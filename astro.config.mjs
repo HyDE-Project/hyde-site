@@ -16,8 +16,8 @@ export default defineConfig({
           label: 'Guides',
           items: [
             // Each item here is one entry in the navigation menu.
-            {label: 'Get Started', slug: 'guides/getting-started'},
-            {label: 'NVIDIA', slug: 'hyde/nvidia'},
+            { label: 'Get Started', slug: '/guides/getting-started'},
+            { label: 'NVIDIA', slug: '/guides/nvidia'},
             // {label: 'Configuration', slug: 'guides/configuration'},
           ],
         },
@@ -40,7 +40,7 @@ export default defineConfig({
           ]
         },
         {
-          label: 'Extended',
+          label: 'Extensions',
           autogenerate: {directory: 'extensions'},
         },
         {
