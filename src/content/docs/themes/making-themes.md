@@ -8,7 +8,11 @@ This tutorial will work for both hyprdots and HyDE.
 
 ### Quick Start Guide
 
-Clone the hyde-theme-starter repo into your themes directory, feel free to rename `MyTheme` to your theme name
+Clone the hyde-theme-starter repo into your themes directory
+
+:::tip
+Rename `MyTheme` to your theme name, make sure it doesn't conflict in names in [HyDE-Gallery](https://github.com/HyDE-Project/hyde-gallery)
+:::
 
 ```bash
 git clone https://github.com/richen604/hyde-theme-starter ~/MyTheme
@@ -32,9 +36,18 @@ git clone https://github.com/richen604/hyde-theme-starter ~/MyTheme
    - Don't add too many wallpapers, 8-10 is a good number
 
 3. Install `just` for running helper scripts `yay -S just`
-   - `cd` into your theme directory `cd ~/MyTheme`
-   - Change your theme name in `justfile`
-   - Run `just init` to generate initial directory structure
+
+Go to your theme directory `cd ~/MyTheme` (replace `MyTheme` with your theme name)
+
+:::tip
+Rename `MyTheme` in the `justfile` to your theme name
+:::
+
+```bash
+theme = "MyTheme"
+```
+
+Run `just init` to generate initial directory structure
 
 Your theme should have the following structure:
 
@@ -71,7 +84,7 @@ Your folder structure should look something like this:
 │       └── Font_<Your-Font-Name>.tar.*
 ```
 
-Make sure to use the correct prefix for each arc. eg. `Gtk_<Your-GTK-Theme>.tar.*`
+**Make sure to use the correct prefix for each arc**. eg. `Gtk_<Your-GTK-Theme>.tar.*`
 
 ### Viewing your theme with Wallbash
 
@@ -159,20 +172,36 @@ These files are used to set the "theme" mode for your theme. (`Meta + Shift + R`
 
 ### Editing *.theme files
 
-Take a look at your theme files
+These files are important for themes to work correctly.
 
-- Each *.theme file contains configuration lines
-- The first line has the format: file_path | command_to_execute
-  - hypr.theme - `$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf`
-  - kitty.theme - `$HOME/.config/kitty/theme.conf|killall -SIGUSR1 kitty`
-  - rofi.theme - `$HOME/.config/rofi/theme.rasi`
-  - waybar.theme - `$HOME/.config/waybar/theme.css|${scrDir}/wbarconfgen.sh`
+You should reference a theme like [Bad Blood](https://github.com/HyDE-Project/hyde-gallery/blob/Bad-Blood/Configs/.config/hyde/themes/Bad%20Blood) along this guide.
 
-- hypr.theme:
-  - Becomes `$HOME/.config/hypr/themes/theme.conf`
-  - Edit the variables for arcs, must match the name of the folder **inside** each arc in `Source/arcs`
-  - You can use hypr.theme to set additional programs for your theme. such as SDDM or Vscode theme
-  - example: [Bad Blood hypr.theme](https://github.com/HyDE-Project/hyde-gallery/blob/Bad-Blood/Configs/.config/hyde/themes/Bad%20Blood/hypr.theme)
+Each *.theme file contains configuration lines
+
+The first line has the format: file_path | command_to_execute
+
+- hypr.theme - `$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf`
+- kitty.theme - `$HOME/.config/kitty/theme.conf|killall -SIGUSR1 kitty`
+- rofi.theme - `$HOME/.config/rofi/theme.rasi`
+- waybar.theme - `$HOME/.config/waybar/theme.css|${scrDir}/wbarconfgen.sh`
+
+the most important file is `hypr.theme`
+
+```bash
+$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
+# ~/.config/hypr/theme/theme.conf is an auto-generated file. Do not edit.
+
+$GTK_THEME=Bad-Blood # folder name inside `Source/arcs/Gtk_<Your-GTK-Theme>.tar.*`
+$ICON_THEME=besgnulinux-mono-red # folder name inside `Source/arcs/Icon_<Your-Icon-Theme>.tar.*`
+$COLOR_SCHEME=prefer-dark # prefer-dark, prefer-light, or auto
+$CURSOR_THEME=Night-Diamond-Red # folder name inside `Source/arcs/Cursor_<Your-Cursor-Theme>.tar.*`
+$CURSOR_SIZE=30 # cursor size in pixels
+```
+
+- Edit the variables for arcs, must match the name of the folder **inside** each arc in `Source/arcs` like above
+- Set hyprland borders, colors, and other theme related settings
+- You can use hypr.theme to set additional programs for your theme. such as SDDM or Vscode theme
+- Becomes `$HOME/.config/hypr/themes/theme.conf`
 
 Any updates to your theme in either `Config` or `Source` should be run with `just install` to update your theme.
 
@@ -185,7 +214,8 @@ This file is entirely optional
 
 ### Finalizing your theme
 
-Your theme should now be ready to be added to the hyde-gallery! </br>
+Your theme should now be ready to be added to the hyde-gallery!
+
 A few more finishing touches:
 
 - Add some screenshots to `~/screenshots`
