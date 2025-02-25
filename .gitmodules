@@ -1,6 +1,0 @@
-[submodule "src/content/docs/themes/hyde-gallery"]
-	path = src/content/docs/themes/hyde-gallery
-	url = https://github.com/HyDE-Project/hyde-gallery.wiki.git
-[submodule "src/content/docs/hyde"]
-	path = src/content/docs/hyde
-	url = https://github.com/HyDE-Project/HyDE.wiki.git
