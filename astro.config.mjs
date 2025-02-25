@@ -23,11 +23,11 @@ export default defineConfig({
         },
         {
           label: 'Installation & Management',
-          autogenerate: {directory: 'hyde/installation_management'},
+          autogenerate: {directory: 'installation_management'},
         },
         {
           label: 'Configuration',
-          autogenerate: {directory: 'hyde/configuration'},
+          autogenerate: {directory: 'configuration'},
         },
         {
           label: 'Theming',
