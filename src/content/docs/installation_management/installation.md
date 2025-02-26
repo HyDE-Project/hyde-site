@@ -81,13 +81,16 @@ The install script can be executed in different modes,
 
 ### Option 2
 
-> [!IMPORTANT]
-> HyDE-CLI author here.
-> The CLI's dots management (Hyde {restore,backup,control,override}) is not yet and might not be 100% compatible of the current hyprdots.
-> This is due to incompatibility of the meta files
-> and the above commands need manual intervention
-> Rest assured that other commands are working perfectly
-> and will be ported to its own `hydectl` command line interface
+:::caution
+
+👋 HyDE-CLI author here.
+The CLI's dots management (Hyde {restore,backup,control,override}) is not yet and might not be 100% compatible of the current hyprdots.
+This is due to incompatibility of the meta files
+and the above commands need manual intervention
+Rest assured that other commands are working perfectly
+and will be ported to its own `hydectl` command line interface
+
+:::
 
 As a second install option, you can also use `Hyde-install`, which might be easier for some.
 View installation instructions for HyDE in [Hyde-cli - Usage](https://github.com/kRHYME7/Hyde-cli?tab=readme-ov-file#usage).
@@ -99,5 +102,8 @@ A declarative way to manage importing and exporting dotfiles from other users. T
 
 ---
 
-> [!IMPORTANT]
-> Please reboot after the install script completes and takes you to the SDDM login screen (or black screen) for the first time.
+:::note
+
+Please reboot after the install script completes and takes you to the SDDM login screen (or black screen) for the first time.
+
+:::
