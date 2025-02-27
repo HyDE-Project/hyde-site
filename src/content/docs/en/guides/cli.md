@@ -6,7 +6,7 @@ description: Installation guide for HyDE-cli
 <div align="center">
   <br>
 
-![hyde_cli_banner](../../../assets/hyde-cli.png)
+![hyde_cli_banner](../../../../assets/hyde-cli.png)
 
 <style type="text/css">
     img {

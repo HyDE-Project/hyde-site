@@ -7,19 +7,31 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'The HyDE project',
+      // Set English as the default language for this site.
+      defaultLocale: 'en',
+      locales: {
+        // English docs in `src/content/docs/en/`
+        en: {
+          label: 'English',
+        },
+        // Dutch docs in `src/content/docs/nl/`
+        nl: {
+          label: 'Nederlands',
+          lang: 'nl',
+        },
+      },
       social: {
         github: 'https://github.com/HyDE-Project',
         discord: 'https://discord.gg/8nWbDC4SnP',
       },
       sidebar: [
         {
+          label: 'Start Here',
+          autogenerate: {directory: 'start_here'},
+        },
+        {
           label: 'Guides',
-          items: [
-            // Each item here is one entry in the navigation menu.
-            { label: 'Get Started', slug: '/guides/getting-started'},
-            { label: 'NVIDIA', slug: '/guides/nvidia'},
-            // {label: 'Configuration', slug: 'guides/configuration'},
-          ],
+          autogenerate: {directory: 'guides'},
         },
         {
           label: 'Installation & Management',
@@ -31,13 +43,7 @@ export default defineConfig({
         },
         {
           label: 'Theming',
-          items: [
-            { label: 'Making Themes', slug: 'themes/making-themes' },
-            {
-              label: 'Theme Gallery',
-              autogenerate: { directory: 'themes/hyde-gallery' }
-            }
-          ]
+          autogenerate: {directory: 'themes'},
         },
         {
           label: 'Extensions',
