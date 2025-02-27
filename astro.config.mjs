@@ -10,14 +10,24 @@ export default defineConfig({
       // Set English as the default language for this site.
       defaultLocale: 'en',
       locales: {
-        // English docs in `src/content/docs/en/`
         en: {
           label: 'English',
         },
-        // Dutch docs in `src/content/docs/nl/`
+        es: {
+          label: 'Español',
+          lang: 'es',
+        },
+        de: {
+          label: 'Deutsch',
+          lang: 'de',
+        },
         nl: {
           label: 'Nederlands',
           lang: 'nl',
+        },
+        zh: {
+          label: '中文',
+          lang: 'zh',
         },
       },
       social: {
