@@ -1,7 +1,6 @@
 ---
 title: NVIDIA
 description: For NVIDIA GPU users
-slug: "/guides/nvidia"
 ---
 
 HyDE's installation automates the installation of **NVIDIA drivers** and **nvidia-utils**.
