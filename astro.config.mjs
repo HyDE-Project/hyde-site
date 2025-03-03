@@ -1,37 +1,20 @@
 // @ts-check
 import starlight from '@astrojs/starlight';
-import {defineConfig} from 'astro/config';
+import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  redirects: {
-    '/': '/en', // Prevents 404's on root domain.
-  },
   integrations: [
     starlight({
       title: 'The HyDE project',
-      // Set English as the default language for this site.
-      defaultLocale: 'en',
+      defaultLocale: 'root',
       locales: {
-        en: {
-          label: 'English',
-        },
-        es: {
-          label: 'Español',
-          lang: 'es',
-        },
-        de: {
-          label: 'Deutsch',
-          lang: 'de',
-        },
-        nl: {
-          label: 'Nederlands',
-          lang: 'nl',
-        },
-        zh: {
-          label: '中文',
-          lang: 'zh',
-        },
+        root: { label: 'English', lang: 'en' },
+        es: { label: 'Español', lang: 'es' },
+        de: { label: 'Deutsch', lang: 'de' },
+        nl: { label: 'Nederlands', lang: 'nl' },
+        zh: { label: '中文', lang: 'zh' },
+        fr: { label: 'Français', lang: 'fr' },
       },
       social: {
         github: 'https://github.com/HyDE-Project',
