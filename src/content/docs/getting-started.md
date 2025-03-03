@@ -1,5 +1,5 @@
 ---
-title: Get Started
+title: Getting Started
 description: Get started with HyDE.
 ---
 

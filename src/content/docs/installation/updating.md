@@ -1,5 +1,5 @@
 ---
-title: Updates
+title: Updating
 description: HyDE Dotfiles Management guide
 ---
 
@@ -17,7 +17,7 @@ git pull origin master
 
 Any configurations you made will be overwritten if listed to be done so as listed by `Scripts/restore_cfg.psv`.
 However, all replaced configs are backed up and may be recovered from in `~/.config/cfg_backups`.
-See [Restore Configuration](/hyde/installation_management/restore/) for more information.
+See [Restore Configuration](/hyde/installation/restore/) for more information.
 
 :::
 

@@ -1,5 +1,5 @@
 ---
-title: HyDE gallery
+title: HyDE Gallery
 description: supported HyDE themes.
 ---
 

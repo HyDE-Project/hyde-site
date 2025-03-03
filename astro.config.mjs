@@ -22,32 +22,54 @@ export default defineConfig({
       },
       sidebar: [
         {
-          label: 'Start Here',
-          autogenerate: {directory: 'start_here'},
+          label: '🚀 Getting Started',
+          items: [
+            // { label: 'Introduction', slug: 'index' },
+            { label: 'First Steps', slug: 'getting-started' },
+          ],
         },
         {
-          label: 'Guides',
-          autogenerate: {directory: 'guides'},
+          label: '🌟 Features',
+          items: [
+            { label: 'HyDE CLI', slug: 'features/cli' },
+            { label: 'HyDE Gallery', slug: 'features/gallery' },
+            { label: 'HyprPanel', slug: 'features/hyprpanel' },
+            { label: 'NVIDIA Support', slug: 'features/nvidia' },
+          ],
         },
         {
-          label: 'Installation & Management',
-          autogenerate: {directory: 'installation_management'},
+          label: '⚙️ Installation',
+          items: [
+            { label: 'HyDE Setup', slug: 'installation/hyde' },
+            { label: 'Updating', slug: 'installation/updating' },
+            { label: 'Restore Configuration', slug: 'installation/restore' },
+          ],
         },
         {
-          label: 'Configuration',
-          autogenerate: {directory: 'configuration'},
+          label: '🛠️ Configuration',
+          items: [
+            { label: 'Hyprland', slug: 'configuration/hyprland' },
+          ],
         },
         {
-          label: 'Theming',
-          autogenerate: {directory: 'themes'},
+          label: '🎨 Customization',
+          items: [
+            { label: 'Creating Themes', slug: 'customization/making-themes' },
+          ],
         },
         {
-          label: 'Extensions',
-          autogenerate: {directory: 'extensions'},
+          label: '🧩 Extensions',
+          items: [
+            { label: 'SwayOSD', slug: 'extensions/swayosd' },
+          ],
         },
         {
-          label: 'Reference',
-          items: [{label: 'FAQs', slug: 'reference/faqs'}],
+          label: '📚 Resources & Help',
+          items: [
+            { label: 'FAQ', slug: 'resources/faq' },
+            { label: 'Roadmap', slug: 'resources/roadmap' },
+            { label: 'Tools & References', slug: 'resources/tools' },
+          ],
         },
       ],
     }),

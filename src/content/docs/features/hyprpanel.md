@@ -1,5 +1,5 @@
 ---
-title: Hyprpanel
+title: HyprPanel
 description: HyprPanel wallbash template
 ---
 
