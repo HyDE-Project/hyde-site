@@ -4,6 +4,9 @@ import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    '/': '/en', // Prevents 404's on root domain.
+  },
   integrations: [
     starlight({
       title: 'The HyDE project',
