@@ -24,37 +24,30 @@ export default defineConfig({
         {
           label: '🚀 Getting Started',
           items: [
-            // { label: 'Introduction', slug: 'index' },
-            { label: 'First Steps', slug: 'getting-started' },
+            { label: 'Introduction', slug: 'getting-started/introduction' },
+            { label: 'Installation', slug: 'getting-started/installation' },
+            { label: 'Update', slug: 'getting-started/update' },
           ],
         },
         {
           label: '🌟 Features',
           items: [
             { label: 'HyDE CLI', slug: 'features/cli' },
-            { label: 'HyDE Gallery', slug: 'features/gallery' },
             { label: 'HyprPanel', slug: 'features/hyprpanel' },
-            { label: 'NVIDIA Support', slug: 'features/nvidia' },
           ],
         },
         {
-          label: '⚙️ Installation',
+          label: '🛠️ Configuring',
           items: [
-            { label: 'HyDE Setup', slug: 'installation/hyde' },
-            { label: 'Updating', slug: 'installation/updating' },
-            { label: 'Restore Configuration', slug: 'installation/restore' },
+            { label: 'Hyprland', slug: 'configuring/hyprland' },
+            { label: 'Restore Configuration', slug: 'configuring/restore' },
           ],
         },
         {
-          label: '🛠️ Configuration',
+          label: '🎨 Theming',
           items: [
-            { label: 'Hyprland', slug: 'configuration/hyprland' },
-          ],
-        },
-        {
-          label: '🎨 Customization',
-          items: [
-            { label: 'Creating Themes', slug: 'customization/making-themes' },
+            { label: 'HyDE Gallery', slug: 'theming/gallery' },
+            { label: 'Making Themes', slug: 'theming/making-themes' },
           ],
         },
         {
@@ -68,7 +61,8 @@ export default defineConfig({
           items: [
             { label: 'FAQ', slug: 'resources/faq' },
             { label: 'Roadmap', slug: 'resources/roadmap' },
-            { label: 'Tools & References', slug: 'resources/tools' },
+            { label: 'NVIDIA Support', slug: 'resources/nvidia' },
+            { label: 'Tools', slug: 'resources/tools' },
           ],
         },
       ],
