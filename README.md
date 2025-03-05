@@ -116,9 +116,8 @@ export default defineConfig({
 - Maintain the same filenames and structure as the original content.
 - **You do not need to translate everything immediately**—just push the structure and translate progressively. If a translation is missing, Starlight will fall back to the default language and display a notice that the page is not yet translated.
 
+Tip: When adding a new language from scratch, mind the `index.mdx` file, which will need some fixing: ensure links are relative to the root folder, not the language folder (specifically the buttons/hero image).
+
 5. Submit your changes
 
-- You know the drill, commit on your branch and make a nice PR. ;) 
-
-Your new language is now ready! 🎉 
-Feel free to add more translations over time and refine the content as needed.
+You know the drill, commit on your branch and make a nice PR. ;) Feel free to add more translations over time and refine the content as needed.
