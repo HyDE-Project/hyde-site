@@ -29,19 +29,23 @@ export default defineConfig({
             { label: 'Update', slug: 'getting-started/update' },
           ],
         },
-        {
-          label: '🌟 Features',
-          items: [
-            { label: 'HyDE CLI', slug: 'features/cli' },
-            { label: 'HyprPanel', slug: 'features/hyprpanel' },
-          ],
-        },
+        // {
+        //   label: '🌟 Features',
+        //   items: [
+        //     { label: 'HyDE CLI', slug: 'features/cli' },
+        //     { label: 'HyprPanel', slug: 'features/hyprpanel' },
+        //   ],
+        // },
         {
           label: '🛠️ Configuring',
-          items: [
-            { label: 'Hyprland', slug: 'configuring/hyprland' },
-            { label: 'Restore Configuration', slug: 'configuring/restore' },
-          ],
+          // items: [
+          //   { label: 'Hyprland', slug: 'configuring/hyprland' },
+          // ],
+          autogenerate: {directory: 'configuring'},
+        },
+        {
+          label: '📙 Man Pages',
+          autogenerate: {directory: 'man-pages'},
         },
         {
           label: '🎨 Theming',
@@ -50,19 +54,20 @@ export default defineConfig({
             { label: 'Making Themes', slug: 'theming/making-themes' },
           ],
         },
-        {
-          label: '🧩 Extensions',
-          items: [
-            { label: 'SwayOSD', slug: 'extensions/swayosd' },
-          ],
-        },
+        // {
+        //   label: '🧩 Extensions',
+        //   items: [
+        //     { label: 'SwayOSD', slug: 'extensions/swayosd' },
+        //   ],
+        // },
         {
           label: '📚 Resources & Help',
           items: [
             { label: 'FAQ', slug: 'resources/faq' },
-            { label: 'Roadmap', slug: 'resources/roadmap' },
+            // { label: 'Roadmap', slug: 'resources/roadmap' },
             { label: 'NVIDIA Support', slug: 'resources/nvidia' },
             { label: 'Tools', slug: 'resources/tools' },
+          { label: 'What is restore.psv', slug: 'resources/restore' },
           ],
         },
       ],
