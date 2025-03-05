@@ -128,15 +128,15 @@ Directory: ./includes/
 
 **Circle** 100 rounding in hyprland
 
-![100-rounding](image.png)
+![100-rounding](assets/waybar/image.png)
 
 **Squircle** 0 rounding in hyprland
 
-![0-rounding](image-1.png)
+![0-rounding](assets/waybar/image-1.png)
 
 **Something between** 5 rounding in hyprland
 
-![Usually how themes are set](image-2.png)
+![Usually how themes are set](assets/waybar/image-2.png)
 
 **Get the Idea?**
 
