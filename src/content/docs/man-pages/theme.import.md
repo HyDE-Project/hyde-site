@@ -5,7 +5,7 @@ description: theme import man page
 
 ### Preview
 
-![preview theme import](./assets/theme.import/image.png)
+![preview theme import](../../../assets/man-pages/theme.import/image.png)
 
 ### NAME
 

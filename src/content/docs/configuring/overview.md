@@ -1,6 +1,8 @@
 ---
 title: Overview
 description: HyDE's Configuration Guide
+sidebar:
+  order: 1
 ---
 
 ### HyDE's Configuration Guide

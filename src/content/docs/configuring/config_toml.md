@@ -1,6 +1,8 @@
 ---
 title: Config Toml
 description: HyDE's Configuration Guide
+sidebar:
+  order: 2
 ---
 
 ### HyDE's Toml configuration
