@@ -49,10 +49,7 @@ export default defineConfig({
         },
         {
           label: '🎨 Theming',
-          items: [
-            { label: 'HyDE Gallery', slug: 'theming/gallery' },
-            { label: 'Making Themes', slug: 'theming/making-themes' },
-          ],
+          autogenerate: {directory: 'theming'},
         },
         // {
         //   label: '🧩 Extensions',
@@ -61,15 +58,13 @@ export default defineConfig({
         //   ],
         // },
         {
-          label: '📚 Resources & Help',
-          items: [
-            { label: 'FAQ', slug: 'resources/faq' },
-            // { label: 'Roadmap', slug: 'resources/roadmap' },
-            { label: 'NVIDIA Support', slug: 'resources/nvidia' },
-            { label: 'Tools', slug: 'resources/tools' },
-          { label: 'What is restore.psv', slug: 'resources/restore' },
-          ],
+          label: '📚 Resources',
+          autogenerate: {directory: 'resources'}
         },
+        {
+          label: '👥 Help',
+          autogenerate: {directory: 'help'}
+        }
       ],
     }),
   ],

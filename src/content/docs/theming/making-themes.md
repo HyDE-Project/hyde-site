@@ -19,6 +19,7 @@ git clone https://github.com/richen604/hyde-theme-starter ~/MyTheme
 ```
 
 1. Required components - all must be in `tar.*` format:
+
    - A GTK theme (mandatory)
      - search [Gnome-Look Themes](https://www.gnome-look.org/browse?cat=135&ord=latest) for existing themes
      - or see [Generate GTK4](#generate-gtk4-from-wallbash) for generating GTK theme from wallpaper
@@ -31,6 +32,7 @@ git clone https://github.com/richen604/hyde-theme-starter ~/MyTheme
      - search [nerdfonts.com](https://www.nerdfonts.com/) for patched developer fonts
 
 2. A collection of wallpapers that match your desired style/color scheme
+
    - [Wallhaven](https://wallhaven.cc/) - For wallpapers
    - [farbenfroh.io](https://farbenfroh.io/) - For color match wallpapers if you have a desired color scheme in mind
    - Don't add too many wallpapers, 8-10 is a good number
@@ -170,13 +172,13 @@ just install
 
 These files are used to set the "theme" mode for your theme. (`Meta + Shift + R`)
 
-### Editing *.theme files
+### Editing \*.theme files
 
 These files are important for themes to work correctly.
 
 You should reference a theme like [Bad Blood](https://github.com/HyDE-Project/hyde-gallery/blob/Bad-Blood/Configs/.config/hyde/themes/Bad%20Blood) along this guide.
 
-Each *.theme file contains configuration lines
+Each \*.theme file contains configuration lines
 
 The first line has the format: file_path | command_to_execute
 
@@ -231,9 +233,9 @@ python3 generate_readme.py
 
 Initialize git
 
-  ```bash
-  git init && git branch -M main && git add . && git commit -m "My first HyDE theme"
-  ```
+```bash
+git init && git branch -M main && git add . && git commit -m "My first HyDE theme"
+```
 
 [create a github repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
