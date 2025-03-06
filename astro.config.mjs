@@ -7,9 +7,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'The HyDE project',
-      defaultLocale: 'root',
+      defaultLocale: 'en',
       locales: {
-        root: { label: 'English', lang: 'en' },
+        en: { label: 'English', lang: 'en' },
         es: { label: 'Español', lang: 'es' },
         de: { label: 'Deutsch', lang: 'de' },
         nl: { label: 'Nederlands', lang: 'nl' },
