@@ -7,12 +7,10 @@ description: Frequently asked questions about HyDE
 Hyprland related questions should be referenced to [Hyprland Wiki](https://wiki.hyprland.org)
 :::
 
-### Add Global or Custom Wallpapers?
+### Add Global or Custom Wallpapers
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
-
----
 
 #### Global wallpapers
 
@@ -76,7 +74,7 @@ You can screen record using the following wayland based recording packages.
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You can set your Hyprland preferences in `~/.config/hypr/userprefs.conf`. These settings are retained even when updating the repository.
+You can set your Hyprland preferences in `xdg_config/hypr/userprefs.conf`. These settings are retained even when updating the repository.
 
 See `Configuring` > `Hyprland` to learn how we structure hyprlad configurations.
 

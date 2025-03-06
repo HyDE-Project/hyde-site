@@ -8,7 +8,7 @@ description: Restore script's logic
 > "restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
 
 ```sh
-./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone`
+./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>
 ```
 
 :::
