@@ -39,8 +39,10 @@ export default defineConfig({
         {
           label: '🛠️ Configuring',
           items: [
-            { label: 'Hyprland', slug: 'configuring/hyprland' },
             { label: 'Restore Configuration', slug: 'configuring/restore' },
+            { label: 'Hyprland', slug: 'configuring/hyprland' },
+            { label: 'Waybar', slug: 'configuring/waybar' },
+
           ],
         },
         {
