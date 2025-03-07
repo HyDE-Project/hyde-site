@@ -103,3 +103,27 @@ theme.patch.sh 'Hack the Box' 'https://github.com/HyDE-Project/Hyde-gallery'
 ```
 
 :::
+
+### Updating
+
+Your local themes can be fetch/updated using the `theme.import.py` script.
+
+<details>
+<summary>Fetch all themes</summary>
+ This command updates all the themes that are located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
+
+```bash
+theme.import.py --fetch all
+```
+
+</details>
+
+<details>
+<summary>Fetch a specific theme</summary>
+ This command updates a specific theme that is located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
+
+```bash
+theme.import.py --fetch "Theme-Name"
+```
+
+</details>

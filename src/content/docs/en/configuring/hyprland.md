@@ -30,13 +30,11 @@ description: Hyprland related configuration
 ```
 . 📂 ~/.config/hypr
 └── 📂 animations/
-│ ├── 📄 *.conf
 ├── 📄 animations.conf
 ├── 📄 hyde.conf
 ├── 📄 hypridle.conf
 ├── 📄 hyprland.conf
 └── 📂 hyprlock/
-│ ├── 📄 *.conf
 ├── 📄 hyprlock.conf
 ├── 📄 keybindings.conf
 ├── 📄 monitors.conf
@@ -49,16 +47,20 @@ description: Hyprland related configuration
 └── 📄 windowrules.conf
 ├──
 . 📂 ~/.local/share/hyde
-├── 📄 hyprland.conf
+│ ├── 📄 hyprland.conf
 ```
 
 ---
 
+:::caution
+
 **Read the [Hyprland Wiki](https://wiki.hyprland.org/) first!**
+
+:::
 
 # HyDE's Hyprland Configuration
 
-Since Hyprland sources ~/.config/hypr/hyprland.conf`, HyDE's Hyprland configuration is divided into three sections:
+Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE's hyprland configuration is divided into three sections:
 
 - [Boilerplate](#1-boilerplate)
 - [Overrides](#2-overrides)
@@ -189,4 +191,15 @@ This section is for user configuration. It is recommended to change this section
 
 ---
 
+:::tip
+
+Likely you only need this files to configure your preferences.
+Hyprland variables can be overridden, therefore you can change the default values to your liking.
+
+Also Hyprland can hot reload the configuration files, so you can edit them and see the changes immediately.
+
+:::
+
 Now you should know which file is which. Refer to the [Hyprland Wiki](https://wiki.hyprland.org) for more information and to achieve your perfect desktop experience.
+
+Also see[FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout)

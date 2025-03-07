@@ -1,5 +1,5 @@
 ---
-title: FAQ & Tips
+title: FAQs & Tips
 description: Frequently asked questions about HyDE
 ---
 
@@ -18,14 +18,14 @@ Global wallpapers will be shown in the selector across all themes.
 
 In your `xdg_config/hyde/config.toml` add this.
 
-```toml
+````toml
 [wallpaper]
 custom_paths = [
     "$XDG_PICTURES_DIR",
     "/path/to/pretty/wallpapers",
 ] # List of paths to search for wallpapers
 
-```
+```s
 
 #### Custom wallpapers per theme
 
@@ -89,7 +89,7 @@ See `Configuring` > `Hyprland` to learn how we structure hyprlad configurations.
 cd ~/HyDE/Scripts
 git pull
 ./install.sh -r
-```
+````
 
 See `Resources` > `Restore Configuration` on how it works
 
@@ -140,9 +140,17 @@ if you want to modify the structure then you'll have to modify the qml files in 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You can change the keyboard layout by adding the keyboard layouts to the Hyprland.conf in ~/.config/hypr/
+Read this first: https://wiki.hyprland.org/Configuring/Variables/#input
 
-Then use the keyboard bind Super + K
+In HyDE we have the `~/.config/hypr/userprefs.conf ` add the configuration in there.
+
+```hyprlang
+input {
+  kb_layout = us,de
+}
+```
+
+Use `SUPER` + `K` to switch between layouts.
 
 </details>
 

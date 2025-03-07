@@ -8,22 +8,20 @@ While installing HyDE alongside another [DE](https://wiki.archlinux.org/title/De
 
 For Nixos support there is a separate project being maintained @ [Hydenix](https://github.com/richen604/hydenix/tree/main)
 
+:::note
+
+The install script will auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
+Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA). Fancy stuff here
+
 :::danger
 
-> The install script will auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
-> Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
+The script modifies your `grub` or `systemd-boot` config to enable NVIDIA DRM.
 
 :::
 
-:::caution
+<!-- ### Option 1 -->
 
-> The script modifies your `grub` or `systemd-boot` config to enable NVIDIA DRM.
-
-:::
-
-### Option 1
-
-#### Automated installation script
+### Automated installation script
 
 ```shell
 pacman -S --needed git base-devel
@@ -32,16 +30,23 @@ cd ~/HyDE/Scripts
 ./install.sh
 ```
 
-> [!TIP]
-> You can also add any other apps you wish to install alongside HyDE to `Scripts/custom_apps.lst` and pass the file as a parameter to install it like so:
->
-> ```sh
-> ./install.sh custom_apps.lst
-> ```
+:::tip
+You can also add any other apps you wish to install alongside HyDE to `Scripts/pkg_user.lst` and pass the file as a parameter to install it like so:
 
-#### Granular and Manual Installation
+```shell
+./install.sh pkg_user.lst
+```
 
-##### Clone
+:::
+
+:::note
+Refer your list from `Scripts/pkg_extra.lst`
+or you can `cp  Scripts/pkg_extra.lst Scripts/pkg_user.lst` if you wish to install all extra packages.
+:::
+
+### Granular and Manual Installation
+
+#### Clone
 
 Clone the repo and change the directory to the script path. Then make sure the user has [w]rite and e[x]ecute permission to the clone directory
 
@@ -51,10 +56,11 @@ git clone --depth 1 https://github.com/prasanthrangan/hyprdots ~/HyDE
 cd ~/HyDE/Scripts
 ```
 
-> [!CAUTION]
-> NEVER ever execute the script with sudo or as root user!
+:::caution
+**NEVER** ever execute the script with sudo or as root user!
+:::
 
-##### Modes
+#### Modes
 
 The install script can be executed in different modes,
 
@@ -64,14 +70,14 @@ The install script can be executed in different modes,
 ./install.sh
 ```
 
-- for full or minimal hyprland installation + your favorite packages (ex. `custom_apps.lst`)
+- for full or minimal hyprland installation + your favorite packages (ex.`pkg_user.lst`)
 
 ```shell
-./install.sh custom_apps.lst # full install custom_hypr.lst + custom_app.lst with configs
-./install.sh -i custom_apps.lst # minimal install custom_hypr.lst + custom_app.lst without configs
+./install.sh pkg_user.lst # full install pkg_core.lst + pkg_user.lst with configs
+./install.sh -i pkg_user.lst # minimal install pkg_core.lst + pkg_user.lst without configs
 ```
 
-- each [section](#process) can also be independently executed as,
+- each[section](#process) can also be independently executed as,
 
 ```shell
 ./install.sh -i # minimal install hyprland without any configs
@@ -85,11 +91,11 @@ The install script can be executed in different modes,
 ./install.sh -irst # to do a test run for all
 ```
 
-### Option 2
+<!-- ### Option 2
 
 :::caution
 
-👋 HyDE-CLI author here.
+HyDE-CLI author here.
 The CLI's dots management (Hyde {restore,backup,control,override}) is not yet and might not be 100% compatible of the current hyprdots.
 This is due to incompatibility of the meta files
 and the above commands need manual intervention
@@ -108,8 +114,11 @@ A declarative way to manage importing and exporting dotfiles from other users. T
 
 ---
 
+---
+
+---
+
 :::note
 
-Please reboot after the install script completes and takes you to the SDDM login screen (or black screen) for the first time.
-
-:::
+> Please reboot after the install script completes and takes you to the SDDM login screen (or black screen) for the first time.
+> ::: -->

@@ -34,7 +34,7 @@ Also see [this](../resources/restore.md).
 > "restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
 
 ```sh
-./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone`
+./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>
 ```
 
 :::
@@ -50,14 +50,3 @@ cd ~/HyDE/Scripts
 </details>
 
 ---
-
-### Theme update and importing
-
-Themes are located at [Scripts/themepatcher.lst](https://github.com/HyDE-Project/HyDE/blob/master/Scripts/themepatcher.lst)
-
-A User can create a new themepatcher list file and use this file to be installed instead.
-example, we can have `my_themes.lst`
-
-```sh
-./restore_thm.sh /path/to/my_themes.lst
-```
