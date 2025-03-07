@@ -23,11 +23,7 @@ export default defineConfig({
       sidebar: [
         {
           label: '🚀 Getting Started',
-          items: [
-            { label: 'Introduction', slug: 'getting-started/introduction' },
-            { label: 'Installation', slug: 'getting-started/installation' },
-            { label: 'Update', slug: 'getting-started/update' },
-          ],
+          autogenerate: {directory: 'getting-started'},
         },
         // {
         //   label: '🌟 Features',
