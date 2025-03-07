@@ -18,14 +18,14 @@ Global wallpapers will be shown in the selector across all themes.
 
 In your `xdg_config/hyde/config.toml` add this.
 
-````toml
+```toml
 [wallpaper]
 custom_paths = [
     "$XDG_PICTURES_DIR",
     "/path/to/pretty/wallpapers",
 ] # List of paths to search for wallpapers
 
-```s
+```
 
 #### Custom wallpapers per theme
 
@@ -89,7 +89,7 @@ See `Configuring` > `Hyprland` to learn how we structure hyprlad configurations.
 cd ~/HyDE/Scripts
 git pull
 ./install.sh -r
-````
+```
 
 See `Resources` > `Restore Configuration` on how it works
 
@@ -144,7 +144,7 @@ Read this first: https://wiki.hyprland.org/Configuring/Variables/#input
 
 In HyDE we have the `~/.config/hypr/userprefs.conf ` add the configuration in there.
 
-```hyprlang
+```
 input {
   kb_layout = us,de
 }
