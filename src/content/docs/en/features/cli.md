@@ -6,7 +6,7 @@ description: Installation guide for HyDE-cli
 <div align="center">
   <br>
 
-![hyde_cli_banner](../../../assets/hyde-cli.png)
+![hyde_cli_banner](../../../../assets/hyde-cli.png)
 
 <style type="text/css">
     img {
@@ -22,7 +22,7 @@ For example, we have a functional TUI restore tool that follows `restore_cfg.lst
 
 </div>
 
-> 🚨 While HyDE-cli is stable, it is important to note that these scripts do alter and *could* potentially mess up your system configuration.
+> 🚨 While HyDE-cli is stable, it is important to note that these scripts do alter and _could_ potentially mess up your system configuration.
 > We ask that you use this tool carefully and report any bugs you find.
 
 ## Installation
@@ -33,8 +33,8 @@ To install, execute the following command:
 curl -sL https://raw.githubusercontent.com/HyDE-Project/Hyde-cli/master/install.sh | bash
 ```
 
-> 📢  For User who do not have root access:
-> ` export HYDE_LOCAL=1 ` to install this package locally
+> 📢 For User who do not have root access:
+> `export HYDE_LOCAL=1` to install this package locally
 
 For other working install solutions, see the following below.
 
@@ -87,8 +87,7 @@ To update:
 make update clean install
 ```
 
-> 📢 User who do not have root access should provide this flag for ` make `; ` make LOCAL=1 `
-
+> 📢 User who do not have root access should provide this flag for `make`; `make LOCAL=1`
 
 > ⚠️ If you have previously installed HyDE without using the CLI, you can still use the CLI to manage your installation.
 > To do this, combine the --dir and --link flags where the local cloned repository is located.
@@ -103,47 +102,49 @@ make update clean install
 
 > 📢 To achieve the best experience, it is encouraged you perform a fresh install of HyDE.
 
-1) **Basic Installation**
+1. **Basic Installation**
 
 - To install HyDE with the defaults, simply run the following command:
 
-    ```sh
-    Hyde-install
-    ```
+  ```sh
+  Hyde-install
+  ```
 
-> ⚠️ *Already  have HyDE before you discover this CLI?*
+> ⚠️ _Already have HyDE before you discover this CLI?_
 > Simply run this command
-> ` Hyde-install --link --dir ~/HyDE `
-> Note that the ` ~/HydE ` is the path to the clone directory.
+> `Hyde-install --link --dir ~/HyDE`
+> Note that the `~/HydE` is the path to the clone directory.
 > See **Advanced Installation** below for more info.
 
-2) **Advanced Installation**
+2. **Advanced Installation**
 
 - For more control over the installation process, you can use the following options:
 
   - **Specify Local Directory**: To clone HyDE into a specific local directory and run the installation, use the `-d` or `--dir` flag followed by the path of the directory.
 
-      ```sh
-      Hyde-install --dir /path/to/directory
-      ```
+    ```sh
+    Hyde-install --dir /path/to/directory
+    ```
 
   - **Specify Remote Git Repository**: To clone HyDE from a specific remote git repository, use the `-g` or `--git` flag followed by the URL of the repository.
 
-      ```sh
-      Hyde-install --git https://host/owner/repository
-      ```
+    ```sh
+    Hyde-install --git https://host/owner/repository
+    ```
 
   - **Link Local Git Repository**: To link a local git repository, use the `-l` or `--link` flag.
 
-      ```sh
-      Hyde-install --link
-      ```
-3) **Sync changes**
-  - If you want to get the latest changes from the `hyprdots/HyDE` repo and apply to your local install
     ```sh
-    Hyde update
-    Hyde restore Config
+    Hyde-install --link
     ```
+
+3. **Sync changes**
+
+- If you want to get the latest changes from the `hyprdots/HyDE` repo and apply to your local install
+  ```sh
+  Hyde update
+  Hyde restore Config
+  ```
 
 > ⚠️ If you have previously installed HyDE without using the CLI, you can still use the CLI to manage your installation.
 > To do this, combine the --dir and --link flags where the local cloned repository is located.
