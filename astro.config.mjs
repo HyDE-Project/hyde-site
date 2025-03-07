@@ -24,9 +24,9 @@ export default defineConfig({
         {
           label: '🚀 Getting Started',
           items: [
-            { label: 'Introduction', slug: 'getting-started/introduction' },
-            { label: 'Installation', slug: 'getting-started/installation' },
-            { label: 'Update', slug: 'getting-started/update' },
+            { label: 'Introduction', slug: 'en/getting-started/introduction' },
+            { label: 'Installation', slug: 'en/getting-started/installation' },
+            { label: 'Update', slug: 'en/getting-started/update' },
           ],
         },
         // {
