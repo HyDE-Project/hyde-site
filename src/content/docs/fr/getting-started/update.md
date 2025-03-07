@@ -48,5 +48,3 @@ cd ~/HyDE/Scripts
 ```
 
 </details>
-
---- 

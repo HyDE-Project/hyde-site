@@ -104,7 +104,7 @@ Vous pouvez définir la résolution et le taux de rafraîchissement du moniteur 
 
 `monitor = DP-1,2560x1440@144,0x0, 1` >> Le @ définit le taux de rafraîchissement
 
-C'est une question "comment faire avec hyprland", consultez toujours leur wiki, https://wiki.hyprland.org/Configuring/Monitors/
+C'est une question "comment faire avec hyprland", consultez toujours leur wiki, <https://wiki.hyprland.org/Configuring/Monitors/>
 
 </details>
 
@@ -140,7 +140,7 @@ Si vous souhaitez modifier la structure, vous devrez modifier les fichiers qml d
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-Lisez d'abord ceci : https://wiki.hyprland.org/Configuring/Variables/#input
+Lisez d'abord ceci : <https://wiki.hyprland.org/Configuring/Variables/#input>
 
 Dans HyDE, nous avons le fichier `~/.config/hypr/userprefs.conf`, ajoutez la configuration là-bas.
 
@@ -226,8 +226,8 @@ Notez que si l'application ne prend pas en charge Wayland, HyDE, Hyprland et Way
 Problèmes connus
 
 - Quelques problèmes de mise à l'échelle avec les configurations rofi, car elles sont créées en fonction de mon affichage ultralarge (21:9).
-- Verrouillage d'écran aléatoire, voir https://github.com/swaywm/sway/issues/7046
-- Le lancement de rofi depuis Waybar interrompt l'entrée de la souris (ajout d'un sleep 0.1 comme solution), voir https://github.com/Alexays/Waybar/issues/1850
+- Verrouillage d'écran aléatoire, voir <https://github.com/swaywm/sway/issues/7046>
+- Le lancement de rofi depuis Waybar interrompt l'entrée de la souris (ajout d'un sleep 0.1 comme solution), voir <https://github.com/Alexays/Waybar/issues/1850>
 - Les applications Flatpak QT ne suivent pas le thème système
 
-</details> 
+</details>

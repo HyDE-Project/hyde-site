@@ -202,4 +202,4 @@ De plus, Hyprland peut recharger à chaud les fichiers de configuration, vous po
 
 Maintenant, vous devriez savoir à quoi sert chaque fichier. Consultez le [Wiki Hyprland](https://wiki.hyprland.org) pour plus d'informations et pour obtenir votre expérience de bureau parfaite.
 
-Voir aussi [FAQ et Conseils](../help/faq.md) 
+Voir aussi [FAQ et Conseils](../help/faq.md)

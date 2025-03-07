@@ -55,7 +55,7 @@ cd ~/HyDE/Scripts
 ```
 
 :::caution
-**NE JAMAIS** exécuter le script avec sudo ou en tant qu'utilisateur root !
+**NE JAMAIS** exécuter le script avec `sudo` ou en tant qu'utilisateur `root` !
 :::
 
 #### Modes
@@ -75,7 +75,7 @@ Le script d'installation peut être exécuté dans différents modes,
 ./install.sh -i pkg_user.lst # installation minimale pkg_core.lst + pkg_user.lst sans configurations
 ```
 
-- chaque [section](#processus) peut également être exécutée indépendamment comme,
+- chaque [section]() peut également être exécutée indépendamment comme,
 
 ```shell
 ./install.sh -i # installation minimale de hyprland sans configurations

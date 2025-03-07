@@ -6,7 +6,7 @@ description: Pour les utilisateurs de GPU NVIDIA
 L'installation de HyDE automatise l'installation des **pilotes NVIDIA** et de **nvidia-utils**.
 
 :::note
-Plus d'informations sur : https://wiki.archlinux.org/title/NVIDIA
+Plus d'informations sur : <https://wiki.archlinux.org/title/NVIDIA>
 
 :::
 
@@ -108,4 +108,4 @@ Ce tableau montre quels pilotes seront ajoutés à votre système en fonction de
 
 :::note
 
-::: 
+:::

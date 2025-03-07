@@ -121,7 +121,7 @@ Observez comment wallbash adapte les couleurs à votre fond d'écran pour les ap
 
 - GTK (nwg-look)
   - pour tester votre arc de thème gtk, passez du mode wallbash au mode thème (Meta + Shift + R)
-  - puis vérifiez `pavucontrol` pour voir si votre thème gtk semble étrange. si c'est le cas, suivez les instructions dans [Générer GTK4](#generer-gtk4-depuis-wallbash) pour générer les fichiers de thème GTK4 en utilisant wallbash
+  - puis vérifiez `pavucontrol` pour voir si votre thème gtk semble étrange. si c'est le cas, suivez les instructions dans [Générer GTK4](#générer-gtk4-depuis-wallbash) pour générer les fichiers de thème GTK4 en utilisant wallbash
 - Kitty (kitty)
 - QT (qt5ct + qt6ct)
 - Waybar (waybar)

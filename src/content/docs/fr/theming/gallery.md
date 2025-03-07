@@ -110,7 +110,8 @@ Vos thèmes locaux peuvent être récupérés/mis à jour en utilisant le script
 
 <details>
 <summary>Récupérer tous les thèmes</summary>
- Cette commande met à jour tous les thèmes qui se trouvent dans `xdg_config/hyde/themes/` qui sont listés dans la [Galerie HyDE](#galerie-de-thèmes)
+
+Cette commande met à jour tous les thèmes qui se trouvent dans `xdg_config/hyde/themes/` qui sont listés dans la [Galerie HyDE](#_top)
 
 ```bash
 theme.import.py --fetch all
@@ -120,7 +121,8 @@ theme.import.py --fetch all
 
 <details>
 <summary>Récupérer un thème spécifique</summary>
- Cette commande met à jour un thème spécifique qui se trouve dans `xdg_config/hyde/themes/` qui est listé dans la [Galerie HyDE](#galerie-de-thèmes)
+
+Cette commande met à jour un thème spécifique qui se trouve dans `xdg_config/hyde/themes/` qui est listé dans la [Galerie HyDE](#_top)
 
 ```bash
 theme.import.py --fetch "Nom-du-Thème"
