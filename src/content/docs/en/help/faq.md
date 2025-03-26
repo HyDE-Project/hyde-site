@@ -231,3 +231,24 @@ Known Issues
 - Flatpak QT apps do not follow system theme
 
 </details>
+
+### "Login failed!" loop on SDDM?
+
+<details>
+<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+
+If your user (or login name) contains capitalisation or special characters, you will need to edit your SDDM theme to be able to log in through the SDDM.
+
+To do this, follow these steps:
+
+1. When in the SDDM screen, open a tty with `Ctrl + Alt + F6` (or other F key)
+2. Log in as the account with the issue
+3. `nano usr/share/sddm/themes/[theme name]/theme.conf`
+4. Find parameter `AllowBadUsername` and set it to true
+5. Reboot
+
+If you still can't log in after these steps, you can set, on the same file, `AllowEmptyPassword` to true, reboot, log in still writing your password, and after logging in you can set it back to false safely.
+
+Here is a [GitHub Issue](https://github.com/HyDE-Project/HyDE/issues/404) about this behaviour. 
+
+</details>
