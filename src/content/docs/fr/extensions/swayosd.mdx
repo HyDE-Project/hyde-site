@@ -1,0 +1,13 @@
+---
+title: swayosd
+description: Un affichage à l'écran basé sur GTK pour les raccourcis clavier comme verrouillage des majuscules et volume
+---
+
+SwayOSD est déjà supporté par HyDE. Vous devez simplement ajouter manuellement le démon pour qu'il fonctionne.
+
+### Configuration rapide
+
+```bash
+  exec-once = swayosd-server # active le service swayosd
+  exec-once = $(pkexec swayosd-libinput-backend) # service swayosd pour l'entrée clavier (nécessite d'être exécuté dans un sous-shell)
+``` 
