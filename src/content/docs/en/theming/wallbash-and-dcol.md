@@ -16,6 +16,7 @@ By default, while **wallpaper caching**, it will produce 4 primary colors, 4 tex
 - **`dcol_txtX`**: These are the inverted primary colors used for text, with `X` ranging from 1 to 4.
 - **`dcol_XaxY`**: These are the accent colors for each primary color, with `X` ranging from 1 to 4 and `Y` ranging from 1 to 9.
 - **`_rgba`**: This suffix indicates that the color is in RGBA format. If the suffix is not present, the color is in hexadecimal format.
+- **`_rgb`**: This suffix indicates that the color is in RGB format.
 
 ## Usage
 
