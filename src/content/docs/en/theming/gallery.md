@@ -66,7 +66,7 @@ sidebar:
 
 ```shell
 
-> + Execute "theme.import.py" inside your terminal
+> + Execute `theme.import.py --select` inside your terminal # This can be found at ~/.local/lib/hyde
 
 > + Choose your theme
 ```
