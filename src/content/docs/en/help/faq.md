@@ -142,7 +142,7 @@ if you want to modify the structure then you'll have to modify the qml files in 
 
 Read this first: https://wiki.hyprland.org/Configuring/Variables/#input
 
-In HyDE we have the `~/.config/hypr/userprefs.conf ` add the configuration in there.
+In HyDE we have the `~/.config/hypr/userprefs.conf` add the configuration in there.
 
 ```
 input {
@@ -159,7 +159,7 @@ Use `SUPER` + `K` to switch between layouts.
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-If your thumnails are not loading, try to rebuild your wallpaper cache.
+If your thumbnails are not loading, try to rebuild your wallpaper cache.
 
 `swwwallcache.sh`
 
