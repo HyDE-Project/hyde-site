@@ -6,6 +6,15 @@ sidebar:
 ---
 
 <style>
+
+  .sl-markdown-content :is(th:first-child, td:first-child){
+    padding-inline-start: 0.5rem;
+  }
+
+  .sl-markdown-content :is(th:last-child, td:last-child){
+    padding-inline-end: 0.5rem;
+  }
+
   table {
     width: 100%;
     margin: 0em 1em;
