@@ -2101,8 +2101,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@5.4.15:
-    resolution: {integrity: sha512-6ANcZRivqL/4WtwPGTKNaosuNJr5tWiftOC7liM7G9+rMb8+oeJeyzymDu4rTN93seySBmbjSfsS3Vzr19KNtA==}
+  vite@5.4.19:
+    resolution: {integrity: sha512-qO3aKv3HoQC8QKiNSTuUM1l9o/XX3+c+VTgLHbJWHZGeTPVAg2XwazI9UWzoxjIJCGCV2zU60uqMzjeLZuULqA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3184,8 +3184,8 @@ snapshots:
       tsconfck: 3.1.5(typescript@5.8.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
-      vite: 5.4.15
-      vitefu: 1.0.6(vite@5.4.15)
+      vite: 5.4.19
+      vitefu: 1.0.6(vite@5.4.19)
       which-pm: 3.0.1
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
@@ -5068,7 +5068,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@5.4.15:
+  vite@5.4.19:
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.3
@@ -5076,9 +5076,9 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitefu@1.0.6(vite@5.4.15):
+  vitefu@1.0.6(vite@5.4.19):
     optionalDependencies:
-      vite: 5.4.15
+      vite: 5.4.19
 
   volar-service-css@0.0.62(@volar/language-service@2.4.12):
     dependencies:
