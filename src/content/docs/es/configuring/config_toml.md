@@ -1,6 +1,6 @@
 ---
 title: Config Toml
-description: HyDE's Configuration Guide
+description: Guía de Configuración de HyDE
 sidebar:
   order: 2
 ---
@@ -36,217 +36,217 @@ sidebar:
   }
 </style>
 
-HyDE exposes `xdg_config/hyde/config.toml` file for users to modify. This lets users have the ability to interact the scripts without using command arguments.
+HyDE expone el archivo `xdg_config/hyde/config.toml` para que los usuarios puedan modificarlo. Esto permite a los usuarios interactuar con los scripts sin necesidad de usar argumentos de línea de comandos.
 
 ---
 
-### Environment variable
+### Variable de entorno
 
-example:
+Ejemplo:
 
-| Key                 | Description            | Default |
+| Clave                 | Descripción            | Valor predeterminado |
 | ------------------- | ---------------------- | ------- |
-| WARP_ENABLE_WAYLAND | Enable Wayland support |         |
+| WARP_ENABLE_WAYLAND | Habilitar soporte Wayland |         |
 
 ### [battery.notify]
 
-| Key      | Description             | Default |
+| Clave      | Descripción             | Valor predeterminado |
 | -------- | ----------------------- | ------- |
-| dock     | Battery notify dock     | true    |
-| interval | Battery notify interval | 5       |
-| notify   | Battery notify          | 1140    |
-| timer    | Battery notify timer    | 120     |
+| dock     | Notificación de batería en dock     | true    |
+| interval | Intervalo de notificación de batería | 5       |
+| notify   | Notificación de batería          | 1140    |
+| timer    | Temporizador de notificación de batería    | 120     |
 
 ### [battery.notify.execute]
 
-| Key         | Description                        | Default             |
+| Clave         | Descripción                        | Valor predeterminado             |
 | ----------- | ---------------------------------- | ------------------- |
-| charging    | Battery notify execute charging    | ""                  |
-| critical    | Battery notify execute critical    | "systemctl suspend" |
-| discharging | Battery notify execute discharging | ""                  |
-| low         | Battery notify execute low         | ""                  |
-| unplug      | Battery notify execute unplug      | ""                  |
+| charging    | Ejecutar al cargar batería    | ""                  |
+| critical    | Ejecutar en batería crítica    | "systemctl suspend" |
+| discharging | Ejecutar al descargar batería | ""                  |
+| low         | Ejecutar en batería baja         | ""                  |
+| unplug      | Ejecutar al desconectar      | ""                  |
 
 ### [battery.notify.threshold]
 
-| Key      | Description                       | Default |
+| Clave      | Descripción                       | Valor predeterminado |
 | -------- | --------------------------------- | ------- |
-| critical | Battery notify critical threshold | 10      |
-| full     | Battery notify full threshold     | 90      |
-| low      | Battery notify low threshold      | 20      |
-| unplug   | Battery notify unplug threshold   | 80      |
+| critical | Umbral crítico de batería | 10      |
+| full     | Umbral de batería llena     | 90      |
+| low      | Umbral de batería baja      | 20      |
+| unplug   | Umbral de desconexión   | 80      |
 
 ### [brightness]
 
-| Key    | Description                                     | Default |
+| Clave    | Descripción                                     | Valor predeterminado |
 | ------ | ----------------------------------------------- | ------- |
-| notify | Brightness control notify                       | true    |
-| steps  | Number of steps to increase/decrease brightness | 5       |
+| notify | Notificación de control de brillo                       | true    |
+| steps  | Número de pasos para aumentar/disminuir brillo | 5       |
 
 ### [cava.hyprlock]
 
-| Key           | Description                                   | Default    |
+| Clave           | Descripción                                   | Valor predeterminado    |
 | ------------- | --------------------------------------------- | ---------- |
-| bar           | Cava bar characters for hyprlock              | "▁▂▃▄▅▆▇█" |
-| max_instances | Maximum number of cava instances for hyprlock | 1          |
-| range         | Number of cava bars for hyprlock              | 7          |
-| standby       | Cava standby character for hyprlock           | "🎶"       |
-| width         | Cava bar width for hyprlock                   | 20         |
+| bar           | Caracteres de barra cava para hyprlock              | "▁▂▃▄▅▆▇█" |
+| max_instances | Número máximo de instancias cava para hyprlock | 1          |
+| range         | Número de barras cava para hyprlock              | 7          |
+| standby       | Carácter de espera cava para hyprlock           | "🎶"       |
+| width         | Ancho de barra cava para hyprlock                   | 20         |
 
 ### [cava.stdout]
 
-| Key           | Description                      | Default    |
+| Clave           | Descripción                      | Valor predeterminado    |
 | ------------- | -------------------------------- | ---------- |
-| bar           | Cava bar characters              | "▁▂▃▄▅▆▇█" |
-| max_instances | Maximum number of cava instances | 1          |
-| range         | Number of cava bars              | 7          |
-| standby       | Cava standby character           | "🎶"       |
-| width         | Cava bar width                   | 20         |
+| bar           | Caracteres de barra cava              | "▁▂▃▄▅▆▇█" |
+| max_instances | Número máximo de instancias cava | 1          |
+| range         | Número de barras cava              | 7          |
+| standby       | Carácter de espera cava           | "🎶"       |
+| width         | Ancho de barra cava                   | 20         |
 
 ### [cava.waybar]
 
-| Key           | Description                                 | Default    |
+| Clave           | Descripción                                 | Valor predeterminado    |
 | ------------- | ------------------------------------------- | ---------- |
-| bar           | Cava bar characters for waybar              | "▁▂▃▄▅▆▇█" |
-| max_instances | Maximum number of cava instances for waybar | 1          |
-| range         | Number of cava bars                         | 7          |
-| standby       | Cava standby character                      | "🎶"       |
-| width         | Cava bar width                              | 20         |
+| bar           | Caracteres de barra cava para waybar              | "▁▂▃▄▅▆▇█" |
+| max_instances | Número máximo de instancias cava para waybar | 1          |
+| range         | Número de barras cava                         | 7          |
+| standby       | Carácter de espera cava                      | "🎶"       |
+| width         | Ancho de barra cava                              | 20         |
 
 ### [hypr.config]
 
-| Key      | Description                                            | Default               |
+| Clave      | Descripción                                            | Valor predeterminado               |
 | -------- | ------------------------------------------------------ | --------------------- |
-| sanitize | List of regex to sanitize in the THEME_NAME/hypr.theme | ['.*rgba\(.*,*,*,*,'] |
+| sanitize | Lista de expresiones regulares para sanitizar en THEME_NAME/hypr.theme | ['.*rgba\(.*,*,*,*,'] |
 
 ### [notification]
 
-| Key       | Description                 | Default              |
+| Clave       | Descripción                 | Valor predeterminado              |
 | --------- | --------------------------- | -------------------- |
-| font      | Font for notifications      | "mononoki Nerd Font" |
-| font_size | Font size for notifications | 8                    |
+| font      | Fuente para notificaciones      | "mononoki Nerd Font" |
+| font_size | Tamaño de fuente para notificaciones | 8                    |
 
 ### [rofi]
 
-| Key   | Description          | Default |
+| Clave   | Descripción          | Valor predeterminado |
 | ----- | -------------------- | ------- |
-| scale | Rofi default scaling | 10      |
+| scale | Escalado predeterminado de Rofi | 10      |
 
 ### [rofi.animation]
 
-| Key   | Description                         | Default |
+| Clave   | Descripción                         | Valor predeterminado |
 | ----- | ----------------------------------- | ------- |
-| scale | 'animation.sh select' configuration | 8       |
+| scale | Configuración de 'animation.sh select' | 8       |
 
 ### [rofi.cliphist]
 
-| Key   | Description               | Default |
+| Clave   | Descripción               | Valor predeterminado |
 | ----- | ------------------------- | ------- |
-| scale | cliphist.sh configuration | 8       |
+| scale | Configuración de cliphist.sh | 8       |
 
 ### [rofi.emoji]
 
-| Key   | Description                         | Default |
+| Clave   | Descripción                         | Valor predeterminado |
 | ----- | ----------------------------------- | ------- |
-| scale | emoji-picker.sh configuration scale | 8       |
-| style | emoji-picker.sh configuration style | 2       |
+| scale | Escala de configuración de emoji-picker.sh | 8       |
+| style | Estilo de configuración de emoji-picker.sh | 2       |
 
 ### [rofi.glyph]
 
-| Key   | Description                   | Default |
+| Clave   | Descripción                   | Valor predeterminado |
 | ----- | ----------------------------- | ------- |
-| scale | glyph-picker.sh configuration | 8       |
+| scale | Configuración de glyph-picker.sh | 8       |
 
 ### [rofi.hyprlock]
 
-| Key   | Description                        | Default |
+| Clave   | Descripción                        | Valor predeterminado |
 | ----- | ---------------------------------- | ------- |
-| scale | 'hyprlock.sh select' configuration | 10      |
+| scale | Configuración de 'hyprlock.sh select' | 10      |
 
 ### [rofi.keybind.hint]
 
-| Key       | Description            | Default |
+| Clave       | Descripción            | Valor predeterminado |
 | --------- | ---------------------- | ------- |
-| delimiter | Keybind hint delimiter | "\t"    |
-| height    | Keybind hint height    | "40em"  |
-| line      | Keybind hint line      | 16      |
-| width     | Keybind hint width     | "40em"  |
+| delimiter | Delimitador de pista de teclas | "\t"    |
+| height    | Altura de pista de teclas    | "40em"  |
+| line      | Línea de pista de teclas      | 16      |
+| width     | Ancho de pista de teclas     | "40em"  |
 
 ### [rofi.launcher]
 
-| Key   | Description                 | Default |
+| Clave   | Descripción                 | Valor predeterminado |
 | ----- | --------------------------- | ------- |
-| scale | rofilaunch.sh configuration | 5       |
+| scale | Configuración de rofilaunch.sh | 5       |
 
 ### [rofi.theme]
 
-| Key   | Description                  | Default |
+| Clave   | Descripción                  | Valor predeterminado |
 | ----- | ---------------------------- | ------- |
-| scale | themeselect.sh configuration | 6       |
+| scale | Configuración de themeselect.sh | 6       |
 
 ### [rofi.wallpaper]
 
-| Key   | Description                    | Default |
+| Clave   | Descripción                    | Valor predeterminado |
 | ----- | ------------------------------ | ------- |
-| scale | swwwallselect.sh configuration | 8       |
+| scale | Configuración de swwwallselect.sh | 8       |
 
 ### [screenshot]
 
-| Key                     | Description                      | Default |
+| Clave                     | Descripción                      | Valor predeterminado |
 | ----------------------- | -------------------------------- | ------- |
-| annotation_post_command | Post command for annotation tool | [""]    |
-| annotation_pre_command  | Pre command for annotation tool  | []      |
-| annotation_tool         | Annotation tool                  | "satty" |
+| annotation_post_command | Comando posterior para herramienta de anotación | [""]    |
+| annotation_pre_command  | Comando previo para herramienta de anotación  | []      |
+| annotation_tool         | Herramienta de anotación                  | "satty" |
 
 ### [sysmonitor]
 
-| Key      | Description                                   | Default |
+| Clave      | Descripción                                   | Valor predeterminado |
 | -------- | --------------------------------------------- | ------- |
-| commands | Fallback command options for system monitor   | [""]    |
-| execute  | Default command to execute for system monitor | ""      |
+| commands | Opciones de comando alternativo para monitor del sistema   | [""]    |
+| execute  | Comando predeterminado para monitor del sistema | ""      |
 
 ### [volume]
 
-| Key         | Description                                 | Default |
+| Clave         | Descripción                                 | Valor predeterminado |
 | ----------- | ------------------------------------------- | ------- |
-| boost       | Enable volume boost                         | false   |
-| boost_limit | Volume boost limit                          | 120     |
-| notify      | Volume control notify                       | true    |
-| steps       | Number of steps to increase/decrease volume | 5       |
+| boost       | Habilitar aumento de volumen                         | false   |
+| boost_limit | Límite de aumento de volumen                          | 120     |
+| notify      | Notificación de control de volumen                       | true    |
+| steps       | Número de pasos para aumentar/disminuir volumen | 5       |
 
 ### [wallbash]
 
-| Key           | Description                            | Default |
+| Clave           | Descripción                            | Valor predeterminado |
 | ------------- | -------------------------------------- | ------- |
-| skip_template | Skips the template when using wallbash | [""]    |
+| skip_template | Omite la plantilla al usar wallbash | [""]    |
 
 ### [wallpaper]
 
-| Key          | Description                            | Default                       |
+| Clave          | Descripción                            | Valor predeterminado                       |
 | ------------ | -------------------------------------- | ----------------------------- |
-| backend      | Wallpaper backend                      | "swww"                        |
-| custom_paths | List of paths to search for wallpapers | ["$HOME/Pictures/Wallpapers"] |
+| backend      | Backend de fondo de pantalla                      | "swww"                        |
+| custom_paths | Lista de rutas para buscar fondos de pantalla | ["$HOME/Pictures/Wallpapers"] |
 
 ### [wallpaper.swww]
 
-| Key                | Description                            | Default |
+| Clave                | Descripción                            | Valor predeterminado |
 | ------------------ | -------------------------------------- | ------- |
-| duration           | Transition duration                    | 1       |
-| framerate          | Transition framerate                   | 60      |
-| transition_default | Transition type for default wallpaper  | "grow"  |
-| transition_next    | Transition type for next wallpaper     | "grow"  |
-| transition_prev    | Transition type for previous wallpaper | "outer" |
+| duration           | Duración de transición                    | 1       |
+| framerate          | Cuadros por segundo de transición                   | 60      |
+| transition_default | Tipo de transición para fondo predeterminado  | "grow"  |
+| transition_next    | Tipo de transición para siguiente fondo     | "grow"  |
+| transition_prev    | Tipo de transición para fondo anterior | "outer" |
 
 ### [waybar]
 
-| Key   | Description          | Default                   |
+| Clave   | Descripción          | Valor predeterminado                   |
 | ----- | -------------------- | ------------------------- |
-| font  | Waybar font          | "JetBrainsMono Nerd Font" |
-| scale | Waybar total scaling | 30                        |
+| font  | Fuente de Waybar          | "JetBrainsMono Nerd Font" |
+| scale | Escalado total de Waybar | 30                        |
 
 ### [weather]
 
-| Key              | Description                                    | Default |
+| Clave              | Descripción                                    | Valor predeterminado |
 | ---------------- | ---------------------------------------------- | ------- |
 | forecast_days    | Number of days to show forecast                | 3       |
 | location         | Location/coordinates string for weather output | ''      |
@@ -259,6 +259,6 @@ example:
 
 ### [wlogout]
 
-| Key   | Description   | Default |
+| Clave   | Description   | Default |
 | ----- | ------------- | ------- |
 | style | Wlogout style | 2       |
