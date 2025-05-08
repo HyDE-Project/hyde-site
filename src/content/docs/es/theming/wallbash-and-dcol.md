@@ -1,97 +1,97 @@
 ---
-title: Wallbash and dcol
-description: Understanding Wallbash and dcol
+title: Wallbash y dcol
+description: Entendiendo Wallbash y dcol
 ---
 
-## Overview
+## Descripción general
 
-This document provides an explanation of the color configuration used for theming HyDE. It covers primary colors, text colors, and accent colors. Each color can be specified in either hexadecimal or RGBA format.
+Este documento proporciona una explicación de la configuración de colores utilizada para la creación de temas en HyDE. Abarca colores primarios, colores de texto y colores de acento. Cada color puede especificarse en formato hexadecimal o RGBA.
 
-## Color Identifiers
+## Identificadores de color
 
-By default, while **wallpaper caching**, it will produce 4 primary colors, 4 text colors, and 9 accent colors for each primary color.
+Por defecto, durante el **almacenamiento en caché de fondos de pantalla**, se producirán 4 colores primarios, 4 colores de texto y 9 colores de acento para cada color primario.
 
-- **`dcol_mode`**: This identifier determines whether the theme is in dark or light mode.
-- **`dcol_pryX`**: These are the primary colors, with `X` ranging from 1 to 4.
-- **`dcol_txtX`**: These are the inverted primary colors used for text, with `X` ranging from 1 to 4.
-- **`dcol_XaxY`**: These are the accent colors for each primary color, with `X` ranging from 1 to 4 and `Y` ranging from 1 to 9.
-- **`_rgba`**: This suffix indicates that the color is in RGBA format. If the suffix is not present, the color is in hexadecimal format.
-- **`_rgb`**: This suffix indicates that the color is in RGB format.
+- **`dcol_mode`**: Este identificador determina si el tema está en modo oscuro o claro.
+- **`dcol_pryX`**: Estos son los colores primarios, donde `X` varía de 1 a 4.
+- **`dcol_txtX`**: Estos son los colores primarios invertidos utilizados para texto, donde `X` varía de 1 a 4.
+- **`dcol_XaxY`**: Estos son los colores de acento para cada color primario, donde `X` varía de 1 a 4 e `Y` varía de 1 a 9.
+- **`_rgba`**: Este sufijo indica que el color está en formato RGBA. Si el sufijo no está presente, el color está en formato hexadecimal.
+- **`_rgb`**: Este sufijo indica que el color está en formato RGB.
 
-## Usage
+## Uso
 
-To use the cache color configuration:
+Para utilizar la configuración de colores en caché:
 
-1. Replace the prefix `dcol_` with `wallbash_` to allow the Wallbash script to parse and change values.
-2. Consider the `wallbash_` prefix as a placeholder for the dominant color value.
-3. Wrap the color identifier with angle brackets (`<...>`) to indicate replacement with the corresponding value, e.g., `<wallbash_pry1>`.
-4. Use this [example](https://github.com/hyde-project/hyde/tree/master/Configs/.config/hyde/wallbash) as a template.
+1. Reemplaza el prefijo `dcol_` con `wallbash_` para permitir que el script Wallbash analice y cambie los valores.
+2. Considera el prefijo `wallbash_` como un marcador de posición para el valor de color dominante.
+3. Envuelve el identificador de color con corchetes angulares (`<...>`) para indicar el reemplazo con el valor correspondiente, p. ej., `<wallbash_pry1>`.
+4. Usa este [ejemplo](https://github.com/hyde-project/hyde/tree/master/Configs/.config/hyde/wallbash) como plantilla.
 
-This allows you to create a template for configurations, using the dominant color or wallpaper, and let the Wallbash script convert it for you.
+Esto te permite crear una plantilla para configuraciones, utilizando el color dominante o fondo de pantalla, y dejar que el script Wallbash lo convierta por ti.
 
-### Creating a `*.dcol` Template
+### Creando una plantilla `*.dcol`
 
-A template requires three parts:
+Una plantilla requiere tres partes:
 
-- Target file
-- Script/command (optional)
-- Contents
+- Archivo de destino
+- Script/comando (opcional)
+- Contenidos
 
-## The basic format:
+## El formato básico:
 
-| target       | command |
+| destino      | comando |
 | ------------ | ------- |
-| **contents** |
+| **contenidos** |
 
 ---
 
-> **Note:** **target**|**command** should always be on line 1 of every template file. We will call it `header line`.
+> **Nota:** **destino**|**comando** siempre debe estar en la línea 1 de cada archivo de plantilla. La llamaremos `línea de encabezado`.
 
-#### Target File
+#### Archivo de destino
 
-Structure your template and determine the target configuration location. This can be:
+Estructura tu plantilla y determina la ubicación de configuración de destino. Esto puede ser:
 
-- `${cacheDir}/wallbash` with post-processing using a script.
-- An expected path, e.g., beside `kitty.conf` for Kitty, sourced by `include theme.conf`.
+- `${cacheDir}/wallbash` con post-procesamiento utilizando un script.
+- Una ruta esperada, p. ej., junto a `kitty.conf` para Kitty, importada mediante `include theme.conf`.
 
-Use environment variables to handle directories dynamically:
+Utiliza variables de entorno para manejar directorios de forma dinámica:
 
-- `${confDir}` = `$XDG_CONFIG_HOME` or `$HOME/.config/`
+- `${confDir}` = `$XDG_CONFIG_HOME` o `$HOME/.config/`
 - `${cacheDir}/wallbash` = `HYDE_CACHE_DIR/wallbash` = `$HOME/.cache/hyde`
 
-#### Optional Script/Command
+#### Script/comando opcional
 
-After filling the target file with contents, you can run arbitrary commands/scripts for post-processing. Use the `WALLBASH_SCRIPTS` variable to navigate to Wallbash's script directory, e.g., `WALLBASH_SCRIPTS/your_script.sh`.
+Después de llenar el archivo de destino con contenidos, puedes ejecutar comandos/scripts arbitrarios para post-procesamiento. Utiliza la variable `WALLBASH_SCRIPTS` para navegar al directorio de scripts de Wallbash, p. ej., `WALLBASH_SCRIPTS/tu_script.sh`.
 
-> **Caution:** Only add templates from trusted authors to avoid executing bad code.
+> **Precaución:** Solo agrega plantillas de autores confiables para evitar ejecutar código malicioso.
 
-#### Contents
+#### Contenidos
 
-These are the contents of the file, containing Wallbash placeholders, e.g., `<wallbash_pry1>`.
+Estos son los contenidos del archivo, que contienen marcadores de posición de Wallbash, p. ej., `<wallbash_pry1>`.
 
 ---
 
-The `~/.config/hyde/wallbash/*` directory contains three main directories:
+El directorio `~/.config/hyde/wallbash/*` contiene tres directorios principales:
 
 ### always
 
-Templates in `./wallbash/always/` are executed during:
+Las plantillas en `./wallbash/always/` se ejecutan durante:
 
-- Theme switch
-- Wallpaper switch
-- Mode switch
+- Cambio de tema
+- Cambio de fondo de pantalla
+- Cambio de modo
 
-More information [here](./always/README).
+Más información [aquí](./always/README).
 
 ### theme
 
-Templates in `./wallbash/theme/` are executed during:
+Las plantillas en `./wallbash/theme/` se ejecutan durante:
 
-- Theme switch
-- Mode switch
+- Cambio de tema
+- Cambio de modo
 
-More information [here](./theme/README).
+Más información [aquí](./theme/README).
 
 ### scripts
 
-For customization, store your scripts in `./wallbash/scripts`. Use the `$WALLBASH_SCRIPTS` variable to navigate this directory.
+Para personalización, almacena tus scripts en `./wallbash/scripts`. Utiliza la variable `$WALLBASH_SCRIPTS` para navegar por este directorio.
