@@ -1,5 +1,5 @@
 ---
-title: Visión general
+title: Descripción general
 description: Guía de configuración de HyDE
 sidebar:
   order: 1
