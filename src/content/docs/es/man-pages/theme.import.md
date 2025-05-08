@@ -1,61 +1,61 @@
 ---
 title: theme.import.py
-description: theme import man page
+description: página del manual de importación de temas
 ---
 
-### Preview
+### Vista previa
 
-![preview theme import](../../../../assets/man-pages/theme.import/image.png)
+![vista previa de importación de temas](../../../../assets/man-pages/theme.import/image.png)
 
-### NAME
+### Nombre
 
-theme.import.py - Imports themes from the HyDE gallery repository
+theme.import.py - Importa temas desde el repositorio de galería de HyDE
 
-### SYNOPSIS
+### Sinopsis
 
-`theme.import.py` [OPTIONS]
+`theme.import.py` [OPCIONES]
 
-### DESCRIPTION
+### Descripción
 
-`theme.import.py` is a script to import and manage themes from the HyDE gallery repository. It allows users to clone the repository, fetch theme data, preview themes, and apply selected themes.
+`theme.import.py` es un script para importar y gestionar temas desde el repositorio de galería de HyDE. Permite a los usuarios clonar el repositorio, obtener datos de temas, previsualizar temas y aplicar los temas seleccionados.
 
-### OPTIONS
+### Opciones
 
 - `-j`, `--json`
-  Fetch JSON data after cloning the repository.
+  Obtener datos JSON después de clonar el repositorio.
 
 - `-S`, `--select`
-  Select themes using `fzf`.
+  Seleccionar temas usando `fzf`.
 
-- `-p`, `--preview` IMAGE_URL
-  Get a preview of the specified theme.
+- `-p`, `--preview` `URL_IMAGEN`
+  Obtener una vista previa del tema especificado.
 
-- `-t`, `--preview-text` TEXT
-  Preview text to display when using the `--preview` option.
+- `-t`, `--preview-text` `TEXTO`
+  Texto de vista previa para mostrar cuando se usa la opción `--preview`.
 
 - `--skip-clone`
-  Skip cloning the repository.
+  Omitir la clonación del repositorio.
 
-- `-f`, `--fetch` THEME
-  Fetch and update a specific theme by name. Use `all` to fetch all themes located in `xdg_config/hyde/themes`.
+- `-f`, `--fetch` `TEMA`
+  Obtener y actualizar un tema específico por nombre. Usa `all` para obtener todos los temas ubicados en `xdg_config/hyde/themes`.
 
-### ENVIRONMENT VARIABLES
+### Variables de entorno
 
 - `LOG_LEVEL`
-  Set the logging level (default: `INFO`).
+  Establece el nivel de registro (predeterminado: `INFO`).
 
 - `XDG_CACHE_HOME`
-  Directory for cache files (default: `~/.cache`).
+  Directorio para archivos de caché (predeterminado: `~/.cache`).
 
 - `XDG_CONFIG_HOME`
-  Directory for configuration files (default: `~/.config`).
+  Directorio para archivos de configuración (predeterminado: `~/.config`).
 
 - `FULL_THEME_UPDATE`
-  Overwrites the archived files (useful for updates and changes in archives).
+  Sobrescribe los archivos archivados (útil para actualizaciones y cambios en archivos).
 
-### EXAMPLES
+### Ejemplos
 
-Opens fzf menu and select themes.
+Abre el menú fzf y selecciona temas.
 
 ```shell
 theme.import.py --select
