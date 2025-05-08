@@ -1,12 +1,12 @@
 ---
-title: Overview
-description: HyDE's Configuration Guide
+title: Visión general
+description: Guía de configuración de HyDE
 sidebar:
   order: 1
 ---
 
-### HyDE's Configuration Guide
+### Guía de configuración de HyDE
 
-As HyDE is not a full-fledge Desktop Environment, we tend to use various tools/apps to accomplish our task.
+Dado que HyDE no es un entorno de escritorio completo, solemos utilizar diversas herramientas y aplicaciones para llevar a cabo nuestras tareas.
 
-In this panel we will talk about how we can configure the dotfiles the HyDE way.
+En este panel hablaremos sobre cómo podemos configurar los dotfiles a la manera de HyDE.
