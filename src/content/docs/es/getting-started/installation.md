@@ -4,18 +4,18 @@ description: Guía de instalación de HyDE
 ---
 
 El script de instalación está diseñado para una instalación mínima de [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux), pero **puede** funcionar en algunas distribuciones [basadas en Arch](https://wiki.archlinux.org/title/Arch-based_distributions).
-Si bien la instalación de HyDE junto con otro [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) debería funcionar, debido a que es una configuración altamente personalizada, **puede** entrar en conflicto con tu tema de [GTK](https://wiki.archlinux.org/title/GTK)/[Qt](https://wiki.archlinux.org/title/Qt), [Shell](https://wiki.archlinux.org/title/Command-line_shell), [SDDM](https://wiki.archlinux.org/title/SDDM), [GRUB](https://wiki.archlinux.org/title/GRUB), etc. y lo haces bajo tu propio riesgo.
+Aunque la instalación de HyDE junto con otro entorno de escritorio [(DE)](https://wiki.archlinux.org/title/Desktop_environment) o gestor de ventanas [(WM)](https://wiki.archlinux.org/title/Window_manager) debería funcionar, al ser una configuración altamente personalizada, **podría** haber conflictos con tu tema de [GTK](https://wiki.archlinux.org/title/GTK)/[Qt](https://wiki.archlinux.org/title/Qt), [Shell](https://wiki.archlinux.org/title/Command-line_shell), [SDDM](https://wiki.archlinux.org/title/SDDM), [GRUB](https://wiki.archlinux.org/title/GRUB), etc. Lo haces bajo tu propio riesgo.
 
-Para el soporte en NixOS, hay un proyecto separado que se mantiene en @ [Hydenix](https://github.com/richen604/hydenix/tree/main)
+Para NixOS, hay un proyecto independiente que se mantiene en @ [Hydenix](https://github.com/richen604/hydenix/tree/main)
 
 :::note
 
-El script de instalación detectará automáticamente una tarjeta NVIDIA e instalará los controladores nvidia-dkms para tu núcleo.
+El script de instalación detectará automáticamente una tarjeta gráfica NVIDIA e instalará los controladores nvidia-dkms para tu kernel.
 Asegúrate de que tu tarjeta gráfica NVIDIA sea compatible con los controladores dkms en la lista proporcionada [aquí](https://wiki.archlinux.org/title/NVIDIA).
 
 :::danger
 
-El script modifica tu configuración de `grub` o `systemd-boot` para habilitar NVIDIA DRM.
+El script modifica tu configuración de `grub` o `systemd-boot` para habilitar NVIDIA DRM (Direct Rendering Manager).
 
 :::
 
@@ -86,7 +86,7 @@ El script de instalación puede ejecutarse en diferentes modos:
 ./install.sh -s # inicia y habilita los servicios del sistema
 ./install.sh -t # prueba sin ejecutar (modo simulación -irst)
 ./install.sh -m # omite la instalación del tema
-./install.sh -n # omite la instalación de NVIDIA
+./install.sh -n # omite la instalación de los controladores NVIDIA
 ./install.sh -irst # realiza una prueba (dry run) de todo
 ```
 
