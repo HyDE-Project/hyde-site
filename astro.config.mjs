@@ -11,6 +11,7 @@ export default defineConfig({
       locales: {
         en: { label: 'English', lang: 'en' },
         fr: { label: 'Français', lang: 'fr' },
+        de: { label: 'Deutsch', lang: 'de' },
       },
       social: {
         github: 'https://github.com/HyDE-Project',

@@ -88,7 +88,6 @@ The install script can be executed in different modes,
 ./install.sh -m # skips the theme installation
 ./install.sh -n # skips nvidia installation
 ./install.sh -irst # to do a test run for all
-./install.sh -irst # to do a test run for all
 ```
 
 <!-- ### Option 2
