@@ -1,65 +1,65 @@
 ---
-title: Restore Configuration
-description: Restore script's logic
+title: Restaurar Configuración
+description: Lógica del script de restauración
 ---
 
 :::note
 
-> "restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
+> "restore" en este contexto significa restaurar los dotfiles desde el repositorio a tu $HOME, no al revés.
 
 ```sh
-./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>
+./restore_cfg.sh </ruta/al/archivo.psv> <opcional /ruta/al/clon/de/hyde>
 ```
 
 :::
 
-## Pipe Separated Values (PSV)
+## Valores Separados por Pipe (PSV)
 
-This is a pipe-separated value file. It contains the paths of the dotfiles and their respective package dependencies.
+Este es un archivo de valores separados por pipe. Contiene las rutas de los dotfiles y sus respectivas dependencias de paquetes.
 
-#### Note:
+#### Nota:
 
-- Lines starting with `#` are comments.
-- The only known variable is `${HOME}`.
-- This is a 4-column file separated by `|`.
-- Each column should use spaces to separate array elements.
+- Las líneas que comienzan con `#` son comentarios.
+- La única variable conocida es `${HOME}`.
+- Este es un archivo de 4 columnas separadas por `|`.
+- Cada columna debe usar espacios para separar elementos de matriz.
 
-#### Structure:
+#### Estructura:
 
 ```shell
-flag|path|target|dependency
+bandera|ruta|destino|dependencia
 ```
 
-#### Flags:
+#### Banderas:
 
-- **( P ) Populate/Preserved**
+- **( P ) Poblar/Preservar**
 
-  - This flag ensures that the target is only copied if it does not already exist. It is useful for preserving the current state of the target, preventing any overwrites or modifications to existing files or directories.
+  - Esta bandera asegura que el destino solo se copie si aún no existe. Es útil para preservar el estado actual del destino, evitando cualquier sobrescritura o modificación a archivos o directorios existentes.
 
-- **( S ) Sync**
+- **( S ) Sincronizar**
 
-  - If the target file(s) exist, overwrite them.
-  - If the target is a directory, only overwrite the files that are listed.
-  - Preserve other files in the target directory that are not listed.
-  - This behavior is similar to the `cp -r` command.
+  - Si el/los archivo(s) de destino existen, sobrescríbelos.
+  - Si el destino es un directorio, solo sobrescribe los archivos que están listados.
+  - Preserva otros archivos en el directorio de destino que no están listados.
+  - Este comportamiento es similar al comando `cp -r`.
 
-- **( O ) Overwrite**
+- **( O ) Sobrescribir**
 
-  - This flag performs an aggressive sync operation. It ensures that the target is completely replaced by the source.
-  - If the target is a directory, every file and subdirectory within it will be overwritten by the corresponding items from the source.
-  - If the target is a file, it will be entirely overwritten by the source file.
-  - This operation does not preserve any existing files or directories in the target location; everything is replaced.
-  - Useful for updating core configurations and scripts.
+  - Esta bandera realiza una operación de sincronización agresiva. Asegura que el destino sea completamente reemplazado por la fuente.
+  - Si el destino es un directorio, cada archivo y subdirectorio dentro de él será sobrescrito por los elementos correspondientes de la fuente.
+  - Si el destino es un archivo, será completamente sobrescrito por el archivo fuente.
+  - Esta operación no preserva ningún archivo o directorio existente en la ubicación de destino; todo es reemplazado.
+  - Útil para actualizar configuraciones y scripts principales.
 
-- **( B ) Backup**
-  - Backup the target.
-  - All P, S, O flags will also backup the target file/directory.
+- **( B ) Respaldo**
+  - Respalda el destino.
+  - Todas las banderas P, S, O también respaldarán el archivo/directorio de destino.
 
 <details>
-<summary>Sample PSV file</summary>
+<summary>Archivo PSV de ejemplo</summary>
 
 ```shell
- Hyde core files 
+ Archivos principales de Hyde 
 P|${HOME}/.config/hyde|config.toml|hyprland
 P|${HOME}/.config/hypr|hyde.conf animations.conf windowrules.conf keybindings.conf userprefs.conf monitors.conf|hyprland
 P|${HOME}/.config/hypr|nvidia.conf|hyprland nvidia-utils
@@ -81,27 +81,27 @@ S|${HOME}/.config/hypr|animations|hyprland
 O|${HOME}/.local/share|hyde|hyprland
 O|${HOME}/.local/lib|hyde|hyprland
 
- Editor 
+ Editor 
 P|${HOME}/.config/Code - OSS/User|settings.json|code
 P|${HOME}/.config/Code/User|settings.json|visual-studio-code-bin
 P|${HOME}/.config/VSCodium/User|settings.json|vscodium-bin
 
- Bar 
+ Barra 
 P|${HOME}/.config/waybar|config.ctl|waybar
 S|${HOME}/.config/waybar|modules config.jsonc theme.css style.css|waybar
 
- Terminal 
+ Terminal 
 P|${HOME}/.config|lsd|lsd
 S|${HOME}/.config|fastfetch|fastfetch
 S|${HOME}/.config/kitty|hyde.conf theme.conf|kitty
 P|${HOME}/.config/kitty|kitty.conf|kitty
 
- Shell 
+ Shell 
 P|${HOME}/.config|fish|fish
 P|${HOME}|.zshrc .hyde.zshrc .p10k.zsh|zsh zsh-theme-powerlevel10k pokego-bin
 S|${HOME}|.zshenv|zsh zsh-theme-powerlevel10k
 
- File Explorer 
+ Explorador de archivos 
 P|${HOME}/.local/state|dolphinstaterc|dolphin
 P|${HOME}/.config|baloofilerc|dolphin
 S|${HOME}/.config/menus|applications.menu|dolphin
@@ -111,42 +111,42 @@ S|${HOME}/.local/share/kio/servicemenus|hydewallpaper.desktop|dolphin
 S|${HOME}/.local/share/kxmlgui5|dolphin|dolphin
 S|${HOME}/.local/share|dolphin|dolphin
 
- Input 
+ Entrada 
 P|${HOME}/.config|libinput-gestures.conf|libinput-gestures
 
- Wayland 
+ Wayland 
 P|${HOME}/.config|spotify-flags.conf|spotify
 P|${HOME}/.config|code-flags.conf|code
 P|${HOME}/.config|code-flags.conf|visual-studio-code-bin
 P|${HOME}/.config|vscodium-flags.conf|vscodium-bin
 P|${HOME}/.config|electron-flags.conf|electron
 
- Notifications 
+ Notificaciones 
 S|${HOME}/.config|dunst|dunst
 
- Gaming 
+ Juegos 
 S|${HOME}/.config|MangoHud|mangohud
 
- Launcher 
+ Lanzador 
 S|${HOME}/.config|rofi|rofi
 S|${HOME}/.config|wlogout|wlogout
 
- Lock Screen 
+ Pantalla de bloqueo 
 S|${HOME}/.config|swaylock|swaylock-effects
 P|${HOME}/.config/hypr|hyprlock.conf|hyprlock
 S|${HOME}/.config/hypr|hyprlock|hyprlock
 
- Idle daemon 
+ Demonio de inactividad 
 P|${HOME}/.config/hypr|hypridle.conf|hypridle
 ```
 
 </details>
 
-## TOML Configuration
+## Configuración TOML
 
-🚧 🚧 WIP 🚧🚧
+🚧 🚧 Trabajo en progreso 🚧🚧
 
-PSV configuration file is convenient for the script to read and write. However, it is very restrictive and not user-friendly.
-For further customization, we can use TOML configuration files.
+El archivo de configuración PSV es conveniente para que el script lo lea y escriba. Sin embargo, es muy restrictivo y no es fácil de usar.
+Para una mayor personalización, podemos usar archivos de configuración TOML.
 
 ...
