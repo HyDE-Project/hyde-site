@@ -1,6 +1,6 @@
 ---
 title: Hyprland
-description: Hyprland related configuration
+description: Configuración relacionada con Hyprland
 ---
 
 <style>
@@ -33,7 +33,7 @@ description: Hyprland related configuration
   }
 </style>
 
-# Configuration Tree
+# Estructura de configuración
 
 ```
 . 📂 ~/.config/hypr
@@ -62,152 +62,152 @@ description: Hyprland related configuration
 
 :::caution
 
-**Read the [Hyprland Wiki](https://wiki.hyprland.org/) first!**
+**¡Lee primero la [Wiki de Hyprland](https://wiki.hyprland.org/)!**
 
 :::
 
-# HyDE's Hyprland Configuration
+# Configuración de Hyprland en HyDE
 
-Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE's hyprland configuration is divided into three sections:
+Dado que Hyprland carga `~/.config/hypr/hyprland.conf`, la configuración de Hyprland en HyDE se divide en tres secciones:
 
-- [Boilerplate](#1-boilerplate)
-- [Overrides](#2-overrides)
-- [Users](#3-users)
+- [Plantilla Base](#1-plantilla-base)
+- [Sobrescrituras](#2-sobrescrituras)
+- [Usuarios](#3-usuarios)
 
-## 1. Boilerplate
+## 1. Plantilla Base
 
-This section contains the default configuration of HyDE. It is recommended not to change this section.
+Esta sección contiene la configuración predeterminada de HyDE. Se recomienda no modificar esta sección.
 
-**Filepath:** $XDG_DATA_HOME/hyde/hyprland.conf`
+**Ruta del archivo:** $XDG_DATA_HOME/hyde/hyprland.conf`
 
-This file is sourced on top of other configurations in ~/.config/hypr/hyprland.conf`.
+Este archivo se carga antes que otras configuraciones en ~/.config/hypr/hyprland.conf`.
 
 ```ini
-# Boilerplate configuration
+# Configuración de plantilla base
 source = ~/.local/share/hyde/hyprland.conf
 ```
 
-## 2. Overrides
+## 2. Sobrescrituras
 
-This section is for overriding the default configuration of HyDE.
+Esta sección es para sobrescribir la configuración predeterminada de HyDE.
 
-As per Hyprland's [Defining Variables](https://wiki.hyprland.org/Hypr-Ecosystem/hyprlang/#defining-variables), HyDE uses $VARIABLES to expose default configurations to be overridden.
+Según la [Definición de Variables](https://wiki.hyprland.org/Hypr-Ecosystem/hyprlang/#defining-variables) de Hyprland, HyDE usa $VARIABLES para exponer configuraciones predeterminadas que pueden ser sobrescritas.
 
-Change this section if you intend to:
+Modifica esta sección si deseas:
 
-- Change the startup and environment variables
-- Stop an app/service from starting
-- Override HyDE's default variables
+- Cambiar las variables de inicio y entorno
+- Detener el inicio de una aplicación/servicio
+- Sobrescribir las variables predeterminadas de HyDE
 
 :::note
 
-To unset a variable, leave it blank
+Para desactivar una variable, déjala en blanco
 
 :::
 
-**Filepath:** $XDG_CONFIG_HOME/hypr/hyde.conf`
+**Ruta del archivo:** $XDG_CONFIG_HOME/hypr/hyde.conf`
 
-### HyDE Configuration Variables
+### Variables de Configuración de HyDE
 
-| Variable             | Description                 | Default Value                |
+| Variable             | Descripción                 | Valor Predeterminado                |
 | -------------------- | --------------------------- | ---------------------------- |
-| $mainMod             | Keyboard modifier           | SUPER (Windows key)          |
-| $QUICKAPPS           | Used for quick app launcher | (Empty)                      |
-| $BROWSER             | Default browser             | firefox                      |
-| $EDITOR              | Default editor              | code                         |
-| $EXPLORER            | Default file manager        | dolphin                      |
-| $TERMINAL            | Default terminal            | kitty                        |
-| $LOCKSCREEN          | Default lockscreen          | hyprlock                     |
-| $IDLE                | Default idle manager        | hypridle                     |
-| $GTK_THEME           | GTK theme                   | Wallbash-Gtk                 |
-| $ICON_THEME          | Icon theme                  | Tela-circle-dracula          |
-| $COLOR_SCHEME        | Color scheme                | prefer-dark                  |
-| $CURSOR_THEME        | Cursor theme                | Bibata-Modern-Ice            |
-| $CURSOR_SIZE         | Cursor size                 | 30                           |
-| $FONT                | Font                        | Canterell                    |
-| $FONT_SIZE           | Font size                   | 10                           |
-| $DOCUMENT_FONT       | Document font               | Cantarell                    |
-| $DOCUMENT_FONT_SIZE  | Document font size          | 10                           |
-| $MONOSPACE_FONT      | Monospace font              | CaskaydiaCove Nerd Font Mono |
-| $MONOSPACE_FONT_SIZE | Monospace font size         | 9                            |
-| $FONT_ANTIALIASING   | Font antialiasing           | rgba                         |
-| $FONT_HINTING        | Font hinting                | full                         |
+| $mainMod             | Modificador de teclado           | SUPER (tecla Windows)          |
+| $QUICKAPPS           | Usado para el lanzador rápido de aplicaciones | (Vacío)                      |
+| $BROWSER             | Navegador predeterminado             | firefox                      |
+| $EDITOR              | Editor predeterminado              | code                         |
+| $EXPLORER            | Gestor de archivos predeterminado        | dolphin                      |
+| $TERMINAL            | Terminal predeterminada            | kitty                        |
+| $LOCKSCREEN          | Pantalla de bloqueo predeterminada          | hyprlock                     |
+| $IDLE                | Gestor de inactividad predeterminado        | hypridle                     |
+| $GTK_THEME           | Tema GTK                   | Wallbash-Gtk                 |
+| $ICON_THEME          | Tema de iconos                  | Tela-circle-dracula          |
+| $COLOR_SCHEME        | Esquema de colores                | prefer-dark                  |
+| $CURSOR_THEME        | Tema del cursor                | Bibata-Modern-Ice            |
+| $CURSOR_SIZE         | Tamaño del cursor                 | 30                           |
+| $FONT                | Fuente                        | Canterell                    |
+| $FONT_SIZE           | Tamaño de fuente                   | 10                           |
+| $DOCUMENT_FONT       | Fuente de documento               | Cantarell                    |
+| $DOCUMENT_FONT_SIZE  | Tamaño de fuente de documento          | 10                           |
+| $MONOSPACE_FONT      | Fuente monoespaciada              | CaskaydiaCove Nerd Font Mono |
+| $MONOSPACE_FONT_SIZE | Tamaño de fuente monoespaciada         | 9                            |
+| $FONT_ANTIALIASING   | Suavizado de fuentes           | rgba                         |
+| $FONT_HINTING        | Hinting de fuentes                | full                         |
 
-### Startup Commands ($start.\*`)
+### Comandos de Inicio ($start.\*`)
 
-The default commands on startup.
+Los comandos predeterminados al iniciar.
 
-| Variable                    | Description                                                  | Default Value                                                                                |
+| Variable                    | Descripción                                                  | Valor Predeterminado                                                                                |
 | --------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
-| $start.XDG_PORTAL_RESET     | Resets XDG Portal                                            | $scrPath/resetxdgportal.sh                                                                   |
-| $start.DBUS_SHARE_PICKER    | Updates DBus environment for share picker                    | dbus-update-activation-environment --systemd --all                                           |
-| $start.SYSTEMD_SHARE_PICKER | Imports environment variables for share picker using systemd | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
-| $start.BAR                  | Starts the Waybar                                            | waybar                                                                                       |
-| $start.NOTIFICATIONS        | Starts the notification daemon                               | swaync                                                                                       |
-| $start.APPTRAY_BLUETOOTH    | Starts the Bluetooth applet                                  | blueman-applet                                                                               |
-| $start.WALLPAPER            | Sets the wallpaper                                           | $scrPath/swwwallpaper.sh                                                                     |
-| $start.TEXT_CLIPBOARD       | Starts the text clipboard manager                            | wl-paste --type text --watch cliphist store                                                  |
-| $start.IMAGE_CLIPBOARD      | Starts the image clipboard manager                           | wl-paste --type image --watch cliphist store                                                 |
-| $start.BATTERY_NOTIFY       | Starts the battery notification script                       | $scrPath/batterynotify.sh                                                                    |
-| $start.NETWORK_MANAGER      | Starts the network manager applet                            | nm-applet --indicator                                                                        |
-| $start.REMOVABLE_MEDIA      | Starts the removable media manager                           | udiskie --no-automount --smart-tray                                                          |
-| $start.AUTH_DIALOGUE        | Starts the authentication dialogue script                    | $scrPath/polkitkdeauth.sh                                                                    |
-| $start.IDLE_DAEMON          | Starts the idle daemon                                       | $IDLE                                                                                        |
+| $start.XDG_PORTAL_RESET     | Reinicia XDG Portal                                            | $scrPath/resetxdgportal.sh                                                                   |
+| $start.DBUS_SHARE_PICKER    | Actualiza el entorno DBus para el selector de compartir                    | dbus-update-activation-environment --systemd --all                                           |
+| $start.SYSTEMD_SHARE_PICKER | Importa variables de entorno para el selector de compartir usando systemd | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
+| $start.BAR                  | Inicia Waybar                                            | waybar                                                                                       |
+| $start.NOTIFICATIONS        | Inicia el daemon de notificaciones                               | swaync                                                                                       |
+| $start.APPTRAY_BLUETOOTH    | Inicia el applet de Bluetooth                                  | blueman-applet                                                                               |
+| $start.WALLPAPER            | Establece el fondo de pantalla                                           | $scrPath/swwwallpaper.sh                                                                     |
+| $start.TEXT_CLIPBOARD       | Inicia el gestor de portapapeles de texto                            | wl-paste --type text --watch cliphist store                                                  |
+| $start.IMAGE_CLIPBOARD      | Inicia el gestor de portapapeles de imágenes                           | wl-paste --type image --watch cliphist store                                                 |
+| $start.BATTERY_NOTIFY       | Inicia el script de notificación de batería                       | $scrPath/batterynotify.sh                                                                    |
+| $start.NETWORK_MANAGER      | Inicia el applet del gestor de red                            | nm-applet --indicator                                                                        |
+| $start.REMOVABLE_MEDIA      | Inicia el gestor de medios extraíbles                           | udiskie --no-automount --smart-tray                                                          |
+| $start.AUTH_DIALOGUE        | Inicia el script de diálogo de autenticación                    | $scrPath/polkitkdeauth.sh                                                                    |
+| $start.IDLE_DAEMON          | Inicia el daemon de inactividad                                       | $IDLE                                                                                        |
 
-### Environment Variables ($env.\*`)
+### Variables de Entorno ($env.\*`)
 
-| Variable                                 | Description                                    | Default Value                 |
+| Variable                                 | Descripción                                    | Valor Predeterminado                 |
 | ---------------------------------------- | ---------------------------------------------- | ----------------------------- |
-| $env.GDK_BACKEND                         | GTK backend to use (Wayland preferred)         | wayland,x11,\*                |
-| $env.QT_QPA_PLATFORM                     | Qt platform to use (Wayland)                   | wayland                       |
-| $env.SDL_VIDEODRIVER                     | SDL2 video driver (Wayland)                    | wayland                       |
-| $env.CLUTTER_BACKEND                     | Clutter backend (Wayland)                      | wayland                       |
-| $env.XDG_CURRENT_DESKTOP                 | XDG current desktop environment                | Hyprland                      |
-| $env.XDG_SESSION_TYPE                    | XDG session type                               | wayland                       |
-| $env.XDG_SESSION_DESKTOP                 | XDG session desktop                            | Hyprland                      |
-| $env.QT_AUTO_SCREEN_SCALE_FACTOR         | Qt automatic screen scaling                    | 1                             |
-| $env.QT_QPA_PLATFORM                     | Qt platform                                    | wayland                       |
-| $env.QT_WAYLAND_DISABLE_WINDOWDECORATION | Disables window decorations on Qt applications | 1                             |
-| $env.QT_QPA_PLATFORMTHEME                | Qt platform theme                              | qt6ct                         |
-| $env.PATH                                | Path environment variable                      | (Empty)                       |
-| $env.MOZ_ENABLE_WAYLAND                  | Enables Wayland for Firefox                    | 1                             |
-| $env.GDK_SCALE                           | GDK scale for Xwayland on HiDPI                | 1                             |
-| $env.ELECTRON_OZONE_PLATFORM_HINT        | Electron Ozone Platform Hint                   | auto                          |
-| $env.XDG_RUNTIME_DIR                     | XDG runtime directory                          | $XDG_RUNTIME_DIR              |
-| $env.XDG_CONFIG_HOME                     | XDG config directory                           | $HOME/.config                 |
-| $env.XDG_CACHE_HOME                      | XDG cache directory                            | $HOME/.cache                  |
-| $env.XDG_DATA_HOME                       | XDG data directory                             | $HOME/.local/share            |
-| $LAYOUT_PATH                             | Path to Hyprlock layout configuration          | /path/to/hyprlock/layout.conf |
-| $BACKGROUND_PATH                         | Path to Hyprlock background image              | $HYPRLOCK_BACKGROUND          |
+| $env.GDK_BACKEND                         | Backend GTK a usar (Wayland preferido)         | wayland,x11,\*                |
+| $env.QT_QPA_PLATFORM                     | Plataforma Qt a usar (Wayland)                   | wayland                       |
+| $env.SDL_VIDEODRIVER                     | Controlador de video SDL2 (Wayland)                    | wayland                       |
+| $env.CLUTTER_BACKEND                     | Backend Clutter (Wayland)                      | wayland                       |
+| $env.XDG_CURRENT_DESKTOP                 | Entorno de escritorio actual XDG                | Hyprland                      |
+| $env.XDG_SESSION_TYPE                    | Tipo de sesión XDG                               | wayland                       |
+| $env.XDG_SESSION_DESKTOP                 | Escritorio de sesión XDG                            | Hyprland                      |
+| $env.QT_AUTO_SCREEN_SCALE_FACTOR         | Escalado automático de pantalla Qt                    | 1                             |
+| $env.QT_QPA_PLATFORM                     | Plataforma Qt                                    | wayland                       |
+| $env.QT_WAYLAND_DISABLE_WINDOWDECORATION | Desactiva decoraciones de ventana en aplicaciones Qt | 1                             |
+| $env.QT_QPA_PLATFORMTHEME                | Tema de plataforma Qt                              | qt6ct                         |
+| $env.PATH                                | Variable de entorno PATH                      | (Vacío)                       |
+| $env.MOZ_ENABLE_WAYLAND                  | Habilita Wayland para Firefox                    | 1                             |
+| $env.GDK_SCALE                           | Escala GDK para Xwayland en HiDPI                | 1                             |
+| $env.ELECTRON_OZONE_PLATFORM_HINT        | Pista de Plataforma Ozone de Electron                   | auto                          |
+| $env.XDG_RUNTIME_DIR                     | Directorio de tiempo de ejecución XDG                          | $XDG_RUNTIME_DIR              |
+| $env.XDG_CONFIG_HOME                     | Directorio de configuración XDG                           | $HOME/.config                 |
+| $env.XDG_CACHE_HOME                      | Directorio de caché XDG                            | $HOME/.cache                  |
+| $env.XDG_DATA_HOME                       | Directorio de datos XDG                             | $HOME/.local/share            |
+| $LAYOUT_PATH                             | Ruta a la configuración de diseño de Hyprlock          | /path/to/hyprlock/layout.conf |
+| $BACKGROUND_PATH                         | Ruta a la imagen de fondo de Hyprlock              | $HYPRLOCK_BACKGROUND          |
 
 :::danger
 
-Modifying this means you know what you are doing!
+¡Modificar esto significa que sabes lo que estás haciendo!
 
 :::
 
-## 3. Users
+## 3. Usuarios
 
-This section is for user configuration. It is recommended to change this section to your liking.
+Esta sección es para la configuración del usuario. Se recomienda modificar esta sección según tus preferencias.
 
-**Filepaths:**
+**Rutas de archivos:**
 
-- ./keybindings.conf`
-- ./windowrules.conf`
-- ./monitors.conf`
-- ./userprefs.conf`
+- ./keybindings.conf
+- ./windowrules.conf
+- ./monitors.conf
+- ./userprefs.conf
 
 ---
 
 :::tip
 
-Likely you only need this files to configure your preferences.
-Hyprland variables can be overridden, therefore you can change the default values to your liking.
+Probablemente solo necesites estos archivos para configurar tus preferencias.
+Las variables de Hyprland pueden ser sobrescritas, por lo que puedes cambiar los valores predeterminados según tus gustos.
 
-Also Hyprland can hot reload the configuration files, so you can edit them and see the changes immediately.
+Además, Hyprland puede recargar en caliente los archivos de configuración, por lo que puedes editarlos y ver los cambios inmediatamente.
 
 :::
 
-Now you should know which file is which. Refer to the [Hyprland Wiki](https://wiki.hyprland.org) for more information and to achieve your perfect desktop experience.
+Ahora deberías saber qué archivo es cuál. Consulta la [Wiki de Hyprland](https://wiki.hyprland.org) para obtener más información y lograr tu experiencia de escritorio perfecta.
 
-Also see[FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout)
+También consulta [Preguntas Frecuentes y Consejos](../help/faq#how-can-i-change-keyboard-layout)
