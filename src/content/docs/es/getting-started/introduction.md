@@ -1,16 +1,16 @@
 ---
-title: Introduction
-description: Get started with HyDE.
+title: Introducción
+description: Primeros pasos con HyDE.
 sidebar:
   order: 1
 ---
 
 <div align="center"><img src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png"><br></div>
 
-🚧🚧🚧 The HyDE project is currently a work in progress…
-This documentation site is still under development, and we are actively working on improving it!
+🚧🚧🚧 El proyecto HyDE está actualmente en desarrollo…
+¡Este sitio de documentación aún está en construcción, y estamos trabajando activamente para mejorarlo!
 
-Feel free to explore, provide feedback, and contribute to making this documentation as useful and comprehensive as possible.
-Your help is invaluable in shaping HyDE and its resources.
+Siéntete libre de explorar, proporcionar comentarios y contribuir a hacer que esta documentación sea lo más útil y completa posible.
+Tu ayuda es invaluable para dar forma a HyDE y sus recursos.
 
-👉 Contribute to the project and documentation on GitHub: [HyDE-Project/hyde-site](https://github.com/HyDE-Project/hyde-site)
+👉 Contribuye al proyecto y la documentación en GitHub: [HyDE-Project/hyde-site](https://github.com/HyDE-Project/hyde-site)
