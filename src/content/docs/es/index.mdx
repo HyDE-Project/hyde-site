@@ -1,0 +1,40 @@
+---
+title: Bienvenido al proyecto HyDE
+description: ¡Dotfiles estéticos, dinámicos y minimalistas para Arch con Hyprland!
+template: splash
+hero:
+  tagline: ¡Dotfiles estéticos, dinámicos y minimalistas para Arch con Hyprland!
+  image:
+    file: ../../../assets/hyde.svg
+  actions:
+    - text: Primeros pasos con HyDE
+      link: /en/getting-started/introduction
+      icon: rocket
+    - text: Explorar en GitHub
+      link: https://github.com/HyDE-Project
+      icon: github
+      variant: minimal
+banner:
+  content: |
+    ¿Tu idioma no está disponible? ¡Ayúdanos a traducir esta documentación! <a href="https://github.com/HyDE-Project/hyde-site?tab=readme-ov-file#translating">Ver cómo.</a>
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## Features
+
+<CardGrid stagger>
+  <Card title="Compatibilidad con XDG" icon="seti:vala">
+    Cumple con la especificación de directorios base de XDG.
+  </Card>
+  <Card title="Actualizaciones más fáciles" icon="add-document">
+    Los scripts principales están separados de la configuración del usuario.
+  </Card>
+  <Card title="¡Más Temas!" icon="moon">
+	  Más opciones de personalización estética.
+  </Card>
+  <Card title="¡Modular!" icon="puzzle">
+	  Una de las direcciones de este proyecto es ser modular.
+</Card>
+
+</CardGrid>
