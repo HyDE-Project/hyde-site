@@ -1,50 +1,50 @@
 ---
-title: Tools
-description: Recommended tools
+title: 工具
+description: 推荐工具
 ---
 
-These tools can enhance your workflow and help you make the most of your Hyprland experience! They have been tested and works well with HyDe too
+这些工具可以增强您的工作流程，帮助您充分利用 Hyprland 体验！它们都经过测试，也能与 HyDE 良好配合
 
-### Wallpaper
+### 壁纸
 
-- [Hyprpaper](https://github.com/hyprwm/hyprpaper) ![c++][cpp] (blazing fast wayland wallpaper utility with IPC controls)
-- [swww](https://github.com/Horus645/swww) ![rust][rs] (Wallpaper daemon with live switching, awesome animations, and GIF support)
-- [mpvpaper](https://github.com/GhostNaN/mpvpaper) ![c][c] (Wallpaper daemon that wraps MPV, useful for videos, and more advanced usage)
-- [swaybg](https://github.com/swaywm/swaybg) ![c][c] (Very simple wallpaper daemon used by default on sway)
-- [waypaper](https://github.com/anufrievroman/waypaper) ![python][py] (GUI wallpaper setter)
-- [waypaper engine](https://github.com/0bCdian/Waypaper-Engine) ![typescript][ts] (GUI wallpaper setter with playlist capabilities)
-- [wpaperd](https://github.com/danyspin97/wpaperd) ![rust][rs] (Minimal wallpaper daemon for Wayland)
-
-
-### Idle Daemons
-
-- [hypridle](https://github.com/hyprwm/hypridle) ![c++][cpp] (Hyprland's idle daemon)
-- [swayidle](https://github.com/swaywm/swayidle) ![c][c] (Idle daemon used by default in sway, also only one I could find for wlroots)
-
-### Lockers
-
-- [swaylock](https://github.com/swaywm/swaylock) ![c][c] (Sway's default locker, very configurable, and popular)
-- [swaylock-effects](https://github.com/mortie/swaylock-effects) ![c][c] (Fork of swaylock, but with effects ^)
-- [waylock](https://codeberg.org/ifreund/waylock) ![zig][z] (A small screenlocker for Wayland compositors)
-- [hyprlock](https://github.com/hyprwm/hyprlock) ![c++][cpp] (Hyprland's GPU-accelerated screen locking utility)
-- [syslock](https://github.com/System64fumo/syslock) ![c++][cpp] (Simple screen locker for wayland written in gtkmm 4)
-
-### Clipboard Managers
-
-- [clipman](https://github.com/chmouel/clipman) ![go][go] (A simple clipboard manager for Wayland)
-- [cliphist](https://github.com/sentriz/cliphist) ![go][go] (Wayland clipboard manager)
+- [Hyprpaper](https://github.com/hyprwm/hyprpaper) ![c++][cpp] (闪电般快速的 Wayland 壁纸工具，带有 IPC 控制)
+- [swww](https://github.com/Horus645/swww) ![rust][rs] (支持实时切换、炫酷动画和 GIF 的壁纸守护程序)
+- [mpvpaper](https://github.com/GhostNaN/mpvpaper) ![c][c] (包装 MPV 的壁纸守护程序，适用于视频和更高级的用途)
+- [swaybg](https://github.com/swaywm/swaybg) ![c][c] (Sway 默认使用的非常简单的壁纸守护程序)
+- [waypaper](https://github.com/anufrievroman/waypaper) ![python][py] (GUI 壁纸设置器)
+- [waypaper engine](https://github.com/0bCdian/Waypaper-Engine) ![typescript][ts] (带有播放列表功能的 GUI 壁纸设置器)
+- [wpaperd](https://github.com/danyspin97/wpaperd) ![rust][rs] (Wayland 的极简壁纸守护程序)
 
 
-### Raw Tools
+### 空闲守护程序
 
-- [Grim](https://git.sr.ht/~emersion/grim) ![c][c] (basic screenshot tool)
-- [grim-hyprland](https://github.com/eriedaberrie/grim-hyprland) ![c][c] (drop-in replacement Grim fork with support for Hyprland's window capture protocol)
-- [Wayshot](https://git.sr.ht/~shinyzenith/wayshot) ![rust][rs] (basic screenshot tool made for speed and in rust)
-- [slurp](https://github.com/emersion/slurp) ![c][c] (basic area selection tool)
-- [Hyprpicker](https://github.com/hyprwm/hyprpicker)  ![c++][cpp] (wlroots-compatible Wayland color picker that does not suck)
-- [Wayfreeze](https://github.com/Jappie3/wayfreeze) ![rust][rs] (Tool to freeze the screen of a Wayland compositor)
+- [hypridle](https://github.com/hyprwm/hypridle) ![c++][cpp] (Hyprland 的空闲守护程序)
+- [swayidle](https://github.com/swaywm/swayidle) ![c][c] (Sway 默认使用的空闲守护程序，也是我能为 wlroots 找到的唯一一个)
 
-### Recording
+### 锁屏工具
 
-- [wf-recorder](https://github.com/ammen99/wf-recorder) ![c++][cpp] (Simple screenrecorder, like grim but records video)
-- [wl-screenrec](https://github.com/russelltg/wl-screenrec) ![rust][rs] (Simple and efficient screenrecorder for AMD and Intel GPUs)
+- [swaylock](https://github.com/swaywm/swaylock) ![c][c] (Sway 的默认锁屏工具，高度可配置且广受欢迎)
+- [swaylock-effects](https://github.com/mortie/swaylock-effects) ![c][c] (swaylock 的分支，但带有特效 ^)
+- [waylock](https://codeberg.org/ifreund/waylock) ![zig][z] (适用于 Wayland 合成器的小型屏幕锁定工具)
+- [hyprlock](https://github.com/hyprwm/hyprlock) ![c++][cpp] (Hyprland 的 GPU 加速屏幕锁定工具)
+- [syslock](https://github.com/System64fumo/syslock) ![c++][cpp] (使用 gtkmm 4 编写的 Wayland 简易屏幕锁定工具)
+
+### 剪贴板管理器
+
+- [clipman](https://github.com/chmouel/clipman) ![go][go] (Wayland 的简单剪贴板管理器)
+- [cliphist](https://github.com/sentriz/cliphist) ![go][go] (Wayland 剪贴板管理器)
+
+
+### 基础工具
+
+- [Grim](https://git.sr.ht/~emersion/grim) ![c][c] (基本截图工具)
+- [grim-hyprland](https://github.com/eriedaberrie/grim-hyprland) ![c][c] (支持 Hyprland 窗口捕获协议的即插即用 Grim 分支)
+- [Wayshot](https://git.sr.ht/~shinyzenith/wayshot) ![rust][rs] (用 Rust 编写的快速基本截图工具)
+- [slurp](https://github.com/emersion/slurp) ![c][c] (基本区域选择工具)
+- [Hyprpicker](https://github.com/hyprwm/hyprpicker)  ![c++][cpp] (与 wlroots 兼容的 Wayland 颜色选择器，效果出色)
+- [Wayfreeze](https://github.com/Jappie3/wayfreeze) ![rust][rs] (冻结 Wayland 合成器屏幕的工具)
+
+### 录制
+
+- [wf-recorder](https://github.com/ammen99/wf-recorder) ![c++][cpp] (简单的屏幕录制器，类似 grim 但录制视频)
+- [wl-screenrec](https://github.com/russelltg/wl-screenrec) ![rust][rs] (适用于 AMD 和 Intel GPU 的简单高效屏幕录制器)
