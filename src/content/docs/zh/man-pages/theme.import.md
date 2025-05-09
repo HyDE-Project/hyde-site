@@ -1,61 +1,61 @@
 ---
 title: theme.import.py
-description: theme import man page
+description: theme import 使用手册
 ---
 
-### Preview
+### 预览
 
-![preview theme import](../../../../assets/man-pages/theme.import/image.png)
+![theme import 预览](../../../../assets/man-pages/theme.import/image.png)
 
-### NAME
+### 名称
 
-theme.import.py - Imports themes from the HyDE gallery repository
+theme.import.py - 从 HyDE 主题库导入主题
 
-### SYNOPSIS
+### 说明
 
-`theme.import.py` [OPTIONS]
+`theme.import.py` [选项]
 
-### DESCRIPTION
+### 描述
 
-`theme.import.py` is a script to import and manage themes from the HyDE gallery repository. It allows users to clone the repository, fetch theme data, preview themes, and apply selected themes.
+`theme.import.py` 是一个用于从 HyDE 主题库导入和管理主题的脚本。它允许用户克隆主题库、获取主题数据、预览主题并应用所选主题。
 
-### OPTIONS
+### 选项
 
 - `-j`, `--json`
-  Fetch JSON data after cloning the repository.
+  克隆仓库后获取 JSON 数据。
 
 - `-S`, `--select`
-  Select themes using `fzf`.
+  使用 `fzf` 选择主题。
 
 - `-p`, `--preview` IMAGE_URL
-  Get a preview of the specified theme.
+  获取指定主题的预览。
 
 - `-t`, `--preview-text` TEXT
-  Preview text to display when using the `--preview` option.
+  使用 `--preview` 选项时显示的预览文本。
 
 - `--skip-clone`
-  Skip cloning the repository.
+  跳过克隆仓库步骤。
 
 - `-f`, `--fetch` THEME
-  Fetch and update a specific theme by name. Use `all` to fetch all themes located in `xdg_config/hyde/themes`.
+  获取并更新指定名称的主题。使用 `all` 获取位于 `xdg_config/hyde/themes` 中的所有主题。
 
-### ENVIRONMENT VARIABLES
+### 环境变量
 
 - `LOG_LEVEL`
-  Set the logging level (default: `INFO`).
+  设置日志级别（默认：`INFO`）。
 
 - `XDG_CACHE_HOME`
-  Directory for cache files (default: `~/.cache`).
+  缓存文件目录（默认：`~/.cache`）。
 
 - `XDG_CONFIG_HOME`
-  Directory for configuration files (default: `~/.config`).
+  配置文件目录（默认：`~/.config`）。
 
 - `FULL_THEME_UPDATE`
-  Overwrites the archived files (useful for updates and changes in archives).
+  覆盖已存档的文件（对于更新和更改归档文件很有用）。
 
-### EXAMPLES
+### 示例
 
-Opens fzf menu and select themes.
+打开 fzf 菜单并选择主题。
 
 ```shell
 theme.import.py --select

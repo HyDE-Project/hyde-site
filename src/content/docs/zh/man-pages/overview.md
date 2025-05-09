@@ -1,8 +1,8 @@
 ---
-title: Overview
-description: HyDE manuals for scripts and executable
+title: 概览
+description: HyDE 脚本和可执行文件的手册
 sidebar:
   order: 1
 ---
 
-HyDE manuals for scripts and executables
+HyDE 脚本和可执行文件的手册
