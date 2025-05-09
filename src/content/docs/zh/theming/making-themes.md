@@ -1,282 +1,282 @@
 ---
-title: Making Themes
-description: How to make themes for HyDE
+title: 制作主题
+description: 如何为 HyDE 制作主题
 ---
 
-Here we will walk you through the process of making themes for HyDE step by step.
-This tutorial will work for both hyprdots and HyDE.
+在这里，我们将一步步引导您完成为 HyDE 制作主题的过程。
+本教程适用于 hyprdots 和 HyDE。
 
-### Quick Start Guide
+### 快速入门指南
 
-Clone the hyde-theme-starter repo into your themes directory
+将 hyde-theme-starter 仓库克隆到您的主题目录
 
 :::tip
-Rename `MyTheme` to your theme name, make sure it doesn't conflict in names in [HyDE-Gallery](https://github.com/HyDE-Project/hyde-gallery)
+将 `MyTheme` 重命名为您的主题名称，确保它不会与 [HyDE-Gallery](https://github.com/HyDE-Project/hyde-gallery) 中的名称冲突
 :::
 
 ```bash
 git clone https://github.com/richen604/hyde-theme-starter ~/MyTheme
 ```
 
-1. Required components - all must be in `tar.*` format:
+1. 必需组件 - 所有组件必须为 `tar.*` 格式：
 
-   - A GTK theme (mandatory)
-     - search [Gnome-Look Themes](https://www.gnome-look.org/browse?cat=135&ord=latest) for existing themes
-     - or see [Generate GTK4](#generate-gtk4-from-wallbash) for generating GTK theme from wallpaper
-   - Icon pack (optional) - defaults to Tela-circle
-     - search [Gnome-Look Icons](https://www.gnome-look.org/browse?cat=132&ord=latest) for existing icon packs
-   - Cursor theme (optional) - defaults to Bibata-Modern-Ice
-     - search [Gnome-Look Cursors](https://www.gnome-look.org/browse?cat=107&ord=latest) for existing cursor themes
-   - Font (optional)
-     - search [fonts.google.com](https://fonts.google.com/) for web fonts
-     - search [nerdfonts.com](https://www.nerdfonts.com/) for patched developer fonts
+   - GTK 主题（必须）
+     - 在 [Gnome-Look Themes](https://www.gnome-look.org/browse?cat=135&ord=latest) 搜索现有主题
+     - 或参见 [生成 GTK4](#从-wallbash-生成-gtk4) 了解如何从壁纸生成 GTK 主题
+   - 图标包（可选）- 默认为 Tela-circle
+     - 在 [Gnome-Look Icons](https://www.gnome-look.org/browse?cat=132&ord=latest) 搜索现有图标包
+   - 鼠标指针主题（可选）- 默认为 Bibata-Modern-Ice
+     - 在 [Gnome-Look Cursors](https://www.gnome-look.org/browse?cat=107&ord=latest) 搜索现有鼠标指针主题
+   - 字体（可选）
+     - 在 [fonts.google.com](https://fonts.google.com/) 搜索网页字体
+     - 在 [nerdfonts.com](https://www.nerdfonts.com/) 搜索修补过的开发者字体
 
-2. A collection of wallpapers that match your desired style/color scheme
+2. 一系列与您期望的风格/配色方案相匹配的壁纸
 
-   - [Wallhaven](https://wallhaven.cc/) - For wallpapers
-   - [farbenfroh.io](https://farbenfroh.io/) - For color match wallpapers if you have a desired color scheme in mind
-   - Don't add too many wallpapers, 8-10 is a good number
+   - [Wallhaven](https://wallhaven.cc/) - 用于壁纸
+   - [farbenfroh.io](https://farbenfroh.io/) - 如果您心中有特定的配色方案，可用于寻找颜色匹配的壁纸
+   - 不要添加太多壁纸，8-10 张是比较合适的数量
 
-3. Install `just` for running helper scripts `yay -S just`
+3. 安装 `just` 以运行辅助脚本 `yay -S just`
 
-Go to your theme directory `cd ~/MyTheme` (replace `MyTheme` with your theme name)
+进入您的主题目录 `cd ~/MyTheme`（将 `MyTheme` 替换为您的主题名称）
 
 :::tip
-Rename `MyTheme` in the `justfile` to your theme name
+在 `justfile` 中将 `MyTheme` 重命名为您的主题名称
 :::
 
 ```bash
 theme = "MyTheme"
 ```
 
-Run `just init` to generate initial directory structure
+运行 `just init` 生成初始目录结构
 
-Your theme should have the following structure:
+您的主题应该具有以下结构：
 
 ```bash
 ~/MyTheme/
-├── Config/                  # Part of your final theme - Configuration files
+├── Config/                  # 您最终主题的一部分 - 配置文件
 │   └── hyde/
 │       └── themes/
-│           └── MyTheme/     # main theme directory
+│           └── MyTheme/     # 主题主目录
 │               └── wallpapers/
-├── refs/                    # for reference files we generate
-├── screenshots/             # for screenshots of your theme
-├── Source/                  # Part of your final theme - Arcs ie. gtk, cursor, icon, font
+├── refs/                    # 用于我们生成的参考文件
+├── screenshots/             # 用于主题的截图
+├── Source/                  # 您最终主题的一部分 - 归档文件，如 gtk、鼠标指针、图标、字体
 │   └── arcs/
 ├── .gitignore
-├── justfile                 # for running helper scripts
-└── README.md                # links to this webpage
+├── justfile                 # 用于运行辅助脚本
+└── README.md                # 链接到此网页
 ```
 
-### Arcs
+### 归档文件
 
-Arcs are the GTK theme, icon, cursor, and font components that make up parts of your theme.
-Lets add these right away to the `Source/arcs` directory so they are ready for testing.
+归档文件包括构成主题部分的 GTK 主题、图标、鼠标指针和字体组件。
+让我们立即将这些添加到 `Source/arcs` 目录中，以便测试。
 
-Your folder structure should look something like this:
+您的文件夹结构应该类似于这样：
 
 ```bash
 ~/MyTheme/
 ├── Source/
 │   └── arcs/
-│       ├── Gtk_<Your-GTK-Theme>.tar.*
-│       ├── Cursor_<Your-Cursor-Theme>.tar.*
-│       └── Icon_<Your-Icon-Theme>.tar.*
-│       └── Font_<Your-Font-Name>.tar.*
+│       ├── Gtk_<您的GTK主题>.tar.*
+│       ├── Cursor_<您的鼠标指针主题>.tar.*
+│       └── Icon_<您的图标主题>.tar.*
+│       └── Font_<您的字体名称>.tar.*
 ```
 
-**Make sure to use the correct prefix for each arc**. eg. `Gtk_<Your-GTK-Theme>.tar.*`
+**确保为每个归档文件使用正确的前缀**。例如：`Gtk_<您的GTK主题>.tar.*`
 
-### Viewing your theme with Wallbash
+### 使用 Wallbash 查看您的主题
 
-Copy your wallpapers to your theme directory
+将您的壁纸复制到主题目录
 
 ```bash
 cp -r ~/wallpapers ~/MyTheme/Config/.config/hyde/themes/MyTheme/wallpapers
 ```
 
-cd into your theme directory
+进入您的主题目录
 
 ```bash
 cd ~/MyTheme
 ```
 
-install your theme
+安装您的主题
 
 ```bash
 just install
 ```
 
-### Testing your theme with wallbash
+### 使用 wallbash 测试您的主题
 
-There are two ways to initialize your theme. from wallbash or from an existing theme.
+初始化主题有两种方式：通过 wallbash 或从现有主题。
 
-We are going to use wallbash for this guide. as it gives you a good understanding of how wallbash generates the colors for your theme. You can learn more about wallbash [here](#understanding-wallbash).
+本指南我们将使用 wallbash，因为它能让您很好地了解 wallbash 如何为您的主题生成颜色。您可以在[这里](#理解-wallbash)了解更多关于 wallbash 的信息。
 
-Open Wallbash, setting auto, dark, or light (`Meta + Shift + R`). </br>
-Set your chosen wallpaper as the current wallpaper (`Meta + Shift + W`)
+打开 Wallbash，设置自动、深色或浅色模式（`Meta + Shift + R`）。</br>
+将您选择的壁纸设置为当前壁纸（`Meta + Shift + W`）
 
-Observe how wallbash adapts the colors to your wallpaper for the following applications:
+观察 wallbash 如何为以下应用程序适配壁纸颜色：
 
 - GTK (nwg-look)
-  - to test your arc gtk theme, change from wallbash mode to theme mode (Meta + Shift + R)
-  - then check `pavucontrol` to see if your gtk theme looks weird. if it does, follow the instructions in [Generate GTK4](#generate-gtk4-from-wallbash) to generate GTK4 theme files using wallbash
+  - 要测试您的 GTK 归档主题，从 wallbash 模式切换到主题模式（Meta + Shift + R）
+  - 然后检查 `pavucontrol` 看您的 GTK 主题是否看起来奇怪。如果是，请按照[生成 GTK4](#从-wallbash-生成-gtk4)中的说明使用 wallbash 生成 GTK4 主题文件
 - Kitty (kitty)
 - QT (qt5ct + qt6ct)
 - Waybar (waybar)
 - Spotify (spotify)
-- VSCode (code) - needs wallbash enabled as color theme
+- VSCode (code) - 需要启用 wallbash 作为颜色主题
 - Cava (cava)
 
-### Generate theme files
+### 生成主题文件
 
-Make sure the wallpaper you picked is the best wallpaper that wallbash generates for your theme. </br>
-Now run the following commands to generate the wallbash files.
+确保您选择的壁纸是 wallbash 为您的主题生成的最佳壁纸。</br>
+现在运行以下命令生成 wallbash 文件。
 
 ```bash
 just gen-all
 just set-wall
 ```
 
-You'll see a bunch of new files in your theme `refs` directory.
+您将在主题的 `refs` 目录中看到一系列新文件。
 
 ```bash
 ~/MyTheme/
-├── refs/                   # for reference files we generate
-│   ├── gtk-4.0/            # GTK4 theme files
-│   │   ├── gtk.css         # Light theme
-│   │   └── gtk-dark.css    # Dark theme
-│   ├── kvantum/            # Kvantum theme files
-│   │   ├── kvantum.theme   # Kvantum theme config
-│   │   └── kvconfig.theme  # Kvantum config
-│   ├── hypr.theme          # Hyprland theme
-│   ├── kitty.theme         # Kitty terminal theme
-│   ├── rofi.theme          # Rofi theme
-│   ├── theme.dcol          # wallbash "theme" mode overrides
-│   └── waybar.theme        # Waybar theme
-│   └── wall.set            # First wallpaper theme uses
+├── refs/                   # 用于我们生成的参考文件
+│   ├── gtk-4.0/            # GTK4 主题文件
+│   │   ├── gtk.css         # 浅色主题
+│   │   └── gtk-dark.css    # 深色主题
+│   ├── kvantum/            # Kvantum 主题文件
+│   │   ├── kvantum.theme   # Kvantum 主题配置
+│   │   └── kvconfig.theme  # Kvantum 配置
+│   ├── hypr.theme          # Hyprland 主题
+│   ├── kitty.theme         # Kitty 终端主题
+│   ├── rofi.theme          # Rofi 主题
+│   ├── theme.dcol          # wallbash "主题"模式覆盖
+│   └── waybar.theme        # Waybar 主题
+│   └── wall.set            # 主题使用的第一张壁纸
 ```
 
-You can copy all the files to your `Config/.config/hyde/themes/MyTheme` directory.
+您可以将所有文件复制到 `Config/.config/hyde/themes/MyTheme` 目录。
 
 ```bash
 cp -r ./refs/* ./Config/.config/hyde/themes/MyTheme
 ```
 
-run install again to update your theme
+再次运行 install 更新您的主题
 
 ```bash
 just install
 ```
 
-These files are used to set the "theme" mode for your theme. (`Meta + Shift + R`)
+这些文件用于为您的主题设置"主题"模式。（`Meta + Shift + R`）
 
-### Editing \*.theme files
+### 编辑 *.theme 文件
 
-These files are important for themes to work correctly.
+这些文件对于主题正常工作非常重要。
 
-You should reference a theme like [Bad Blood](https://github.com/HyDE-Project/hyde-gallery/blob/Bad-Blood/Configs/.config/hyde/themes/Bad%20Blood) along this guide.
+您应该在本指南中参考如 [Bad Blood](https://github.com/HyDE-Project/hyde-gallery/blob/Bad-Blood/Configs/.config/hyde/themes/Bad%20Blood) 的主题。
 
-Each \*.theme file contains configuration lines
+每个 *.theme 文件包含配置行
 
-The first line has the format: file_path | command_to_execute
+第一行格式为：file_path | command_to_execute
 
 - hypr.theme - `$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf`
 - kitty.theme - `$HOME/.config/kitty/theme.conf|killall -SIGUSR1 kitty`
 - rofi.theme - `$HOME/.config/rofi/theme.rasi`
 - waybar.theme - `$HOME/.config/waybar/theme.css|${scrDir}/wbarconfgen.sh`
 
-the most important file is `hypr.theme`
+最重要的文件是 `hypr.theme`
 
 ```bash
 $HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
-# ~/.config/hypr/theme/theme.conf is an auto-generated file. Do not edit.
+# ~/.config/hypr/theme/theme.conf 是自动生成的文件。请勿编辑。
 
-$GTK_THEME=Bad-Blood # folder name inside `Source/arcs/Gtk_<Your-GTK-Theme>.tar.*`
-$ICON_THEME=besgnulinux-mono-red # folder name inside `Source/arcs/Icon_<Your-Icon-Theme>.tar.*`
-$COLOR_SCHEME=prefer-dark # prefer-dark, prefer-light, or auto
-$CURSOR_THEME=Night-Diamond-Red # folder name inside `Source/arcs/Cursor_<Your-Cursor-Theme>.tar.*`
-$CURSOR_SIZE=30 # cursor size in pixels
+$GTK_THEME=Bad-Blood # `Source/arcs/Gtk_<您的GTK主题>.tar.*` 内的文件夹名称
+$ICON_THEME=besgnulinux-mono-red # `Source/arcs/Icon_<您的图标主题>.tar.*` 内的文件夹名称
+$COLOR_SCHEME=prefer-dark # prefer-dark, prefer-light, 或 auto
+$CURSOR_THEME=Night-Diamond-Red # `Source/arcs/Cursor_<您的鼠标指针主题>.tar.*` 内的文件夹名称
+$CURSOR_SIZE=30 # 鼠标指针大小（像素）
 ```
 
-- Edit the variables for arcs, must match the name of the folder **inside** each arc in `Source/arcs` like above
-- Set hyprland borders, colors, and other theme related settings
-- You can use hypr.theme to set additional programs for your theme. such as SDDM or Vscode theme
-- Becomes `$HOME/.config/hypr/themes/theme.conf`
+- 编辑归档文件的变量，必须与 `Source/arcs` 中每个归档文件**内部**的文件夹名称匹配，如上所示
+- 设置 hyprland 边框、颜色和其他主题相关设置
+- 您可以使用 hypr.theme 为主题设置额外的程序，比如 SDDM 或 Vscode 主题
+- 生成 `$HOME/.config/hypr/themes/theme.conf`
 
-Any updates to your theme in either `Config` or `Source` should be run with `just install` to update your theme.
+如果您在 `Config` 或 `Source` 中更新了主题，应运行 `just install` 更新您的主题。
 
-### Editing theme.dcol
+### 编辑 theme.dcol
 
-The `theme.dcol` file is used to override some generated wallbash colors for wallbash modes.
-Check out [understanding wallbash](#understanding-wallbash) for more information.
+`theme.dcol` 文件用于覆盖 wallbash 模式下生成的某些 wallbash 颜色。
+查看[理解 wallbash](#理解-wallbash)了解更多信息。
 
-This file is entirely optional
+此文件完全是可选的
 
-### Finalizing your theme
+### 完成您的主题
 
-Your theme should now be ready to be added to the hyde-gallery!
+您的主题现在应该可以添加到 hyde-gallery 了！
 
-A few more finishing touches:
+还有一些收尾工作：
 
-- Add some screenshots to `~/screenshots`
-- Add your theme to the Hyde-Gallery
+- 在 `~/screenshots` 中添加一些截图
+- 将您的主题添加到 Hyde-Gallery
 
-### Adding Themes to Hyde-Gallery
+### 将主题添加到 Hyde-Gallery
 
-In your theme directory, generate the readme using
+在您的主题目录中，使用以下命令生成自述文件
 
 ```bash
 python3 generate_readme.py
 ```
 
-Initialize git
+初始化 git
 
 ```bash
 git init && git branch -M main && git add . && git commit -m "My first HyDE theme"
 ```
 
-[create a github repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
+[创建 github 仓库](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
 ```bash
-git remote add origin <your-repo-url>
+git remote add origin <您的仓库URL>
 git push -u origin main
 ```
 
 Fork hyde-gallery <https://github.com/HyDE-Project/hyde-gallery> </br>
-Add your theme to the list and `hyde-themes.json`
+将您的主题添加到列表和 `hyde-themes.json` 中
 
-## More Information
+## 更多信息
 
-### Generate GTK4 from wallbash
+### 从 wallbash 生成 GTK4
 
-If your theme doesn't include GTK4 support, pavucontrol and other GTK4 applications may appear with a plain white theme.
+如果您的主题不包含 GTK4 支持，pavucontrol 和其他 GTK4 应用程序可能会显示为纯白色主题。
 
-Run the following command to generate the GTK4 theme files
+运行以下命令生成 GTK4 主题文件
 
 ```bash
 just gen-gtk4
 ```
 
-Copy the `refs/gtk-4.0` directory to your theme directory
+将 `refs/gtk-4.0` 目录复制到您的主题目录
 
 ```bash
 mkdir -p ./Config/.config/hyde/themes/MyTheme/gtk-4.0
 cp -r ./refs/gtk-4.0/* ./Config/.config/hyde/themes/MyTheme/gtk-4.0/
 ```
 
-### Understanding wallbash
+### 理解 wallbash
 
-Wallbash generates 4 primary colors from your wallpaper, then creates color groups around each primary color with the following structure:
+Wallbash 从您的壁纸中生成 4 种主要颜色，然后围绕每个主要颜色创建颜色组，结构如下：
 
-For each primary color (`wallbash_pry1` through `wallbash_pry4`):
+对于每种主要颜色（`wallbash_pry1` 到 `wallbash_pry4`）：
 
-- Text color (`wallbash_txt1` through `wallbash_txt4`)
-- 9 accent colors (`wallbash_1xa1` through `wallbash_1xa9` for group 1, etc.)
+- 文本颜色（`wallbash_txt1` 到 `wallbash_txt4`）
+- 9 种强调色（第 1 组的 `wallbash_1xa1` 到 `wallbash_1xa9`，以此类推）
 
-Each color has an RGBA variant with configurable opacity (e.g. `wallbash_pry1_rgba(0.95)`)
+每种颜色都有一个带可配置透明度的 RGBA 变体（例如 `wallbash_pry1_rgba(0.95)`）
 
-Total: 44 base colors (4 groups × 11 colors) plus RGBA variants
+总计：44 种基本颜色（4 组 × 11 种颜色）加上 RGBA 变体
 
-Use `just gen-dcol` to generate a `theme.dcol` with all the wallbash generated colors for your active wallpaper for reference
+使用 `just gen-dcol` 生成包含当前壁纸所有 wallbash 生成颜色的 `theme.dcol` 作为参考
