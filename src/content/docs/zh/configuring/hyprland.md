@@ -1,6 +1,6 @@
 ---
 title: Hyprland
-description: Hyprland related configuration
+description: Hyprland 相关配置
 ---
 
 <style>
@@ -33,7 +33,7 @@ description: Hyprland related configuration
   }
 </style>
 
-# Configuration Tree
+# 目录树
 
 ```
 . 📂 ~/.config/hypr
@@ -66,148 +66,148 @@ description: Hyprland related configuration
 
 :::
 
-# HyDE's Hyprland Configuration
+# HyDE 的 Hyprland 配置
 
-Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE's hyprland configuration is divided into three sections:
+由于 Hyprland 会加载 `~/.config/hypr/hyprland.conf`，HyDE 的 Hyprland 配置被分为三个部分：
 
-- [Boilerplate](#1-boilerplate)
-- [Overrides](#2-overrides)
-- [Users](#3-users)
+- [模板配置](#1-模板配置)
+- [覆盖配置](#2-覆盖配置)
+- [用户配置](#3-用户配置)
 
-## 1. Boilerplate
+## 1. 模板配置
 
-This section contains the default configuration of HyDE. It is recommended not to change this section.
+此部分包含 HyDE 的默认配置，建议不要修改此部分。
 
-**Filepath:** $XDG_DATA_HOME/hyde/hyprland.conf`
+**文件路径：** `$XDG_DATA_HOME/hyde/hyprland.conf`
 
-This file is sourced on top of other configurations in ~/.config/hypr/hyprland.conf`.
+此文件会在 `~/.config/hypr/hyprland.conf` 的其他配置之前加载。
 
 ```ini
-# Boilerplate configuration
+# 模板配置
 source = ~/.local/share/hyde/hyprland.conf
 ```
 
-## 2. Overrides
+## 2. 覆盖配置
 
-This section is for overriding the default configuration of HyDE.
+此部分用于覆盖 HyDE 的默认配置。
 
-As per Hyprland's [Defining Variables](https://wiki.hyprland.org/Hypr-Ecosystem/hyprlang/#defining-variables), HyDE uses $VARIABLES to expose default configurations to be overridden.
+根据 Hyprland 的[定义变量](https://wiki.hyprland.org/Hypr-Ecosystem/hyprlang/#defining-variables)，HyDE 使用 $VARIABLES 来暴露默认配置以供覆盖。
 
-Change this section if you intend to:
+如果您打算进行以下操作，请修改此部分：
 
-- Change the startup and environment variables
-- Stop an app/service from starting
-- Override HyDE's default variables
+- 更改启动和环境变量
+- 停止某个应用/服务的启动
+- 覆盖 HyDE 的默认变量
 
 :::note
 
-To unset a variable, leave it blank
+要取消设置某个变量，请将其留空。
 
 :::
 
-**Filepath:** $XDG_CONFIG_HOME/hypr/hyde.conf`
+**文件路径：** `$XDG_CONFIG_HOME/hypr/hyde.conf`
 
-### HyDE Configuration Variables
+### HyDE 配置变量
 
-| Variable             | Description                 | Default Value                |
-| -------------------- | --------------------------- | ---------------------------- |
-| $mainMod             | Keyboard modifier           | SUPER (Windows key)          |
-| $QUICKAPPS           | Used for quick app launcher | (Empty)                      |
-| $BROWSER             | Default browser             | firefox                      |
-| $EDITOR              | Default editor              | code                         |
-| $EXPLORER            | Default file manager        | dolphin                      |
-| $TERMINAL            | Default terminal            | kitty                        |
-| $LOCKSCREEN          | Default lockscreen          | hyprlock                     |
-| $IDLE                | Default idle manager        | hypridle                     |
-| $GTK_THEME           | GTK theme                   | Wallbash-Gtk                 |
-| $ICON_THEME          | Icon theme                  | Tela-circle-dracula          |
-| $COLOR_SCHEME        | Color scheme                | prefer-dark                  |
-| $CURSOR_THEME        | Cursor theme                | Bibata-Modern-Ice            |
-| $CURSOR_SIZE         | Cursor size                 | 30                           |
-| $FONT                | Font                        | Canterell                    |
-| $FONT_SIZE           | Font size                   | 10                           |
-| $DOCUMENT_FONT       | Document font               | Cantarell                    |
-| $DOCUMENT_FONT_SIZE  | Document font size          | 10                           |
-| $MONOSPACE_FONT      | Monospace font              | CaskaydiaCove Nerd Font Mono |
-| $MONOSPACE_FONT_SIZE | Monospace font size         | 9                            |
-| $FONT_ANTIALIASING   | Font antialiasing           | rgba                         |
-| $FONT_HINTING        | Font hinting                | full                         |
+| 变量名                | 描述                       | 默认值                       |
+| -------------------- | --------------------------| ---------------------------- |
+| $mainMod             | 键盘修饰键                  | SUPER (Windows 键)           |
+| $QUICKAPPS           | 快速启动应用的变量           | (empty)                      |
+| $BROWSER             | 默认浏览器                  | firefox                     |
+| $EDITOR              | 默认编辑器                 | code                         |
+| $EXPLORER            | 默认文件管理器              | dolphin                      |
+| $TERMINAL            | 默认终端                   | kitty                        |
+| $LOCKSCREEN          | 默认锁屏工具                | hyprlock                     |
+| $IDLE                | 默认空闲管理器              | hypridle                      |
+| $GTK_THEME           | GTK 主题                  | Wallbash-Gtk                |
+| $ICON_THEME          | 图标主题                   | Tela-circle-dracula          |
+| $COLOR_SCHEME        | 配色方案                   | prefer-dark                  |
+| $CURSOR_THEME        | 鼠标指针主题                | Bibata-Modern-Ice            |
+| $CURSOR_SIZE         | 鼠标指针大小                | 30                           |
+| $FONT                | 字体                      | Canterell                    |
+| $FONT_SIZE           | 字体大小                   | 10                           |
+| $DOCUMENT_FONT       | 文档字体                   | Cantarell                    |
+| $DOCUMENT_FONT_SIZE  | 文档字体大小               | 10                           |
+| $MONOSPACE_FONT      | 等宽字体                   | CaskaydiaCove Nerd Font Mono |
+| $MONOSPACE_FONT_SIZE | 等宽字体大小               | 9                            |
+| $FONT_ANTIALIASING   | 字体抗锯齿                 | rgba                         |
+| $FONT_HINTING        | 字体提示                   | full                         |
 
-### Startup Commands ($start.\*`)
+### 启动命令 ($start.\*`)
 
-The default commands on startup.
+默认的启动命令。
 
-| Variable                    | Description                                                  | Default Value                                                                                |
-| --------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------- |
-| $start.XDG_PORTAL_RESET     | Resets XDG Portal                                            | $scrPath/resetxdgportal.sh                                                                   |
-| $start.DBUS_SHARE_PICKER    | Updates DBus environment for share picker                    | dbus-update-activation-environment --systemd --all                                           |
-| $start.SYSTEMD_SHARE_PICKER | Imports environment variables for share picker using systemd | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
-| $start.BAR                  | Starts the Waybar                                            | waybar                                                                                       |
-| $start.NOTIFICATIONS        | Starts the notification daemon                               | swaync                                                                                       |
-| $start.APPTRAY_BLUETOOTH    | Starts the Bluetooth applet                                  | blueman-applet                                                                               |
-| $start.WALLPAPER            | Sets the wallpaper                                           | $scrPath/swwwallpaper.sh                                                                     |
-| $start.TEXT_CLIPBOARD       | Starts the text clipboard manager                            | wl-paste --type text --watch cliphist store                                                  |
-| $start.IMAGE_CLIPBOARD      | Starts the image clipboard manager                           | wl-paste --type image --watch cliphist store                                                 |
-| $start.BATTERY_NOTIFY       | Starts the battery notification script                       | $scrPath/batterynotify.sh                                                                    |
-| $start.NETWORK_MANAGER      | Starts the network manager applet                            | nm-applet --indicator                                                                        |
-| $start.REMOVABLE_MEDIA      | Starts the removable media manager                           | udiskie --no-automount --smart-tray                                                          |
-| $start.AUTH_DIALOGUE        | Starts the authentication dialogue script                    | $scrPath/polkitkdeauth.sh                                                                    |
-| $start.IDLE_DAEMON          | Starts the idle daemon                                       | $IDLE                                                                                        |
+| 变量名                    | 描述                                                         | 默认值                                                                                     |
+| ------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| $start.XDG_PORTAL_RESET   | 重置 XDG Portal                                              | $scrPath/resetxdgportal.sh                                                                |
+| $start.DBUS_SHARE_PICKER  | 更新 DBus 环境变量以支持共享选择器                           | dbus-update-activation-environment --systemd --all                                        |
+| $start.SYSTEMD_SHARE_PICKER | 使用 systemd 导入共享选择器的环境变量                      | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
+| $start.BAR                | 启动 Waybar                                                  | waybar                                                                                     |
+| $start.NOTIFICATIONS      | 启动通知守护程序                                             | swaync                                                                                     |
+| $start.APPTRAY_BLUETOOTH  | 启动蓝牙托盘小程序                                           | blueman-applet                                                                             |
+| $start.WALLPAPER          | 设置壁纸                                                     | $scrPath/swwwallpaper.sh                                                                   |
+| $start.TEXT_CLIPBOARD     | 启动文本剪贴板管理器                                         | wl-paste --type text --watch cliphist store                                                |
+| $start.IMAGE_CLIPBOARD    | 启动图片剪贴板管理器                                         | wl-paste --type image --watch cliphist store                                               |
+| $start.BATTERY_NOTIFY     | 启动电池通知脚本                                             | $scrPath/batterynotify.sh                                                                  |
+| $start.NETWORK_MANAGER    | 启动网络管理器托盘小程序                                     | nm-applet --indicator                                                                      |
+| $start.REMOVABLE_MEDIA    | 启动可移动媒体管理器                                         | udiskie --no-automount --smart-tray                                                       |
+| $start.AUTH_DIALOGUE      | 启动认证对话框脚本                                           | $scrPath/polkitkdeauth.sh                                                                  |
+| $start.IDLE_DAEMON        | 启动空闲守护程序                                             | $IDLE                                                                                      |
 
-### Environment Variables ($env.\*`)
+### 环境变量 ($env.\*`)
 
-| Variable                                 | Description                                    | Default Value                 |
-| ---------------------------------------- | ---------------------------------------------- | ----------------------------- |
-| $env.GDK_BACKEND                         | GTK backend to use (Wayland preferred)         | wayland,x11,\*                |
-| $env.QT_QPA_PLATFORM                     | Qt platform to use (Wayland)                   | wayland                       |
-| $env.SDL_VIDEODRIVER                     | SDL2 video driver (Wayland)                    | wayland                       |
-| $env.CLUTTER_BACKEND                     | Clutter backend (Wayland)                      | wayland                       |
-| $env.XDG_CURRENT_DESKTOP                 | XDG current desktop environment                | Hyprland                      |
-| $env.XDG_SESSION_TYPE                    | XDG session type                               | wayland                       |
-| $env.XDG_SESSION_DESKTOP                 | XDG session desktop                            | Hyprland                      |
-| $env.QT_AUTO_SCREEN_SCALE_FACTOR         | Qt automatic screen scaling                    | 1                             |
-| $env.QT_QPA_PLATFORM                     | Qt platform                                    | wayland                       |
-| $env.QT_WAYLAND_DISABLE_WINDOWDECORATION | Disables window decorations on Qt applications | 1                             |
-| $env.QT_QPA_PLATFORMTHEME                | Qt platform theme                              | qt6ct                         |
-| $env.PATH                                | Path environment variable                      | (Empty)                       |
-| $env.MOZ_ENABLE_WAYLAND                  | Enables Wayland for Firefox                    | 1                             |
-| $env.GDK_SCALE                           | GDK scale for Xwayland on HiDPI                | 1                             |
-| $env.ELECTRON_OZONE_PLATFORM_HINT        | Electron Ozone Platform Hint                   | auto                          |
-| $env.XDG_RUNTIME_DIR                     | XDG runtime directory                          | $XDG_RUNTIME_DIR              |
-| $env.XDG_CONFIG_HOME                     | XDG config directory                           | $HOME/.config                 |
-| $env.XDG_CACHE_HOME                      | XDG cache directory                            | $HOME/.cache                  |
-| $env.XDG_DATA_HOME                       | XDG data directory                             | $HOME/.local/share            |
-| $LAYOUT_PATH                             | Path to Hyprlock layout configuration          | /path/to/hyprlock/layout.conf |
-| $BACKGROUND_PATH                         | Path to Hyprlock background image              | $HYPRLOCK_BACKGROUND          |
+| 变量名                                 | 描述                                           | 默认值                       |
+| ------------------------------------- | -------------------------------------------- | --------------------------- |
+| $env.GDK_BACKEND                      | 要使用的 GTK 后端（优先 Wayland）             | wayland,x11,\*              |
+| $env.QT_QPA_PLATFORM                  | 要使用的 Qt 平台（Wayland）                   | wayland                     |
+| $env.SDL_VIDEODRIVER                  | SDL2 视频驱动（Wayland）                      | wayland                     |
+| $env.CLUTTER_BACKEND                  | Clutter 后端（Wayland）                       | wayland                     |
+| $env.XDG_CURRENT_DESKTOP              | 当前桌面环境                                  | Hyprland                    |
+| $env.XDG_SESSION_TYPE                 | 会话类型                                      | wayland                     |
+| $env.XDG_SESSION_DESKTOP              | 会话桌面                                      | Hyprland                    |
+| $env.QT_AUTO_SCREEN_SCALE_FACTOR      | Qt 自动屏幕缩放                               | 1                           |
+| $env.QT_QPA_PLATFORM                  | Qt 平台                                       | wayland                     |
+| $env.QT_WAYLAND_DISABLE_WINDOWDECORATION | 禁用 Qt 应用程序的窗口装饰                   | 1                           |
+| $env.QT_QPA_PLATFORMTHEME             | Qt 平台主题                                   | qt6ct                       |
+| $env.PATH                             | 路径环境变量                                  | (空)                        |
+| $env.MOZ_ENABLE_WAYLAND               | 为 Firefox 启用 Wayland                       | 1                           |
+| $env.GDK_SCALE                        | Xwayland 上 HiDPI 的 GDK 缩放                 | 1                           |
+| $env.ELECTRON_OZONE_PLATFORM_HINT     | Electron Ozone 平台提示                       | auto                        |
+| $env.XDG_RUNTIME_DIR                  | XDG 运行时目录                                | $XDG_RUNTIME_DIR            |
+| $env.XDG_CONFIG_HOME                  | XDG 配置目录                                  | $HOME/.config               |
+| $env.XDG_CACHE_HOME                   | XDG 缓存目录                                  | $HOME/.cache                |
+| $env.XDG_DATA_HOME                    | XDG 数据目录                                  | $HOME/.local/share          |
+| $LAYOUT_PATH                          | Hyprlock 布局配置文件路径                     | /path/to/hyprlock/layout.conf |
+| $BACKGROUND_PATH                      | Hyprlock 背景图片路径                         | $HYPRLOCK_BACKGROUND        |
 
 :::danger
 
-Modifying this means you know what you are doing!
+修改这些变量意味着您清楚自己在做什么！
 
 :::
 
-## 3. Users
+## 3. 用户配置
 
-This section is for user configuration. It is recommended to change this section to your liking.
+此部分用于用户自定义配置。建议根据您的需求进行更改。
 
-**Filepaths:**
+**文件路径：**
 
-- ./keybindings.conf`
-- ./windowrules.conf`
-- ./monitors.conf`
-- ./userprefs.conf`
+- ./keybindings.conf
+- ./windowrules.conf
+- ./monitors.conf
+- ./userprefs.conf
 
 ---
 
 :::tip
 
-Likely you only need this files to configure your preferences.
-Hyprland variables can be overridden, therefore you can change the default values to your liking.
+通常您只需要修改这些文件来配置您的偏好设置。  
+Hyprland 的变量可以被覆盖，因此您可以根据需要更改默认值。  
 
-Also Hyprland can hot reload the configuration files, so you can edit them and see the changes immediately.
+此外，Hyprland 支持热加载配置文件，因此您可以编辑文件并立即查看更改效果。
 
 :::
 
-Now you should know which file is which. Refer to the [Hyprland Wiki](https://wiki.hyprland.org) for more information and to achieve your perfect desktop experience.
+现在您应该知道每个文件的用途了。请参考 [Hyprland Wiki](https://wiki.hyprland.org) 以获取更多信息，打造您的理想桌面体验。
 
-Also see[FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout)
+另请参阅 [FAQs 和提示](../help/faq#how-can-i-change-keyboard-layout)。

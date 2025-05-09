@@ -1,6 +1,6 @@
 ---
-title: Config Toml
-description: HyDE's Configuration Guide
+title: 配置文件
+description: HyDE 的配置指南
 sidebar:
   order: 2
 ---
@@ -36,229 +36,229 @@ sidebar:
   }
 </style>
 
-HyDE exposes `xdg_config/hyde/config.toml` file for users to modify. This lets users have the ability to interact the scripts without using command arguments.
+HyDE 向用户公开了 `xdg_config/hyde/config.toml` 文件供修改。这样用户就能在无需使用命令行参数的情况下与脚本交互。
 
 ---
 
-### Environment variable
+### 环境变量
 
-example:
+示例：
 
-| Key                 | Description            | Default |
-| ------------------- | ---------------------- | ------- |
-| WARP_ENABLE_WAYLAND | Enable Wayland support |         |
+| 键                  | 描述                    | 默认值 |
+| ------------------- | ---------------------- | ------ |
+| WARP_ENABLE_WAYLAND | 启用 Wayland 支持       |        |
 
 ### [battery.notify]
 
-| Key      | Description             | Default |
-| -------- | ----------------------- | ------- |
-| dock     | Battery notify dock     | true    |
-| interval | Battery notify interval | 5       |
-| notify   | Battery notify          | 1140    |
-| timer    | Battery notify timer    | 120     |
+| 键        | 描述                     | 默认值 |
+| --------- | ------------------------ | ------ |
+| dock      | 是否启用电池停靠通知      | true   |
+| interval  | 电池通知的时间间隔（分钟）| 5      |
+| notify    | 电池通知的阈值（秒）      | 1140   |
+| timer     | 电池通知的计时器（秒）    | 120    |
 
 ### [battery.notify.execute]
 
-| Key         | Description                        | Default             |
-| ----------- | ---------------------------------- | ------------------- |
-| charging    | Battery notify execute charging    | ""                  |
-| critical    | Battery notify execute critical    | "systemctl suspend" |
-| discharging | Battery notify execute discharging | ""                  |
-| low         | Battery notify execute low         | ""                  |
-| unplug      | Battery notify execute unplug      | ""                  |
+| 键          | 描述                       | 默认值             |
+| ------------ | -------------------------- | ------------------ |
+| charging     | 电池充电时执行的命令       | ""                 |
+| critical     | 电池电量过低时执行的命令   | "systemctl suspend"|
+| discharging  | 电池放电时执行的命令       | ""                 |
+| low          | 电池电量低时执行的命令     | ""                 |
+| unplug       | 电池拔出时执行的命令       | ""                 |
 
 ### [battery.notify.threshold]
 
-| Key      | Description                       | Default |
-| -------- | --------------------------------- | ------- |
-| critical | Battery notify critical threshold | 10      |
-| full     | Battery notify full threshold     | 90      |
-| low      | Battery notify low threshold      | 20      |
-| unplug   | Battery notify unplug threshold   | 80      |
+| 键        | 描述                       | 默认值 |
+| ----------| -------------------------- | ------ |
+| critical  | 电池电量过低通知的阈值     | 10     |
+| full      | 电池充满通知的阈值         | 90     |
+| low       | 电池电量低通知的阈值       | 20     |
+| unplug    | 电池拔出通知的阈值         | 80     |
 
 ### [brightness]
 
-| Key    | Description                                     | Default |
-| ------ | ----------------------------------------------- | ------- |
-| notify | Brightness control notify                       | true    |
-| steps  | Number of steps to increase/decrease brightness | 5       |
+| 键        | 描述                       | 默认值 |
+| ----------| -------------------------- | ------ |
+| notify    | 亮度控制通知                | true   |
+| steps     | 增减亮度的单位               | 5      |
 
 ### [cava.hyprlock]
 
-| Key           | Description                                   | Default    |
-| ------------- | --------------------------------------------- | ---------- |
-| bar           | Cava bar characters for hyprlock              | "▁▂▃▄▅▆▇█" |
-| max_instances | Maximum number of cava instances for hyprlock | 1          |
-| range         | Number of cava bars for hyprlock              | 7          |
-| standby       | Cava standby character for hyprlock           | "🎶"       |
-| width         | Cava bar width for hyprlock                   | 20         |
+| 键           | 描述                                      | 默认值    |
+| ------------- | ------------------------------------------ | ---------- |
+| bar           | hyprlock 中 Cava 条形图字符                       | "▁▂▃▄▅▆▇█" |
+| max_instances | hyprlock 中最大 Cava 实例数                       | 1          |
+| range         | hyprlock 中 Cava 条形数量                         | 7          |
+| standby       | hyprlock 中 Cava 待机字符                         | "🎶"       |
+| width         | hyprlock 中 Cava 条形图宽度                       | 20         |
 
 ### [cava.stdout]
 
-| Key           | Description                      | Default    |
+| 键           | 描述                          | 默认值    |
 | ------------- | -------------------------------- | ---------- |
-| bar           | Cava bar characters              | "▁▂▃▄▅▆▇█" |
-| max_instances | Maximum number of cava instances | 1          |
-| range         | Number of cava bars              | 7          |
-| standby       | Cava standby character           | "🎶"       |
-| width         | Cava bar width                   | 20         |
+| bar           | Cava 条形图字符                      | "▁▂▃▄▅▆▇█" |
+| max_instances | 最大 Cava 实例数                     | 1          |
+| range         | Cava 条形图数量                      | 7          |
+| standby       | Cava 待机字符                        | "🎶"       |
+| width         | Cava 条形图宽度                      | 20         |
 
 ### [cava.waybar]
 
-| Key           | Description                                 | Default    |
-| ------------- | ------------------------------------------- | ---------- |
-| bar           | Cava bar characters for waybar              | "▁▂▃▄▅▆▇█" |
-| max_instances | Maximum number of cava instances for waybar | 1          |
-| range         | Number of cava bars                         | 7          |
-| standby       | Cava standby character                      | "🎶"       |
-| width         | Cava bar width                              | 20         |
+| 键           | 描述                                      | 默认值    |
+| ------------- | ------------------------------------------ | ---------- |
+| bar           | waybar 中 Cava 条形图字符                         | "▁▂▃▄▅▆▇█" |
+| max_instances | waybar 中最大 Cava 实例数                         | 1          |
+| range         | waybar 中 Cava 条形图数量                         | 7          |
+| standby       | waybar 中 Cava 待机字符                           | "🎶"       |
+| width         | waybar 中 Cava 条形图宽度                         | 20         |
 
 ### [hypr.config]
 
-| Key      | Description                                            | Default               |
-| -------- | ------------------------------------------------------ | --------------------- |
-| sanitize | List of regex to sanitize in the THEME_NAME/hypr.theme | ['.*rgba\(.*,*,*,*,'] |
+| 键      | 描述                                                     | 默认值               |
+| -------- | --------------------------------------------------------------- | --------------------- |
+| sanitize | 在 THEME_NAME/hypr.theme 中需清理的正则表达式列表                | ['.*rgba\(.*,*,*,*,'] |
 
 ### [notification]
 
-| Key       | Description                 | Default              |
-| --------- | --------------------------- | -------------------- |
-| font      | Font for notifications      | "mononoki Nerd Font" |
-| font_size | Font size for notifications | 8                    |
+| 键       | 描述               | 默认值              |
+| --------- | ------------------------- | -------------------- |
+| font      | 通知显示字体              | "mononoki Nerd Font" |
+| font_size | 通知字体大小              | 8                    |
 
 ### [rofi]
 
-| Key   | Description          | Default |
-| ----- | -------------------- | ------- |
-| scale | Rofi default scaling | 10      |
+| 键   | 描述             | 默认值 |
+| ----- | ---------------- | ------- |
+| scale | Rofi 的默认缩放比例 | 10      |
 
 ### [rofi.animation]
 
-| Key   | Description                         | Default |
-| ----- | ----------------------------------- | ------- |
-| scale | 'animation.sh select' configuration | 8       |
+| 键   | 描述                          | 默认值 |
+| ----- | ---------------------------- | ------- |
+| scale | 配置 'animation.sh select' 的缩放比例 | 8       |
 
 ### [rofi.cliphist]
 
-| Key   | Description               | Default |
-| ----- | ------------------------- | ------- |
-| scale | cliphist.sh configuration | 8       |
+| 键   | 描述                  | 默认值 |
+| ----- | -------------------- | ------- |
+| scale | 配置 cliphist.sh 的缩放比例 | 8       |
 
 ### [rofi.emoji]
 
-| Key   | Description                         | Default |
-| ----- | ----------------------------------- | ------- |
-| scale | emoji-picker.sh configuration scale | 8       |
-| style | emoji-picker.sh configuration style | 2       |
+| 键   | 描述                          | 默认值 |
+| ----- | ---------------------------- | ------- |
+| scale | 配置 emoji-picker.sh 的缩放比例 | 8       |
+| style | 配置 emoji-picker.sh 的样式   | 2       |
 
 ### [rofi.glyph]
 
-| Key   | Description                   | Default |
-| ----- | ----------------------------- | ------- |
-| scale | glyph-picker.sh configuration | 8       |
+| 键    | 描述                  | 默认值 |
+| ----- | -------------------- | ------- |
+| scale | 配置 glyph-picker.sh 的缩放比例 | 8       |
 
 ### [rofi.hyprlock]
 
-| Key   | Description                        | Default |
-| ----- | ---------------------------------- | ------- |
-| scale | 'hyprlock.sh select' configuration | 10      |
+| 键   | 描述                          | 默认值 |
+| ----- | ---------------------------- | ------- |
+| scale | 配置 'hyprlock.sh select' 的缩放比例 | 10      |
 
 ### [rofi.keybind.hint]
 
-| Key       | Description            | Default |
-| --------- | ---------------------- | ------- |
-| delimiter | Keybind hint delimiter | "\t"    |
-| height    | Keybind hint height    | "40em"  |
-| line      | Keybind hint line      | 16      |
-| width     | Keybind hint width     | "40em"  |
+| 键       | 描述                     | 默认值 |
+| --------- | ------------------------------- | ------- |
+| delimiter | 按键绑定提示分隔符              | "\t"    |
+| height    | 按键绑定提示高度                | "40em"  |
+| line      | 按键绑定提示行数                | 16      |
+| width     | 按键绑定提示宽度                | "40em"  |
 
 ### [rofi.launcher]
 
-| Key   | Description                 | Default |
-| ----- | --------------------------- | ------- |
-| scale | rofilaunch.sh configuration | 5       |
+| 键   | 描述                        | 默认值 |
+| ----- | ---------------------------------- | ------- |
+| scale | 配置 rofilaunch.sh 的缩放比例            | 5       |
 
 ### [rofi.theme]
 
-| Key   | Description                  | Default |
-| ----- | ---------------------------- | ------- |
-| scale | themeselect.sh configuration | 6       |
+| 键   | 描述                         | 默认值 |
+| ----- | ----------------------------------- | ------- |
+| scale | 配置 themeselect.sh 的缩放比例            | 6       |
 
 ### [rofi.wallpaper]
 
-| Key   | Description                    | Default |
-| ----- | ------------------------------ | ------- |
-| scale | swwwallselect.sh configuration | 8       |
+| 键   | 描述                             | 默认值 |
+| ----- | ------------------------------------- | ------- |
+| scale | 配置 swwwallselect.sh 的缩放比例              | 8       |
 
 ### [screenshot]
 
-| Key                     | Description                      | Default |
-| ----------------------- | -------------------------------- | ------- |
-| annotation_post_command | Post command for annotation tool | [""]    |
-| annotation_pre_command  | Pre command for annotation tool  | []      |
-| annotation_tool         | Annotation tool                  | "satty" |
+| 键                     | 描述                         | 默认值 |
+| ----------------------- | ----------------------------------- | ------- |
+| annotation_post_command | 注释工具执行后的命令               | [""]    |
+| annotation_pre_command  | 注释工具执行前的命令               | []      |
+| annotation_tool         | 用于注释的工具                     | "satty" |
 
 ### [sysmonitor]
 
-| Key      | Description                                   | Default |
-| -------- | --------------------------------------------- | ------- |
-| commands | Fallback command options for system monitor   | [""]    |
-| execute  | Default command to execute for system monitor | ""      |
+| 键      | 描述                                     | 默认值 |
+| -------- | ----------------------------------------------- | ------- |
+| commands | 系统监控的备用命令选项                           | [""]    |
+| execute  | 系统监控默认执行命令                             | ""      |
 
 ### [volume]
 
-| Key         | Description                                 | Default |
-| ----------- | ------------------------------------------- | ------- |
-| boost       | Enable volume boost                         | false   |
-| boost_limit | Volume boost limit                          | 120     |
-| notify      | Volume control notify                       | true    |
-| steps       | Number of steps to increase/decrease volume | 5       |
+| 键         | 描述                                | 默认值 |
+| ----------- | ------------------------------------------ | ------- |
+| boost       | 启用音量提升                                 | false   |
+| boost_limit | 音量阈值                                    | 120     |
+| notify      | 音量控制提示                                 | true    |
+| steps       | 每次调节音量的单位                            | 5       |
 
 ### [wallbash]
 
-| Key           | Description                            | Default |
-| ------------- | -------------------------------------- | ------- |
-| skip_template | Skips the template when using wallbash | [""]    |
+| 键           | 描述                          | 默认值 |
+| ------------- | ------------------------------------ | ------- |
+| skip_template | 使用 wallbash 时跳过模板              | [""]    |
 
 ### [wallpaper]
 
-| Key          | Description                            | Default                       |
-| ------------ | -------------------------------------- | ----------------------------- |
-| backend      | Wallpaper backend                      | "swww"                        |
-| custom_paths | List of paths to search for wallpapers | ["$HOME/Pictures/Wallpapers"] |
+| 键          | 描述                                  | 默认值                       |
+| ------------ | -------------------------------------------- | ----------------------------- |
+| backend      | 壁纸后端进程                                     | "swww"                        |
+| custom_paths | 搜索壁纸的路径列表                           | ["$HOME/Pictures/Wallpapers"] |
 
 ### [wallpaper.swww]
 
-| Key                | Description                            | Default |
-| ------------------ | -------------------------------------- | ------- |
-| duration           | Transition duration                    | 1       |
-| framerate          | Transition framerate                   | 60      |
-| transition_default | Transition type for default wallpaper  | "grow"  |
-| transition_next    | Transition type for next wallpaper     | "grow"  |
-| transition_prev    | Transition type for previous wallpaper | "outer" |
+| 键                | 描述                                     | 默认值 |
+| ------------------ | ----------------------------------------------- | ------- |
+| duration           | 壁纸过渡时长                                    | 1       |
+| framerate          | 壁纸过渡帧率                                    | 60      |
+| transition_default | 默认壁纸过渡效果                                | "grow"  |
+| transition_next    | 下一张壁纸过渡效果                              | "grow"  |
+| transition_prev    | 上一张壁纸过渡效果                              | "outer" |
 
 ### [waybar]
 
-| Key   | Description          | Default                   |
-| ----- | -------------------- | ------------------------- |
-| font  | Waybar font          | "JetBrainsMono Nerd Font" |
-| scale | Waybar total scaling | 30                        |
+| 键   | 描述                            | 默认值                   |
+| ----- | -------------------------------------- | ------------------------- |
+| font  | Waybar 字体                           | "JetBrainsMono Nerd Font" |
+| scale | Waybar 整体缩放比例                     | 30                        |
 
 ### [weather]
 
-| Key              | Description                                    | Default |
-| ---------------- | ---------------------------------------------- | ------- |
-| forecast_days    | Number of days to show forecast                | 3       |
-| location         | Location/coordinates string for weather output | ''      |
-| show_icon        | Show weather icon in waybar                    | true    |
-| show_location    | Show location in waybar                        | true    |
-| show_today       | Detailed description of today in tooltip       | true    |
-| temperature_unit | Temperature unit                               | 'c'     |
-| time_format      | Time format                                    | '24h'   |
-| windspeed_unit   | Windspeed unit                                 | 'km/h'  |
+| 键              | 描述                                       | 默认值 |
+| ---------------- | ------------------------------------------------- | ------- |
+| forecast_days    | 显示天气预报的天数                                 | 3       |
+| location         | 天气信息显示的地点/坐标字符串                      | ''      |
+| show_icon        | 在 Waybar 中显示天气图标                           | true    |
+| show_location    | 在 Waybar 中显示地点                               | true    |
+| show_today       | 在提示中显示今日详细天气信息                       | true    |
+| temperature_unit | 温度单位                                         | 'c'     |
+| time_format      | 时间格式                                         | '24h'   |
+| windspeed_unit   | 风速单位                                         | 'km/h'  |
 
 ### [wlogout]
 
-| Key   | Description   | Default |
-| ----- | ------------- | ------- |
-| style | Wlogout style | 2       |
+| 键   | 描述    | 默认值 |
+| ----- | -------------- | ------- |
+| style | Wlogout 样式    | 2       |
