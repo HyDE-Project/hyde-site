@@ -1,0 +1,40 @@
+---
+title: 欢迎来到 HyDE 项目
+description: 为 Arch hyprland 提供美观、动态和极简的配置！
+template: splash
+hero:
+  tagline: 为 Arch hyprland 提供美观、动态和极简的配置！
+  image:
+    file: ../../../assets/hyde.svg
+  actions:
+    - text: 开始使用 HyDE
+      link: /zh/getting-started/introduction
+      icon: rocket
+    - text: 在 GitHub 上探索
+      link: https://github.com/HyDE-Project
+      icon: github
+      variant: minimal
+banner:
+  content: |
+    缺少您的语言？帮助我们翻译此文档！<a href="https://github.com/HyDE-Project/hyde-site?tab=readme-ov-file#translating">查看如何操作。</a>
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## 功能
+
+<CardGrid stagger>
+  <Card title="XDG 兼容性" icon="seti:vala">
+    遵循 XDG 基本目录规范。
+  </Card>
+  <Card title="更轻松的核心更新" icon="add-document">
+    核心脚本与用户配置分离。
+  </Card>
+  <Card title="更多主题！" icon="moon">
+    提供更多主题选项。
+  </Card>
+  <Card title="模块化！" icon="puzzle">
+    该项目的目标之一是实现模块化。
+  </Card>
+
+</CardGrid>
