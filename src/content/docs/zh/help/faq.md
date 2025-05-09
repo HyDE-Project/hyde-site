@@ -1,50 +1,50 @@
 ---
-title: FAQs & Tips
-description: Frequently asked questions about HyDE
+title: 常见问题解答与技巧
+description: 关于 HyDE 的常见问题
 ---
 
 :::tip
-Hyprland related questions should be referenced to [Hyprland Wiki](https://wiki.hyprland.org)
+与 Hyprland 相关的问题请参考 [Hyprland 官方维基](https://wiki.hyprland.org)
 :::
 
-### Add Global or Custom Wallpapers
+### 添加全局或自定义壁纸
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-#### Global wallpapers
+#### 全局壁纸
 
-Global wallpapers will be shown in the selector across all themes.
+全局壁纸将在所有主题的选择器中显示。
 
-In your `xdg_config/hyde/config.toml` add this.
+在您的 `xdg_config/hyde/config.toml` 中添加以下内容：
 
 ```toml
 [wallpaper]
 custom_paths = [
     "$XDG_PICTURES_DIR",
     "/path/to/pretty/wallpapers",
-] # List of paths to search for wallpapers
+] # 搜索壁纸的路径列表
 
 ```
 
-#### Custom wallpapers per theme
+#### 每个主题的自定义壁纸
 
-##### Option 1: GUI
+##### 方法一：图形界面
 
-Using dolphin to select a wallpaper/s for a theme
+使用 Dolphin 为主题选择壁纸
 
-![image](https://github.com/user-attachments/assets/a72458fc-da94-45e4-8dd4-dba48b910e82)
+![图片](https://github.com/user-attachments/assets/a72458fc-da94-45e4-8dd4-dba48b910e82)
 
-1. Select image
-2. Right Click and hover, "Set As Wallpaper"
-3. Choose a destination theme
+1. 选择图片
+2. 右键点击并悬停在"设为壁纸"选项上
+3. 选择目标主题
 
-##### Option 2: CLI
+##### 方法二：命令行
 
-Custom wallpapers are added per theme.
+自定义壁纸是按主题添加的。
 
-1. Add a wallpaper in`~/.config/hyde/themes/Theme-Name/wallpapers/*`.
-2. Then run`hyde-shell reload`
+1. 在 `~/.config/hyde/themes/主题名称/wallpapers/*` 中添加壁纸。
+2. 然后运行 `hyde-shell reload`
 
 ---
 
@@ -52,35 +52,35 @@ Custom wallpapers are added per theme.
 
 </details>
 
-### How do I screen record?
+### 如何录制屏幕？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You can screen record using the following wayland based recording packages.
+您可以使用以下基于 Wayland 的录制软件包进行屏幕录制。
 
 `wl-screenrec`
 
 `wf-recorder`
 
-`kooha `
+`kooha`
 
 `obs`
 
 </details>
 
-### How do I set my own preferences?
+### 如何设置我自己的偏好？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You can set your Hyprland preferences in `xdg_config/hypr/userprefs.conf`. These settings are retained even when updating the repository.
+您可以在 `xdg_config/hypr/userprefs.conf` 中设置您的 Hyprland 偏好。即使在更新仓库时，这些设置也会被保留。
 
-See `Configuring` > `Hyprland` to learn how we structure hyprlad configurations.
+查看 `配置` > `Hyprland` 部分了解我们如何组织 Hyprland 配置。
 
 </details>
 
-### How do I update my dotfiles to the latest?
+### 如何将我的配置文件更新到最新版本？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
@@ -91,58 +91,58 @@ git pull
 ./install.sh -r
 ```
 
-See `Resources` > `Restore Configuration` on how it works
+查看 `资源` > `恢复配置` 了解其工作原理
 
 </details>
 
-### How do I set my monitor resolution and refresh rate?
+### 如何设置我的显示器分辨率和刷新率？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You can set the monitor resolution and refresh rate in `~/.config/hypr/monitors.conf`
+您可以在 `~/.config/hypr/monitors.conf` 中设置显示器分辨率和刷新率
 
-`monitor = DP-1,2560x1440@144,0x0, 1` >> The @ set's the refresh rate
+`monitor = DP-1,2560x1440@144,0x0, 1` >> 其中 @ 设置刷新率
 
-This is a `how to hyprland` question, always seek there wiki, https://wiki.hyprland.org/Configuring/Monitors/
+这是一个"如何使用 Hyprland"的问题，请始终查阅其维基，https://wiki.hyprland.org/Configuring/Monitors/
 
 </details>
 
-### How do I remove the pokemon characters or change the terminal startup intro?
+### 如何移除宝可梦角色或更改终端启动介绍？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You need to edit the `.hyde.zshrc` file in your home directory at `~/.hyde.zshrc`
+您需要编辑主目录中的 `.hyde.zshrc` 文件，位置在 `~/.hyde.zshrc`
 
-1. Edit`~/.hyde.zshrc`
-2. add a # to line 158 where pokego --no-title -r 1,3,6
-3. save
+1. 编辑 `~/.hyde.zshrc`
+2. 在第 158 行的 pokego --no-title -r 1,3,6 前添加 #
+3. 保存
 
 </details>
 
-### How do I edit the sddm wallpaper or settings?
+### 如何编辑 SDDM 壁纸或设置？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-- Change Wallpaper
-  You need to manually run the script `~/.config/hypr/sddmwall.sh` on the wallpaper you want for the login screen, you can select the wallpaper from the themes and make sure it is the current swww wallpaper.
-- Change SDDM settings
-  (colors, background, date format, font) can be configured in `/usr/share/sddm/themes/corners/theme.conf`
+- 更改壁纸
+  您需要手动在您想要用作登录屏幕的壁纸上运行脚本 `~/.config/hypr/sddmwall.sh`，您可以从主题中选择壁纸并确保它是当前的 swww 壁纸。
+- 更改 SDDM 设置
+  (颜色、背景、日期格式、字体)可以在 `/usr/share/sddm/themes/corners/theme.conf` 中配置
 
-if you want to modify the structure then you'll have to modify the qml files in /usr/share/sddm/themes/corners/components
+如果您想修改结构，那么您需要修改 /usr/share/sddm/themes/corners/components 中的 qml 文件
 
 </details>
 
-### How can I change keyboard layout?
+### 如何更改键盘布局？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-Read this first: https://wiki.hyprland.org/Configuring/Variables/#input
+首先阅读这个：https://wiki.hyprland.org/Configuring/Variables/#input
 
-In HyDE we have the `~/.config/hypr/userprefs.conf` add the configuration in there.
+在 HyDE 中，我们有 `~/.config/hypr/userprefs.conf`，在那里添加配置。
 
 ```
 input {
@@ -150,66 +150,66 @@ input {
 }
 ```
 
-Use `SUPER` + `K` to switch between layouts.
+使用 `SUPER` + `K` 在布局之间切换。
 
 </details>
 
-### No thumbnails on selectors?
+### 选择器上没有缩略图？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-If your thumbnails are not loading, try to rebuild your wallpaper cache.
+如果您的缩略图没有加载，尝试重建您的壁纸缓存。
 
 `swwwallcache.sh`
 
 </details>
 
-### How do I edit the waybar?
+### 如何编辑 Waybar？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You can set your required modules in this file - `~/.config/waybar/config.ctl`
+您可以在此文件中设置所需的模块 - `~/.config/waybar/config.ctl`
 
-Refer to the theming documentation here in the Wiki. [Waybar](https://github.com/Alexays/Waybar/wiki)
+参考维基中的主题文档。[Waybar](https://github.com/Alexays/Waybar/wiki)
 
 </details>
 
-### How do I remove the blur on waybar?
+### 如何移除 Waybar 上的模糊效果？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You can remove the blur on waybar by removing blurls = waybar in the themes directory by commenting the line at the end of each `theme.conf` file.
-Themes Directory: `~/.config/hypr/themes/`
+您可以通过在主题目录中注释掉每个 `theme.conf` 文件末尾的 blurls = waybar 行来移除 Waybar 上的模糊效果。
+主题目录：`~/.config/hypr/themes/`
 
 </details>
 
-### How do I launch the gamebar shown in the preview?
+### 如何启动预览中显示的游戏栏？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-You'll need steam game or lutris library installed, and then run this:
+您需要安装 Steam 游戏或 Lutris 库，然后运行：
 
-`~/.config/hypr/scripts/gamelauncher.sh <n>` # where n is style [1-4]
+`~/.config/hypr/scripts/gamelauncher.sh <n>` # 其中 n 是样式 [1-4]
 
 </details>
 
-### How can I launch it on app launcher?
+### 如何在应用启动器上启动它？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-Find the .desktop entry using this handy command find /usr/share/applications -name '\*code.desktop' image
-You should copy then edit the .desktop entry of each application to `~/.local/share/applications/`
-Find the Exec = part then add the flags
-image
+使用这个方便的命令查找 .desktop 条目 find /usr/share/applications -name '\*code.desktop' 图片
+您应该复制然后编辑每个应用程序的 .desktop 条目到 `~/.local/share/applications/`
+找到 Exec = 部分然后添加标志
+图片
 
-> 📢 Remember, if you're looking to edit or create a .desktop file, it's a good practice to place it in ~/.local/share/applications/ to avoid modifying >system-wide files. This ensures that your changes are user-specific and do not require administrative privileges
+> 📢 请记住，如果您想编辑或创建 .desktop 文件，最好将其放在 ~/.local/share/applications/ 中，以避免修改系统范围的文件。这确保您的更改是特定于用户的，不需要管理员权限
 
-Here is the [wiki](https://wiki.archlinux.org/title/Desktop_entries) on how to deal with .desktop entries.
+这里是关于如何处理 .desktop 条目的 [维基](https://wiki.archlinux.org/title/Desktop_entries)。
 
 </details>
 
@@ -218,37 +218,37 @@ Here is the [wiki](https://wiki.archlinux.org/title/Desktop_entries) on how to d
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-Please navigate to the Hyprland wiki for the explanation.
+请前往 Hyprland 维基获取相关解释。
 
 [XWayland](https://wiki.hyprland.org/Configuring/XWayland/)
-Note that if the application does not support Wayland, HyDE, Hyprland and Wayland itself don't have powers to magically fixed the issue! Do not report this as an issue, try to open questions on the [Discussion panel](https://github.com/HyDE-Project/Hyde-cli) for help.
+请注意，如果应用程序不支持 Wayland，HyDE、Hyprland 和 Wayland 本身没有能力神奇地解决问题！不要将此报告为问题，尝试在 [讨论面板](https://github.com/HyDE-Project/Hyde-cli) 上提问以获取帮助。
 
-Known Issues
+已知问题
 
-- Few scaling issues with rofi configs, as they are created based on my ultrawide (21:9) display.
-- Random lockscreen crash, refer https://github.com/swaywm/sway/issues/7046
-- Waybar launching rofi breaks mouse input (added sleep 0.1 as workaround), refer https://github.com/Alexays/Waybar/issues/1850
-- Flatpak QT apps do not follow system theme
+- rofi 配置中有一些缩放问题，因为它们是基于我的超宽 (21:9) 显示器创建的。
+- 随机锁屏崩溃，参考 https://github.com/swaywm/sway/issues/7046
+- Waybar 启动 rofi 会中断鼠标输入（添加 sleep 0.1 作为临时解决方案），参考 https://github.com/Alexays/Waybar/issues/1850
+- Flatpak QT 应用不遵循系统主题
 
 </details>
 
-### "Login failed!" loop on SDDM?
+### SDDM 上出现"登录失败！"循环？
 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-If your user (or login name) contains capitalisation or special characters, you will need to edit your SDDM theme to be able to log in through the SDDM.
+如果您的用户（或登录名）包含大写字母或特殊字符，您需要编辑 SDDM 主题才能通过 SDDM 登录。
 
-To do this, follow these steps:
+要做到这一点，请按照以下步骤操作：
 
-1. When in the SDDM screen, open a tty with `Ctrl + Alt + F6` (or other F key)
-2. Log in as the account with the issue
-3. `nano usr/share/sddm/themes/[theme name]/theme.conf`
-4. Find parameter `AllowBadUsername` and set it to true
-5. Reboot
+1. 在 SDDM 屏幕时，使用 `Ctrl + Alt + F6`（或其他 F 键）打开一个 tty
+2. 以有问题的账户登录
+3. `nano usr/share/sddm/themes/[主题名称]/theme.conf`
+4. 找到参数 `AllowBadUsername` 并将其设置为 true
+5. 重启
 
-If you still can't log in after these steps, you can set, on the same file, `AllowEmptyPassword` to true, reboot, log in still writing your password, and after logging in you can set it back to false safely.
+如果在这些步骤后您仍然无法登录，您可以在同一文件中将 `AllowEmptyPassword` 设置为 true，重启，仍然输入您的密码登录，登录后您可以安全地将其设置回 false。
 
-Here is a [GitHub Issue](https://github.com/HyDE-Project/HyDE/issues/404) about this behaviour. 
+这里有一个关于此行为的 [GitHub 问题](https://github.com/HyDE-Project/HyDE/issues/404)。
 
 </details>
