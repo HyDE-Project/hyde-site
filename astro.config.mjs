@@ -12,7 +12,8 @@ export default defineConfig({
         en: { label: 'English', lang: 'en' },
         fr: { label: 'Français', lang: 'fr' },
         es: { label: 'Español', lang: 'es' },
-        zh: { label: '简体中文', lang: 'zh' }
+        zh: { label: '简体中文', lang: 'zh' },
+        de: { label: 'Deutsch', lang: 'de' },
       },
       social: {
         github: 'https://github.com/HyDE-Project',

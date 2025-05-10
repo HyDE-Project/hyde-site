@@ -141,6 +141,7 @@ make update clean install
 3. **Sync changes**
 
 - If you want to get the latest changes from the `hyprdots/HyDE` repo and apply to your local install
+
   ```sh
   Hyde update
   Hyde restore Config
