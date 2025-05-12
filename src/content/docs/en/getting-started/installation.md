@@ -11,7 +11,8 @@ For Nixos support there is a separate project being maintained @ [Hydenix](https
 :::note
 
 The install script will auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
-Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA). Fancy stuff here
+Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
+:::
 
 :::danger
 
@@ -77,7 +78,7 @@ The install script can be executed in different modes,
 ./install.sh -i pkg_user.lst # minimal install pkg_core.lst + pkg_user.lst without configs
 ```
 
-- each[section](#process) can also be independently executed as,
+- each [section](#process) can also be independently executed as,
 
 ```shell
 ./install.sh -i # minimal install hyprland without any configs

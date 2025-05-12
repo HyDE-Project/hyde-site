@@ -46,9 +46,7 @@ Custom wallpapers are added per theme.
 1. Add a wallpaper in`~/.config/hyde/themes/Theme-Name/wallpapers/*`.
 2. Then run`hyde-shell reload`
 
----
 
----
 
 </details>
 
@@ -100,11 +98,12 @@ See `Resources` > `Restore Configuration` on how it works
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
+Read this for details: https://wiki.hyprland.org/Configuring/Monitors/
+
 You can set the monitor resolution and refresh rate in `~/.config/hypr/monitors.conf`
 
-`monitor = DP-1,2560x1440@144,0x0, 1` >> The @ set's the refresh rate
+Ex: `monitor = DP-1,2560x1440@144,0x0, 1` >> The @ set's the refresh rate, but note that your monitor may not support all refresh rates.
 
-This is a `how to hyprland` question, always seek there wiki, https://wiki.hyprland.org/Configuring/Monitors/
 
 </details>
 
@@ -115,9 +114,9 @@ This is a `how to hyprland` question, always seek there wiki, https://wiki.hyprl
 
 You need to edit the `.hyde.zshrc` file in your home directory at `~/.hyde.zshrc`
 
-1. Edit`~/.hyde.zshrc`
-2. add a # to line 158 where pokego --no-title -r 1,3,6
-3. save
+1. Edit `~/.hyde.zshrc`
+2. Add a # to line 158 where it writes `pokego --no-title -r 1,3,6`
+3. Save
 
 </details>
 
@@ -140,7 +139,7 @@ if you want to modify the structure then you'll have to modify the qml files in 
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-Read this first: https://wiki.hyprland.org/Configuring/Variables/#input
+Read this for details: https://wiki.hyprland.org/Configuring/Variables/#input
 
 In HyDE we have the `~/.config/hypr/userprefs.conf` add the configuration in there.
 
@@ -172,7 +171,7 @@ If your thumbnails are not loading, try to rebuild your wallpaper cache.
 
 You can set your required modules in this file - `~/.config/waybar/config.ctl`
 
-Refer to the theming documentation here in the Wiki. [Waybar](https://github.com/Alexays/Waybar/wiki)
+Refer to the theming documentation in the [Waybar Wiki](https://github.com/Alexays/Waybar/wiki).
 
 </details>
 
@@ -207,7 +206,9 @@ You should copy then edit the .desktop entry of each application to `~/.local/sh
 Find the Exec = part then add the flags
 image
 
-> 📢 Remember, if you're looking to edit or create a .desktop file, it's a good practice to place it in ~/.local/share/applications/ to avoid modifying >system-wide files. This ensures that your changes are user-specific and do not require administrative privileges
+:::note
+📢 Remember, if you're looking to edit or create a .desktop file, it's a good practice to place it in ~/.local/share/applications/ to avoid modifying >system-wide files. This ensures that your changes are user-specific and do not require administrative privileges
+:::
 
 Here is the [wiki](https://wiki.archlinux.org/title/Desktop_entries) on how to deal with .desktop entries.
 
@@ -218,7 +219,7 @@ Here is the [wiki](https://wiki.archlinux.org/title/Desktop_entries) on how to d
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-Please navigate to the Hyprland wiki for the explanation.
+Please refer to the [Hyprland Wiki](https://wiki.hyprland.org) for the explanation.
 
 [XWayland](https://wiki.hyprland.org/Configuring/XWayland/)
 Note that if the application does not support Wayland, HyDE, Hyprland and Wayland itself don't have powers to magically fixed the issue! Do not report this as an issue, try to open questions on the [Discussion panel](https://github.com/HyDE-Project/Hyde-cli) for help.

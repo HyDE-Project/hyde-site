@@ -78,9 +78,9 @@ Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE's hyprland configura
 
 This section contains the default configuration of HyDE. It is recommended not to change this section.
 
-**Filepath:** $XDG_DATA_HOME/hyde/hyprland.conf`
+**Filepath:** `$XDG_DATA_HOME/hyde/hyprland.conf`
 
-This file is sourced on top of other configurations in ~/.config/hypr/hyprland.conf`.
+This file is sourced on top of other configurations in `~/.config/hypr/hyprland.conf`.
 
 ```ini
 # Boilerplate configuration
@@ -105,7 +105,7 @@ To unset a variable, leave it blank
 
 :::
 
-**Filepath:** $XDG_CONFIG_HOME/hypr/hyde.conf`
+**Filepath:** `$XDG_CONFIG_HOME/hypr/hyde.conf`
 
 ### HyDE Configuration Variables
 
@@ -133,7 +133,7 @@ To unset a variable, leave it blank
 | $FONT_ANTIALIASING   | Font antialiasing           | rgba                         |
 | $FONT_HINTING        | Font hinting                | full                         |
 
-### Startup Commands ($start.\*`)
+### Startup Commands (`$start.\*`)
 
 The default commands on startup.
 
@@ -154,7 +154,7 @@ The default commands on startup.
 | $start.AUTH_DIALOGUE        | Starts the authentication dialogue script                    | $scrPath/polkitkdeauth.sh                                                                    |
 | $start.IDLE_DAEMON          | Starts the idle daemon                                       | $IDLE                                                                                        |
 
-### Environment Variables ($env.\*`)
+### Environment Variables (`$env.\*`)
 
 | Variable                                 | Description                                    | Default Value                 |
 | ---------------------------------------- | ---------------------------------------------- | ----------------------------- |
@@ -192,10 +192,10 @@ This section is for user configuration. It is recommended to change this section
 
 **Filepaths:**
 
-- ./keybindings.conf`
-- ./windowrules.conf`
-- ./monitors.conf`
-- ./userprefs.conf`
+- `./keybindings.conf`
+- `./windowrules.conf`
+- `./monitors.conf`
+- `./userprefs.conf`
 
 ---
 
@@ -210,4 +210,4 @@ Also Hyprland can hot reload the configuration files, so you can edit them and s
 
 Now you should know which file is which. Refer to the [Hyprland Wiki](https://wiki.hyprland.org) for more information and to achieve your perfect desktop experience.
 
-Also see[FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout)
+Also see [FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout).

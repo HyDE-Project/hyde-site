@@ -45,7 +45,9 @@ A template requires three parts:
 
 ---
 
-> **Note:** **target**|**command** should always be on line 1 of every template file. We will call it `header line`.
+:::note
+**target**|**command** should always be on line 1 of every template file. We will call it `header line`.
+:::
 
 #### Target File
 
@@ -63,7 +65,9 @@ Use environment variables to handle directories dynamically:
 
 After filling the target file with contents, you can run arbitrary commands/scripts for post-processing. Use the `WALLBASH_SCRIPTS` variable to navigate to Wallbash's script directory, e.g., `WALLBASH_SCRIPTS/your_script.sh`.
 
-> **Caution:** Only add templates from trusted authors to avoid executing bad code.
+:::caution 
+Only add templates from trusted authors to avoid executing bad code.
+:::
 
 #### Contents
 
