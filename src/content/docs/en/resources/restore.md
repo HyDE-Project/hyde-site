@@ -5,7 +5,7 @@ description: Restore script's logic
 
 :::note
 
-> "restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
+"restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
 
 ```sh
 ./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>

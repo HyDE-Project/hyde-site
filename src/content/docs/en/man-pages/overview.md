@@ -5,4 +5,4 @@ sidebar:
   order: 1
 ---
 
-HyDE manuals for scripts and executables
+HyDE manuals for scripts and executables.
