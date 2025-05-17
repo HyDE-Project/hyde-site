@@ -51,9 +51,9 @@ or you can `cp  Scripts/pkg_extra.lst Scripts/pkg_user.lst` if you wish to insta
 
 Clone the repo and change the directory to the script path. Then make sure the user has [w]rite and e[x]ecute permission to the clone directory
 
-```sh
+```shell
 pacman -Sy git
-git clone --depth 1 https://github.com/prasanthrangan/hyprdots ~/HyDE
+git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
 cd ~/HyDE/Scripts
 ```
 

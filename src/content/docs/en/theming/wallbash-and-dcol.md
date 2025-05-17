@@ -39,11 +39,11 @@ A template requires three parts:
 
 ## The basic format:
 
-| target       | command |
-| ------------ | ------- |
-| **contents** |
+```
+target|command 
+contents
+```
 
----
 
 :::note
 **target**|**command** should always be on line 1 of every template file. We will call it `header line`.
