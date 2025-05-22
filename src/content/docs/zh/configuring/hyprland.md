@@ -133,7 +133,7 @@ source = ~/.local/share/hyde/hyprland.conf
 | $FONT_ANTIALIASING   | 字体抗锯齿                 | rgba                         |
 | $FONT_HINTING        | 字体提示                   | full                         |
 
-### 启动命令 ($start.\*`)
+### 启动命令 (`$start.\*`)
 
 默认的启动命令。
 
@@ -154,7 +154,7 @@ source = ~/.local/share/hyde/hyprland.conf
 | $start.AUTH_DIALOGUE      | 启动认证对话框脚本                                           | $scrPath/polkitkdeauth.sh                                                                  |
 | $start.IDLE_DAEMON        | 启动空闲守护程序                                             | $IDLE                                                                                      |
 
-### 环境变量 ($env.\*`)
+### 环境变量 (`$env.\*`)
 
 | 变量名                                 | 描述                                           | 默认值                       |
 | ------------------------------------- | -------------------------------------------- | --------------------------- |
@@ -192,10 +192,10 @@ source = ~/.local/share/hyde/hyprland.conf
 
 **文件路径：**
 
-- ./keybindings.conf
-- ./windowrules.conf
-- ./monitors.conf
-- ./userprefs.conf
+- `./keybindings.conf`
+- `./windowrules.conf`
+- `./monitors.conf`
+- `./userprefs.conf`
 
 ---
 

@@ -46,10 +46,6 @@ custom_paths = [
 1. 在 `~/.config/hyde/themes/主题名称/wallpapers/*` 中添加壁纸。
 2. 然后运行 `hyde-shell reload`
 
----
-
----
-
 </details>
 
 ### 如何录制屏幕？
@@ -102,9 +98,7 @@ git pull
 
 您可以在 `~/.config/hypr/monitors.conf` 中设置显示器分辨率和刷新率
 
-`monitor = DP-1,2560x1440@144,0x0, 1` >> 其中 @ 设置刷新率
-
-这是一个"如何使用 Hyprland"的问题，请始终查阅其维基，https://wiki.hyprland.org/Configuring/Monitors/
+例如：`monitor = DP-1,2560x1440@144,0x0, 1` >> 其中 @ 设置刷新率，但请注意，您的显示器可能不支持所有刷新率。
 
 </details>
 
@@ -140,7 +134,7 @@ git pull
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-首先阅读这个：https://wiki.hyprland.org/Configuring/Variables/#input
+在这里查看更多细节：https://wiki.hyprland.org/Configuring/Variables/#input
 
 在 HyDE 中，我们有 `~/.config/hypr/userprefs.conf`，在那里添加配置。
 
@@ -172,7 +166,7 @@ input {
 
 您可以在此文件中设置所需的模块 - `~/.config/waybar/config.ctl`
 
-参考维基中的主题文档。[Waybar](https://github.com/Alexays/Waybar/wiki)
+请参考 [Waybar Wiki](https://github.com/Alexays/Waybar/wiki) 。
 
 </details>
 
@@ -207,9 +201,11 @@ input {
 找到 Exec = 部分然后添加标志
 图片
 
+:::note
 > 📢 请记住，如果您想编辑或创建 .desktop 文件，最好将其放在 ~/.local/share/applications/ 中，以避免修改系统范围的文件。这确保您的更改是特定于用户的，不需要管理员权限
 
-这里是关于如何处理 .desktop 条目的 [维基](https://wiki.archlinux.org/title/Desktop_entries)。
+这里是关于如何处理 .desktop 条目的 [Wiki](https://wiki.archlinux.org/title/Desktop_entries)。
+:::
 
 </details>
 
@@ -218,7 +214,7 @@ input {
 <details>
 <summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
 
-请前往 Hyprland 维基获取相关解释。
+请参阅[Hyprland Wiki](https://wiki.hyprland.org)获取解释。
 
 [XWayland](https://wiki.hyprland.org/Configuring/XWayland/)
 请注意，如果应用程序不支持 Wayland，HyDE、Hyprland 和 Wayland 本身没有能力神奇地解决问题！不要将此报告为问题，尝试在 [讨论面板](https://github.com/HyDE-Project/Hyde-cli) 上提问以获取帮助。

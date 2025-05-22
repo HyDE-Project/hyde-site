@@ -11,7 +11,8 @@ description: HyDE 安装指南
 :::note
 
 安装脚本会自动检测NVIDIA显卡并为您的内核安装nvidia-dkms驱动。
-请确保您的NVIDIA显卡支持dkms驱动，支持的显卡列表请参考[这里](https://wiki.archlinux.org/title/NVIDIA)。这里有些花哨的东西
+请确保您的NVIDIA显卡支持dkms驱动，支持的显卡列表请参考[这里](https://wiki.archlinux.org/title/NVIDIA)。
+:::
 
 :::danger
 
@@ -49,9 +50,9 @@ cd ~/HyDE/Scripts
 
 克隆仓库并将当前工作目录跳转至脚本路径。然后确保用户对克隆目录具有写[w]和执行[x]权限
 
-```sh
+```shell
 pacman -Sy git
-git clone --depth 1 https://github.com/prasanthrangan/hyprdots ~/HyDE
+git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
 cd ~/HyDE/Scripts
 ```
 
@@ -76,7 +77,7 @@ cd ~/HyDE/Scripts
 ./install.sh -i pkg_user.lst # 最小化安装 pkg_core.lst + pkg_user.lst 不包含配置
 ```
 
-- 每个[部分](#process)也可以独立执行，
+- 每个 [部分](#process)也可以独立执行，
 
 ```shell
 ./install.sh -i # 最小化安装hyprland，不包含任何配置

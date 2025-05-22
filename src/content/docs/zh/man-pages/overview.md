@@ -5,4 +5,4 @@ sidebar:
   order: 1
 ---
 
-HyDE 脚本和可执行文件的手册
+HyDE 脚本和可执行文件的手册。
