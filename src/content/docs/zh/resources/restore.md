@@ -5,7 +5,7 @@ description: Restore 脚本的逻辑
 
 :::note
 
-> 在以下内容中，"restore"指的是将仓库中的配置文件恢复到您的 $HOME 目录，而不是相反的操作。
+在以下内容中，"restore"指的是将仓库中的配置文件恢复到您的 $HOME 目录，而不是相反的操作。
 
 ```sh
 ./restore_cfg.sh </path/to/file.psv > <可选 /path/to/hyde/clone>
