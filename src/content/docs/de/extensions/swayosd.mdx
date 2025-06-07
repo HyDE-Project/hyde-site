@@ -1,0 +1,13 @@
+---
+title: swayosd
+description: Ein auf GTK basierender On-Screen-Display für Tastaturkürzel wie Groß-schreiben und Lautstärke
+---
+
+SwayOSD wird von HyDE bereits unterstützt. Sie müssen lediglich den Daemon manuell hinzufügen, damit es funktioniert.
+
+### Schnelleinrichtung
+
+```bash
+  exec-once = swayosd-server # enable swayosd service
+  exec-once = $(pkexec swayosd-libinput-backend) # swayosd service for keyboard input (requires to be run in a subshell)
+```

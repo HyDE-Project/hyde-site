@@ -5,32 +5,36 @@ template: splash
 hero:
   tagline: Aesthetic, dynamic and minimal dots for Arch hyprland!
   image:
-    file: ../../assets/hyde.png
+    file: ../../assets/hyde.svg
   actions:
     - text: Get Started with HyDE
-      link: getting-started/introduction
+      link: en/getting-started/introduction
       icon: rocket
     - text: Explore on GitHub
       link: https://github.com/HyDE-Project
       icon: github
       variant: minimal
+banner:
+  content: |
+    Your language is missing? Help us translate this documentation! <a href="https://github.com/HyDE-Project/hyde-site?tab=readme-ov-file#translating">See how.</a>
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
 ## Features
 
 <CardGrid stagger>
-	<Card title="XDG Compliance" icon="seti:vala">
-		Follows the XDG Base Directory Specification.
-	</Card>
-	<Card title="Easier core updates" icon="add-document">
-		Updates are now easier with the new core scripts.
-	</Card>
-	<Card title="Separate parent directory" icon="seti:folder">
-		Parent directory is now separate from the core scripts `(./hyde-shell)`.
-	</Card>
-	<Card title="New core scripts location" icon="seti:powershell">
-		Core scripts are now located in the `(./lib/hyde-shell/)` directory.
-	</Card>
+  <Card title="XDG Compliance" icon="seti:vala">
+    Follows the XDG Base Directory Specification.
+  </Card>
+  <Card title="Easier core updates" icon="add-document">
+    Core scripts are separated to user config.
+  </Card>
+  <Card title="More Themes!" icon="moon">
+	More theming options.
+</Card>
+  <Card title="Modular!" icon="puzzle">
+	One of the directions of this project is to be modular.
+</Card>
+
 </CardGrid>

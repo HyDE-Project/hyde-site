@@ -7,14 +7,14 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'The HyDE project',
-      defaultLocale: 'root',
+      defaultLocale: 'en',
       locales: {
-        root: { label: 'English', lang: 'en' },
-        es: { label: 'Español', lang: 'es' },
-        de: { label: 'Deutsch', lang: 'de' },
-        nl: { label: 'Nederlands', lang: 'nl' },
-        zh: { label: '中文', lang: 'zh' },
+        en: { label: 'English', lang: 'en' },
         fr: { label: 'Français', lang: 'fr' },
+        es: { label: 'Español', lang: 'es' },
+        zh: { label: '简体中文', lang: 'zh' },
+        de: { label: 'Deutsch', lang: 'de' },
+        hi: { label: 'हिन्दी', lang: 'hi' },
       },
       social: {
         github: 'https://github.com/HyDE-Project',
@@ -23,50 +23,28 @@ export default defineConfig({
       sidebar: [
         {
           label: '🚀 Getting Started',
-          items: [
-            { label: 'Introduction', slug: 'getting-started/introduction' },
-            { label: 'Installation', slug: 'getting-started/installation' },
-            { label: 'Update', slug: 'getting-started/update' },
-          ],
-        },
-        {
-          label: '🌟 Features',
-          items: [
-            { label: 'HyDE CLI', slug: 'features/cli' },
-            { label: 'HyprPanel', slug: 'features/hyprpanel' },
-          ],
+          autogenerate: {directory: 'getting-started'},
         },
         {
           label: '🛠️ Configuring',
-          items: [
-            { label: 'Restore Configuration', slug: 'configuring/restore' },
-            { label: 'Hyprland', slug: 'configuring/hyprland' },
-            { label: 'Waybar', slug: 'configuring/waybar' },
-
-          ],
+          autogenerate: {directory: 'configuring'},
+        },
+        {
+          label: '📙 Man Pages',
+          autogenerate: {directory: 'man-pages'},
         },
         {
           label: '🎨 Theming',
-          items: [
-            { label: 'HyDE Gallery', slug: 'theming/gallery' },
-            { label: 'Making Themes', slug: 'theming/making-themes' },
-          ],
+          autogenerate: {directory: 'theming'},
         },
         {
-          label: '🧩 Extensions',
-          items: [
-            { label: 'SwayOSD', slug: 'extensions/swayosd' },
-          ],
+          label: '📚 Resources',
+          autogenerate: {directory: 'resources'}
         },
         {
-          label: '📚 Resources & Help',
-          items: [
-            { label: 'FAQ', slug: 'resources/faq' },
-            { label: 'Roadmap', slug: 'resources/roadmap' },
-            { label: 'NVIDIA Support', slug: 'resources/nvidia' },
-            { label: 'Tools', slug: 'resources/tools' },
-          ],
-        },
+          label: '👥 Help',
+          autogenerate: {directory: 'help'}
+        }
       ],
     }),
   ],
