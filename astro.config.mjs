@@ -6,7 +6,11 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'The HyDE project',
+      title: 'HyDE',
+      customCss: [
+        // Path to our custom CSS file
+        './src/styles/custom.css',
+      ],
       defaultLocale: 'en',
       locales: {
         en: { label: 'English', lang: 'en' },
@@ -16,10 +20,18 @@ export default defineConfig({
         de: { label: 'Deutsch', lang: 'de' },
         hi: { label: 'हिन्दी', lang: 'hi' },
       },
-      social: {
-        github: 'https://github.com/HyDE-Project',
-        discord: 'https://discord.gg/8nWbDC4SnP',
-      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/HyDE-Project',
+        },
+        {
+          icon: 'discord',
+          label: 'Discord',
+          href: 'https://discord.gg/8nWbDC4SnP',
+        },
+      ],
       sidebar: [
         {
           label: '🚀 Getting Started',

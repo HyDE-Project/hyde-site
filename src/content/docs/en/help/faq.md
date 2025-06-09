@@ -3,14 +3,71 @@ title: FAQs & Tips
 description: Frequently asked questions about HyDE
 ---
 
+<style>
+.sl-markdown-content details {
+  border: 1px solid #A984CC;
+  border-radius: 8px;
+  padding: 0;
+  margin: 1rem 0;
+  background: var(--sl-color-gray-6);
+}
+
+.sl-markdown-content details summary {
+  background: #A984CC;
+  color: #ffffff;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px 8px 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sl-markdown-content details[open] summary {
+  border-radius: 8px 8px 0 0;
+}
+
+.sl-markdown-content details summary::-webkit-details-marker {
+  display: none;
+}
+
+.sl-markdown-content details summary::marker {
+  display: none;
+}
+
+.sl-markdown-content details summary::before {
+  content: "▶ ";
+  margin-right: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.sl-markdown-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.sl-markdown-content details > div {
+  padding: 1.5rem;
+}
+
+:root[data-theme="light"] .sl-markdown-content details {
+  background: var(--sl-color-white);
+  border-color: #A984CC;
+}
+
+:root[data-theme="light"] .sl-markdown-content details summary {
+  background: #A984CC;
+  color: #ffffff;
+}
+</style>
+
 :::tip
 Hyprland related questions should be referenced to [Hyprland Wiki](https://wiki.hyprland.org)
 :::
 
-### Add Global or Custom Wallpapers
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="wallpapers">How do I add global or custom wallpapers?</summary>
+<div>
 
 #### Global wallpapers
 
@@ -46,14 +103,12 @@ Custom wallpapers are added per theme.
 1. Add a wallpaper in`~/.config/hyde/themes/Theme-Name/wallpapers/*`.
 2. Then run`hyde-shell reload`
 
-
-
+</div>
 </details>
 
-### How do I screen record?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="screen-record">How do I screen record?</summary>
+<div>
 
 You can screen record using the following wayland based recording packages.
 
@@ -65,23 +120,23 @@ You can screen record using the following wayland based recording packages.
 
 `obs`
 
+</div>
 </details>
 
-### How do I set my own preferences?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="preferences">How do I set my own preferences?</summary>
+<div>
 
 You can set your Hyprland preferences in `xdg_config/hypr/userprefs.conf`. These settings are retained even when updating the repository.
 
 See `Configuring` > `Hyprland` to learn how we structure hyprlad configurations.
 
+</div>
 </details>
 
-### How do I update my dotfiles to the latest?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="update-dotfiles">How do I update my dotfiles to the latest?</summary>
+<div>
 
 ```sh
 cd ~/HyDE/Scripts
@@ -91,12 +146,12 @@ git pull
 
 See `Resources` > `Restore Configuration` on how it works
 
+</div>
 </details>
 
-### How do I set my monitor resolution and refresh rate?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="monitor-resolution">How do I set my monitor resolution and refresh rate?</summary>
+<div>
 
 Read this for details: https://wiki.hyprland.org/Configuring/Monitors/
 
@@ -104,13 +159,12 @@ You can set the monitor resolution and refresh rate in `~/.config/hypr/monitors.
 
 Ex: `monitor = DP-1,2560x1440@144,0x0, 1` >> The @ set's the refresh rate, but note that your monitor may not support all refresh rates.
 
-
+</div>
 </details>
 
-### How do I remove the pokemon characters or change the terminal startup intro?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="pokemon-terminal">How do I remove the pokemon characters or change the terminal startup intro?</summary>
+<div>
 
 You need to edit the `.hyde.zshrc` file in your home directory at `~/.hyde.zshrc`
 
@@ -118,12 +172,12 @@ You need to edit the `.hyde.zshrc` file in your home directory at `~/.hyde.zshrc
 2. Add a # to line 158 where it writes `pokego --no-title -r 1,3,6`
 3. Save
 
+</div>
 </details>
 
-### How do I edit the sddm wallpaper or settings?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="sddm-settings">How do I edit the sddm wallpaper or settings?</summary>
+<div>
 
 - Change Wallpaper
   You need to manually run the script `~/.config/hypr/sddmwall.sh` on the wallpaper you want for the login screen, you can select the wallpaper from the themes and make sure it is the current swww wallpaper.
@@ -132,12 +186,12 @@ You need to edit the `.hyde.zshrc` file in your home directory at `~/.hyde.zshrc
 
 if you want to modify the structure then you'll have to modify the qml files in /usr/share/sddm/themes/corners/components
 
+</div>
 </details>
 
-### How can I change keyboard layout?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="keyboard-layout">How can I change keyboard layout?</summary>
+<div>
 
 Read this for details: https://wiki.hyprland.org/Configuring/Variables/#input
 
@@ -151,55 +205,55 @@ input {
 
 Use `SUPER` + `K` to switch between layouts.
 
+</div>
 </details>
 
-### No thumbnails on selectors?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="thumbnails-selectors">No thumbnails on selectors?</summary>
+<div>
 
 If your thumbnails are not loading, try to rebuild your wallpaper cache.
 
 `swwwallcache.sh`
 
+</div>
 </details>
 
-### How do I edit the waybar?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="edit-waybar">How do I edit the waybar?</summary>
+<div>
 
 You can set your required modules in this file - `~/.config/waybar/config.ctl`
 
 Refer to the theming documentation in the [Waybar Wiki](https://github.com/Alexays/Waybar/wiki).
 
+</div>
 </details>
 
-### How do I remove the blur on waybar?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="waybar-blur">How do I remove the blur on waybar?</summary>
+<div>
 
 You can remove the blur on waybar by removing blurls = waybar in the themes directory by commenting the line at the end of each `theme.conf` file.
 Themes Directory: `~/.config/hypr/themes/`
 
+</div>
 </details>
 
-### How do I launch the gamebar shown in the preview?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="gamebar">How do I launch the gamebar shown in the preview?</summary>
+<div>
 
 You'll need steam game or lutris library installed, and then run this:
 
 `~/.config/hypr/scripts/gamelauncher.sh <n>` # where n is style [1-4]
 
+</div>
 </details>
 
-### How can I launch it on app launcher?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="app-launcher">How can I launch it on app launcher?</summary>
+<div>
 
 Find the .desktop entry using this handy command find /usr/share/applications -name '\*code.desktop' image
 You should copy then edit the .desktop entry of each application to `~/.local/share/applications/`
@@ -212,12 +266,12 @@ image
 
 Here is the [wiki](https://wiki.archlinux.org/title/Desktop_entries) on how to deal with .desktop entries.
 
+</div>
 </details>
 
-### Xwayland(👹)
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="xwayland">Xwayland(👹)</summary>
+<div>
 
 Please refer to the [Hyprland Wiki](https://wiki.hyprland.org) for the explanation.
 
@@ -231,12 +285,12 @@ Known Issues
 - Waybar launching rofi breaks mouse input (added sleep 0.1 as workaround), refer https://github.com/Alexays/Waybar/issues/1850
 - Flatpak QT apps do not follow system theme
 
+</div>
 </details>
 
-### "Login failed!" loop on SDDM?
-
 <details>
-<summary>〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️〰️</summary>
+<summary id="sddm-login-loop">Login failed!" loop on SDDM?</summary>
+<div>
 
 If your user (or login name) contains capitalisation or special characters, you will need to edit your SDDM theme to be able to log in through the SDDM.
 
@@ -252,4 +306,5 @@ If you still can't log in after these steps, you can set, on the same file, `All
 
 Here is a [GitHub Issue](https://github.com/HyDE-Project/HyDE/issues/404) about this behaviour. 
 
+</div>
 </details>
