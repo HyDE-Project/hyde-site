@@ -1,0 +1,57 @@
+/* Centralized CSS for faq.md across all languages */
+
+.sl-markdown-content details {
+  border: 1px solid var(--sl-color-accent);
+  border-radius: 8px;
+  padding: 0;
+  margin: 1rem 0;
+  background: var(--sl-color-gray-6);
+}
+
+.sl-markdown-content details summary {
+  background: #A984CC;
+  color: #ffffff;
+  padding: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px 8px 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sl-markdown-content details[open] summary {
+  border-radius: 8px 8px 0 0;
+}
+
+.sl-markdown-content details summary::-webkit-details-marker {
+  display: none;
+}
+
+.sl-markdown-content details summary::marker {
+  display: none;
+}
+
+.sl-markdown-content details summary::before {
+  content: "▶ ";
+  margin-right: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.sl-markdown-content details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.sl-markdown-content details > div {
+  padding: 1.5rem;
+}
+
+:root[data-theme="light"] .sl-markdown-content details {
+  background: var(--sl-color-white);
+  border-color: #A984CC;
+}
+
+:root[data-theme="light"] .sl-markdown-content details summary {
+  background: #A984CC;
+  color: #ffffff;
+}

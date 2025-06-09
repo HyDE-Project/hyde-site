@@ -2,6 +2,9 @@
   "name": "hyde-site",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=18.20.8"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,9 +14,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/starlight": "^0.28.6",
-    "astro": "^4.16.18",
+    "@astrojs/starlight": "^0.34.3",
+    "astro": "^5.9.0",
     "sharp": "^0.32.6",
+    "tslib": "^2.8.1",
     "typescript": "^5.8.2"
   },
   "packageManager": "pnpm@9.15.9"

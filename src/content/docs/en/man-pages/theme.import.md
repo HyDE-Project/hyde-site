@@ -1,6 +1,6 @@
 ---
 title: theme.import.py
-description: theme import man page
+description: theme import manual page
 ---
 
 ### Preview

@@ -5,27 +5,7 @@ sidebar:
   order: 2
 ---
 
-<style>
-  table {
-    width: 100%;
-    margin: 0em 1em;
-  }
-  th, td {
-    border: 0.1em solid var(--sl-color-gray-5);
-    padding: 1em 2em;
-    text-align: left;
-  }
-  th {
-    background-color: var(--sl-color-accent);
-    color: var(--sl-color-accent-high-contrast);
-    text-align: center;
-    margin: 10em;
-    padding: 10em;
-  }
-  :root[data-theme="light"] th {
-    color: var(--sl-color-white);
-  }
-</style>
+<link rel="stylesheet" href="/src/styles/configuring/config_toml.css">
 
 HyDE expose le fichier `xdg_config/hyde/config.toml` pour que les utilisateurs puissent le modifier. Cela permet aux utilisateurs d'interagir avec les scripts sans utiliser d'arguments de commande.
 

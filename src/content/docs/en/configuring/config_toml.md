@@ -1,40 +1,11 @@
 ---
-title: Config Toml
+title: Main Configuration
 description: HyDE's Configuration Guide
 sidebar:
   order: 2
 ---
 
-<style>
-
-  .sl-markdown-content :is(th:first-child, td:first-child){
-    padding-inline-start: 0.5rem;
-  }
-
-  .sl-markdown-content :is(th:last-child, td:last-child){
-    padding-inline-end: 0.5rem;
-  }
-
-  table {
-    width: 100%;
-    margin: 0em 1em;
-  }
-  th, td {
-    border: 0.1em solid var(--sl-color-gray-5);
-    padding: 1em 2em;
-    text-align: left;
-  }
-  th {
-    background-color: var(--sl-color-accent);
-    color: var(--sl-color-accent-high-contrast);
-    text-align: center;
-    margin: 10em;
-    padding: 10em;
-  }
-  :root[data-theme="light"] th {
-    color: var(--sl-color-white);
-  }
-</style>
+<link rel="stylesheet" href="/src/styles/configuring/config_toml.css">
 
 HyDE exposes `xdg_config/hyde/config.toml` file for users to modify. This lets users have the ability to interact the scripts without using command arguments.
 
@@ -42,11 +13,11 @@ HyDE exposes `xdg_config/hyde/config.toml` file for users to modify. This lets u
 
 ### Environment variable
 
-example:
+Variables like this will be pass to the scripts ONLY.
 
-| Key                 | Description            | Default |
-| ------------------- | ---------------------- | ------- |
-| WARP_ENABLE_WAYLAND | Enable Wayland support |         |
+| Key           | Description          | Default |
+| ------------- | -------------------- | ------- |
+| XCURSOR_THEME | Set the cursor theme | ""      |
 
 ### [battery.notify]
 
@@ -112,6 +83,52 @@ example:
 | range         | Number of cava bars                         | 7          |
 | standby       | Cava standby character                      | "🎶"       |
 | width         | Cava bar width                              | 20         |
+
+### [hyprland]
+
+| Key                 | Description                  | Default                        |
+| ------------------- | ---------------------------- | ------------------------------ |
+| background_path     | LockScreen's Background path | ""                             |
+| bar                 | Bar                          | "waybar"                       |
+| browser             | Browser                      | "firefox"                      |
+| button_layout       | Button layout (gtk only)     | ""                             |
+| color_scheme        | Color scheme                 | "prefer-dark"                  |
+| cursor_size         | Cursor size                  | 24                             |
+| cursor_theme        | Cursor theme                 | "Bibata-Modern-Ice"            |
+| document_font_size  | Document font size           | 10                             |
+| editor              | Editor                       | "code"                         |
+| explorer            | File manager                 | "dolphin"                      |
+| font                | Font                         | "Canterell"                    |
+| font_antialiasing   | Font antialiasing            | "rgba"                         |
+| font_hinting        | Font hinting                 | "full"                         |
+| font_size           | Font size                    | 10                             |
+| gtk_theme           | GTK theme                    | "Wallbash-Gtk"                 |
+| icon_theme          | Icon theme                   | "Tela-circle-dracula"          |
+| idle                | Idle manager                 | "hypridle"                     |
+| lockscreen          | Lockscreen                   | "lockscreen.sh"                |
+| monospace_font      | Monospace font               | "CaskaydiaCove Nerd Font Mono" |
+| monospace_font_size | Monospace font size          | 9                              |
+| quickapps           | Quick apps                   | "kitty"                        |
+| terminal            | Terminal                     | "kitty"                        |
+
+### [hyprland_start]
+
+| Key                  | Description                 | Default                                                                                        |
+| -------------------- | --------------------------- | ---------------------------------------------------------------------------------------------- |
+| apptray_bluetooth    | Bluetooth applet            | "blueman-applet"                                                                               |
+| auth_dialogue        | Authentication dialogue     | "polkitkdeauth.sh"                                                                             |
+| bar                  | Bar                         | "hyde-shell waybar --watch"                                                                    |
+| battery_notify       | Battery notification script | "batterynotify.sh"                                                                             |
+| dbus_share_picker    | DBus share picker           | "dbus-update-activation-environment --systemd --all"                                           |
+| idle_daemon          | Idle daemon                 | "hypridle"                                                                                     |
+| image_clipboard      | Image clipboard             | "wl-paste --type image --watch cliphist store"                                                 |
+| network_manager      | Network manager             | "nm-applet --indicator"                                                                        |
+| notifications        | Notifications               | "swaync"                                                                                       |
+| removable_media      | Removable media manager     | "udiskie --no-automount --smart-tray"                                                          |
+| systemd_share_picker | Systemd share picker        | "systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" |
+| text_clipboard       | Text clipboard              | "wl-paste --type text --watch cliphist store"                                                  |
+| wallpaper            | Wallpaper script            | "$scrPath/wallpaper.sh --global"                                                               |
+| xdg_portal_reset     | XDG portal reset script     | "resetxdgportal.sh"                                                                            |
 
 ### [hypr.config]
 

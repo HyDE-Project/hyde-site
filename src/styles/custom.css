@@ -1,0 +1,415 @@
+/* Custom styles for HyDE site - ONLY for main page eyecandy and consistent colors */
+
+/* HyDE Brand Colors - Global */
+:root {
+  --hyde-light: #D9D9D9;
+  --hyde-dark: #363742;
+  --hyde-cream: #D4CFC9;
+  --hyde-rose: #C8A09E;
+  --hyde-purple: #A984CC;
+  --hyde-blue: #9096B6;
+  
+  /* Color variations for effects - ONLY used on main page */
+  --hyde-purple-glow: rgba(169, 132, 204, 0.6);
+  --hyde-blue-glow: rgba(144, 150, 182, 0.6);
+  --hyde-rose-glow: rgba(200, 160, 158, 0.6);
+  --hyde-cream-subtle: rgba(212, 207, 201, 0.1);
+  --hyde-dark-subtle: rgba(54, 55, 66, 0.8);
+}
+
+/* Light theme color adjustments */
+[data-theme="light"] {
+  --hyde-bg-light: #fafafa;
+  --hyde-bg-dark: #ffffff;
+  --hyde-text-primary: var(--hyde-dark);
+  --hyde-text-secondary: #555;
+}
+
+[data-theme="dark"] {
+  --hyde-bg-light: var(--hyde-dark);
+  --hyde-bg-dark: #2a2b35;
+  --hyde-text-primary: var(--hyde-light);
+  --hyde-text-secondary: var(--hyde-cream);
+}
+
+/* ========== MINIMAL CONSISTENT COLORS FOR ALL PAGES ========== */
+
+/* Just consistent link colors - no fancy effects */
+a {
+  color: var(--hyde-blue);
+}
+
+a:hover {
+  color: var(--hyde-purple);
+}
+
+/* Simple header title with HyDE colors - no animations for other pages */
+.site-title {
+  color: var(--hyde-purple);
+}
+
+/* ========== MAIN PAGE ONLY - FANCY EFFECTS ========== */
+/* These styles ONLY apply to the main index page for eyecandy */
+
+/* Hero section - ONLY on main page */
+.hero {
+  position: relative;
+  padding: 4rem 2rem;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 0 0 2rem 2rem;
+}
+
+/* Dark theme hero background */
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, 
+    var(--hyde-dark) 0%, 
+    #2a2b35 50%, 
+    var(--hyde-dark) 100%);
+}
+
+/* Light theme hero background */
+[data-theme="light"] .hero {
+  background: linear-gradient(135deg, 
+    var(--hyde-cream) 0%, 
+    #f0ebe5 50%, 
+    var(--hyde-cream) 100%);
+}
+
+/* Animated background pattern - main page only */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+  animation: backgroundPulse 8s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Dark theme particles */
+[data-theme="dark"] .hero::before {
+  background: 
+    radial-gradient(circle at 20% 20%, var(--hyde-purple-glow) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--hyde-blue-glow) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, var(--hyde-rose-glow) 0%, transparent 50%);
+}
+
+/* Light theme particles */
+[data-theme="light"] .hero::before {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(169, 132, 204, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(144, 150, 182, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(200, 160, 158, 0.2) 0%, transparent 50%);
+}
+
+@keyframes backgroundPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); }
+}
+
+/* HyDE title with animated gradient - main page only */
+.hero h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, 
+    var(--hyde-light) 0%,
+    var(--hyde-purple) 25%,
+    var(--hyde-blue) 50%,
+    var(--hyde-rose) 75%,
+    var(--hyde-cream) 100%);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hydeGradient 4s ease-in-out infinite;
+  letter-spacing: 0.1em;
+  z-index: 2;
+  position: relative;
+}
+
+/* Light theme title adjustment */
+[data-theme="light"] .hero h1 {
+  background: linear-gradient(45deg, 
+    var(--hyde-dark) 0%,
+    var(--hyde-purple) 25%,
+    var(--hyde-blue) 50%,
+    var(--hyde-rose) 75%,
+    var(--hyde-dark) 100%);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes hydeGradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Tagline with subtle glow - main page only */
+.hero .tagline {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  animation: taglineGlow 3s ease-in-out infinite;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  position: relative;
+}
+
+/* Dark theme tagline */
+[data-theme="dark"] .hero .tagline {
+  color: var(--hyde-cream);
+  text-shadow: 0 0 20px var(--hyde-blue-glow);
+}
+
+/* Light theme tagline */
+[data-theme="light"] .hero .tagline {
+  color: var(--hyde-dark);
+  text-shadow: 0 0 10px rgba(54, 55, 66, 0.3);
+}
+
+@keyframes taglineGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Logo with floating animation - main page only */
+.hero .hero-image {
+  margin: 2rem 0;
+  z-index: 2;
+  position: relative;
+}
+
+.hero .hero-image img {
+  max-width: 300px;
+  animation: logoFloat 6s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .hero .hero-image img {
+  filter: drop-shadow(0 0 30px var(--hyde-purple-glow));
+}
+
+[data-theme="light"] .hero .hero-image img {
+  filter: drop-shadow(0 0 20px rgba(169, 132, 204, 0.4));
+}
+
+.hero .hero-image img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px); }
+  33% { transform: translateY(-15px); }
+  66% { transform: translateY(-5px); }
+}
+
+/* Action buttons with hover effects - main page only */
+.hero .actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+.hero .actions a {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+}
+
+/* Dark theme buttons */
+[data-theme="dark"] .hero .actions a {
+  background: linear-gradient(135deg, var(--hyde-purple), var(--hyde-blue));
+  color: var(--hyde-light);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .hero .actions a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px var(--hyde-purple-glow);
+  border-color: var(--hyde-cream);
+  background: linear-gradient(135deg, var(--hyde-rose), var(--hyde-purple));
+}
+
+/* Light theme buttons */
+[data-theme="light"] .hero .actions a {
+  background: linear-gradient(135deg, var(--hyde-purple), var(--hyde-blue));
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .hero .actions a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(169, 132, 204, 0.4);
+  border-color: var(--hyde-dark);
+  background: linear-gradient(135deg, var(--hyde-rose), var(--hyde-purple));
+}
+
+.hero .actions a[data-variant="minimal"] {
+  background: transparent !important;
+  border: 2px solid var(--hyde-blue);
+  color: var(--hyde-blue);
+}
+
+[data-theme="dark"] .hero .actions a[data-variant="minimal"]:hover {
+  background: var(--hyde-blue) !important;
+  color: var(--hyde-dark);
+}
+
+[data-theme="light"] .hero .actions a[data-variant="minimal"]:hover {
+  background: var(--hyde-blue) !important;
+  color: white;
+}
+
+/* Floating particles - main page only */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 400px 300px;
+  animation: particleFloat 12s linear infinite;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+[data-theme="dark"] .hero::after {
+  background-image: 
+    radial-gradient(2px 2px at 100px 150px, var(--hyde-purple), transparent),
+    radial-gradient(1px 1px at 200px 50px, var(--hyde-blue), transparent),
+    radial-gradient(1px 1px at 50px 200px, var(--hyde-rose), transparent),
+    radial-gradient(2px 2px at 300px 100px, var(--hyde-cream), transparent);
+}
+
+[data-theme="light"] .hero::after {
+  background-image: 
+    radial-gradient(2px 2px at 100px 150px, rgba(169, 132, 204, 0.6), transparent),
+    radial-gradient(1px 1px at 200px 50px, rgba(144, 150, 182, 0.6), transparent),
+    radial-gradient(1px 1px at 50px 200px, rgba(200, 160, 158, 0.6), transparent),
+    radial-gradient(2px 2px at 300px 100px, rgba(54, 55, 66, 0.4), transparent);
+  opacity: 0.4;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(50px);
+    opacity: 0;
+  }
+}
+
+/* Responsive design for main page */
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+    min-height: 70vh;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1.2rem;
+  }
+  
+  .hero .hero-image img {
+    max-width: 200px;
+  }
+  
+  .hero .actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero .actions a {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1rem;
+  }
+}
+
+/* ========== END MAIN PAGE ONLY STYLES ========== */
+
+/* Performance optimization - disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero *, .hero *::before, .hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========== MINIMAL STYLING FOR ALL OTHER PAGES ========== */
+/* Keep default Starlight behavior but with consistent HyDE colors */
+
+/* Subtle HyDE color consistency for headers (no animations) */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--hyde-purple);
+}
+
+/* Simple code styling with HyDE colors */
+code {
+  background-color: rgba(169, 132, 204, 0.1);
+  color: var(--hyde-purple);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+pre {
+  border: 1px solid var(--hyde-purple);
+  border-radius: 8px;
+}
+
+/* Simple table styling */
+th {
+  background-color: var(--hyde-purple);
+  color: white;
+}
+
+/* Subtle focus states */
+button:focus, a:focus, select:focus {
+  outline: 2px solid var(--hyde-purple);
+  outline-offset: 2px;
+}
+
+/* That's it! Keep everything else as default Starlight */
