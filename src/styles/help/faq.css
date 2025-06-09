@@ -1,7 +1,7 @@
 /* Centralized CSS for faq.md across all languages */
 
 .sl-markdown-content details {
-  border: 1px solid #A984CC;
+  border: 1px solid var(--sl-color-accent);
   border-radius: 8px;
   padding: 0;
   margin: 1rem 0;
