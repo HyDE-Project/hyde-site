@@ -25,7 +25,7 @@ See [Restore Configuration](/hyde/installation/restore/) for more information.
 
 In addition to the command above, you can modify the [Scripts/restore_cfg.psv](https://github.com/HyDE-Project/HyDE/blob/master/Scripts/restore_cfg.psv). The documentation on is on the file.
 
-Also see [this](../resources/restore.md).
+Also see [this](../../resources/restore/) .
 
 ### Updating the dotfiles ONLY
 

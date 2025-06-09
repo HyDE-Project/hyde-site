@@ -5,36 +5,7 @@ sidebar:
   order: 3
 ---
 
-<style>
-  .sl-markdown-content :is(th:first-child, td:first-child){
-    padding-inline-start: 0.5rem;
-  }
-
-  .sl-markdown-content :is(th:last-child, td:last-child){
-    padding-inline-end: 0.5rem;
-  }
-
-  table {
-    width: 100%;
-    margin: 0em 1em;
-  }
-  th, td {
-    border: 0.1em solid var(--sl-color-gray-5);
-    padding: 1em 2em;
-    text-align: left;
-  }
-  th {
-    background-color: #A984CC !important; /* HyDE purple */
-    color: #D9D9D9 !important; /* HyDE light */
-    text-align: center;
-    margin: 0;
-    padding: 1em 2em;
-  }
-  :root[data-theme="light"] th {
-    background-color: #A984CC !important; /* HyDE purple for light theme too */
-    color: #ffffff !important; /* White text for better contrast in light theme */
-  }
-</style>
+<link rel="stylesheet" href="/src/styles/configuring/hyprland.css">
 
 # Configuration Tree
 
