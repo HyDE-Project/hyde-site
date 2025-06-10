@@ -5,36 +5,7 @@ sidebar:
   order: 2
 ---
 
-<style>
-
-  .sl-markdown-content :is(th:first-child, td:first-child){
-    padding-inline-start: 0.5rem;
-  }
-
-  .sl-markdown-content :is(th:last-child, td:last-child){
-    padding-inline-end: 0.5rem;
-  }
-
-  table {
-    width: 100%;
-    margin: 0em 1em;
-  }
-  th, td {
-    border: 0.1em solid var(--sl-color-gray-5);
-    padding: 1em 2em;
-    text-align: left;
-  }
-  th {
-    background-color: var(--sl-color-accent);
-    color: var(--sl-color-accent-high-contrast);
-    text-align: center;
-    margin: 10em;
-    padding: 10em;
-  }
-  :root[data-theme="light"] th {
-    color: var(--sl-color-white);
-  }
-</style>
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 HyDE उपयोगकर्ताओं के लिए `xdg_config/hyde/config.toml` फ़ाइल प्रदान करता है जिसे वे संशोधित कर सकते हैं। इससे उपयोगकर्ता कमांड आर्ग्युमेंट्स का उपयोग किए बिना स्क्रिप्ट्स के साथ इंटरैक्ट कर सकते हैं।
 

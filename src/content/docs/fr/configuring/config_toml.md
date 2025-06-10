@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-<link rel="stylesheet" href="/src/styles/configuring/config_toml.css">
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 HyDE expose le fichier `xdg_config/hyde/config.toml` pour que les utilisateurs puissent le modifier. Cela permet aux utilisateurs d'interagir avec les scripts sans utiliser d'arguments de commande.
 

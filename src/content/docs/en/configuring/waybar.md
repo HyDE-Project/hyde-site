@@ -452,7 +452,7 @@ waybar.py -S
 # Or apply directly
 waybar -c ~/.config/waybar/layouts/my_config.jsonc
 ```
-![alt text](image.png)
+![alt text](/src/assets/waybar/selector.png)
 
 :::note 
 See ./waybar.py --help for more options.

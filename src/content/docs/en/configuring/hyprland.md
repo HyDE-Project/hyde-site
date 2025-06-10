@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-<link rel="stylesheet" href="/src/styles/configuring/hyprland.css">
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 # Configuration Tree
 

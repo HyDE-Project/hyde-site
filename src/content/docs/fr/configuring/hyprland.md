@@ -3,27 +3,7 @@ title: Hyprland
 description: Configuration liée à Hyprland
 ---
 
-<style>
-  table {
-    width: 100%;
-    margin: 0em 1em;
-  }
-  th, td {
-    border: 0.1em solid var(--sl-color-gray-5);
-    padding: 1em 2em;
-    text-align: left;
-  }
-  th {
-    background-color: var(--sl-color-accent);
-    color: var(--sl-color-accent-high-contrast);
-    text-align: center;
-    margin: 10em;
-    padding: 10em;
-  }
-  :root[data-theme="light"] th {
-    color: var(--sl-color-white);
-  }
-</style>
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 # Arborescence des fichiers de configuration
 

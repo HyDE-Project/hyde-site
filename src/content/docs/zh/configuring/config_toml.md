@@ -5,36 +5,7 @@ sidebar:
   order: 2
 ---
 
-<style>
-
-  .sl-markdown-content :is(th:first-child, td:first-child){
-    padding-inline-start: 0.5rem;
-  }
-
-  .sl-markdown-content :is(th:last-child, td:last-child){
-    padding-inline-end: 0.5rem;
-  }
-
-  table {
-    width: 100%;
-    margin: 0em 1em;
-  }
-  th, td {
-    border: 0.1em solid var(--sl-color-gray-5);
-    padding: 1em 2em;
-    text-align: left;
-  }
-  th {
-    background-color: var(--sl-color-accent);
-    color: var(--sl-color-accent-high-contrast);
-    text-align: center;
-    margin: 10em;
-    padding: 10em;
-  }
-  :root[data-theme="light"] th {
-    color: var(--sl-color-white);
-  }
-</style>
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 HyDE 向用户公开了 `xdg_config/hyde/config.toml` 文件供修改。这样用户就能在无需使用命令行参数的情况下与脚本交互。
 
