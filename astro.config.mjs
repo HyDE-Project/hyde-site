@@ -6,7 +6,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   integrations: [
     starlight({
-      title: 'HyDE',
+      title: 'The HyDE Project',
       customCss: [
         // Path to our custom CSS file
         './src/styles/custom.css',
