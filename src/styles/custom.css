@@ -51,6 +51,70 @@ a:hover {
 /* ========== MAIN PAGE ONLY - FANCY EFFECTS ========== */
 /* These styles ONLY apply to the main index page for eyecandy */
 
+/* Full page background for splash template */
+body:has([data-template="splash"]),
+html:has([data-template="splash"]) {
+  min-height: 100vh;
+}
+
+/* Apply background to the entire splash page */
+[data-template="splash"] {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Dark theme splash page background */
+[data-theme="dark"] [data-template="splash"] {
+  background: linear-gradient(135deg, 
+    var(--hyde-dark) 0%, 
+    #2a2b35 50%, 
+    var(--hyde-dark) 100%);
+}
+
+/* Light theme splash page background */
+[data-theme="light"] [data-template="splash"] {
+  background: linear-gradient(135deg, 
+    var(--hyde-cream) 0%, 
+    #f0ebe5 50%, 
+    var(--hyde-cream) 100%);
+}
+
+/* Animated background pattern for entire splash page */
+[data-template="splash"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+  animation: backgroundPulse 8s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Dark theme particles for splash page */
+[data-theme="dark"] [data-template="splash"]::before {
+  background: 
+    radial-gradient(circle at 20% 20%, var(--hyde-purple-glow) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, var(--hyde-blue-glow) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, var(--hyde-rose-glow) 0%, transparent 50%);
+}
+
+/* Light theme particles for splash page */
+[data-theme="light"] [data-template="splash"]::before {
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(169, 132, 204, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(144, 150, 182, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(200, 160, 158, 0.2) 0%, transparent 50%);
+}
+
+/* Ensure content appears above background */
+[data-template="splash"] > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Hero section - ONLY on main page */
 .hero {
   position: relative;
@@ -60,53 +124,9 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
   border-radius: 0 0 2rem 2rem;
-}
-
-/* Dark theme hero background */
-[data-theme="dark"] .hero {
-  background: linear-gradient(135deg, 
-    var(--hyde-dark) 0%, 
-    #2a2b35 50%, 
-    var(--hyde-dark) 100%);
-}
-
-/* Light theme hero background */
-[data-theme="light"] .hero {
-  background: linear-gradient(135deg, 
-    var(--hyde-cream) 0%, 
-    #f0ebe5 50%, 
-    var(--hyde-cream) 100%);
-}
-
-/* Animated background pattern - main page only */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0.3;
-  animation: backgroundPulse 8s ease-in-out infinite;
-  z-index: 1;
-}
-
-/* Dark theme particles */
-[data-theme="dark"] .hero::before {
-  background: 
-    radial-gradient(circle at 20% 20%, var(--hyde-purple-glow) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, var(--hyde-blue-glow) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, var(--hyde-rose-glow) 0%, transparent 50%);
-}
-
-/* Light theme particles */
-[data-theme="light"] .hero::before {
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(169, 132, 204, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(144, 150, 182, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(200, 160, 158, 0.2) 0%, transparent 50%);
+  background: transparent;
 }
 
 @keyframes backgroundPulse {
