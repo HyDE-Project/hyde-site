@@ -63,6 +63,211 @@ html:has([data-template="splash"]) {
   position: relative;
 }
 
+/* Main content area styling for splash page */
+[data-template="splash"] .main-frame {
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+/* Content below hero - Features section and more */
+[data-template="splash"] .content-panel {
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+/* Style the main content area below hero */
+[data-template="splash"] main {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+/* Features section styling */
+[data-template="splash"] h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 4rem 0 3rem 0;
+  background: linear-gradient(45deg, 
+    var(--hyde-purple) 0%,
+    var(--hyde-blue) 50%,
+    var(--hyde-rose) 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: hydeGradient 4s ease-in-out infinite;
+  position: relative;
+  z-index: 3;
+}
+
+/* Light theme Features heading */
+[data-theme="light"] [data-template="splash"] h2 {
+  background: linear-gradient(45deg, 
+    var(--hyde-dark) 0%,
+    var(--hyde-purple) 50%,
+    var(--hyde-blue) 100%);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card grid styling for splash page */
+[data-template="splash"] .card-grid {
+  position: relative !important;
+  z-index: 3 !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 2rem !important;
+}
+
+/* Individual card styling with HyDE theme */
+[data-template="splash"] .card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(169, 132, 204, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Style Starlight's actual card elements */
+[data-template="splash"] article.card {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(169, 132, 204, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 2rem !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  margin: 1rem !important;
+}
+
+/* Dark theme cards */
+[data-theme="dark"] [data-template="splash"] .card {
+  background: rgba(54, 55, 66, 0.1) !important;
+  border: 1px solid rgba(169, 132, 204, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Dark theme article cards */
+[data-theme="dark"] [data-template="splash"] article.card {
+  background: rgba(54, 55, 66, 0.1) !important;
+  border: 1px solid rgba(169, 132, 204, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Light theme cards */
+[data-theme="light"] [data-template="splash"] .card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(169, 132, 204, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Light theme article cards */
+[data-theme="light"] [data-template="splash"] article.card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid rgba(169, 132, 204, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Card hover effects */
+[data-template="splash"] .card:hover {
+  transform: translateY(-10px) !important;
+  border-color: var(--hyde-purple) !important;
+}
+
+/* Article card hover effects */
+[data-template="splash"] article.card:hover {
+  transform: translateY(-10px) !important;
+  border-color: var(--hyde-purple) !important;
+}
+
+[data-theme="dark"] [data-template="splash"] .card:hover {
+  box-shadow: 0 15px 40px rgba(169, 132, 204, 0.4) !important;
+  background: rgba(54, 55, 66, 0.2) !important;
+}
+
+[data-theme="dark"] [data-template="splash"] article.card:hover {
+  box-shadow: 0 15px 40px rgba(169, 132, 204, 0.4) !important;
+  background: rgba(54, 55, 66, 0.2) !important;
+}
+
+[data-theme="light"] [data-template="splash"] .card:hover {
+  box-shadow: 0 15px 40px rgba(169, 132, 204, 0.3) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+[data-theme="light"] [data-template="splash"] article.card:hover {
+  box-shadow: 0 15px 40px rgba(169, 132, 204, 0.3) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Card titles with HyDE colors */
+[data-template="splash"] .card h3 {
+  color: var(--hyde-purple) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Style card titles (p.title span) */
+[data-template="splash"] article.card p.title span {
+  color: var(--hyde-purple) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+/* Card content text */
+[data-template="splash"] .card p {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  opacity: 0.9 !important;
+}
+
+/* Style card content (.body p) */
+[data-template="splash"] article.card .body p {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  opacity: 0.9 !important;
+}
+
+[data-theme="dark"] [data-template="splash"] .card p {
+  color: var(--hyde-cream) !important;
+}
+
+[data-theme="dark"] [data-template="splash"] article.card .body p {
+  color: var(--hyde-cream) !important;
+}
+
+[data-theme="light"] [data-template="splash"] .card p {
+  color: var(--hyde-dark) !important;
+}
+
+[data-theme="light"] [data-template="splash"] article.card .body p {
+  color: var(--hyde-dark) !important;
+}
+
+/* Card icons with HyDE theme */
+[data-template="splash"] .card .icon {
+  color: var(--hyde-blue) !important;
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Style card icons */
+[data-template="splash"] article.card .icon {
+  color: var(--hyde-blue) !important;
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
 /* Dark theme splash page background */
 [data-theme="dark"] [data-template="splash"] {
   background: linear-gradient(135deg, 
@@ -123,10 +328,38 @@ html:has([data-template="splash"]) {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   overflow: visible;
   border-radius: 0 0 2rem 2rem;
   background: transparent;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Hero image positioning - large image anchored to right */
+.hero img,
+.hero .hero-image img {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  width: 60vw !important;
+  height: 100% !important;
+  max-width: 800px !important;
+  object-fit: contain !important;
+  object-position: right center !important;
+  opacity: 0.15 !important;
+  filter: blur(1px) !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+/* Better visibility for light theme */
+[data-theme="light"] .hero img,
+[data-theme="light"] .hero .hero-image img {
+  opacity: 0.25 !important;
+  filter: blur(0.5px) contrast(1.2) !important;
 }
 
 @keyframes backgroundPulse {
@@ -136,9 +369,10 @@ html:has([data-template="splash"]) {
 
 /* HyDE title with animated gradient - main page only */
 .hero h1 {
-  font-size: 4.5rem;
+  font-size: 8rem;
   font-weight: 900;
-  margin-bottom: 1rem;
+  margin: 0;
+  padding: 0;
   background: linear-gradient(45deg, 
     var(--hyde-light) 0%,
     var(--hyde-purple) 25%,
@@ -151,8 +385,10 @@ html:has([data-template="splash"]) {
   -webkit-text-fill-color: transparent;
   animation: hydeGradient 4s ease-in-out infinite;
   letter-spacing: 0.1em;
-  z-index: 2;
+  z-index: 3;
   position: relative;
+  text-align: left;
+  display: inline;
 }
 
 /* Light theme title adjustment */
@@ -176,13 +412,18 @@ html:has([data-template="splash"]) {
 
 /* Tagline with subtle glow - main page only */
 .hero .tagline {
-  font-size: 1.5rem;
-  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
   animation: taglineGlow 3s ease-in-out infinite;
   font-weight: 300;
   letter-spacing: 0.05em;
-  z-index: 2;
+  z-index: 3;
   position: relative;
+  text-align: left;
+  display: inline;
+  margin-left: 2rem;
+  vertical-align: baseline;
 }
 
 /* Dark theme tagline */
@@ -202,35 +443,30 @@ html:has([data-template="splash"]) {
   50% { opacity: 0.8; }
 }
 
-/* Logo with floating animation - main page only */
-.hero .hero-image {
-  margin: 2rem 0;
-  z-index: 2;
-  position: relative;
+/* Title container for inline layout */
+.hero .hero-title {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 3rem;
 }
 
-.hero .hero-image img {
-  max-width: 300px;
-  animation: logoFloat 6s ease-in-out infinite;
-  transition: all 0.3s ease;
-}
-
-[data-theme="dark"] .hero .hero-image img {
-  filter: drop-shadow(0 0 30px var(--hyde-purple-glow));
-}
-
-[data-theme="light"] .hero .hero-image img {
-  filter: drop-shadow(0 0 20px rgba(169, 132, 204, 0.4));
-}
-
-.hero .hero-image img:hover {
-  transform: scale(1.05);
-}
-
-@keyframes logoFloat {
-  0%, 100% { transform: translateY(0px); }
-  33% { transform: translateY(-15px); }
-  66% { transform: translateY(-5px); }
+/* Background logo with blur effect */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 1000px;
+  height: 400px;
+  /* background-image: url('../../assets/hyde.svg'); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  filter: blur(2px);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Action buttons with hover effects - main page only */
@@ -238,9 +474,9 @@ html:has([data-template="splash"]) {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  justify-content: center;
-  z-index: 2;
+  z-index: 3;
   position: relative;
+  margin-left: 4rem;
 }
 
 .hero .actions a {
@@ -299,10 +535,10 @@ html:has([data-template="splash"]) {
   color: white;
 }
 
-/* Floating particles - main page only */
-.hero::after {
+/* Floating particles for entire splash page */
+[data-template="splash"]::after {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -314,7 +550,7 @@ html:has([data-template="splash"]) {
   z-index: 1;
 }
 
-[data-theme="dark"] .hero::after {
+[data-theme="dark"] [data-template="splash"]::after {
   background-image: 
     radial-gradient(2px 2px at 100px 150px, var(--hyde-purple), transparent),
     radial-gradient(1px 1px at 200px 50px, var(--hyde-blue), transparent),
@@ -322,7 +558,7 @@ html:has([data-template="splash"]) {
     radial-gradient(2px 2px at 300px 100px, var(--hyde-cream), transparent);
 }
 
-[data-theme="light"] .hero::after {
+[data-theme="light"] [data-template="splash"]::after {
   background-image: 
     radial-gradient(2px 2px at 100px 150px, rgba(169, 132, 204, 0.6), transparent),
     radial-gradient(1px 1px at 200px 50px, rgba(144, 150, 182, 0.6), transparent),
@@ -351,10 +587,69 @@ html:has([data-template="splash"]) {
 /* Responsive design for main page */
 @media (max-width: 768px) {
   .hero {
+    align-items: center;
+    text-align: center;
     padding: 2rem 1rem;
     min-height: 70vh;
   }
   
+  .hero .hero-title {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero .tagline {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+  
+  .hero .actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .hero .actions a {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .hero::before {
+    opacity: 0.05;
+    width: 300px;
+    height: 300px;
+  }
+  
+  .hero img,
+  .hero .hero-image img {
+    width: 40vw !important;
+    max-width: 300px !important;
+    opacity: 0.08 !important;
+  }
+  
+  /* Features section mobile */
+  [data-template="splash"] h2 {
+    font-size: 2.5rem;
+    margin: 3rem 0 2rem 0;
+  }
+  
+  [data-template="splash"] .card-grid {
+    padding: 1rem;
+  }
+  
+  [data-template="splash"] .card {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
   .hero h1 {
     font-size: 3rem;
   }
@@ -363,28 +658,38 @@ html:has([data-template="splash"]) {
     font-size: 1.2rem;
   }
   
-  .hero .hero-image img {
-    max-width: 200px;
-  }
-  
-  .hero .actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .hero .actions a {
-    width: 80%;
-    text-align: center;
+  [data-template="splash"] h2 {
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 480px) {
+/* Medium screens - adjust sizes */
+@media (max-width: 1024px) and (min-width: 769px) {
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 6rem;
   }
   
   .hero .tagline {
-    font-size: 1rem;
+    font-size: 2rem;
+  }
+  
+  .hero .actions {
+    margin-left: 2rem;
+  }
+  
+  .hero::before {
+    width: 350px;
+    height: 350px;
+  }
+  
+  .hero img,
+  .hero .hero-image img {
+    width: 50vw !important;
+    max-width: 600px !important;
+  }
+  
+  [data-template="splash"] h2 {
+    font-size: 3rem;
   }
 }
 
