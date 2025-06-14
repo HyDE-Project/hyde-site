@@ -1,11 +1,11 @@
 ---
-title: 配置文件
+title: 主要配置
 description: HyDE 的配置指南
 sidebar:
   order: 2
 ---
 
-<link rel="stylesheet" href="/src/styles/tables.css">
+<link rel="stylesheet" href="/src/styles/configuring/config_toml.css">
 
 HyDE 向用户公开了 `xdg_config/hyde/config.toml` 文件供修改。这样用户就能在无需使用命令行参数的情况下与脚本交互。
 
@@ -13,11 +13,11 @@ HyDE 向用户公开了 `xdg_config/hyde/config.toml` 文件供修改。这样�
 
 ### 环境变量
 
-示例：
+这样的变量只会传递给脚本：
 
 | 键                  | 描述                    | 默认值 |
-| ------------------- | ---------------------- | ------ |
-| WARP_ENABLE_WAYLAND | 启用 Wayland 支持       |        |
+| ------------------- | ----------------------  | ------ |
+| XCURSOR_THEME       |     设置光标主题        |   ""   |
 
 ### [battery.notify]
 
@@ -83,6 +83,54 @@ HyDE 向用户公开了 `xdg_config/hyde/config.toml` 文件供修改。这样�
 | range         | waybar 中 Cava 条形图数量                         | 7          |
 | standby       | waybar 中 Cava 待机字符                           | "🎶"       |
 | width         | waybar 中 Cava 条形图宽度                         | 20         |
+
+### [hyprland]
+
+| 键                  | 描述                         | 默认值                         |
+| ------------------- | ---------------------------- | ------------------------------ |
+| background_path     | 锁屏背景路径                 | ""                             |
+| bar                 | 状态栏                       | "waybar"                       |
+| browser             | 浏览器                       | "firefox"                      |
+| button_layout       | 按钮布局（仅限 gtk）         | ""                             |
+| color_scheme        | 颜色方案                     | "prefer-dark"                  |
+| cursor_size         | 光标大小                     | 24                             |
+| cursor_theme        | 光标主题                     | "Bibata-Modern-Ice"            |
+| document_font_size  | 文档字体大小                 | 10                             |
+| editor              | 编辑器                       | "code"                         |
+| explorer            | 文件管理器                   | "dolphin"                      |
+| font                | 字体                         | "Canterell"                    |
+| font_antialiasing   | 字体抗锯齿                   | "rgba"                         |
+| font_hinting        | 字体提示                     | "full"                         |
+| font_size           | 字体大小                     | 10                             |
+| gtk_theme           | GTK 主题                     | "Wallbash-Gtk"                 |
+| icon_theme          | 图标主题                     | "Tela-circle-dracula"          |
+| idle                | 空闲管理器                   | "hypridle"                     |
+| lockscreen          | 锁屏                         | "lockscreen.sh"                |
+| monospace_font      | 等宽字体                     | "CaskaydiaCove Nerd Font Mono" |
+| monospace_font_size | 等宽字体大小                 | 9                              |
+| quickapps           | 快速应用                     | "kitty"                        |
+| terminal            | 终端                         | "kitty"                        |
+
+### [hyprland_start]
+
+| 键                   | 描述                           | 默认值                                                                                         |
+| -------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------- |
+| apptray_bluetooth    | 蓝牙托盘                       | "blueman-applet"                                                                               |
+| auth_dialogue        | 身份验证对话框                 | "polkitkdeauth.sh"                                                                             |
+| bar                  | 状态栏                         | "hyde-shell waybar --watch"                                                                    |
+| battery_notify       | 电池通知脚本                   | "batterynotify.sh"                                                                             |
+| dbus_share_picker    | DBus 分享选择器                | "dbus-update-activation-environment --systemd --all"                                           |
+| idle_daemon          | 空闲守护进程                   | "hypridle"                                                                                     |
+| image_clipboard      | 图像剪贴板                     | "wl-paste --type image --watch cliphist store"                                                 |
+| network_manager      | 网络管理器                     | "nm-applet --indicator"                                                                        |
+| notifications        | 通知                           | "swaync"                                                                                       |
+| removable_media      | 可移动媒体管理器               | "udiskie --no-automount --smart-tray"                                                          |
+| systemd_share_picker | Systemd 分享选择器             | "systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP" |
+| text_clipboard       | 文本剪贴板                     | "wl-paste --type text --watch cliphist store"                                                  |
+| wallpaper            | 壁纸脚本                       | "$scrPath/wallpaper.sh --global"                                                               |
+| xdg_portal_reset     | XDG 门户重置脚本               | "resetxdgportal.sh"                                                                            |
+
+
 
 ### [hypr.config]
 
