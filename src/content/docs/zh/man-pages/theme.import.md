@@ -1,6 +1,6 @@
 ---
 title: theme.import.py
-description: theme import 使用手册
+description: 管理主题导入脚本（theme.import.py）的手册
 ---
 
 ### 预览

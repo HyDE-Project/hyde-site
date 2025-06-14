@@ -1,0 +1,91 @@
+---
+title: HyDE 脚本
+description: HyDE 的脚本执行包装器和环境解析器。
+sidebar:
+  order: 2
+---
+
+## 名称
+
+`hyde-shell` - HyDE 脚本执行包装器和环境解析器
+
+## 概要
+
+```
+hyde-shell [command] [arguments...]
+hyde-shell [--help | help | -h]
+hyde-shell [-r | reload]
+```
+
+## 描述
+
+`hyde-shell` 是一个通用的包装脚本，可以在不使用文件扩展名的情况下执行 HyDE 脚本，并解决用户可能意外覆盖其 PATH 中的 `~/.local/lib/hyde` 的 PATH 相关问题。
+
+`hyde-shell` 位于 `~/.local/bin/` 中，自动发现并执行来自 HyDE 库目录的脚本，同时处理 Python 脚本 (.py) 和 shell 脚本 (.sh)，而无需文件扩展名。
+
+## 选项
+
+**`--help, help, -h`**
+: 显示帮助信息，显示可用命令和使用信息。
+
+**`-r, reload`**
+: 重新加载 HyDE 环境并刷新所有配置。
+
+## 内置命令
+
+**`wallbash`**
+: 执行 wallbash 脚本以实现动态主题和颜色管理。
+
+## 脚本执行
+
+`hyde-shell` 提供对所有 HyDE 脚本的访问，而无需文件扩展名：
+
+```bash
+hyde-shell waybar              # 执行 waybar.py
+hyde-shell theme.import        # 执行 theme.import.py
+hyde-shell wallpaper           # 执行 wallpaper.sh
+hyde-shell screenrecord          # 执行 screenrecord.sh
+```
+
+该包装器会自动发现并解析 HyDE 库目录中的所有脚本。
+
+## 使用示例
+
+执行任何 HyDE 脚本而无需文件扩展名：
+```bash
+hyde-shell waybar --help           # 运行 waybar.py 并带有帮助标志
+hyde-shell theme.import            # 运行 theme.import.py
+hyde-shell wallpaper               # 运行 wallpaper.sh
+```
+
+使用内置命令：
+```bash
+hyde-shell wallbash                # 执行 ~/.config/hyde/wallbash/scripts/ 中的 wallbash 脚本
+
+hyde-shell reload                  # 重新加载 HyDE 环境
+```
+
+将参数传递给底层脚本：
+```bash
+hyde-shell waybar --set layout-1   # 将参数传递给 waybar.py
+```
+
+## 主要特性
+
+- **脚本路径解析**：在 `~/.local/lib/hyde/` 中查找脚本，而不考虑 PATH 配置
+- **扩展名处理**：自动附加适当的文件扩展名 (.py, .sh)
+- **PATH 独立性**：无论当前 PATH 配置或工作目录如何，都能正常工作
+
+## 文件
+
+**`~/.local/bin/hyde-shell`**
+: 主要可执行包装脚本
+
+**`~/.local/lib/hyde/`**
+: 包含所有 HyDE 脚本和模块的目录
+
+## 注意事项
+
+- 始终优先使用 `hyde-shell` 而不是直接执行脚本，以获得最大的兼容性
+- 文件扩展名是可选的，并会自动解析
+- 未来的 HyDE 版本将越来越依赖 `hyde-shell` 来执行脚本
