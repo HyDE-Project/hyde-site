@@ -25,7 +25,7 @@ git pull origin master
 
 除了上述命令，您还可以修改 [Scripts/restore_cfg.psv](https://github.com/HyDE-Project/HyDE/blob/master/Scripts/restore_cfg.psv)。文件中有相关文档说明。
 
-另请参阅 [此处](../resources/restore.md)。
+另请参阅 [此处](../../resources/restore/)。
 
 ### 仅更新 dotfiles
 
