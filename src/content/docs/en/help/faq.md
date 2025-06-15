@@ -3,7 +3,7 @@ title: FAQs & Tips
 description: Frequently asked questions about HyDE
 ---
 
-<link rel="stylesheet" href="/src/styles/help/faq.css">
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 :::tip
 Hyprland related questions should be referenced to [Hyprland Wiki](https://wiki.hyprland.org)

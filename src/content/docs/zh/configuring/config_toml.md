@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-<link rel="stylesheet" href="/src/styles/configuring/config_toml.css">
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 HyDE 向用户公开了 `xdg_config/hyde/config.toml` 文件供修改。这样用户就能在无需使用命令行参数的情况下与脚本交互。
 

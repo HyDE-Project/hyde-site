@@ -3,7 +3,7 @@ title: 常见问题解答与技巧
 description: 关于 HyDE 的常见问题
 ---
 
-<link rel="stylesheet" href="/src/styles/help/faq.css">
+<link rel="stylesheet" href="/src/styles/tables.css">
 
 :::tip
 与 Hyprland 相关的问题请参考 [Hyprland 官方维基](https://wiki.hyprland.org)
