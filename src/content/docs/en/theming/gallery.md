@@ -64,66 +64,60 @@ sidebar:
 
 > - Make sure you have installed [HyDE](https://github.com/HyDE-project/hyde)
 
+### Interactively import themes from the gallery
+
 ```shell
-
-> + Execute "theme.import.py" inside your terminal
-
-> + Choose your theme
+hydectl theme import
 ```
 
-![image](https://raw.githubusercontent.com/HyDE-Project/hyde-gallery/43e6cce54698f24842ae2fbb7b80e79556a21e02/assets/HydeThemes.png)
+### Import a specific theme by name and URL
+
+```shell
+hydectl theme import --name "Theme Name" --url "https://github.com/User/Repository"
+```
+
+### Update all local themes
+
+```shell
+hydectl theme import --fetch all
+```
+
+### Update a specific theme
+
+```shell
+hydectl theme import --fetch "Theme Name"
+```
+
+### Select a theme interactively
+
+```shell
+hydectl theme select
+```
+
+### Set a theme directly
+
+```shell
+hydectl theme set "Theme Name"
+```
 
 ---
 
-:::note
+## Wallpaper Management
 
-HyDE do not utilize a CLI yet, therefore we shall invoke scripts manually. Note that the future CLI will still invoke `theme.import.py` and `theme.patch.sh`, therefore no foreseeable API changes.
-
-:::
-
-📢 - You can also add Url-links or File path with single quotations for installing a specific theme
+### Select a wallpaper interactively
 
 ```shell
-theme.patch.sh "Theme-Name" "/Path/to/Configs"
-theme.patch.sh "Theme-Name" "https://github.com/User/Repository"
-theme.patch.sh "Theme-Name" "https://github.com/User/Repository/tree/branch"
+hydectl wallpaper select
 ```
 
-example
+### Set a specific wallpaper
 
 ```shell
-theme.patch.sh 'Hack the Box' 'https://github.com/HyDE-Project/Hyde-gallery'
+hydectl wallpaper set /path/to/wallpaper.jpg
 ```
 
-:::tip
-📢 Incase themes have archive updates. export `FORCE_THEME_UPDATE=true` to update Gtk, Icons, Cursors & Font.
+### List available wallpapers
 
 ```shell
- export FORCE_THEME_UPDATE=true
+hydectl wallpaper list
 ```
-
-:::
-
-### Updating
-
-Your local themes can be fetch/updated using the `theme.import.py` script.
-
-<details>
-<summary>Fetch all themes</summary>
- This command updates all the themes that are located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
-
-```bash
-theme.import.py --fetch all
-```
-
-</details>
-
-<details>
-<summary>Fetch a specific theme</summary>
- This command updates a specific theme that is located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
-
-```bash
-theme.import.py --fetch "Theme-Name"
-```
-
-</details>
