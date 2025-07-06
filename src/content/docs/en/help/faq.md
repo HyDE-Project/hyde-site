@@ -73,7 +73,7 @@ You can screen record using the following wayland based recording packages.
 
 You can set your Hyprland preferences in `xdg_config/hypr/userprefs.conf`. These settings are retained even when updating the repository.
 
-See `Configuring` > `Hyprland` to learn how we structure hyprlad configurations.
+See `Configuring` > `Hyprland` to learn how we structure Hyprland configurations.
 
 </div>
 </details>
@@ -107,17 +107,21 @@ Ex: `monitor = DP-1,2560x1440@144,0x0, 1` >> The @ set's the refresh rate, but n
 </details>
 
 <details>
-<summary id="pokemon-terminal">How do I remove the pokemon characters or change the terminal startup intro?</summary>
+<summary id="pokemon-terminal">How do I remove the pokemon characters?</summary>
 <div>
 
-You need to edit the `.hyde.zshrc` file in your home directory at `~/.hyde.zshrc`
-
-1. Edit `~/.hyde.zshrc`
-2. Add a # to line 158 where it writes `pokego --no-title -r 1,3,6`
-3. Save
+Uninstall pokego-bin.
 
 </div>
 </details>
+
+<details>
+<summary id="startup intro">How do I change the terminal startup intro?</summary>
+<div>
+
+Edit `~/.config/zsh/user.zsh`
+
+</div>
 
 <details>
 <summary id="sddm-settings">How do I edit the sddm wallpaper or settings?</summary>
@@ -167,7 +171,7 @@ If your thumbnails are not loading, try to rebuild your wallpaper cache.
 <summary id="edit-waybar">How do I edit the waybar?</summary>
 <div>
 
-You can set your required modules in this file - `~/.config/waybar/config.ctl`
+You can create a custom waybar config by adding a custom file to ~/.config/waybar/layouts/<filename>.jsonc.  It will then be selectable in the HyDE menu, or by running the script in the repo `HyDE/Scripts/waybar.py -S`
 
 Refer to the theming documentation in the [Waybar Wiki](https://github.com/Alexays/Waybar/wiki).
 
