@@ -122,6 +122,7 @@ Uninstall pokego-bin.
 Edit `~/.config/zsh/user.zsh`
 
 </div>
+</details>
 
 <details>
 <summary id="sddm-settings">How do I edit the sddm wallpaper or settings?</summary>
