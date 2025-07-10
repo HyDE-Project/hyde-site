@@ -66,7 +66,7 @@ sidebar:
 
 ```shell
 
-> + Execute "theme.import.py" inside your terminal
+> + Execute "hyde-shell theme.import --select" inside your terminal
 
 > + Choose your theme
 ```
@@ -75,45 +75,39 @@ sidebar:
 
 ---
 
-:::note
-
-HyDE do not utilize a CLI yet, therefore we shall invoke scripts manually. Note that the future CLI will still invoke `theme.import.py` and `theme.patch.sh`, therefore no foreseeable API changes.
-
-:::
-
 📢 - You can also add Url-links or File path with single quotations for installing a specific theme
 
 ```shell
-theme.patch.sh "Theme-Name" "/Path/to/Configs"
-theme.patch.sh "Theme-Name" "https://github.com/User/Repository"
-theme.patch.sh "Theme-Name" "https://github.com/User/Repository/tree/branch"
+hyde-shell theme.patch "Theme-Name" "/Path/to/Configs"
+hyde-shell theme.patch "Theme-Name" "https://github.com/User/Repository"
+hyde-shell theme.patch "Theme-Name" "https://github.com/User/Repository/tree/branch"
 ```
 
 example
 
 ```shell
-theme.patch.sh 'Hack the Box' 'https://github.com/HyDE-Project/Hyde-gallery'
+hyde-shell theme.patch 'Hack the Box' 'https://github.com/HyDE-Project/Hyde-gallery'
 ```
 
 :::tip
 📢 Incase themes have archive updates. export `FORCE_THEME_UPDATE=true` to update Gtk, Icons, Cursors & Font.
 
 ```shell
- export FORCE_THEME_UPDATE=true
+export FORCE_THEME_UPDATE=true
 ```
 
 :::
 
 ### Updating
 
-Your local themes can be fetch/updated using the `theme.import.py` script.
+Your local themes can be fetch/updated using the `theme.import` script.
 
 <details>
 <summary>Fetch all themes</summary>
  This command updates all the themes that are located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
 
 ```bash
-theme.import.py --fetch all
+hyde-shell theme.import --fetch all
 ```
 
 </details>
@@ -123,7 +117,7 @@ theme.import.py --fetch all
  This command updates a specific theme that is located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
 
 ```bash
-theme.import.py --fetch "Theme-Name"
+hyde-shell theme.import --fetch "Theme-Name"
 ```
 
 </details>
