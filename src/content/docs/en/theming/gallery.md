@@ -66,7 +66,7 @@ sidebar:
 
 ```shell
 
-> + Execute "hyde-shell theme.import --select" inside your terminal
+> + Execute "hydectl theme import" inside your terminal
 
 > + Choose your theme
 ```
@@ -75,18 +75,25 @@ sidebar:
 
 ---
 
-📢 - You can also add Url-links or File path with single quotations for installing a specific theme
+## Selecting a theme
 
+You can select themes using rofi with the following command:
 ```shell
-hyde-shell theme.patch "Theme-Name" "/Path/to/Configs"
-hyde-shell theme.patch "Theme-Name" "https://github.com/User/Repository"
-hyde-shell theme.patch "Theme-Name" "https://github.com/User/Repository/tree/branch"
+hydectl theme select
 ```
 
-example
-
+You can also set it straight from the terminal using the following command
 ```shell
-hyde-shell theme.patch 'Hack the Box' 'https://github.com/HyDE-Project/Hyde-gallery'
+hydectl theme set "Theme-Name"
+```
+
+## Importing other themes
+
+You can import other themes by running:
+```shell
+hydectl theme import --name "Theme-Name" --url "https://github.com/User/Repository"
+hydectl theme import --name "Theme-Name" --url "https://github.com/User/Repository/Branch"
+hydectl theme import --name "Theme-Name" --url "/Path/to/Configs/
 ```
 
 :::tip
@@ -107,7 +114,7 @@ Your local themes can be fetch/updated using the `theme.import` script.
  This command updates all the themes that are located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
 
 ```bash
-hyde-shell theme.import --fetch all
+hydectl theme import -f all
 ```
 
 </details>
@@ -117,7 +124,7 @@ hyde-shell theme.import --fetch all
  This command updates a specific theme that is located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
 
 ```bash
-hyde-shell theme.import --fetch "Theme-Name"
+hydectl theme import -f "Theme-Name"
 ```
 
 </details>
