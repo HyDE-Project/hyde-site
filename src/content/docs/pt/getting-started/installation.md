@@ -1,28 +1,30 @@
 ---
-title: Installation
-description: HyDE Installation guide
+title: Instalação
+description: Guia de Instalação do HyDE
 ---
 
-The installation script is designed for a minimal [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux) install, but **may** work on some [Arch-based distros](https://wiki.archlinux.org/title/Arch-based_distributions).
-While installing HyDE alongside another [DE](https://wiki.archlinux.org/title/Desktop_environment)/[WM](https://wiki.archlinux.org/title/Window_manager) should work, due to it being a heavily customized setup, it **will** conflict with your [GTK](https://wiki.archlinux.org/title/GTK)/[Qt](https://wiki.archlinux.org/title/Qt) theming, [Shell](https://wiki.archlinux.org/title/Command-line_shell), [SDDM](https://wiki.archlinux.org/title/SDDM), [GRUB](https://wiki.archlinux.org/title/GRUB), etc. and is at your own risk.
+// TODO: Por artigos
 
-For Nixos support there is a separate project being maintained @ [Hydenix](https://github.com/richen604/hydenix/tree/main)
+Este script de instalação foi projetado para um sistema mínimo [Arch Linux](https://wiki.archlinux.org/title/Arch_Linux_(Portugu%C3%AAs)) , mas **pode** funcionar em alguns [distros derivados do Arch](https://wiki.archlinux.org/title/Arch-based_distributions_(Portugu%C3%AAs)).
+Embora instalar HyDE com outro [DE](https://wiki.archlinux.org/title/Desktop_environment_(Portugu%C3%AAs)/[WM](https://wiki.archlinux.org/title/Window_manager_(Portugu%C3%AAs) funcione, como ele é uma configuração fortemente customizada, ele **irá** conflitar com a personalização visual do [GTK](https://wiki.archlinux.org/title/GTK_(Portugu%C3%AAs)/[Qt](https://wiki.archlinux.org/title/Qt_(Portugu%C3%AAs), [Shell](https://wiki.archlinux.org/title/Command-line_shell_(Portugu%C3%AAs), [SDDM](https://wiki.archlinux.org/title/SDDM_(Portugu%C3%AAs), [GRUB](https://wiki.archlinux.org/title/GRUB_(Portugu%C3%AAs), etc., e é por sua própria conta e risco.
+
+Para suporte a NixOS, há um projeto separado mantido: @ [Hydenix](https://github.com/richen604/hydenix/tree/main).
 
 :::note
 
-The install script will auto-detect an NVIDIA card and install nvidia-dkms drivers for your kernel.
-Please ensure that your NVIDIA card supports dkms drivers in the list provided [here](https://wiki.archlinux.org/title/NVIDIA).
+O script de instalação irá automaticamente detectar uma placa NVIDIA, e instalará drivers nvidia-dkms para o seu kernel
+Por favor, verifique se sua placa NVIDIA tem suporte aos drivers dkms na lista indicada [aqui](https://wiki.archlinux.org/title/NVIDIA_(Portugu%C3%AAs).
 :::
 
 :::danger
 
-The script modifies your `grub` or `systemd-boot` config to enable NVIDIA DRM.
+O script modifica sua configuração `grub` ou `systemd-boot` para habilitar DRM NVIDIA.
 
 :::
 
 <!-- ### Option 1 -->
 
-### Automated installation script
+### Script automático de instalação.
 
 ```shell
 pacman -S --needed git base-devel
@@ -32,7 +34,7 @@ cd ~/HyDE/Scripts
 ```
 
 :::tip
-You can also add any other apps you wish to install alongside HyDE to `Scripts/pkg_user.lst` and pass the file as a parameter to install it like so:
+Você pode adicionar quaisquer outros apps que você deseja instalar com o HyDE no arquivo `Scripts/pkg_user.lst` e passar como parâmetro para instalá-los dessa maneira:
 
 ```shell
 ./install.sh pkg_user.lst
@@ -41,16 +43,15 @@ You can also add any other apps you wish to install alongside HyDE to `Scripts/p
 :::
 
 :::note
-Refer your list from `Scripts/pkg_extra.lst`
-or you can `cp  Scripts/pkg_extra.lst Scripts/pkg_user.lst` if you wish to install all extra packages.
+Use o `Scripts/pkg_extra.lst` como referência para sua lista,
+ou `cp  Scripts/pkg_extra.lst Scripts/pkg_user.lst` se deseja instalar todos os pacotes extras.
 :::
 
-### Granular and Manual Installation
+### Instalação manual e granular
 
 #### Clone
 
-Clone the repo and change the directory to the script path. Then make sure the user has [w]rite and e[x]ecute permission to the clone directory
-
+Clone o repositório e mude o diretório para o caminho do script. Também garante que o usuário tem permissão de escrever[w] e de e[x]ecutar no diretório clonado.
 ```shell
 pacman -Sy git
 git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
@@ -58,37 +59,37 @@ cd ~/HyDE/Scripts
 ```
 
 :::caution
-**NEVER** ever execute the script with sudo or as root user!
+**JAMAIS** execute o script com sudo ou como usuario root!
 :::
 
-#### Modes
+#### Modos
 
-The install script can be executed in different modes,
+O script de instalação pode ser executado em diferentes modos
 
-- for default full hyprland installation with all configs
+- Para instalação completa padrão hyprland com todas as configurações
 
 ```shell
 ./install.sh
 ```
 
-- for full or minimal hyprland installation + your favorite packages (ex.`pkg_user.lst`)
+- Para instalação completa ou minima + seus pacotes favoritos (ex.`pkg_user.lst`)
 
 ```shell
-./install.sh pkg_user.lst # full install pkg_core.lst + pkg_user.lst with configs
-./install.sh -i pkg_user.lst # minimal install pkg_core.lst + pkg_user.lst without configs
+./install.sh pkg_user.lst # instalação completa pkg_core.lst + pkg_user.lst com configurações
+./install.sh -i pkg_user.lst # instalação minima pkg_core.lst + pkg_user.lst sem configurações.
 ```
 
-- each [section](#process) can also be independently executed as,
+- Cada [seção](#process) pode ser executada de forma independente como,
 
 ```shell
-./install.sh -i # minimal install hyprland without any configs
-./install.sh -d # minimal install hyprland without any configs, but with (--noconfirm) install
-./install.sh -r # just restores the config files
-./install.sh -s # start and enable system services
-./install.sh -t # test run without executing (-irst to dry run all)
-./install.sh -m # skips the theme installation
-./install.sh -n # skips nvidia installation
-./install.sh -irst # to do a test run for all
+./install.sh -i # instalação hyprland minima sem quaisquer configurações
+./install.sh -d # instalação minima hyprland sem quaisquer configurações, mas com instalação (--noconfirm).
+./install.sh -r # apenas restaura os arquivos de configuração
+./install.sh -s # inicia e habilita serviços do sistema
+./install.sh -t # Teste sem executar (-irst para simular tudo)
+./install.sh -m # pula a instalação de temas
+./install.sh -n # pula a instalação nvidia
+./install.sh -irst # para testar tudo sem aplicar nada
 ```
 
 <!-- ### Option 2
