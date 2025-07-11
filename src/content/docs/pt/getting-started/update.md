@@ -1,52 +1,50 @@
 ---
-title: Updating
-description: HyDE Dotfiles Management guide
+title: Atualizando
+description: Guia de Gerenciamento dos Dotfiles HyDE
 ---
 
-## Automated
+## Automatizada
 
-To update HyDE, you will need to pull the latest changes from GitHub and restore the configs by running the following commands:
+Para atualizar o HyDE, você precisa puxar as mudanças mais recentes e restaurar as configurações executando os seguintes comandos:
 
-```shell
+shell
 cd ~/HyDE/Scripts
 git pull origin master
 ./install.sh -r
-```
+
 
 :::note
 
-Any configurations you made will be overwritten if listed to be done so as listed by `Scripts/restore_cfg.psv`.
-However, all replaced configs are backed up and may be recovered from in `~/.config/cfg_backups`.
-See [Restore Configuration](/hyde/installation/restore/) for more information.
+Quaisquer configurações que você fez serão sobreescritas se listadas para serem feitas em: Scripts/restore_cfg.psv.
+No entanto, todas as configurações sobreescritas serão salvas e podem ser recuperadas em: ~/.config/cfg_backups.
+Veja [Restaurando configuração](/hyde/installation/restore/) para mais informações.
 
 :::
 
-## Granular and Manual Updates
+## Atualizações manuais e granulares
 
-In addition to the command above, you can modify the [Scripts/restore_cfg.psv](https://github.com/HyDE-Project/HyDE/blob/master/Scripts/restore_cfg.psv). The documentation on is on the file.
+Além do comando acima, você pode modificar o [Scripts/restore_cfg.psv](https://github.com/HyDE-Project/HyDE/blob/master/Scripts/restore_cfg.psv). A documentação está no arquivo.
 
-Also see [this](../../resources/restore/).
+Também veja [isso](../../resources/restore/).
 
-### Updating the dotfiles ONLY
+### Atualizando APENAS os dotfiles
 
 :::note
 
-> "restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
+> "restaurar" no contexto aqui é restaurar os dotfiles do repositório para seu $HOME, não o contrário.
 
-```sh
+sh
 ./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>
-```
+
 
 :::
 
 <details>
-<summary>Something like this</summary>
+<summary>Algo assim</summary>
 
-```sh
+sh
 cd ~/HyDE/Scripts
 ./restore_cfg.sh ./restore_cfg.psv
-```
+
 
 </details>
-
----
