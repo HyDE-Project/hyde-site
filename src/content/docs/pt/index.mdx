@@ -1,0 +1,37 @@
+---
+title: HyDE
+description: HyDE your Development Environment - Aesthetic, dynamic and minimal dots for Arch hyprland!
+template: splash
+hero:
+  tagline: your Development Environment ✨
+  image:
+    file: ../../../assets/hyde.svg
+  actions:
+    - text: Get Started with HyDE
+      link: /en/getting-started/introduction
+      icon: rocket
+    - text: Explore on GitHub
+      link: https://github.com/HyDE-Project
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## Features
+
+<CardGrid stagger>
+  <Card title="XDG Compliance" icon="seti:vala">
+    Follows the XDG Base Directory Specification.
+  </Card>
+  <Card title="Easier core updates" icon="add-document">
+    Core scripts are separated to user config.
+  </Card>
+  <Card title="More Themes!" icon="moon">
+	More theming options.
+</Card>
+  <Card title="Modular!" icon="puzzle">
+	One of the directions of this project is to be modular.
+</Card>
+
+</CardGrid>

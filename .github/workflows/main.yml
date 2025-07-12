@@ -1,0 +1,33 @@
+name: Atualizar do Upstream
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # everyday at midnight
+  workflow_dispatch: # also runs manually
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # necessary to get full history and branches
+
+      - name: Configure remote upstream
+        run: git remote add upstream https://github.com/ORIGINAL/REPO.git
+
+      - name: Fetch upstream
+        run: git fetch upstream
+
+      - name: Merge upstream 
+        run: |
+          git checkout main
+          git merge upstream/main
+
+      - name: Push to fork
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git push origin main
