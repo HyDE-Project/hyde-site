@@ -66,7 +66,7 @@ sidebar:
 
 ```shell
 
-> + Execute "hydectl theme import" inside your terminal
+> + Execute "theme.import.py" inside your terminal
 
 > + Choose your theme
 ```
@@ -75,46 +75,45 @@ sidebar:
 
 ---
 
-## Selecting a theme
+:::note
 
-You can select themes using rofi with the following command:
+HyDE do not utilize a CLI yet, therefore we shall invoke scripts manually. Note that the future CLI will still invoke `theme.import.py` and `theme.patch.sh`, therefore no foreseeable API changes.
+
+:::
+
+📢 - You can also add Url-links or File path with single quotations for installing a specific theme
+
 ```shell
-hydectl theme select
+theme.patch.sh "Theme-Name" "/Path/to/Configs"
+theme.patch.sh "Theme-Name" "https://github.com/User/Repository"
+theme.patch.sh "Theme-Name" "https://github.com/User/Repository/tree/branch"
 ```
 
-You can also set it straight from the terminal using the following command
-```shell
-hydectl theme set "Theme-Name"
-```
+example
 
-## Importing other themes
-
-You can import other themes by running:
 ```shell
-hydectl theme import --name "Theme-Name" --url "https://github.com/User/Repository"
-hydectl theme import --name "Theme-Name" --url "https://github.com/User/Repository/Branch"
-hydectl theme import --name "Theme-Name" --url "/Path/to/Configs/
+theme.patch.sh 'Hack the Box' 'https://github.com/HyDE-Project/Hyde-gallery'
 ```
 
 :::tip
 📢 Incase themes have archive updates. export `FORCE_THEME_UPDATE=true` to update Gtk, Icons, Cursors & Font.
 
 ```shell
-export FORCE_THEME_UPDATE=true
+ export FORCE_THEME_UPDATE=true
 ```
 
 :::
 
 ### Updating
 
-Your local themes can be fetch/updated using the `theme.import` script.
+Your local themes can be fetch/updated using the `theme.import.py` script.
 
 <details>
 <summary>Fetch all themes</summary>
  This command updates all the themes that are located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
 
 ```bash
-hydectl theme import -f all
+theme.import.py --fetch all
 ```
 
 </details>
@@ -124,7 +123,7 @@ hydectl theme import -f all
  This command updates a specific theme that is located in `xdg_config/hyde/themes/` that are listed in the [HyDe-gallery](#theme-gallery)
 
 ```bash
-hydectl theme import -f "Theme-Name"
+theme.import.py --fetch "Theme-Name"
 ```
 
 </details>
