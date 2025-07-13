@@ -1,6 +1,6 @@
 ---
-title: Main Configuration
-description: HyDE's Configuration Guide
+title: Configuração principal
+description: Guia de configuração do HyDE
 sidebar:
   order: 2
 ---
@@ -22,348 +22,348 @@ then paste it in here.
 
  -->
 
-HyDE exposes `xdg_config/hyde/config.toml` file for users to modify. This lets users have the ability to interact the scripts without using command arguments.
+---
+O HyDE expõe o arquivo `xdg_config/hyde/config.toml` para usuários modificarem. Isto permite que usuários tenham a habilidade de interagir com os scripts sem usar parâmetros de comando.
 
-Users are encouraged to use an editor that support schema validation to ensure the configuration file is valid.
+Os usuários são encorajados a usar um editor que suporte validação de schema para garantir que o arquivo de configuração é válido.
 ```toml
 "$schema" = "https://raw.githubusercontent.com/HyDE-Project/HyDE/refs/heads/master/Configs/.local/share/hyde/schema/config.toml.json"
 ```
 ---
 ### [battery.notify]
 
-batterynotify.sh configuration.
+Configuração para o batterynotify.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| dock | Dock status for battery notifications. | true |
-| interval | Interval for battery notifications. | 5 |
-| notify | Notification threshold. | 1140 |
-| timer | Timer for battery notifications. | 120 |
+| dock | Status do dock para notificações da bateria. | true |
+| interval | Intervalo para notificações da bateria. | 5 |
+| notify | Limite de notificações. | 1140 |
+| timer | Timer para notificações da bateria. | 120 |
 
 ### [battery.notify.execute]
 
-Commands to execute for battery notifications.
+Comando para executar para notificações da bateria.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| charging | Command to execute when charging. |  |
-| critical | Command to execute when battery is critical. | systemctl suspend |
-| discharging | Command to execute when discharging. |  |
-| low | Command to execute when battery is low. |  |
-| unplug | Command to execute when unplugged. |  |
+| charging | Comando para executar quando carregando. |  |
+| critical | Comando para executar quando bateria critica. | systemctl suspend |
+| discharging | Comando para executar quando descarregando. |  |
+| low | Comando para executar quando bateria baixa. |  |
+| unplug | Comando para executar quando desconectado. |  |
 
 ### [battery.notify.threshold]
 
-Thresholds for battery notifications.
+Limiar para notificações da bateria.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| critical | Critical battery threshold. | 10 |
-| full | Full battery threshold. | 90 |
-| low | Low battery threshold. | 20 |
-| unplug | Unplug battery threshold. | 100 |
+| critical | Limiar para bateria critica. | 10 |
+| full | Limiar para bateria cheia. | 90 |
+| low | Limiar para bateria baixa. | 20 |
+| unplug | Limiar para desconectar bateria. | 100 |
 
 ### [brightness]
 
-brightnesscontrol.sh configuration.
+Configuração do brightnesscontrol.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| notify | Enable notifications for brightness control. | true |
-| steps | Number of steps to increase/decrease brightness. | 5 |
+| notify | Habilitar notificações para controle de brilho. | true |
+| steps | Número de passos para incrementar/reduzir volume. | 5 |
 
 ### [cava.hyprlock]
 
-'cava.sh hyprlock' configuration.
+Configuração do 'cava.sh hyprlock'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| bar | Bar characters for cava. | ▁▂▃▄▅▆▇█ |
-| max_instances | Maximum number of cava instances. | 1 |
-| range | Number of bars minus one. | 7 |
-| standby | Standby character for cava. | 🎶 |
-| width | Width of the cava output. | 20 |
+| bar | Caracteres de barra do cava. | ▁▂▃▄▅▆▇█ |
+| max_instances | número máximo de instâncias do cava. | 1 |
+| range | Número de barras, menos um. | 7 |
+| standby | Caractere de standby do cava. | 🎶 |
+| width | Largura da saida do cava. | 20 |
 
 ### [cava.stdout]
 
-'cava.sh stdout' configuration.
+Configuração do 'cava.sh stdout'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| bar | Bar characters for cava. | ▁▂▃▄▅▆▇█ |
-| max_instances | Maximum number of cava instances. | 1 |
-| range | Number of bars minus one. | 7 |
-| standby | Standby character for cava. | 🎶 |
-| width | Width of the cava output. | 20 |
+| bar | Caracteres de barra para o cava. | ▁▂▃▄▅▆▇█ |
+| max_instances | número de instâncias máxima do cava. | 1 |
+| range | número de barras, menos um. | 7 |
+| standby | Caractere de espera do cava. | 🎶 |
+| width | Largura da saída do cava. | 20 |
 
 ### [cava.waybar]
 
-'cava.sh waybar' configuration.
+'Configuração do cava.sh waybar'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| bar | Bar characters for cava. | ▁▂▃▄▅▆▇█ |
-| max_instances | Maximum number of cava instances. | 1 |
-| range | Number of bars minus one. | 7 |
-| standby | Standby character for cava. | 🎶 |
-| width | Width of the cava output. | 20 |
+| bar | Caracteres de barra do cava. | ▁▂▃▄▅▆▇█ |
+| max_instances | número máximo de instâncias do cava. | 1 |
+| range | número de barras, menos um. | 7 |
+| standby | Caractere de espera do cava. | 🎶 |
+| width | Largura da saída do cava. | 20 |
 
 ### [hypr.config]
 
-Hypr configuration.
+Configuração do Hypr.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| sanitize | List of regex to sanitize in the theme.config. | [".*rgba\(.*,.*,.*,.*\)"] |
+| sanitize | Lista de regex para higienizar no theme.config. | [".*rgba\(.*,.*,.*,.*\)"] |
 
 ### [hyprland]
 
-Hyprland configuration.
+Configuração do hyprland.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| background_path | LockScreen's Background path. |  |
-| bar | Bar. | waybar |
-| browser | Browser. | firefox |
-| button_layout | Button layout. (gtk only) |  |
-| color_scheme | Color scheme. | prefer-dark |
-| cursor_size | Cursor size. | 24 |
-| cursor_theme | Cursor theme. | Bibata-Modern-Ice |
-| document_font_size | Document font size. | 10 |
+| background_path | Caminho do papel de parede da tela de bloqueio. |  |
+| bar | Barra. | waybar |
+| browser | Navegador. | firefox |
+| button_layout | Layout do botão. (apenas gtk) |  |
+| color_scheme | Esquema de cores. | prefer-dark |
+| cursor_size | Tamanho do cursor. | 24 |
+| cursor_theme | Tema do cursor. | Bibata-Modern-Ice |
+| document_font_size | Tamanho da fonte do documento. | 10 |
 | editor | Editor. | code |
-| explorer | File manager. | dolphin |
-| font | Font. | Canterell |
-| font_antialiasing | Font antialiasing. | rgba |
+| explorer | Gerenciador de arquivos. | dolphin |
+| font | Fonte. | Canterell |
+| font_antialiasing | Antialiasing da fonte. | rgba |
 | font_hinting | Font hinting. | full |
-| font_size | Font size. | 10 |
-| gtk_theme | GTK theme. | Wallbash-Gtk |
-| icon_theme | Icon theme. | Tela-circle-dracula |
-| idle | Idle manager. | hypridle |
-| lockscreen | Lockscreen. | lockscreen.sh |
-| monospace_font | Monospace font. | CaskaydiaCove Nerd Font Mono |
-| monospace_font_size | Monospace font size. | 9 |
-| quickapps | Quick apps. | kitty |
+| font_size | Tamanho da fonte. | 10 |
+| gtk_theme | Tema GTK. | Wallbash-Gtk |
+| icon_theme | Tema dos ícones. | Tela-circle-dracula |
+| idle | Gerenciador de ociosidade. | hypridle |
+| lockscreen | Tela de bloqueio. | lockscreen.sh |
+| monospace_font | Fonte mono espaçada. | CaskaydiaCove Nerd Font Mono |
+| monospace_font_size | Tamanho da fonte mono espaçada. | 9 |
+| quickapps | Aplicativos de acesso rápido. | kitty |
 | terminal | Terminal. | kitty |
 
 ### [hyprland_start]
 
-Hyprland start configuration.
+Configuração de inicialização hyprland.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| apptray_bluetooth | Bluetooth applet. | blueman-applet |
-| auth_dialogue | Authentication dialogue. | polkitkdeauth.sh |
-| bar | Bar. | hyde-shell waybar --watch |
-| battery_notify | Battery notification script. | batterynotify.sh |
-| dbus_share_picker | DBus share picker. | dbus-update-activation-environment --systemd --all |
-| idle_daemon | Idle daemon. | hypridle |
-| image_clipboard | Image clipboard. | wl-paste --type image --watch cliphist store |
-| network_manager | Network manager. | nm-applet --indicator |
-| notifications | Notifications. | swaync |
-| removable_media | Removable media manager. | udiskie --no-automount --smart-tray |
-| systemd_share_picker | Systemd share picker. | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
-| text_clipboard | Text clipboard. | wl-paste --type text --watch cliphist store |
-| wallpaper | Wallpaper script. | $scrPath/wallpaper.sh --global |
-| xdg_portal_reset | XDG portal reset script. | resetxdgportal.sh |
+| apptray_bluetooth | Applet do Bluetooth | blueman-applet |
+| auth_dialogue | Caixa de diálogo da autenticação. | polkitkdeauth.sh |
+| bar | Barra. | hyde-shell waybar --watch |
+| battery_notify | Script de notificação da bateria. | batterynotify.sh |
+| dbus_share_picker | Share picker do DBus. | dbus-update-activation-environment --systemd --all |
+| idle_daemon | Gerenciador de ociosidade. | hypridle |
+| image_clipboard | Área de transferência de imagens. | wl-paste --type image --watch cliphist store |
+| network_manager | Gerenciador de rede. | nm-applet --indicator |
+| notifications | Notificações. | swaync |
+| removable_media | Gerenciador de mídias removíveis. | udiskie --no-automount --smart-tray |
+| systemd_share_picker | Share picker do systemd. | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
+| text_clipboard | Área de transferência do texto. | wl-paste --type text --watch cliphist store |
+| wallpaper | Script do papel de parede. | $scrPath/wallpaper.sh --global |
+| xdg_portal_reset | Script de reset do XDG-Portal. | resetxdgportal.sh |
 
 ### [mediaplayer]
 
-mediaplayer.py configuration.
+Configuração do mediaplayer.py.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| artist_track_separator | Separator symbols to display between artist and track. |    |
-| max_length | Max length of song and artist string. | 70 |
-| prefix_paused | Prefix for paused media. |    |
-| prefix_playing | Prefix for playing media. |  |
-| standby_text | To display on standby. |   Music |
+| artist_track_separator | Simbolo do separador para mostrar entre o artista e a música. |    |
+| max_length | Tamanho máximo para o string da música e artista. | 70 |
+| prefix_paused | Prefixo para mídia pausada. |    |
+| prefix_playing | Prefixo para mídia tocando. |  |
+| standby_text | Prefix para standby. |   Music |
 
 ### [notification]
 
-Notification script configuration.
+Configuração do script de notificação.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| font | Font for notifications. | mononoki Nerd Font |
-| font_size | Font size for notifications. | 10 |
+| font | Fonte para notificações. | mononoki Nerd Font |
+| font_size | Tamanho da fonte para notificações. | 10 |
 
 ### [rofi]
 
-Global rofi configuration.
+Configuração global do Rofi.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Rofi default scaling. | 10 |
+| scale | Escala para o Rofi. | 10 |
 
 ### [rofi.animation]
 
-'animation.sh select' configuration.
+Configuração do 'animation.sh select'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for animation. | 10 |
+| scale | Escala para a animação. | 10 |
 
 ### [rofi.cliphist]
 
-cliphist.sh configuration.
+Configuração do cliphist.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for cliphist. | 10 |
+| scale | Escala para o cliphist.sh. | 10 |
 
 ### [rofi.emoji]
 
-emoji-picker.sh configuration.
+Configuração para o emoji-picker.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for emoji picker. | 10 |
-| style | Style for emoji picker. | 1 |
+| scale | Escala para o seletor de emojis. | 10 |
+| style | Estilo para o seletor de emojis. | 1 |
 
 ### [rofi.glyph]
 
-glyph-picker.sh configuration.
+Configuração do glyph-picker.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for glyph picker. | 10 |
+| scale | Escala para o glyph-picker.sh. | 10 |
 
 ### [rofi.hyprlock]
 
-'hyprlock.sh select' configuration.
+Configuração do 'hyprlock.sh select'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for hyprlock. | 10 |
+| scale | Escala para o hyprlock. | 10 |
 
 ### [rofi.launch]
 
-rofilaunch.sh configuration.
+Configuração para o rofilaunch.sh
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| drun_args | Additional arguments for drun mode. | [] |
-| filebrowser_args | Additional arguments for filebrowser mode. | [] |
-| run_args | Additional arguments for run mode. | [] |
-| scale | Scaling for launch. | 5 |
-| window_args | Additional arguments for window mode. | [] |
+| drun_args | Argumentos adicionais para o modo drun. | [] |
+| filebrowser_args | Argumentos adicionais para o modo filebrowser. | [] |
+| run_args | Argumentos adicionais para o modo run. | [] |
+| scale | Escala para abertura. | 5 |
+| window_args | Argumentos adicionais para o modo window. | [] |
 
 ### [rofi.theme]
 
-themeselect.sh configuration.
+Configuração do themeselect.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for theme selector. | 6 |
+| scale | Escala para o seletor de temas. | 6 |
 
 ### [rofi.wallpaper]
 
-swwwallselect.sh configuration.
+Configuração para o swwwallselect.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for wallpaper. | 10 |
+| scale | Escala para o papel de parede. | 10 |
 
 ### [rofi.keybind.hint]
 
-keybind_hint.sh configuration.
+Configuração do keybind_hint.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| delimiter | Delimiter for keybind hints. | 	 |
-| height | Height for keybind hints. | 40em |
-| line | Number of lines for keybind hints. | 16 |
-| width | Width for keybind hints. | 40em |
+| delimiter | Delimitador para sugestões de teclas. |    |
+| height | Altura para sugestões de teclas. | 40em |
+| line | Número de linhas para sugestões de teclas. | 16 |
+| width | Largura para sugestões de teclas. | 40em |
 
 ### [screenshot]
 
-screenshot.sh configuration.
+Configuração do screenshot.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| annotation_post_command | Post command for annotation tool. | [""] |
-| annotation_pre_command | Pre command for annotation tool. | [] |
-| annotation_tool | Annotation tool for screenshots. | satty |
+| annotation_post_command | Comando a executar após a captura de tela. | [""] |
+| annotation_pre_command | Comando a executar antes da captura de tela. | [] |
+| annotation_tool | Ferramenta de anotação para capturas de tela. | satty |
 
 ### [sysmonitor]
 
-sysmonlaunch.sh configuration.
+Configuração do sysmonlaunch.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| commands | Fallback command options. | [""] |
-| execute | Default command to execute. |  |
+| commands | Opções do comando de fallback. | [""] |
+| execute | Comando padrão para executar. |  |
 
 ### [volume]
 
-volumecontrol.sh configuration.
+Configuração do volumecontrol.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| boost | Enable volume boost. | false |
-| boost_limit | Volume boost limit. | 120 |
-| notify | Enable notifications for volume control. | true |
-| steps | Number of steps to increase/decrease volume. | 5 |
+| boost | Habilitar amplificação do volume. | false |
+| boost_limit | Limite da amplificação do volume. | 120 |
+| notify | Habilitar notificações para controle do volume. | true |
+| steps | número de passos para incrementar/reduzir o volume. | 5 |
 
 ### [wallbash]
 
-wallbash configuration.
+Configuração do wallbash.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| skip_template | Templates to skip when using wallbash. | [""] |
+| skip_template | Templates a serem ignorados pelo wallbash. | [""] |
 
 ### [wallpaper]
 
-Wallpaper configuration.
+Configuração do papel de parede
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| backend | Wallpaper backend, requires 'wallpaper.<backend>.sh' as handler script in $PATH | swww |
-| custom_paths | List of paths to search for wallpapers. | [] |
+| backend | Backend do papel de parede, requer o script 'wallpaper.<backend>.sh' no $PATH para funcionar | swww |
+| custom_paths | Lista de caminhos para procurar papéis de parede | [] |
 
 ### [wallpaper.swww]
 
-swwwallselect.sh configuration.
+Configuração do swwwallselect.sh
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| duration | Transition duration. | 1 |
-| framerate | Transition framerate. | 60 |
-| transition_default | Transition type for default wallpaper. | grow |
-| transition_next | Transition type for next wallpaper. | grow |
-| transition_prev | Transition type for previous wallpaper. | outer |
+| duration | Duração da transição do papel de parede. | 1 |
+| framerate | Framerate da transição do papel de parede. | 60 |
+| transition_default | Modo de transição do papel de parede padrão. | grow |
+| transition_next | Modo de transição para o próximo papel de parede. | grow |
+| transition_prev | Modo de transição para o papel de parede anterior. | outer |
 
 ### [waybar]
 
-waybar configuration.
+Configuração do waybar.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| font | Font for waybar. | JetBrainsMono Nerd Font |
-| icon_size | Icon size for waybar. | 10 |
-| scale | Total scaling for waybar. | 10 |
+| font | Fonte para o waybar. | JetBrainsMono Nerd Font |
+| icon_size | Tamanho dos ícones do waybar. | 10 |
+| scale | Escala global do waybar. | 10 |
 
 ### [weather]
 
-Weather configuration.
+Configuração do módulo do clima.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| forecast_days | Number of days to show forecast (0-3). | 3 |
-| location | Location/coordinates string for the weather output. |  |
-| show_icon | Show the weather icon in waybar. | true |
-| show_location | Show the location in waybar. | true |
-| show_today | Show detailed description of today in tooltip. | true |
-| temperature_unit | Temperature unit ('c' or 'f'). | c |
-| time_format | Time format ('12h' or '24h'). | 24h |
-| windspeed_unit | Windspeed unit ('km/h' or 'mph'). | km/h |
+| forecast_days | número de dias a serem mostrados na previsão (0-3). | 3 |
+| location | Localização/coordenadas para o clima. |  |
+| show_icon | Mostra o ícone do clima no waybar. | true |
+| show_location | Mostra a localização no waybar. | true |
+| show_today | Mostra descrição detalhada de hoje no tooltip. | true |
+| temperature_unit | Unidade de temperatura ('c' ou 'f'). | c |
+| time_format | Formato da hora ('12h' ou '24h'). | 24h |
+| windspeed_unit | Unidade da velocidade do vento ('km/h' ou 'mph'). | km/h |
 
 ### [wlogout]
 
-wlogout configuration.
+Configuração do wlogout.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| style | Style for wlogout. | 2 |
-
+| style | Estilo para o wlogout. | 2 |
