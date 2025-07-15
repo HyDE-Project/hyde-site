@@ -1,13 +1,13 @@
 ---
 title: Hyprland
-description: Hyprland related configuration
+description: Configurações relacionadas ao Hyprland
 sidebar:
   order: 3
 ---
 
 <link rel="stylesheet" href="/src/styles/tables.css">
 
-# Configuration Tree
+# Árvore de configuração
 
 ```
 . 📂 ~/.config/hypr
@@ -36,57 +36,57 @@ sidebar:
 
 :::caution
 
-**Read the [Hyprland Wiki](https://wiki.hyprland.org/) first!**
+**Leia a [_Wiki_ do _Hyprland_](https://wiki.hyprland.org/) primeiro!**
 
 :::
 
-# HyDE's Hyprland Configuration
+# Configuração do _Hyprland_ do _HyDE_
 
-Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE's hyprland configuration is divided into three sections:
+Como o _Hyprland_ importa o `~/.config/hypr/hyprland.conf`, a configuração do _Hyprland_ do _HyDE_ é dividida em três seções:
 
-- [Boilerplate](#1-boilerplate)
-- [Overrides](#2-overrides)
-- [Users](#3-users)
+- [Modelo base](#1-boilerplate)
+- [Sobrescrições](#2-overrides)
+- [Usuários](#3-users)
 
-## 1. Boilerplate
+## 1. Modelo base
 
-This section contains the default configuration of HyDE. It is recommended not to change this section.
+Essa seção contêm a configuração padrão do _HyDE_. Não é recomendado mudar esta seção.
 
-**Filepath:** `$XDG_DATA_HOME/hyde/hyprland.conf`
+**Caminho:** `$XDG_DATA_HOME/hyde/hyprland.conf`
 
-This file is sourced on top of other configurations in `~/.config/hypr/hyprland.conf`.
+Essa configuração é importada em cima de outras configurações em `~/.config/hypr/hyprland.conf`.
 
 ```ini
 # Boilerplate configuration
 source = ~/.local/share/hyde/hyprland.conf
 ```
 
-## 2. Overrides
+## 2. Sobreescrições
 
-This section is for overriding the default configuration of HyDE.
+Essa seção é para sobrescrever a configuração padrão do _HyDE_.
 
 :::caution
 
-The `xdg_config/hypr/hyde.conf` file is deprecated. Use `xdg_config/hyde/config.toml` instead.
+O arquivo `xdg_config/hypr/hyde.conf` é obsoleto. Use `xdg_config/hyde/config.toml` em vez disso.
 
 :::
 
-To override HyDE's default Hyprland settings, configure these sections in your `config.toml`:
+Para sobrescrever a configuração padrão, configure estas seções no seu `config.toml`:
 
-- **[hyprland]** - Application defaults, theming, and display settings
-- **[hyprland_start]** - Startup commands and services
+- **[hyprland]** - Aplicativos padrão, temas e configurações de display.
+- **[hyprland_start]** - Comandos na inicialização e serviços.
 
-**Configuration File:** `$XDG_STATE_HOME/hyde/hyprland.conf`
+**Arquivo de configuração:** `$XDG_STATE_HOME/hyde/hyprland.conf`
 
-For detailed options, see:
+Para opções mais detalhadas, veja:
 - [hyprland configuration](../config_toml/#hyprland)
 - [hyprland_start configuration](../config_toml/#hyprland_start)
 
-## 3. Users
+## 3. Usuário;
 
-This section is for user configuration. It is recommended to change this section to your liking.
+Essa seção é para configuração do usuário. É recomendado mudar esta seção de acordo com seu gosto.
 
-**Filepaths:**
+**Caminhos:**
 
 - `./keybindings.conf`
 - `./windowrules.conf`
@@ -97,13 +97,13 @@ This section is for user configuration. It is recommended to change this section
 
 :::tip
 
-Likely you only need this files to configure your preferences.
-Hyprland variables can be overridden, therefore you can change the default values to your liking.
+Você provavelmente só precisa destes arquivos para configurar suas preferências.
+As variáveis do _Hyprland_ podem ser sobrescritas, logo você pode mudar os valores padrão de acordo com seu gosto.
 
-Also Hyprland can hot reload the configuration files, so you can edit them and see the changes immediately.
+O _Hyprland_ pode recarregar instantaneamente os arquivos de configuração, então você pode editá-los, e ver as mudanças imediatamente.
 
 :::
 
-Now you should know which file is which. Refer to the [Hyprland Wiki](https://wiki.hyprland.org) for more information and to achieve your perfect desktop experience.
+Agora você deve saber qual arquivo é responsável pelo oque. Refira-se a [_Wiki_ do _Hyprland_](https://wiki.hyprland.org) para mais informações e para conseguir sua experiência de _desktop_ perfeita.
 
-Also see [FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout).
+Também veja [Duvidas Frequentes e Dicas](../help/faq#how-can-i-change-keyboard-layout).
