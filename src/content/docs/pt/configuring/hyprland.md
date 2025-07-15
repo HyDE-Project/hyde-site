@@ -36,7 +36,7 @@ sidebar:
 
 :::caution
 
-**Leia a [_Wiki_ do _Hyprland_](https://wiki.hyprland.org/) primeiro!**
+**Leia a [_Wiki_ do _Hyprland_](https://wiki.hyprland.org/) (Em inglês) primeiro!**
 
 :::
 
