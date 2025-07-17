@@ -22,6 +22,7 @@ export default defineConfig({
         zh: { label: '简体中文', lang: 'zh' },
         de: { label: 'Deutsch', lang: 'de' },
         hi: { label: 'हिन्दी', lang: 'hi' },
+	pt: { label: 'Português', lang: 'pt'},
       },
       social: [
         {
