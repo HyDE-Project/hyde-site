@@ -36,13 +36,13 @@ sidebar:
 
 :::caution
 
-**Leia a [_Wiki_ do _Hyprland_](https://wiki.hyprland.org/) (Em inglês) primeiro!**
+**Leia a [Wiki do Hyprland](https://wiki.hyprland.org/) (Em inglês) primeiro!**
 
 :::
 
-# Configuração do _Hyprland_ do _HyDE_
+# Configuração do Hyprland do HyDE
 
-Como o _Hyprland_ importa o `~/.config/hypr/hyprland.conf`, a configuração do _Hyprland_ do _HyDE_ é dividida em três seções:
+Como o Hyprland importa o `~/.config/hypr/hyprland.conf`, a configuração do Hyprland do HyDE é dividida em três seções:
 
 - [Modelo base](#1-boilerplate)
 - [Sobrescrições](#2-overrides)
@@ -50,7 +50,7 @@ Como o _Hyprland_ importa o `~/.config/hypr/hyprland.conf`, a configuração do 
 
 ## 1. Modelo base
 
-Essa seção contêm a configuração padrão do _HyDE_. Não é recomendado mudar esta seção.
+Essa seção contêm a configuração padrão do HyDE. Não é recomendado mudar esta seção.
 
 **Caminho:** `$XDG_DATA_HOME/hyde/hyprland.conf`
 
@@ -63,7 +63,7 @@ source = ~/.local/share/hyde/hyprland.conf
 
 ## 2. Sobreescrições
 
-Essa seção é para sobrescrever a configuração padrão do _HyDE_.
+Essa seção é para sobrescrever a configuração padrão do HyDE.
 
 :::caution
 
@@ -98,12 +98,12 @@ Essa seção é para configuração do usuário. É recomendado mudar esta seç�
 :::tip
 
 Você provavelmente só precisa destes arquivos para configurar suas preferências.
-As variáveis do _Hyprland_ podem ser sobrescritas, logo você pode mudar os valores padrão de acordo com seu gosto.
+As variáveis do Hyprland podem ser sobrescritas, logo você pode mudar os valores padrão de acordo com seu gosto.
 
-O _Hyprland_ pode recarregar instantaneamente os arquivos de configuração, então você pode editá-los, e ver as mudanças imediatamente.
+O Hyprland pode recarregar instantaneamente os arquivos de configuração, então você pode editá-los, e ver as mudanças imediatamente.
 
 :::
 
-Agora você deve saber qual arquivo é responsável pelo oque. Refira-se a [_Wiki_ do _Hyprland_](https://wiki.hyprland.org) para mais informações e para conseguir sua experiência de _desktop_ perfeita.
+Agora você deve saber qual arquivo é responsável pelo oque. Refira-se a [_Wiki_ do Hyprland](https://wiki.hyprland.org) para mais informações e para conseguir sua experiência de desktop perfeita.
 
 Também veja [Duvidas Frequentes e Dicas](../help/faq#how-can-i-change-keyboard-layout).
