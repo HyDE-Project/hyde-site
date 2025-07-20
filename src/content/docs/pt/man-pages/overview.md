@@ -1,8 +1,8 @@
 ---
-title: Overview
-description: HyDE manuals for scripts and executable
+title: Visão Geral
+description: Manuais do HyDE para scripts e executáveis.
 sidebar:
   order: 1
 ---
 
-HyDE manuals for scripts and executables.
+ Manuais do HyDE para scripts e executáveis.
