@@ -32,7 +32,7 @@ description: Configuração do Waybar
   - Arquivo gerado pelo tema.
 
 :::note
-Você deve saber que o `xdg_share/waybar` (~/.local/share/waybar) é uma pasta providenciada pelo HyDE. NUNCA faça alterações nesta pasta, já que elas serão sobrescritas nas atualizações. Você deve, em vez disso, editar seu próprio diretório  `~/.config/waybar`! 
+Você deve saber que o `xdg_share/waybar` (~/.local/share/waybar) é um diretório providenciada pelo HyDE. NUNCA faça alterações neste diretório, já que elas serão sobrescritas nas atualizações. Você deve, em vez disso, editar seu próprio diretório  `~/.config/waybar`! 
 
 Leve em conta que ambas tem a mesma estrutura e que eu sugiro que você copie os arquivos do `xdg_share/waybar` para o `~/.config/waybar`, e os edite lá.
 
@@ -40,7 +40,7 @@ Leve em conta que ambas tem a mesma estrutura e que eu sugiro que você copie os
 
 ### Módulos
 
-Pasta: `./modules/`
+Diretório: `./modules/`
 
 ```text
 └── 📂 modules/
@@ -70,7 +70,7 @@ Exemplo:
 
 ### Layouts
 
-Pasta: `./layouts/`
+Diretório: `./layouts/`
 
 ```text
 └── 📂 layouts/
@@ -81,7 +81,7 @@ Pasta: `./layouts/`
    └── 📄 ....jsonc
 ```
 
-O HyDE guarda todos os layouts prontos para usar na pasta `layouts/`. Essas configurações podem ser navegados utilizando o script `hyde-shell waybar`
+O HyDE guarda todos os layouts prontos para usar no diretório `layouts/`. Essas configurações podem ser navegados utilizando o script `hyde-shell waybar`
 
 :::note
 Se um usuário acidentalmente configurar o `./waybar/config.jsonc`, ela será movida para o `~/.config/waybar/layouts/backup/name_timestamp.jsonc`. Mesmo com essas medidas, nós te encorajamos a criar uma cópia de sua configuração em `~/.config/waybar/layouts/`.
@@ -91,7 +91,7 @@ Para a estilização veja [Estilos](#estilos).
 
 ### Estilos
 
-Pasta: `./styles/`
+Diretório: `./styles/`
 
 ```text
 └── 📂 styles/
@@ -103,14 +103,14 @@ Pasta: `./styles/`
    └── 📄 ...*.css
 ```
 
-A pasta `styles/` contem os arquivos CSS contraparte para os layouts.
+O diretório `styles/` contem os arquivos CSS contraparte para os layouts.
 Quando você escolhe o layout, o HyDE tentará utilizar o estilo CSS equivalente correspondendo os nomes-base. `khing.jsonc` utilizará o `khing.css`.
 
 Explicitar as opções `--config <file>` e o `--style <file>` também é suportado.
 
 ### Includes
 
-Pasta: `./includes/`
+Diretório: `./includes/`
 
 ```text
 └── 📂 includes/
@@ -142,7 +142,7 @@ Pasta: `./includes/`
 
 ### Menus
 
-Pasta: `./menus/`
+Diretório: `./menus/`
 
 Guarda todos os arquivos XML de objetos GTK. Para corretamente gerenciar os arquivos, adicionamos os arquivos GObject XML em `~/.config/waybar/menus/`
 
