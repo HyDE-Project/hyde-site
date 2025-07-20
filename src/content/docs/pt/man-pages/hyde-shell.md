@@ -1,91 +1,91 @@
 ---
 title: hyde-shell
-description: HyDE's wrapper to execute HyDE scripts and executables.
+description: Wrapper do HyDE para executar scripts e executáveis do HyDE.
 sidebar:
   order: 2
 ---
 
-## Name
+## Nome
 
-`hyde-shell` - HyDE script execution wrapper and environment resolver
+`hyde-shell` - Wrapper de execução dos scripts do HyDE e resolvedor de ambiente.
 
-## Synopsis
+## Sinopse
 
 ```
-hyde-shell [command] [arguments...]
+hyde-shell [comando] [argumentos...]
 hyde-shell [--help | help | -h]
 hyde-shell [-r | reload]
 ```
 
-## Description
+## Descrição
 
-`hyde-shell` is a universal wrapper script that executes HyDE scripts without file extensions and solves PATH-related issues where users might accidentally overwrite `~/.local/lib/hyde` in their PATH.
+`hyde-shell` é um script de wrapper universal que executa scripts do HyDE sem extensões de arquivo e resolve problemas relacionados ao PATH, onde usuários podem acidentalmente sobrescrever `~/.local/lib/hyde` no PATH.
 
-Located in `~/.local/bin/`, `hyde-shell` automatically discovers and executes scripts from the HyDE library directory, handling both Python scripts (.py) and shell scripts (.sh) without requiring file extensions.
+Localizado em `~/.local/bin/`, o `hyde-shell` automaticamente descobre e executa scripts do diretório de biblioteca do HyDE, lidando com scripts Python (.py) e scripts shell (.sh) sem precisar de extensões de arquivo.
 
-## Options
+## Opções
 
 **`--help, help, -h`**
-: Display help message showing available commands and usage information.
+: Exibe mensagem de ajuda mostrando comandos disponíveis e instruções de uso.
 
 **`-r, reload`**
-: Reload the HyDE environment and refresh all configurations.
+: Recarrega o ambiente HyDE e recarrega todas as configurações.
 
-## Built-in Commands
+## Comandos embutidos
 
 **`wallbash`**
-: Execute a wallbash script for dynamic theming and color management.
+: Executa um script wallbash para estilização dinâmica e gerenciamento de cores.
 
-## Script Execution
+## Execução de scripts
 
-`hyde-shell` provides access to all HyDE scripts without requiring file extensions:
+`hyde-shell` fornece acesso a todos os scripts HyDE sem precisar de extensões de arquivo:
 
 ```bash
-hyde-shell waybar              # Executes waybar.py
-hyde-shell theme.import        # Executes theme.import.py
-hyde-shell wallpaper           # Executes wallpaper.sh
-hyde-shell screenrecord          # Executes screenrecord.sh
+hyde-shell waybar              # Executa waybar.py
+hyde-shell theme.import        # Executa theme.import.py
+hyde-shell wallpaper           # Executa wallpaper.sh
+hyde-shell screenrecord          # Executa screenrecord.sh
 ```
 
-The wrapper automatically discovers and resolves all scripts in the HyDE library directory.
+O wrapper automaticamente descobre e resolve todos os scripts no diretório da biblioteca HyDE.
 
 ## Usage Examples
 
-Execute any HyDE script without file extension:
+Executa qualquer script HyDE sem precisar da extensão do arquivo:
 ```bash
-hyde-shell waybar --help           # Run waybar.py with help flag
-hyde-shell theme.import            # Run theme.import.py
-hyde-shell wallpaper               # Run wallpaper.sh
+hyde-shell waybar --help           # Executa waybar.py com o argumento de ajuda
+hyde-shell theme.import            # Executa theme.import.py
+hyde-shell wallpaper               # Executa wallpaper.sh
 ```
 
-Use built-in commands:
+Usa comandos embutidos: 
 ```bash
 hyde-shell wallbash                # Execute wallbash scripts in ~/.config/hyde/wallbash/scripts/
 
 hyde-shell reload                  # Reload HyDE environment
 ```
 
-Pass arguments to underlying scripts:
+Passa argumentos para o script subjacente:
 ```bash
-hyde-shell waybar --set layout-1   # Pass arguments to waybar.py
+hyde-shell waybar --set layout-1   # Passa arguments para o waybar.py
 ```
 
-## Key Features
+## Ferramentas chave
 
-- **Script Path Resolution**: Finds scripts in `~/.local/lib/hyde/` regardless of PATH configuration
-- **Extension Handling**: Automatically appends appropriate file extensions (.py, .sh)
-- **PATH Independence**: Works regardless of current PATH configuration or working directory
+- **Resolução do caminho do Script**: Encontra scripts no `~/.local/lib/hyde/` independente da configuração do PATH.
+- **Lida com extensões**: Automaticamente acrescenta extensões de arquivo apropriadas (.py, .sh).
+- **Independência do PATH**: Funciona de forma independente da configuração atual do HyDE ou do diretório de trabalho.
 
-## Files
+## Arquivos
 
 **`~/.local/bin/hyde-shell`**
-: Main executable wrapper script
+: Executável principal do script de wrapper.
 
 **`~/.local/lib/hyde/`**
-: Directory containing all HyDE scripts and modules
+: Diretório contendo todos scripts e módulos HyDE.
 
-## Notes
+## Notas
 
-- Always prefer `hyde-shell` over direct script execution for maximum compatibility
-- File extensions are optional and automatically resolved
-- Future HyDE versions will increasingly rely on `hyde-shell` for script execution
+- Sempre prefira `hyde-shell` sobre execução direta dos scripts para máxima compatibilidade.
+- Extensões de arquivo são opcionais e automaticamente resolvidas.
+- Versões futuras do HyDE vão cada vez mais depender do `hyde-shell` para execução de scripts.
