@@ -1,61 +1,61 @@
 ---
 title: theme.import.py
-description: theme import manual page
+description: Página do manual do theme import.
 ---
 
-### Preview
+### Prévia
 
 ![preview theme import](../../../../assets/man-pages/theme.import/image.png)
 
-### NAME
+### NOME
 
-theme.import.py - Imports themes from the HyDE gallery repository
+theme.import.py - Importa temas do repositório da galeria do HyDE.
 
 ### SYNOPSIS
 
-`theme.import.py` [OPTIONS]
+`theme.import.py` [OPÇÕES]
 
-### DESCRIPTION
+### DESCRIÇÃO
 
-`theme.import.py` is a script to import and manage themes from the HyDE gallery repository. It allows users to clone the repository, fetch theme data, preview themes, and apply selected themes.
+`theme.import.py` é um script para importar e gerenciar temas do repositório da galeria do HyDE. Ele permite que usuários clonem o repositório, busquem dados do tema, vejam uma prévia do tema, e apliquem temas selecionados.
 
-### OPTIONS
+### OPÇÕES
 
 - `-j`, `--json`
-  Fetch JSON data after cloning the repository.
+  Carrega dados JSON após clonar o repositório.
 
 - `-S`, `--select`
-  Select themes using `fzf`.
+  Seleciona temas usando `fzf`.
 
-- `-p`, `--preview` IMAGE_URL
-  Get a preview of the specified theme.
+- `-p`, `--preview` TEMA.
+  Mostra uma prévia do tema especificado
 
-- `-t`, `--preview-text` TEXT
-  Preview text to display when using the `--preview` option.
+- `-t`, `--preview-text` TEMA.r
+  Prévia do texto para mostrar quando usando a opção `--preview`.
 
 - `--skip-clone`
-  Skip cloning the repository.
+  Pula a clonagem do repositório.
 
 - `-f`, `--fetch` THEME
-  Fetch and update a specific theme by name. Use `all` to fetch all themes located in `xdg_config/hyde/themes`.
+  Busca e atualiza um tema específico por nome. Use `all` para buscar todos os temas em `xdg_config/hyde/themes`.
 
 ### ENVIRONMENT VARIABLES
 
 - `LOG_LEVEL`
-  Set the logging level (default: `INFO`).
+  Configuração o nível de log (padrão: `INFO`).
 
 - `XDG_CACHE_HOME`
-  Directory for cache files (default: `~/.cache`).
+  Diretório para o cache (padrão: `~/.cache`).
 
 - `XDG_CONFIG_HOME`
-  Directory for configuration files (default: `~/.config`).
+  Diretório para os arquivos de configuração (padrão: `~/.config`).
 
 - `FULL_THEME_UPDATE`
-  Overwrites the archived files (useful for updates and changes in archives).
+  Sobrescreve os ficheiros arquivados (Útil para atualizações e mudanças nos arquivos).
 
 ### EXAMPLES
 
-Opens fzf menu and select themes.
+Abre menu fzf e seleciona temas.
 
 ```shell
 theme.import.py --select
