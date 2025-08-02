@@ -1,0 +1,13 @@
+---
+title: swayosd
+description: Экранный индикатор на основе GTK для сочетаний клавиш, таких как caps-lock и громкость
+---
+
+SwayOSD уже поддерживается HyDE. Вам просто нужно вручную добавить демон, чтобы он заработал.
+
+### Quick setup
+
+```bash
+  exec-once = swayosd-server # включить службу swayosd
+  exec-once = $(pkexec swayosd-libinput-backend) # служба swayosd для ввода с клавиатуры (требуется запуск в подоболочке)
+```
