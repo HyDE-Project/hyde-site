@@ -106,4 +106,4 @@ source = ~/.local/share/hyde/hyprland.conf
 
 Теперь вы должны знать, какой файл за что отвечает. Обратитесь к [Hyprland Wiki](https://wiki.hyprland.org) для получения дополнительной информации и для создания идеального рабочего стола.
 
-Также смотрите [FAQ & Tips](../../help/faq#keyboard-layout).
+Также смотрите [ЧАВО и советы](../../help/faq#keyboard-layout).
