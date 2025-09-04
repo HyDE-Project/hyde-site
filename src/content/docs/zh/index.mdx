@@ -18,20 +18,118 @@ hero:
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
+<div className="badges">
+  <a href="https://discord.gg/AYbJ9MJez7">
+    <img
+      alt="Discord 成员"
+      src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FmT5YqjaJFh%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&suffix=%20成员&style=for-the-badge&logo=discord&logoSize=auto&label=HyDE%20Discord&labelColor=ebbcba&color=c79bf0"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE">
+    <img
+      alt="GitHub Stars"
+      src="https://img.shields.io/github/stars/HyDE-Project/HyDE?style=for-the-badge&logo=github&label=Stars&color=8aadf4"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE/releases">
+    <img
+      alt="最新版本"
+      src="https://img.shields.io/github/v/release/HyDE-Project/HyDE?style=for-the-badge&label=Latest&color=c6a0f6"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE">
+    <img
+      alt="许可证"
+      src="https://img.shields.io/github/license/HyDE-Project/HyDE?style=for-the-badge&color=8bd5ca&label=License"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE/issues">
+    <img
+      alt="Issues"
+      src="https://img.shields.io/github/issues/HyDE-Project/HyDE?style=for-the-badge&color=f5a97f&label=Issues"
+    />
+  </a>
+</div>
+
+## 什么是 HyDE？
+
+HyDE 是一个面向 Arch 上 Hyprland 的、美观且模块化并符合 XDG 的开发环境，
+专注于干净的设计、可维护性以及良好的用户体验。它将核心脚本与用户配置分离，
+让升级更安全、冲突更少。
+
+<CardGrid>
+  <a className="card-anchor" href="/zh/getting-started/installation">
+    <Card title="安装 HyDE" icon="rocket">
+      按步骤快速、安全地完成 HyDE 安装。
+    </Card>
+  </a>
+  <a
+    className="card-anchor"
+    href="https://discord.gg/AYbJ9MJez7"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Card title="加入 Discord" icon="discord">
+      获取帮助、分享配置并关注公告。
+    </Card>
+  </a>
+</CardGrid>
+
 ## 功能
 
 <CardGrid stagger>
-  <Card title="XDG 兼容性" icon="seti:vala">
-    遵循 XDG 基本目录规范。
+  <Card title="XDG 兼容" icon="seti:vala">
+    依据 XDG 标准分类存放配置、数据与缓存。
   </Card>
-  <Card title="更轻松的核心更新" icon="add-document">
-    核心脚本与用户配置分离。
+  <Card title="更易于升级" icon="add-document">
+    核心脚本分离，升级更安全、更少冲突。
   </Card>
-  <Card title="更多主题！" icon="moon">
-    提供更多主题选项。
+  <Card title="更多主题" icon="moon">
+	通过 themepatcher 为 waybar、rofi 与壁纸提供精选主题，
+	并有社区主题画廊。
   </Card>
-  <Card title="模块化！" icon="puzzle">
-    该项目的目标之一是实现模块化。
+  <Card title="模块化" icon="puzzle">
+	模块化设计：切换功能、替换组件并轻松扩展。
   </Card>
 
 </CardGrid>
+
+## 安装
+
+```sh
+pacman -S --needed git base-devel
+git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
+cd ~/HyDE/Scripts
+./install.sh
+```
+
+需要帮助？请参阅：[入门 > 安装](/zh/getting-started/installation)
+
+## Showcase
+
+<div className="showcase">
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/wb_mode_sel.png"
+    alt="通知操作"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/rofi_style_3.png"
+    alt="Rofi 启动器"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/rofi_style_12.png"
+    alt="Rofi 启动器 2"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/wlog_style_2.png"
+    alt="Wlogout 菜单"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/game_launch_3.png"
+    alt="游戏启动器"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/game_launch_5.png"
+    alt="游戏启动器 2"
+  />
+</div>

@@ -1,0 +1,74 @@
+---
+title: Введение
+description: Начало работы с HyDE.
+sidebar:
+  order: 1
+---
+
+import LatestRelease from '../../../../components/LatestRelease.astro'
+
+<div align="center"><img src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png" /><br /></div>
+
+::::caution
+
+HyDE всё ещё в разработке...
+Документация пока не завершена, мы активно её улучшаем и дополняем.
+::::
+
+HyDE — это чистая, эстетичная и модульная среда разработки для
+Hyprland на Arch. Акцент на единообразии интерфейса, разумных
+настройках по умолчанию и обновлениях, которые не мешают работе.
+
+## Что вы найдёте
+
+- Пошаговую установку и советы для первого запуска
+- Продуманную модульную структуру для аккуратных конфигураций
+- Инструменты оформления и галерею сообщества для обмена стилями
+- Справочник по утилитам и командам из поставки
+
+## Последний релиз
+
+<div className="latest-release">
+  <LatestRelease
+    repo="HyDE-Project/HyDE"
+    versionLabel="Версия:"
+    dateLabel="Дата:"
+  />
+</div>
+
+Полные примечания и файлы ищите на <a
+  href="https://github.com/HyDE-Project/HyDE/releases"
+  className="underline"
+  target="_blank"
+  rel="noopener noreferrer">странице релизов</a> в GitHub.
+
+::::tip
+
+Помогите нам стать лучше
+
+Присылайте улучшения в GitHub или делитесь обратной связью в Discord.
+Ваш вклад напрямую формирует HyDE и эту документацию.
+
+::::
+
+## Быстрая установка
+
+```sh
+pacman -S --needed git base-devel
+git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
+cd ~/HyDE/Scripts
+./install.sh
+```
+
+После установки перезагрузитесь и войдите в HyDE через дисплей‑менеджер.
+
+## Дальше
+
+- Полное [руководство по установке](/ru/getting-started/installation)
+- Как [обновляться](/ru/getting-started/update)
+- [Оформление](/ru/theming/making-themes) и [Галерея](/ru/theming/gallery)
+
+---
+
+Вносите вклад в HyDE и документацию на GitHub:
+[HyDE-Project/HyDE](https://github.com/HyDE-Project/HyDE)

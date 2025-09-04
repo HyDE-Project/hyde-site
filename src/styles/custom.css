@@ -149,6 +149,15 @@ html:has([data-template="splash"]) {
   margin: 1rem !important;
 }
 
+/* Make wrapped cards remain visually consistent when inside anchors */
+.card-anchor {
+  display: block;
+  text-decoration: none;
+}
+.card-anchor article.card {
+  height: 100%;
+}
+
 /* Dark theme cards */
 [data-theme="dark"] [data-template="splash"] .card {
   background: rgba(54, 55, 66, 0.1) !important;
@@ -323,7 +332,7 @@ html:has([data-template="splash"]) {
 /* Hero section - ONLY on main page */
 .hero {
   position: relative;
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
@@ -335,6 +344,79 @@ html:has([data-template="splash"]) {
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+}
+
+/* Badge row below hero title */
+.badges {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+  position: relative;
+  z-index: 3;
+}
+.badges img {
+  height: 32px;
+}
+
+/* Colorful highlights list */
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 1100px;
+}
+.highlights li {
+  background: linear-gradient(135deg, rgba(169,132,204,0.2), rgba(144,150,182,0.2));
+  border: 1px solid rgba(169,132,204,0.35);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  color: var(--hyde-text-primary);
+  backdrop-filter: blur(8px);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.highlights li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(169,132,204,.25);
+  border-color: var(--hyde-purple);
+}
+.hl-icon {
+  margin-right: .5rem;
+  filter: drop-shadow(0 2px 6px rgba(169,132,204,.45));
+}
+
+/* Showcase grid */
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem auto 1rem auto;
+  max-width: 1600px;
+  align-items: start;
+}
+.showcase img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(169,132,204,0.45);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 16px 38px rgba(0,0,0,.22);
+}
+
+/* Keep images comfortable on small screens */
+@media (max-width: 640px) {
+  .showcase {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 1rem;
+  }
 }
 
 /* Hero image positioning - large image anchored to right */
@@ -480,7 +562,7 @@ html:has([data-template="splash"]) {
 }
 
 .hero .actions a {
-  padding: 1rem 2rem;
+  padding: 1.1rem 2.2rem;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
@@ -738,3 +820,24 @@ button:focus, a:focus, select:focus {
 }
 
 /* That's it! Keep everything else as default Starlight */
+
+/* Latest release inline layout in introduction */
+.latest-release {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-auto-rows: auto;
+  gap: .5rem 1rem;
+  align-items: center;
+  max-width: 520px;
+  margin: 1rem 0 0 0;
+}
+.latest-release .lr-label {
+  font-weight: 600;
+  color: var(--hyde-purple);
+}
+.latest-release .latest-release-content {
+  display: contents;
+}
+.latest-release .latest-version .latest-date {
+  grid-column: 2;
+}

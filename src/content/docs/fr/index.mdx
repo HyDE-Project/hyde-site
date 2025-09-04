@@ -18,19 +18,118 @@ hero:
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
+<div className="badges">
+  <a href="https://discord.gg/AYbJ9MJez7">
+    <img
+      alt="Membres Discord"
+      src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FmT5YqjaJFh%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&suffix=%20membres&style=for-the-badge&logo=discord&logoSize=auto&label=HyDE%20Discord&labelColor=ebbcba&color=c79bf0"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE">
+    <img
+      alt="Étoiles GitHub"
+      src="https://img.shields.io/github/stars/HyDE-Project/HyDE?style=for-the-badge&logo=github&label=Stars&color=8aadf4"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE/releases">
+    <img
+      alt="Dernière version"
+      src="https://img.shields.io/github/v/release/HyDE-Project/HyDE?style=for-the-badge&label=Dernière&color=c6a0f6"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE">
+    <img
+      alt="Licence"
+      src="https://img.shields.io/github/license/HyDE-Project/HyDE?style=for-the-badge&color=8bd5ca&label=Licence"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE/issues">
+    <img
+      alt="Issues"
+      src="https://img.shields.io/github/issues/HyDE-Project/HyDE?style=for-the-badge&color=f5a97f&label=Issues"
+    />
+  </a>
+</div>
+
+## Qu'est‑ce que HyDE ?
+
+HyDE est un environnement de développement esthétique, modulaire et conforme XDG
+pour Hyprland sur Arch, axé sur un design propre, la maintenabilité et une UX soignée.
+Les scripts cœur sont séparés de votre configuration pour des mises à jour plus sûres.
+
+<CardGrid>
+  <a className="card-anchor" href="/fr/getting-started/installation">
+    <Card title="Installer HyDE" icon="rocket">
+      Guide pas à pas pour configurer HyDE rapidement et en toute sécurité.
+    </Card>
+  </a>
+  <a
+    className="card-anchor"
+    href="https://discord.gg/AYbJ9MJez7"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Card title="Rejoindre Discord" icon="discord">
+      Obtenez de l'aide, partagez vos setups et suivez les annonces.
+    </Card>
+  </a>
+</CardGrid>
+
 ## Fonctionnalités
 
 <CardGrid stagger>
   <Card title="Conformité XDG" icon="seti:vala">
-    Suit la spécification XDG Base Directory.
+    Conserve configuration, données et cache selon les standards XDG.
   </Card>
-  <Card title="Mises à jour plus faciles" icon="add-document">
-    Les scripts principaux sont séparés de la configuration utilisateur
+  <Card title="Mises à jour cœur simplifiées" icon="add-document">
+    Scripts cœur séparés pour des mises à jour sûres et sans conflits.
   </Card>
   <Card title="Plus de thèmes !" icon="moon">
-    Plus d'options de personnalisation
+	Thèmes sélectionnés via themepatcher pour waybar, rofi et fonds —
+	ainsi qu'une galerie communautaire.
   </Card>
   <Card title="Modulaire !" icon="puzzle">
-    L'une des directions de ce projet est d'être modulaire.
+	Architecture modulaire — activer, échanger, étendre facilement.
   </Card>
-</CardGrid> 
+
+</CardGrid>
+
+## Installer
+
+```sh
+pacman -S --needed git base-devel
+git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
+cd ~/HyDE/Scripts
+./install.sh
+```
+
+Besoin d'aide ? Voir : [Premiers pas > Installation](/fr/getting-started/installation)
+
+## Showcase
+
+<div className="showcase">
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/wb_mode_sel.png"
+    alt="Action de notification"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/rofi_style_3.png"
+    alt="Lanceur Rofi"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/rofi_style_12.png"
+    alt="Lanceur Rofi 2"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/wlog_style_2.png"
+    alt="Menu Wlogout"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/game_launch_3.png"
+    alt="Lanceur de jeux"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/game_launch_5.png"
+    alt="Lanceur de jeux 2"
+  />
+</div>
