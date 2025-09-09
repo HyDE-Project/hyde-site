@@ -1,9 +1,9 @@
 {
   "name": "hyde-site",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "engines": {
-    "node": ">=18.20.8"
+    "node": ">=20"
   },
   "scripts": {
     "dev": "astro dev",
