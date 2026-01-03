@@ -1,0 +1,134 @@
+---
+title: HyDE
+description: HyDE - Lingkungan Pengembangan yang Bersih, Estetis, dan Modular untuk Hyprland di Arch Linux!
+template: splash
+hero:
+  tagline: Lingkungan Pengembangan yang Bersih, Estetis, dan Modular untuk Hyprland di Arch Linux! ✨
+  image:
+    file: ../../../assets/hyde.svg
+  actions:
+    - text: Mulai Menggunakan HyDE
+      link: /id/getting-started/introduction
+      icon: rocket
+    - text: Jelajahi di GitHub
+      link: https://github.com/HyDE-Project
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+<div className="badges">
+  <a href="https://discord.gg/AYbJ9MJez7">
+    <img
+      alt="Discord members"
+      src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fdiscordapp.com%2Fapi%2Finvites%2FmT5YqjaJFh%3Fwith_counts%3Dtrue&query=%24.approximate_member_count&suffix=%20members&style=for-the-badge&logo=discord&logoSize=auto&label=HyDE%20Discord&labelColor=ebbcba&color=c79bf0"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE">
+    <img
+      alt="GitHub stars"
+      src="https://img.shields.io/github/stars/HyDE-Project/HyDE?style=for-the-badge&logo=github&label=Stars&color=8aadf4"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE/releases">
+    <img
+      alt="Latest release"
+      src="https://img.shields.io/github/v/release/HyDE-Project/HyDE?style=for-the-badge&label=Latest&color=c6a0f6"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE">
+    <img
+      alt="License"
+      src="https://img.shields.io/github/license/HyDE-Project/HyDE?style=for-the-badge&color=8bd5ca&label=License"
+    />
+  </a>
+  <a href="https://github.com/HyDE-Project/HyDE/issues">
+    <img
+      alt="Issues"
+      src="https://img.shields.io/github/issues/HyDE-Project/HyDE?style=for-the-badge&color=f5a97f&label=Issues"
+    />
+  </a>
+</div>
+
+## Apa itu HyDE?
+
+HyDE adalah lingkungan pengembangan yang bersih, estetis, dan modular untuk Hyprland di Arch Linux.
+Fokusnya adalah pada tampilan dan nuansa yang konsisten, konfigurasi bawaan yang masuk akal, 
+serta pembaruan yang tidak mengganggu alur kerja Anda.
+
+<CardGrid>
+  <a className="card-anchor" href="/id/getting-started/installation">
+    <Card title="Instalasi HyDE" icon="rocket">
+      Langkah demi langkah untuk mengatur HyDE dengan cepat dan aman.
+    </Card>
+  </a>
+  <a
+    className="card-anchor"
+    href="https://discord.gg/AYbJ9MJez7"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Card title="Gabung Discord" icon="discord">
+      Dapatkan bantuan, bagikan pengaturan, dan ikuti pengumuman.
+    </Card>
+  </a>
+</CardGrid>
+
+## Fitur
+
+<CardGrid stagger>
+  <Card title="XDG Compliance" icon="seti:vala">
+    Menjaga konfigurasi, data, dan cache yang teratur menggunakan standar XDG.
+  </Card>
+  <Card title="Pembaruan yang Mudah" icon="add-document">
+    Skrip inti terpisah dari dotfiles Anda untuk pembaruan yang lebih aman dan bebas konflik.
+  </Card>
+  <Card title="Banyak Tema!" icon="moon">
+	  Tema terpilih via themepatcher untuk waybar, rofi, dan wallpaper — plus galeri tema komunitas.
+  </Card>
+  <Card title="Modular!" icon="puzzle">
+	Modular by design — toggle fitur, swap komponen, dan mudah diperluas.
+</Card>
+
+</CardGrid>
+
+## Instalasi
+
+```sh
+pacman -S --needed git base-devel
+git clone --depth 1 https://github.com/HyDE-Project/HyDE ~/HyDE
+cd ~/HyDE/Scripts
+./install.sh
+```
+
+Butuh bantuan? Lihat panduan lengkap: [Perkenalan > Instalasi](/id/getting-started/installation)
+
+## Tampilan
+
+<div className="showcase">
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/wb_mode_sel.png"
+    alt="Notification Action"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/rofi_style_3.png"
+    alt="Rofi Launcher"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/rofi_style_12.png"
+    alt="Rofi Launcher 2"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/wlog_style_2.png"
+    alt="Wlogout menu"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/game_launch_3.png"
+    alt="Game Launcher"
+  />
+  <img
+    src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/game_launch_5.png"
+    alt="Game Launcher 2"
+  />
+</div>
