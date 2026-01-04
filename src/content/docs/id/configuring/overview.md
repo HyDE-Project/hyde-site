@@ -1,12 +1,14 @@
 ---
-title: Overview
-description: HyDE's Configuration Guide
+title: Ikhtisar
+description: Panduan Konfigurasi HyDE
 sidebar:
   order: 1
 ---
 
-### HyDE's Configuration Guide
+### Panduan Konfigurasi HyDE
 
-As HyDE is not a full-fledge Desktop Environment, we tend to use various tools/apps to accomplish our task.
+Karena HyDE bukan merupakan Desktop Environment yang sepenuhnya lengkap, kami
+menggunakan berbagai tools dan aplikasi untuk menunjang kebutuhan. 
 
-In this panel we will talk about how we can configure the dotfiles the HyDE way.
+Pada bagian ini, kita akan membahas bagaimana cara mengkonfigurasi dotfiles 
+dengan pendekatan khas HyDE.
