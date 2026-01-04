@@ -1,13 +1,13 @@
 ---
 title: Hyprland
-description: Hyprland related configuration
+description: Konfigurasi Hyprland
 sidebar:
   order: 3
 ---
 
 <link rel="stylesheet" href="/src/styles/tables.css">
 
-# Configuration Tree
+# Struktur Konfigurasi
 
 ```
 . 📂 ~/.config/hypr
@@ -36,13 +36,13 @@ sidebar:
 
 :::caution
 
-**Read the [Hyprland Wiki](https://wiki.hyprland.org/) first!**
+**Silahkan baca [Hyprland Wiki](https://wiki.hyprland.org/) terlebih dahulu!**
 
 :::
 
-# HyDE's Hyprland Configuration
+# Konfigurasi Hyperland HyDE
 
-Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE divides its configuration into three sections:
+Karena Hyperland memuat (source) `~/.config/hypr/hyprland.conf`, HyDE membagi konfigurasinya menjadi tiga bagian:
 
 - [Boilerplate](#1-boilerplate)
 - [Overrides](#2-overrides)
@@ -50,43 +50,43 @@ Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE divides its configur
 
 ## 1. Boilerplate
 
-This section contains the default configuration of HyDE, which you are recommended not to modify.
+Bagian ini berisi konfigurasi default dari HyDE, yang disarankan untuk tidak Anda ubah.
 
-**Filepath:** `$XDG_DATA_HOME/hyde/hyprland.conf`
+**Lokasi file:** `$XDG_DATA_HOME/hyde/hyprland.conf`
 
-This file is sourced on top of other configurations in `~/.config/hypr/hyprland.conf`.
+File ini dimuat di bagian paling atas dari konfigurasi lain dalam `~/.config/hypr/hyprland.conf`.
 
 ```ini
-# Boilerplate configuration
+# Konfigurasi Boilerplate 
 source = ~/.local/share/hyde/hyprland.conf
 ```
 
 ## 2. Overrides
 
-This section is for overriding HyDE's default configuration.
+Bagian ini digunakan untuk menimpa/mengabaikan konfigurasi default HyDE.
 
 :::caution
 
-The `xdg_config/hypr/hyde.conf` file is deprecated, use `xdg_config/hyde/config.toml` instead.
+File `xdg_config/hypr/hyde.conf` sudah usang (deprecated), gunakan `xdg_config/hyde/config.toml` sebagai gantinya.
 
 :::
 
-To override HyDE's default Hyprland settings, configure these sections in your `config.toml`:
+Untuk menimpa pengaturan default Hyperland di HyDE, konfigurasikan bagian berikut dalam `config.toml` anda:
 
-- **[hyprland]** - Application defaults, theming, and display settings
-- **[hyprland_start]** - Startup commands and services
+- **[hyprland]** - Default aplikasi, tema, dan pengaturan tampilan
+- **[hyprland_start]** - Perintah saat startup dan layanan (services)
 
-**Configuration File:** `$XDG_STATE_HOME/hyde/hyprland.conf`
+**File Konfigurasi:** `$XDG_STATE_HOME/hyde/hyprland.conf`
 
-For detailed options, see:
-- [hyprland configuration](../config_toml/#hyprland)
-- [hyprland_start configuration](../config_toml/#hyprland_start)
+Untuk opsi detailnya, lihat:
+- [konfigurasi `hyprland`](../config_toml/#hyprland)
+- [konfigurasi `hyprland_start`](../config_toml/#hyprland_start)
 
 ## 3. Users
 
-This section is for user configuration, which you may adjust as needed. 
+Bagian ini dikhususkan bagi konfigurasi pengguna, yang dapat disesuaikan berdasarkan kebutuhan pengguna.
 
-**Filepaths:**
+**Lokasi File:**
 
 - `./keybindings.conf`
 - `./windowrules.conf`
@@ -97,12 +97,14 @@ This section is for user configuration, which you may adjust as needed.
 
 :::tip
 
-You will likely need to configure only these files; you can override Hyprland's variables, so change them as you wish.
+Kemungkinan besar Anda hanya perlu mengkonfigurasi file-file diatas; Anda dapat menimpa 
+variabel Hyperland sesuai kebutuhan.
 
-Also, Hyprland can hot reload the configuration files, so you can edit them and immediately see the changes.
+Selain itu, Hyperland mendukung fitur *hot reload* pada file konfigurasi, 
+sehingga perubahan dapat langsung diterapkan tanpa perlu memulai ulang sesi.
 
 :::
 
-Now you should know which file is which. Refer to the [Hyprland Wiki](https://wiki.hyprland.org) for more information to achieve your perfect desktop experience.
+Sekarang Anda sudah mengetahui fungsi dari masing-masing file. Silahkan merujuk ke [Hyprland Wiki](https://wiki.hyprland.org) untuk informasi lebih lanjut guna mendapatkan pengalaman desktop yang sempurna.
 
-Also see [FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout).
+Lihat juga [Tanya Jawab (FAQ) dan Tips](../help/faq#how-can-i-change-keyboard-layout).
