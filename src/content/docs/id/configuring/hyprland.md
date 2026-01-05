@@ -40,9 +40,9 @@ sidebar:
 
 :::
 
-# Konfigurasi Hyperland HyDE
+# Konfigurasi Hyprland HyDE
 
-Karena Hyperland memuat (source) `~/.config/hypr/hyprland.conf`, HyDE membagi konfigurasinya menjadi tiga bagian:
+Karena Hyprland memuat (source) `~/.config/hypr/hyprland.conf`, HyDE membagi konfigurasinya menjadi tiga bagian:
 
 - [Boilerplate](#1-boilerplate)
 - [Overrides](#2-overrides)
@@ -71,7 +71,7 @@ File `xdg_config/hypr/hyde.conf` sudah usang (deprecated), gunakan `xdg_config/h
 
 :::
 
-Untuk menimpa pengaturan default Hyperland di HyDE, konfigurasikan bagian berikut dalam `config.toml` anda:
+Untuk menimpa pengaturan default Hyprland di HyDE, konfigurasikan bagian berikut dalam `config.toml` anda:
 
 - **[hyprland]** - Default aplikasi, tema, dan pengaturan tampilan
 - **[hyprland_start]** - Perintah saat startup dan layanan (services)
@@ -98,9 +98,9 @@ Bagian ini dikhususkan bagi konfigurasi pengguna, yang dapat disesuaikan berdasa
 :::tip
 
 Kemungkinan besar Anda hanya perlu mengkonfigurasi file-file diatas; Anda dapat menimpa 
-variabel Hyperland sesuai kebutuhan.
+variabel Hyprland sesuai kebutuhan.
 
-Selain itu, Hyperland mendukung fitur *hot reload* pada file konfigurasi, 
+Selain itu, Hyprland mendukung fitur *hot reload* pada file konfigurasi, 
 sehingga perubahan dapat langsung diterapkan tanpa perlu memulai ulang sesi.
 
 :::
