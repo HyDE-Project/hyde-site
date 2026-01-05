@@ -1,6 +1,6 @@
 ---
-title: Main Configuration
-description: HyDE's Configuration Guide
+title: Konfigurasi Utama
+description: Panduan Konfigurasi HyDE
 sidebar:
   order: 2
 ---
@@ -11,7 +11,7 @@ sidebar:
 
 Translators:
 Request a translation for config.toml schema at
-https://github.com/HyDE-Project/HyDE/blob/master/Configs/.local/share/hyde/schema/config.toml
+https://github.com/HyDE-Project/HyDE/blob/>master/Configs/.local/share/hyde/schema/config.toml
 
 translate the schema to your language
 example:
@@ -23,387 +23,389 @@ then paste it in here.
  -->
 
 ---
-HyDE exposes `xdg_config/hyde/config.toml` file for users to modify. This lets users have the ability to interact the scripts without using command arguments.
+HyDE menyediakan file `xdg_config/hyde/config.toml` yang dapat dimodifikasi oleh pengguna. 
+Hal ini memungkinkan pengguna untuk berinteraksi dengan skrip tanpa harus menggunakan argumen perintah (*command arguments*).
 
-Users are encouraged to use an editor that support schema validation to ensure the configuration file is valid.
+Pengguna sangat disarankan untuk menggunakan aplikasi editor yang mendukung validasi skema 
+untuk memastikan agar konfigurasi file tersebut sudah valid.
 ```toml
 "$schema" = "https://raw.githubusercontent.com/HyDE-Project/HyDE/refs/heads/master/Configs/.local/share/hyde/schema/config.toml.json"
 ```
 ---
 ### [battery.notify]
 
-batterynotify.sh configuration.
+Konfigurasi `batterynotify.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| dock | Dock status for battery notifications. | true |
-| interval | Interval for battery notifications. | 5 |
-| notify | Notification threshold. | 1140 |
-| timer | Timer for battery notifications. | 120 |
+| dock | Status dock untuk notifikasi baterai. | true |
+| interval | Interval (jarak waktu) untuk notifikasi baterai. | 5 |
+| notify | Ambang batas (threshold) notifikasi. | 1140 |
+| timer | Penghitung baterai (timer) untuk notifikasi baterai. | 120 |
 
 ### [battery.notify.execute]
 
-Commands to execute for battery notifications.
+Perintah untuk dieksekusi pada notifikasi baterai.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| charging | Command to execute when charging. |  |
-| critical | Command to execute when battery is critical. | systemctl suspend |
-| discharging | Command to execute when discharging. |  |
-| low | Command to execute when battery is low. |  |
-| unplug | Command to execute when unplugged. |  |
+| charging | Perintah untuk dieksekusi saat pengisian daya (cas). |  |
+| critical | Perintah untuk dieksekusi saat baterai krisis. | systemctl suspend |
+| discharging | Perintah untuk dieksekusi saat daya baterai berkurang (tidak dicas). |  |
+| low | Perintah untuk dieksekusi saat baterai lemah. |  |
+| unplug | Perintah untuk dieksekusi saat kabel pengisian daya dilepas. |  |
 
 ### [battery.notify.threshold]
 
-Thresholds for battery notifications.
+Ambang batas untuk notifikasi baterai.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| critical | Critical battery threshold. | 10 |
-| full | Full battery threshold. | 90 |
-| low | Low battery threshold. | 20 |
-| unplug | Unplug battery threshold. | 100 |
+| critical | Ambang batas baterai kritis. | 10 |
+| full | Ambang batas baterai penuh. | 90 |
+| low | Ambang batas baterai lemah. | 20 |
+| unplug | Ambang batas saat kabel pengisian daya dilepas. | 100 |
 
 ### [brightness]
 
-brightnesscontrol.sh configuration.
+Konfigurasi `brightnesscontrol.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| notify | Enable notifications for brightness control. | true |
-| steps | Number of steps to increase/decrease brightness. | 5 |
+| notify | Aktifkan notifikasi untuk kontrol kecerahan. | true |
+| steps | Jumlah langkah untuk menambah/mengurangi kecerahan. | 5 |
 
 ### [cava]
 
-Cava visualizer configuration.
+Konfigurasi visualizer Cava.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| channels | Audio channels: stereo or mono. | stereo |
-| range | Bar sensitivity | 8 |
-| reverse | Reverse spectrum movement (0 or 1). | 1 |
+| channels | Saluran audio: stereo atau mono. | stereo |
+| range | Sensitivitas bar | 8 |
+| reverse | Membalikkan gerakan spektrum (0 atau 1). | 1 |
 
 ### [cava.hyprlock]
 
-'cava.sh hyprlock' configuration.
+Konfigurasi 'cava.sh hyprlock'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| bar | Bar characters for cava. | ▁▂▃▄▅▆▇█ |
-| bar_array | Bar array for hyprlock preset. | ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"] |
-| range | Number of bars minus one. | 7 |
-| standby | Standby character for cava. | 🎶 |
-| width | Width of the cava output. | 20 |
+| bar | Karakter bar untuk cava. | ▁▂▃▄▅▆▇█ |
+| bar_array | Array bar untuk preset hyprlock. | ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"] |
+| range | Jumlah bar dikurangi satu. | 7 |
+| standby | Karakter standby untuk cava. | 🎶 |
+| width | Lebar output cava. | 20 |
 
 ### [cava.stdout]
 
-'cava.sh stdout' configuration.
+Konfigurasi 'cava.sh stdout'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| bar | Bar characters for cava. | ▁▂▃▄▅▆▇█ |
-| bar_array | Bar array for stdout preset. | ["░", "▒", "▓", "█"] |
-| range | Number of bars minus one. | 7 |
-| standby | Standby character for cava. | 🎶 |
-| width | Width of the cava output. | 20 |
+| bar | Karakter bar untuk cava. | ▁▂▃▄▅▆▇█ |
+| bar_array | Array bar untuk preset stdout. | ["░", "▒", "▓", "█"] |
+| range | Jumlah bar dikurangi satu. | 7 |
+| standby | Karakter standby untuk cava. | 🎶 |
+| width | Lebar output cava. | 20 |
 
 ### [cava.waybar]
 
-'cava.sh waybar' configuration.
+Konfigurasi 'cava.sh waybar'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| bar | Bar characters for cava. | ▁▂▃▄▅▆▇█ |
-| bar_array | Bar array for waybar preset. | ["◜", "◝", "◞", "◟", "◠", "◡", "◢", "◣"] |
-| range | Number of bars minus one. | 7 |
-| standby | Standby character for cava. | 🎶 |
-| width | Width of the cava output. | 20 |
+| bar | Karakter bar untuk cava. | ▁▂▃▄▅▆▇█ |
+| bar_array | Array bar untuk preset waybar. | ["◜", "◝", "◞", "◟", "◠", "◡", "◢", "◣"] |
+| range | Jumlah bar dikurangi satu. | 7 |
+| standby | Karakter standby untuk cava. | 🎶 |
+| width | Lebar output cava. | 20 |
 
 ### [hyprland]
 
-Hyprland configuration.
+Konfigurasi Hyprland.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| background_path | LockScreen's Background path. |  |
+| background_path | Jalur latar belakang LockScreen. |  |
 | bar | Bar. | waybar |
-| browser | Browser. | firefox |
-| button_layout | Button layout. (gtk only) |  |
-| color_scheme | Color scheme. | prefer-dark |
-| cursor_size | Cursor size. | 24 |
-| cursor_theme | Cursor theme. | Bibata-Modern-Ice |
-| document_font_size | Document font size. | 10 |
+| browser | Peramban. | firefox |
+| button_layout | Tata letak tombol. (hanya gtk) |  |
+| color_scheme | Skema warna. | prefer-dark |
+| cursor_size | Ukuran kursor. | 24 |
+| cursor_theme | Tema kursor. | Bibata-Modern-Ice |
+| document_font_size | Ukuran font dokumen. | 10 |
 | editor | Editor. | code |
-| explorer | File manager. | dolphin |
+| explorer | Pengelola file. | dolphin |
 | font | Font. | Canterell |
-| font_antialiasing | Font antialiasing. | rgba |
-| font_hinting | Font hinting. | full |
-| font_size | Font size. | 10 |
-| gtk_theme | GTK theme. | Wallbash-Gtk |
-| icon_theme | Icon theme. | Tela-circle-dracula |
-| idle | Idle manager. | hypridle |
-| lockscreen | Lockscreen. | lockscreen.sh |
-| monospace_font | Monospace font. | CaskaydiaCove Nerd Font Mono |
-| monospace_font_size | Monospace font size. | 9 |
-| quickapps | Quick apps. | kitty |
+| font_antialiasing | Antialiasing font. | rgba |
+| font_hinting | Hinting font. | full |
+| font_size | Ukuran font. | 10 |
+| gtk_theme | Tema GTK. | Wallbash-Gtk |
+| icon_theme | Tema ikon. | Tela-circle-dracula |
+| idle | Pengelola idle. | hypridle |
+| lockscreen | Layar kunci. | lockscreen.sh |
+| monospace_font | Font monospace. | CaskaydiaCove Nerd Font Mono |
+| monospace_font_size | Ukuran font monospace. | 9 |
+| quickapps | Aplikasi cepat. | kitty |
 | terminal | Terminal. | kitty |
 
 ### [hyprland-start]
 
-Hyprland start configuration.
+Konfigurasi awal Hyprland.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| apptray_bluetooth | Bluetooth applet. | blueman-applet |
-| auth_dialogue | Authentication dialogue. | polkitkdeauth.sh |
+| apptray_bluetooth | Applet Bluetooth. | blueman-applet |
+| auth_dialogue | Dialog autentikasi. | polkitkdeauth.sh |
 | bar | Bar. | hyde-shell waybar --watch |
-| battery_notify | Battery notification script. | batterynotify.sh |
-| dbus_share_picker | DBus share picker. | dbus-update-activation-environment --systemd --all |
-| idle_daemon | Idle daemon. | hypridle |
-| image_clipboard | Image clipboard. | wl-paste --type image --watch cliphist store |
-| network_manager | Network manager. | nm-applet --indicator |
-| notifications | Notifications. | swaync |
-| removable_media | Removable media manager. | udiskie --no-automount --smart-tray |
-| systemd_share_picker | Systemd share picker. | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
-| text_clipboard | Text clipboard. | wl-paste --type text --watch cliphist store |
-| wallpaper | Wallpaper script. | $scrPath/wallpaper.sh --global |
-| xdg_portal_reset | XDG portal reset script. | resetxdgportal.sh |
+| battery_notify | Skrip notifikasi baterai. | batterynotify.sh |
+| dbus_share_picker | Pemilih berbagi DBus. | dbus-update-activation-environment --systemd --all |
+| idle_daemon | Daemon idle. | hypridle |
+| image_clipboard | Clipboard gambar. | wl-paste --type image --watch cliphist store |
+| network_manager | Pengelola jaringan. | nm-applet --indicator |
+| notifications | Notifikasi. | swaync |
+| removable_media | Pengelola media yang dapat dilepas. | udiskie --no-automount --smart-tray |
+| systemd_share_picker | Pemilih berbagi Systemd. | systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP |
+| text_clipboard | Clipboard teks. | wl-paste --type text --watch cliphist store |
+| wallpaper | Skrip wallpaper. | $scrPath/wallpaper.sh --global |
+| xdg_portal_reset | Skrip reset portal XDG. | resetxdgportal.sh |
 
 ### [mediaplayer]
 
-mediaplayer.py configuration.
+Konfigurasi `mediaplayer.py`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| artist_track_separator | Separator symbols to display between artist and track. |    |
-| max_length | Max length of song and artist string. | 70 |
-| prefix_paused | Prefix for paused media. |    |
-| prefix_playing | Prefix for playing media. |  |
-| standby_text | To display on standby. |   Music |
+| artist_track_separator | Simbol pemisah untuk ditampilkan antara artis dan lagu. |    |
+| max_length | Panjang maksimum string lagu dan artis. | 70 |
+| prefix_paused | Awalan untuk media yang dijeda. |    |
+| prefix_playing | Awalan untuk media yang diputar. |  |
+| standby_text | Teks yang ditampilkan saat standby. |   Music |
 
 ### [notification]
 
-Notification script configuration.
+Konfigurasi skrip notifikasi.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| font | Font for notifications. | mononoki Nerd Font |
-| font_size | Font size for notifications. | 10 |
+| font | Font untuk notifikasi. | mononoki Nerd Font |
+| font_size | Ukuran font untuk notifikasi. | 10 |
 
 ### [rofi]
 
-Global rofi configuration.
+Konfigurasi rofi global.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Rofi default scaling. | 10 |
+| scale | Skala default rofi. | 10 |
 
 ### [rofi.animation]
 
-'animation.sh select' configuration.
+Konfigurasi 'animation.sh select'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for animation. | 10 |
+| scale | Skala untuk animasi. | 10 |
 
 ### [rofi.bookmarks]
 
-hyde-shell rofi.bookmarks.sh configuration.
+Konfigurasi hyde-shell rofi.bookmarks.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| args | Additional arguments for bookmarks. | [] |
-| font | Font for bookmarks. | JetBrainsMono Nerd Font |
-| scale | Scaling for bookmarks. | 10 |
-| style | Style for rofi bookmarks. |  |
+| args | Argumen tambahan untuk bookmark. | [] |
+| font | Font untuk bookmark. | JetBrainsMono Nerd Font |
+| scale | Skala untuk bookmark. | 10 |
+| style | Gaya untuk rofi bookmark. |  |
 
 ### [rofi.cliphist]
 
-cliphist.sh configuration.
+Konfigurasi `cliphist.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for cliphist. | 10 |
+| scale | Skala untuk cliphist. | 10 |
 
 ### [rofi.emoji]
 
-emoji-picker.sh configuration.
+Konfigurasi `emoji-picker.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| args | Additional arguments for emoji picker. | ["-multi-select"] |
-| scale | Scaling for emoji picker. | 10 |
-| style | Style for emoji picker. | 1 |
+| args | Argumen tambahan untuk pemilih emoji. | ["-multi-select"] |
+| scale | Skala untuk pemilih emoji. | 10 |
+| style | Gaya untuk pemilih emoji. | 1 |
 
 ### [rofi.glyph]
 
-glyph-picker.sh configuration.
+Konfigurasi `glyph-picker.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| args | Additional arguments for glyph picker. | ["-multi-select"] |
-| scale | Scaling for glyph picker. | 10 |
+| args | Argumen tambahan untuk pemilih glyph. | ["-multi-select"] |
+| scale | Skala untuk pemilih glyph. | 10 |
 
 ### [rofi.hyprlock]
 
-'hyprlock.sh select' configuration.
+Konfigurasi 'hyprlock.sh select'.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for hyprlock. | 10 |
+| scale | Skala untuk hyprlock. | 10 |
 
 ### [rofi.launch]
 
-rofilaunch.sh configuration.
+Konfigurasi `rofilaunch.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| drun_args | Additional arguments for drun mode. | [] |
-| drun_style | Style for drun mode. | style_1 |
-| filebrowser_args | Additional arguments for filebrowser mode. | [] |
-| filebrowser_style | Style for filebrowser mode. | style_1 |
-| run_args | Additional arguments for run mode. | [] |
-| run_style | Style for run mode. | style_1 |
-| scale | Scaling for launch. | 5 |
-| window_args | Additional arguments for window mode. | [] |
-| window_style | Style for window mode. | style_1 |
+| drun_args | Argumen tambahan untuk mode drun. | [] |
+| drun_style | Gaya untuk mode drun. | style_1 |
+| filebrowser_args | Argumen tambahan untuk mode filebrowser. | [] |
+| filebrowser_style | Gaya untuk mode filebrowser. | style_1 |
+| run_args | Argumen tambahan untuk mode run. | [] |
+| run_style | Gaya untuk mode run. | style_1 |
+| scale | Skala untuk peluncuran. | 5 |
+| window_args | Argumen tambahan untuk mode window. | [] |
+| window_style | Gaya untuk mode window. | style_1 |
 
 ### [rofi.theme]
 
-themeselect.sh configuration.
+Konfigurasi `themeselect.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for theme selector. | 6 |
+| scale | Skala untuk pemilih tema. | 6 |
 
 ### [rofi.wallpaper]
 
-swwwallselect.sh configuration.
+Konfigurasi `swwwallselect.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| scale | Scaling for wallpaper. | 10 |
+| scale | Skala untuk wallpaper. | 10 |
 
 ### [rofi.websearch]
 
-hyde-shell rofi.websearch.sh configuration.
+Konfigurasi hyde-shell rofi.websearch.sh.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| args | Additional arguments for websearch. | [] |
-| font | Font for websearch. | JetBrainsMono Nerd Font |
-| scale | Scaling for websearch. | 10 |
-| style | Style for rofi websearch. |  |
+| args | Argumen tambahan untuk pencarian web. | [] |
+| font | Font untuk pencarian web. | JetBrainsMono Nerd Font |
+| scale | Skala untuk pencarian web. | 10 |
+| style | Gaya untuk rofi pencarian web. |  |
 
 ### [rofi.keybind.hint]
 
-keybind_hint.sh configuration.
+Konfigurasi `keybind_hint.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| delimiter | Delimiter for keybind hints. | 	 |
-| height | Height for keybind hints. | 40em |
-| line | Number of lines for keybind hints. | 16 |
-| width | Width for keybind hints. | 40em |
+| delimiter | Pemisah untuk petunjuk keybind. | 	 |
+| height | Tinggi untuk petunjuk keybind. | 40em |
+| line | Jumlah baris untuk petunjuk keybind. | 16 |
+| width | Lebar untuk petunjuk keybind. | 40em |
 
 ### [screenshot]
 
-screenshot.sh configuration.
+Konfigurasi `screenshot.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| annotation_post_command | Post command for annotation tool. | [""] |
-| annotation_pre_command | Pre command for annotation tool. | [] |
-| annotation_tool | Annotation tool for screenshots. | satty |
+| annotation_post_command | Perintah pasca untuk alat anotasi. | [""] |
+| annotation_pre_command | Perintah pra untuk alat anotasi. | [] |
+| annotation_tool | Alat anotasi untuk screenshot. | satty |
 
 ### [screenshot.ocr]
 
-OCR configuration.
+Konfigurasi OCR.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| tesseract_languages | Place desired languages to use for text recognition. To see installed languages run `tesseract --list-langs`. | ["eng"] |
+| tesseract_languages | Tempatkan bahasa yang diinginkan untuk digunakan dalam pengenalan teks. Untuk melihat bahasa yang terpasang, jalankan `tesseract --list-langs`. | ["eng"] |
 
 ### [sysmonitor]
 
-sysmonlaunch.sh configuration.
+Konfigurasi `sysmonlaunch.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| commands | Fallback command options. | [""] |
-| execute | Default command to execute. |  |
+| commands | Opsi perintah fallback. | [""] |
+| execute | Perintah default yang akan dieksekusi. |  |
 
 ### [volume]
 
-volumecontrol.sh configuration.
+Konfigurasi `volumecontrol.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| boost | Enable volume boost. | false |
-| boost_limit | Volume boost limit. | 120 |
-| notify | Enable notifications for volume control. | true |
-| steps | Number of steps to increase/decrease volume. | 5 |
+| boost | Aktifkan peningkatan volume. | false |
+| boost_limit | Batas peningkatan volume. | 120 |
+| notify | Aktifkan notifikasi untuk kontrol volume. | true |
+| steps | Jumlah langkah untuk menambah/mengurangi volume. | 5 |
 
 ### [wallbash]
 
-wallbash configuration.
+Konfigurasi wallbash.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| skip_template | Templates to skip when using wallbash. | [""] |
+| skip_template | Template yang akan dilewati saat menggunakan wallbash. | [""] |
 
 ### [wallpaper]
 
-Wallpaper configuration.
+Konfigurasi wallpaper.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| backend | Wallpaper backend, requires 'wallpaper.<backend>.sh' as handler script in $PATH | swww |
-| custom_paths | List of paths to search for wallpapers. | [] |
+| backend | Backend wallpaper, memerlukan 'wallpaper.<backend>.sh' sebagai skrip handler di $PATH | swww |
+| custom_paths | Daftar jalur untuk mencari wallpaper. | [] |
 
 ### [wallpaper.swww]
 
-swwwallselect.sh configuration.
+Konfigurasi `swwwallselect.sh`.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| duration | Transition duration. | 1 |
-| framerate | Transition framerate. | 60 |
-| transition_default | Transition type for default wallpaper. | grow |
-| transition_next | Transition type for next wallpaper. | grow |
-| transition_prev | Transition type for previous wallpaper. | outer |
+| duration | Durasi transisi. | 1 |
+| framerate | Framerate transisi. | 60 |
+| transition_default | Jenis transisi untuk wallpaper default. | grow |
+| transition_next | Jenis transisi untuk wallpaper berikutnya. | grow |
+| transition_prev | Jenis transisi untuk wallpaper sebelumnya. | outer |
 
 ### [waybar]
 
-waybar configuration.
+Konfigurasi waybar.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| font | Font for waybar. | JetBrainsMono Nerd Font |
-| icon_size | Icon size for waybar. | 10 |
-| position | A fallback position of the waybar.   | top |
-| scale | Total scaling for waybar. | 10 |
+| font | Font untuk waybar. | JetBrainsMono Nerd Font |
+| icon_size | Ukuran ikon untuk waybar. | 10 |
+| position | Posisi fallback dari waybar.   | top |
+| scale | Skala total untuk waybar. | 10 |
 
 ### [weather]
 
-Weather configuration.
+Konfigurasi cuaca.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| forecast_days | Number of days to show forecast (0-3). | 3 |
-| location | Location/coordinates string for the weather output. |  |
-| show_icon | Show the weather icon in waybar. | true |
-| show_location | Show the location in waybar. | true |
-| show_today | Show detailed description of today in tooltip. | true |
-| temperature_unit | Temperature unit ('c' or 'f'). | c |
-| time_format | Time format ('12h' or '24h'). | 24h |
-| windspeed_unit | Windspeed unit ('km/h' or 'mph'). | km/h |
+| forecast_days | Jumlah hari untuk menampilkan prakiraan (0-3). | 3 |
+| location | String lokasi/koordinat untuk output cuaca. |  |
+| show_icon | Tampilkan ikon cuaca di waybar. | true |
+| show_location | Tampilkan lokasi di waybar. | true |
+| show_today | Tampilkan deskripsi detail hari ini di tooltip. | true |
+| temperature_unit | Satuan suhu ('c' atau 'f'). | c |
+| time_format | Format waktu ('12h' atau '24h'). | 24h |
+| windspeed_unit | Satuan kecepatan angin ('km/h' atau 'mph'). | km/h |
 
 ### [wlogout]
 
-wlogout configuration.
+Konfigurasi wlogout.
 
 | Key | Description | Default |
 | --- | ----------- | ------- |
-| style | Style for wlogout. | 2 |
+| style | Gaya untuk wlogout. | 2 |
 
