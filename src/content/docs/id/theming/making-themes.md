@@ -1,282 +1,282 @@
 ---
-title: Making Themes
-description: How to make themes for HyDE
+title: Membuat Tema
+description: Cara membuat tema untuk HyDE
 ---
 
-Here we will walk you through the process of making themes for HyDE step by step.
-This tutorial will work for both hyprdots and HyDE.
+Di sini kami akan memandu Anda melalui proses pembuatan tema untuk HyDE langkah demi langkah.
+Tutorial ini akan bekerja untuk hyprdots dan HyDE.
 
-### Quick Start Guide
+### Panduan Memulai Cepat
 
-Clone the hyde-theme-starter repo into your themes directory
+Clone repo hyde-theme-starter ke direktori tema Anda
 
 :::tip
-Rename `MyTheme` to your theme name, make sure it doesn't conflict in names in [HyDE-Gallery](https://github.com/HyDE-Project/hyde-gallery)
+Ubah nama `MyTheme` menjadi nama tema Anda, pastikan tidak ada konflik nama di [HyDE-Gallery](https://github.com/HyDE-Project/hyde-gallery)
 :::
 
 ```bash
 git clone https://github.com/richen604/hyde-theme-starter ~/MyTheme
 ```
 
-1. Required components - all must be in `tar.*` format:
+1. Komponen yang diperlukan - semua harus dalam format `tar.*`:
 
-   - A GTK theme (mandatory)
-     - search [Gnome-Look Themes](https://www.gnome-look.org/browse?cat=135&ord=latest) for existing themes
-     - or see [Generate GTK4](#generate-gtk4-from-wallbash) for generating GTK theme from wallpaper
-   - Icon pack (optional) - defaults to Tela-circle
-     - search [Gnome-Look Icons](https://www.gnome-look.org/browse?cat=132&ord=latest) for existing icon packs
-   - Cursor theme (optional) - defaults to Bibata-Modern-Ice
-     - search [Gnome-Look Cursors](https://www.gnome-look.org/browse?cat=107&ord=latest) for existing cursor themes
-   - Font (optional)
-     - search [fonts.google.com](https://fonts.google.com/) for web fonts
-     - search [nerdfonts.com](https://www.nerdfonts.com/) for patched developer fonts
+   - Tema GTK (wajib)
+     - cari [Gnome-Look Themes](https://www.gnome-look.org/browse?cat=135&ord=latest) untuk tema yang sudah ada
+     - atau lihat [Generate GTK4](#generate-gtk4-dari-wallbash) untuk membuat tema GTK dari wallpaper
+   - Paket ikon (opsional) - default ke Tela-circle
+     - cari [Gnome-Look Icons](https://www.gnome-look.org/browse?cat=132&ord=latest) untuk paket ikon yang sudah ada
+   - Tema kursor (opsional) - default ke Bibata-Modern-Ice
+     - cari [Gnome-Look Cursors](https://www.gnome-look.org/browse?cat=107&ord=latest) untuk tema kursor yang sudah ada
+   - Font (opsional)
+     - cari [fonts.google.com](https://fonts.google.com/) untuk web font
+     - cari [nerdfonts.com](https://www.nerdfonts.com/) untuk font pengembang yang sudah di-patch
 
-2. A collection of wallpapers that match your desired style/color scheme
+2. Koleksi wallpaper yang cocok dengan gaya/skema warna yang Anda inginkan
 
-   - [Wallhaven](https://wallhaven.cc/) - For wallpapers
-   - [farbenfroh.io](https://farbenfroh.io/) - For color match wallpapers if you have a desired color scheme in mind
-   - Don't add too many wallpapers, 8-10 is a good number
+   - [Wallhaven](https://wallhaven.cc/) - Untuk wallpaper
+   - [farbenfroh.io](https://farbenfroh.io/) - Untuk wallpaper yang cocok dengan warna jika Anda memiliki skema warna yang diinginkan
+   - Jangan menambahkan terlalu banyak wallpaper, 8-10 adalah angka yang bagus
 
-3. Install `just` for running helper scripts `yay -S just`
+3. Instal `just` untuk menjalankan skrip helper `yay -S just`
 
-Go to your theme directory `cd ~/MyTheme` (replace `MyTheme` with your theme name)
+Pergi ke direktori tema Anda `cd ~/MyTheme` (ganti `MyTheme` dengan nama tema Anda)
 
 :::tip
-Rename `MyTheme` in the `justfile` to your theme name
+Ubah nama `MyTheme` di `justfile` menjadi nama tema Anda
 :::
 
 ```bash
 theme = "MyTheme"
 ```
 
-Run `just init` to generate initial directory structure
+Jalankan `just init` untuk menghasilkan struktur direktori awal
 
-Your theme should have the following structure:
+Tema Anda harus memiliki struktur berikut:
 
 ```bash
 ~/MyTheme/
-├── Config/                  # Part of your final theme - Configuration files
+├── Config/                  # Bagian dari tema final Anda - File konfigurasi
 │   └── hyde/
 │       └── themes/
-│           └── MyTheme/     # main theme directory
+│           └── MyTheme/     # direktori tema utama
 │               └── wallpapers/
-├── refs/                    # for reference files we generate
-├── screenshots/             # for screenshots of your theme
-├── Source/                  # Part of your final theme - Arcs ie. gtk, cursor, icon, font
+├── refs/                    # untuk file referensi yang kita hasilkan
+├── screenshots/             # untuk screenshot tema Anda
+├── Source/                  # Bagian dari tema final Anda - Arcs yaitu gtk, cursor, icon, font
 │   └── arcs/
 ├── .gitignore
-├── justfile                 # for running helper scripts
-└── README.md                # links to this webpage
+├── justfile                 # untuk menjalankan skrip helper
+└── README.md                # link ke halaman web ini
 ```
 
 ### Arcs
 
-Arcs are the GTK theme, icon, cursor, and font components that make up parts of your theme.
-Lets add these right away to the `Source/arcs` directory so they are ready for testing.
+Arcs adalah komponen tema GTK, ikon, kursor, dan font yang membentuk bagian dari tema Anda.
+Mari tambahkan ini segera ke direktori `Source/arcs` agar siap untuk pengujian.
 
-Your folder structure should look something like this:
+Struktur folder Anda harus terlihat seperti ini:
 
 ```bash
 ~/MyTheme/
 ├── Source/
 │   └── arcs/
-│       ├── Gtk_<Your-GTK-Theme>.tar.*
-│       ├── Cursor_<Your-Cursor-Theme>.tar.*
-│       └── Icon_<Your-Icon-Theme>.tar.*
-│       └── Font_<Your-Font-Name>.tar.*
+│       ├── Gtk_<Tema-GTK-Anda>.tar.*
+│       ├── Cursor_<Tema-Kursor-Anda>.tar.*
+│       └── Icon_<Tema-Ikon-Anda>.tar.*
+│       └── Font_<Nama-Font-Anda>.tar.*
 ```
 
-**Make sure to use the correct prefix for each arc**. eg. `Gtk_<Your-GTK-Theme>.tar.*`
+**Pastikan untuk menggunakan prefix yang benar untuk setiap arc**. contoh: `Gtk_<Tema-GTK-Anda>.tar.*`
 
-### Viewing your theme with Wallbash
+### Melihat tema Anda dengan Wallbash
 
-Copy your wallpapers to your theme directory
+Salin wallpaper Anda ke direktori tema Anda
 
 ```bash
 cp -r ~/wallpapers ~/MyTheme/Config/.config/hyde/themes/MyTheme/wallpapers
 ```
 
-cd into your theme directory
+cd ke direktori tema Anda
 
 ```bash
 cd ~/MyTheme
 ```
 
-install your theme
+instal tema Anda
 
 ```bash
 just install
 ```
 
-### Testing your theme with wallbash
+### Menguji tema Anda dengan wallbash
 
-There are two ways to initialize your theme. from wallbash or from an existing theme.
+Ada dua cara untuk menginisialisasi tema Anda, dari wallbash atau dari tema yang sudah ada.
 
-We are going to use wallbash for this guide. as it gives you a good understanding of how wallbash generates the colors for your theme. You can learn more about wallbash [here](#understanding-wallbash).
+Kita akan menggunakan wallbash untuk panduan ini karena memberikan pemahaman yang baik tentang bagaimana wallbash menghasilkan warna untuk tema Anda. Anda dapat mempelajari lebih lanjut tentang wallbash [di sini](#memahami-wallbash).
 
-Open Wallbash, setting auto, dark, or light (`Meta + Shift + R`). </br>
-Set your chosen wallpaper as the current wallpaper (`Meta + Shift + W`)
+Buka Wallbash, atur auto, dark, atau light (`Meta + Shift + R`). </br>
+Atur wallpaper pilihan Anda sebagai wallpaper saat ini (`Meta + Shift + W`)
 
-Observe how wallbash adapts the colors to your wallpaper for the following applications:
+Amati bagaimana wallbash menyesuaikan warna dengan wallpaper Anda untuk aplikasi berikut:
 
 - GTK (nwg-look)
-  - to test your arc gtk theme, change from wallbash mode to theme mode (Meta + Shift + R)
-  - then check `pavucontrol` to see if your gtk theme looks weird. if it does, follow the instructions in [Generate GTK4](#generate-gtk4-from-wallbash) to generate GTK4 theme files using wallbash
+  - untuk menguji tema arc gtk Anda, ubah dari mode wallbash ke mode tema (Meta + Shift + R)
+  - kemudian periksa `pavucontrol` untuk melihat apakah tema gtk Anda terlihat aneh. jika ya, ikuti instruksi di [Generate GTK4](#generate-gtk4-dari-wallbash) untuk menghasilkan file tema GTK4 menggunakan wallbash
 - Kitty (kitty)
 - QT (qt5ct + qt6ct)
 - Waybar (waybar)
 - Spotify (spotify)
-- VSCode (code) - needs wallbash enabled as color theme
+- VSCode (code) - memerlukan wallbash diaktifkan sebagai tema warna
 - Cava (cava)
 
-### Generate theme files
+### Generate file tema
 
-Make sure the wallpaper you picked is the best wallpaper that wallbash generates for your theme. </br>
-Now run the following commands to generate the wallbash files.
+Pastikan wallpaper yang Anda pilih adalah wallpaper terbaik yang dihasilkan wallbash untuk tema Anda. </br>
+Sekarang jalankan perintah berikut untuk menghasilkan file wallbash.
 
 ```bash
 just gen-all
 just set-wall
 ```
 
-You'll see a bunch of new files in your theme `refs` directory.
+Anda akan melihat banyak file baru di direktori `refs` tema Anda.
 
 ```bash
 ~/MyTheme/
-├── refs/                   # for reference files we generate
-│   ├── gtk-4.0/            # GTK4 theme files
-│   │   ├── gtk.css         # Light theme
-│   │   └── gtk-dark.css    # Dark theme
-│   ├── kvantum/            # Kvantum theme files
-│   │   ├── kvantum.theme   # Kvantum theme config
-│   │   └── kvconfig.theme  # Kvantum config
-│   ├── hypr.theme          # Hyprland theme
-│   ├── kitty.theme         # Kitty terminal theme
-│   ├── rofi.theme          # Rofi theme
-│   ├── theme.dcol          # wallbash "theme" mode overrides
-│   └── waybar.theme        # Waybar theme
-│   └── wall.set            # First wallpaper theme uses
+├── refs/                   # untuk file referensi yang kita hasilkan
+│   ├── gtk-4.0/            # File tema GTK4
+│   │   ├── gtk.css         # Tema terang
+│   │   └── gtk-dark.css    # Tema gelap
+│   ├── kvantum/            # File tema Kvantum
+│   │   ├── kvantum.theme   # Konfigurasi tema Kvantum
+│   │   └── kvconfig.theme  # Konfigurasi Kvantum
+│   ├── hypr.theme          # Tema Hyprland
+│   ├── kitty.theme         # Tema terminal Kitty
+│   ├── rofi.theme          # Tema Rofi
+│   ├── theme.dcol          # Override mode "theme" wallbash
+│   └── waybar.theme        # Tema Waybar
+│   └── wall.set            # Wallpaper pertama yang digunakan tema
 ```
 
-You can copy all the files to your `Config/.config/hyde/themes/MyTheme` directory.
+Anda dapat menyalin semua file ke direktori `Config/.config/hyde/themes/MyTheme` Anda.
 
 ```bash
 cp -r ./refs/* ./Config/.config/hyde/themes/MyTheme
 ```
 
-run install again to update your theme
+jalankan install lagi untuk memperbarui tema Anda
 
 ```bash
 just install
 ```
 
-These files are used to set the "theme" mode for your theme. (`Meta + Shift + R`)
+File-file ini digunakan untuk mengatur mode "theme" untuk tema Anda. (`Meta + Shift + R`)
 
-### Editing \*.theme files
+### Mengedit file \*.theme
 
-These files are important for themes to work correctly.
+File-file ini penting agar tema bekerja dengan benar.
 
-You should reference a theme like [Bad Blood](https://github.com/HyDE-Project/hyde-gallery/blob/Bad-Blood/Configs/.config/hyde/themes/Bad%20Blood) along this guide.
+Anda harus merujuk tema seperti [Bad Blood](https://github.com/HyDE-Project/hyde-gallery/blob/Bad-Blood/Configs/.config/hyde/themes/Bad%20Blood) dalam panduan ini.
 
-Each \*.theme file contains configuration lines
+Setiap file \*.theme berisi baris konfigurasi
 
-The first line has the format: file_path | command_to_execute
+Baris pertama memiliki format: file_path | command_to_execute
 
 - hypr.theme - `$HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf`
 - kitty.theme - `$HOME/.config/kitty/theme.conf|killall -SIGUSR1 kitty`
 - rofi.theme - `$HOME/.config/rofi/theme.rasi`
 - waybar.theme - `$HOME/.config/waybar/theme.css|${scrDir}/wbarconfgen.sh`
 
-the most important file is `hypr.theme`
+file yang paling penting adalah `hypr.theme`
 
 ```bash
 $HOME/.config/hypr/themes/theme.conf|> $HOME/.config/hypr/themes/colors.conf
-# ~/.config/hypr/theme/theme.conf is an auto-generated file. Do not edit.
+# ~/.config/hypr/theme/theme.conf adalah file yang dihasilkan otomatis. Jangan edit.
 
-$GTK_THEME=Bad-Blood # folder name inside `Source/arcs/Gtk_<Your-GTK-Theme>.tar.*`
-$ICON_THEME=besgnulinux-mono-red # folder name inside `Source/arcs/Icon_<Your-Icon-Theme>.tar.*`
-$COLOR_SCHEME=prefer-dark # prefer-dark, prefer-light, or auto
-$CURSOR_THEME=Night-Diamond-Red # folder name inside `Source/arcs/Cursor_<Your-Cursor-Theme>.tar.*`
-$CURSOR_SIZE=30 # cursor size in pixels
+$GTK_THEME=Bad-Blood # nama folder di dalam `Source/arcs/Gtk_<Tema-GTK-Anda>.tar.*`
+$ICON_THEME=besgnulinux-mono-red # nama folder di dalam `Source/arcs/Icon_<Tema-Ikon-Anda>.tar.*`
+$COLOR_SCHEME=prefer-dark # prefer-dark, prefer-light, atau auto
+$CURSOR_THEME=Night-Diamond-Red # nama folder di dalam `Source/arcs/Cursor_<Tema-Kursor-Anda>.tar.*`
+$CURSOR_SIZE=30 # ukuran kursor dalam pixel
 ```
 
-- Edit the variables for arcs, must match the name of the folder **inside** each arc in `Source/arcs` like above
-- Set hyprland borders, colors, and other theme related settings
-- You can use hypr.theme to set additional programs for your theme. such as SDDM or Vscode theme
-- Becomes `$HOME/.config/hypr/themes/theme.conf`
+- Edit variabel untuk arcs, harus cocok dengan nama folder **di dalam** setiap arc di `Source/arcs` seperti di atas
+- Atur border hyprland, warna, dan pengaturan terkait tema lainnya
+- Anda dapat menggunakan hypr.theme untuk mengatur program tambahan untuk tema Anda, seperti tema SDDM atau Vscode
+- Menjadi `$HOME/.config/hypr/themes/theme.conf`
 
-Any updates to your theme in either `Config` or `Source` should be run with `just install` to update your theme.
+Setiap pembaruan tema Anda di `Config` atau `Source` harus dijalankan dengan `just install` untuk memperbarui tema Anda.
 
-### Editing theme.dcol
+### Mengedit theme.dcol
 
-The `theme.dcol` file is used to override some generated wallbash colors for wallbash modes.
-Check out [understanding wallbash](#understanding-wallbash) for more information.
+File `theme.dcol` digunakan untuk menimpa beberapa warna wallbash yang dihasilkan untuk mode wallbash.
+Lihat [memahami wallbash](#memahami-wallbash) untuk informasi lebih lanjut.
 
-This file is entirely optional
+File ini sepenuhnya opsional
 
-### Finalizing your theme
+### Menyelesaikan tema Anda
 
-Your theme should now be ready to be added to the hyde-gallery!
+Tema Anda sekarang harus siap untuk ditambahkan ke hyde-gallery!
 
-A few more finishing touches:
+Beberapa sentuhan akhir lagi:
 
-- Add some screenshots to `~/screenshots`
-- Add your theme to the Hyde-Gallery
+- Tambahkan beberapa screenshot ke `~/screenshots`
+- Tambahkan tema Anda ke Hyde-Gallery
 
-### Adding Themes to Hyde-Gallery
+### Menambahkan Tema ke Hyde-Gallery
 
-In your theme directory, generate the readme using
+Di direktori tema Anda, hasilkan readme menggunakan
 
 ```bash
 python3 generate_readme.py
 ```
 
-Initialize git
+Inisialisasi git
 
 ```bash
-git init && git branch -M main && git add . && git commit -m "My first HyDE theme"
+git init && git branch -M main && git add . && git commit -m "Tema HyDE pertama saya"
 ```
 
-[create a github repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
+[buat repo github](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
 
 ```bash
-git remote add origin <your-repo-url>
+git remote add origin <url-repo-anda>
 git push -u origin main
 ```
 
 Fork hyde-gallery <https://github.com/HyDE-Project/hyde-gallery> </br>
-Add your theme to the list and `hyde-themes.json`
+Tambahkan tema Anda ke daftar dan `hyde-themes.json`
 
-## More Information
+## Informasi Lebih Lanjut
 
-### Generate GTK4 from wallbash
+### Generate GTK4 dari wallbash
 
-If your theme doesn't include GTK4 support, pavucontrol and other GTK4 applications may appear with a plain white theme.
+Jika tema Anda tidak menyertakan dukungan GTK4, pavucontrol dan aplikasi GTK4 lainnya mungkin muncul dengan tema putih polos.
 
-Run the following command to generate the GTK4 theme files
+Jalankan perintah berikut untuk menghasilkan file tema GTK4
 
 ```bash
 just gen-gtk4
 ```
 
-Copy the `refs/gtk-4.0` directory to your theme directory
+Salin direktori `refs/gtk-4.0` ke direktori tema Anda
 
 ```bash
 mkdir -p ./Config/.config/hyde/themes/MyTheme/gtk-4.0
 cp -r ./refs/gtk-4.0/* ./Config/.config/hyde/themes/MyTheme/gtk-4.0/
 ```
 
-### Understanding wallbash
+### Memahami wallbash
 
-Wallbash generates 4 primary colors from your wallpaper, then creates color groups around each primary color with the following structure:
+Wallbash menghasilkan 4 warna utama dari wallpaper Anda, kemudian membuat kelompok warna di sekitar setiap warna utama dengan struktur berikut:
 
-For each primary color (`wallbash_pry1` through `wallbash_pry4`):
+Untuk setiap warna utama (`wallbash_pry1` sampai `wallbash_pry4`):
 
-- Text color (`wallbash_txt1` through `wallbash_txt4`)
-- 9 accent colors (`wallbash_1xa1` through `wallbash_1xa9` for group 1, etc.)
+- Warna teks (`wallbash_txt1` sampai `wallbash_txt4`)
+- 9 warna aksen (`wallbash_1xa1` sampai `wallbash_1xa9` untuk grup 1, dst.)
 
-Each color has an RGBA variant with configurable opacity (e.g. `wallbash_pry1_rgba(0.95)`)
+Setiap warna memiliki varian RGBA dengan opacity yang dapat dikonfigurasi (mis. `wallbash_pry1_rgba(0.95)`)
 
-Total: 44 base colors (4 groups × 11 colors) plus RGBA variants
+Total: 44 warna dasar (4 grup × 11 warna) ditambah varian RGBA
 
-Use `just gen-dcol` to generate a `theme.dcol` with all the wallbash generated colors for your active wallpaper for reference
+Gunakan `just gen-dcol` untuk menghasilkan `theme.dcol` dengan semua warna yang dihasilkan wallbash untuk wallpaper aktif Anda sebagai referensi
