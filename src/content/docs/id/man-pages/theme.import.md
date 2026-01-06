@@ -1,61 +1,61 @@
 ---
 title: theme.import.py
-description: theme import manual page
+description: halaman manual impor tema
 ---
 
-### Preview
+### Pratinjau
 
-![preview theme import](../../../../assets/man-pages/theme.import/image.png)
+![pratinjau impor tema](../../../../assets/man-pages/theme.import/image.png)
 
-### NAME
+### NAMA
 
-theme.import.py - Imports themes from the HyDE gallery repository
+theme.import.py - Mengimpor tema dari repositori galeri HyDE
 
-### SYNOPSIS
+### SINOPSIS
 
-`theme.import.py` [OPTIONS]
+`theme.import.py` [OPSI]
 
-### DESCRIPTION
+### DESKRIPSI
 
-`theme.import.py` is a script to import and manage themes from the HyDE gallery repository. It allows users to clone the repository, fetch theme data, preview themes, and apply selected themes.
+`theme.import.py` adalah skrip untuk mengimpor dan mengelola tema dari repositori galeri HyDE. Skrip ini memungkinkan pengguna untuk mengkloning repositori, mengambil data tema, melihat pratinjau tema, dan menerapkan tema yang dipilih.
 
-### OPTIONS
+### OPSI
 
 - `-j`, `--json`
-  Fetch JSON data after cloning the repository.
+  Mengambil data JSON setelah mengkloning repositori.
 
 - `-S`, `--select`
-  Select themes using `fzf`.
+  Memilih tema menggunakan `fzf`.
 
 - `-p`, `--preview` IMAGE_URL
-  Get a preview of the specified theme.
+  Mendapatkan pratinjau dari tema yang ditentukan.
 
-- `-t`, `--preview-text` TEXT
-  Preview text to display when using the `--preview` option.
+- `-t`, `--preview-text` TEKS
+  Teks pratinjau yang ditampilkan saat menggunakan opsi `--preview`.
 
 - `--skip-clone`
-  Skip cloning the repository.
+  Melewati proses kloning repositori.
 
-- `-f`, `--fetch` THEME
-  Fetch and update a specific theme by name. Use `all` to fetch all themes located in `xdg_config/hyde/themes`.
+- `-f`, `--fetch` TEMA
+  Mengambil dan memperbarui tema tertentu berdasarkan nama. Gunakan `all` untuk mengambil semua tema yang terletak di `xdg_config/hyde/themes`.
 
-### ENVIRONMENT VARIABLES
+### VARIABEL LINGKUNGAN
 
 - `LOG_LEVEL`
-  Set the logging level (default: `INFO`).
+  Menetapkan tingkat logging (default: `INFO`).
 
 - `XDG_CACHE_HOME`
-  Directory for cache files (default: `~/.cache`).
+  Direktori untuk file cache (default: `~/.cache`).
 
 - `XDG_CONFIG_HOME`
-  Directory for configuration files (default: `~/.config`).
+  Direktori untuk file konfigurasi (default: `~/.config`).
 
 - `FULL_THEME_UPDATE`
-  Overwrites the archived files (useful for updates and changes in archives).
+  Menimpa file yang diarsipkan (berguna untuk pembaruan dan perubahan dalam arsip).
 
-### EXAMPLES
+### CONTOH
 
-Opens fzf menu and select themes.
+Membuka menu fzf dan memilih tema.
 
 ```shell
 theme.import.py --select
