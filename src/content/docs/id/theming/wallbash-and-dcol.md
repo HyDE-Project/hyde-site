@@ -1,43 +1,43 @@
 ---
-title: Wallbash and dcol
-description: Understanding Wallbash and dcol
+title: Wallbash dan dcol
+description: Memahami Wallbash dan dcol
 ---
 
-## Overview
+## Ikhtisar
 
-This document provides an explanation of the color configuration used for theming HyDE. It covers primary colors, text colors, and accent colors. Each color can be specified in either hexadecimal or RGBA format.
+Dokumen ini memberikan penjelasan tentang konfigurasi warna yang digunakan untuk tema HyDE. Ini mencakup warna utama, warna teks, dan warna aksen. Setiap warna dapat ditentukan dalam format heksadesimal atau RGBA.
 
-## Color Identifiers
+## Identifier Warna
 
-By default, while **wallpaper caching**, it will produce 4 primary colors, 4 text colors, and 9 accent colors for each primary color.
+Secara default, saat **caching wallpaper**, ini akan menghasilkan 4 warna utama, 4 warna teks, dan 9 warna aksen untuk setiap warna utama.
 
-- **`dcol_mode`**: This identifier determines whether the theme is in dark or light mode.
-- **`dcol_pryX`**: These are the primary colors, with `X` ranging from 1 to 4.
-- **`dcol_txtX`**: These are the inverted primary colors used for text, with `X` ranging from 1 to 4.
-- **`dcol_XaxY`**: These are the accent colors for each primary color, with `X` ranging from 1 to 4 and `Y` ranging from 1 to 9.
-- **`_rgba`**: This suffix indicates that the color is in RGBA format. If the suffix is not present, the color is in hexadecimal format.
-- **`_rgb`**: This suffix indicates that the color is in RGB format.
+- **`dcol_mode`**: Identifier ini menentukan apakah tema dalam mode gelap atau terang.
+- **`dcol_pryX`**: Ini adalah warna utama, dengan `X` berkisar dari 1 hingga 4.
+- **`dcol_txtX`**: Ini adalah warna utama yang dibalik digunakan untuk teks, dengan `X` berkisar dari 1 hingga 4.
+- **`dcol_XaxY`**: Ini adalah warna aksen untuk setiap warna utama, dengan `X` berkisar dari 1 hingga 4 dan `Y` berkisar dari 1 hingga 9.
+- **`_rgba`**: Suffix ini menunjukkan bahwa warna dalam format RGBA. Jika suffix tidak ada, warna dalam format heksadesimal.
+- **`_rgb`**: Suffix ini menunjukkan bahwa warna dalam format RGB.
 
-## Usage
+## Penggunaan
 
-To use the cache color configuration:
+Untuk menggunakan konfigurasi warna cache:
 
-1. Replace the prefix `dcol_` with `wallbash_` to allow the Wallbash script to parse and change values.
-2. Consider the `wallbash_` prefix as a placeholder for the dominant color value.
-3. Wrap the color identifier with angle brackets (`<...>`) to indicate replacement with the corresponding value, e.g., `<wallbash_pry1>`.
-4. Use this [example](https://github.com/hyde-project/hyde/tree/master/Configs/.config/hyde/wallbash) as a template.
+1. Ganti prefix `dcol_` dengan `wallbash_` agar skrip Wallbash dapat mem-parse dan mengubah nilai.
+2. Anggap prefix `wallbash_` sebagai placeholder untuk nilai warna dominan.
+3. Bungkus identifier warna dengan kurung sudut (`<...>`) untuk menunjukkan penggantian dengan nilai yang sesuai, misalnya `<wallbash_pry1>`.
+4. Gunakan [contoh ini](https://github.com/hyde-project/hyde/tree/master/Configs/.config/hyde/wallbash) sebagai template.
 
-This allows you to create a template for configurations, using the dominant color or wallpaper, and let the Wallbash script convert it for you.
+Ini memungkinkan Anda untuk membuat template untuk konfigurasi, menggunakan warna dominan atau wallpaper, dan biarkan skrip Wallbash mengkonversinya untuk Anda.
 
-### Creating a `*.dcol` Template
+### Membuat Template `*.dcol`
 
-A template requires three parts:
+Sebuah template memerlukan tiga bagian:
 
-- Target file
-- Script/command (optional)
-- Contents
+- File target
+- Script/command (opsional)
+- Konten
 
-## The basic format:
+## Format dasar:
 
 ```
 target|command 
@@ -46,56 +46,56 @@ contents
 
 
 :::note
-**target**|**command** should always be on line 1 of every template file. We will call it `header line`.
+**target**|**command** harus selalu ada pada baris 1 dari setiap file template. Kita akan menyebutnya `header line`.
 :::
 
-#### Target File
+#### File Target
 
-Structure your template and determine the target configuration location. This can be:
+Strukturkan template Anda dan tentukan lokasi konfigurasi target. Ini bisa berupa:
 
-- `${cacheDir}/wallbash` with post-processing using a script.
-- An expected path, e.g., beside `kitty.conf` for Kitty, sourced by `include theme.conf`.
+- `${cacheDir}/wallbash` dengan post-processing menggunakan script.
+- Path yang diharapkan, misalnya di samping `kitty.conf` untuk Kitty, di-source oleh `include theme.conf`.
 
-Use environment variables to handle directories dynamically:
+Gunakan variabel environment untuk menangani direktori secara dinamis:
 
-- `${confDir}` = `$XDG_CONFIG_HOME` or `$HOME/.config/`
+- `${confDir}` = `$XDG_CONFIG_HOME` atau `$HOME/.config/`
 - `${cacheDir}/wallbash` = `HYDE_CACHE_DIR/wallbash` = `$HOME/.cache/hyde`
 
-#### Optional Script/Command
+#### Script/Command Opsional
 
-After filling the target file with contents, you can run arbitrary commands/scripts for post-processing. Use the `WALLBASH_SCRIPTS` variable to navigate to Wallbash's script directory, e.g., `WALLBASH_SCRIPTS/your_script.sh`.
+Setelah mengisi file target dengan konten, Anda dapat menjalankan perintah/script arbitrary untuk post-processing. Gunakan variabel `WALLBASH_SCRIPTS` untuk navigasi ke direktori script Wallbash, misalnya `WALLBASH_SCRIPTS/your_script.sh`.
 
 :::caution 
-Only add templates from trusted authors to avoid executing bad code.
+Hanya tambahkan template dari pembuat terpercaya untuk menghindari menjalankan kode yang buruk (malicious).
 :::
 
-#### Contents
+#### Konten
 
-These are the contents of the file, containing Wallbash placeholders, e.g., `<wallbash_pry1>`.
+Ini adalah konten dari file, berisi placeholder Wallbash, misalnya `<wallbash_pry1>`.
 
 ---
 
-The `~/.config/hyde/wallbash/*` directory contains three main directories:
+Direktori `~/.config/hyde/wallbash/*` berisi tiga direktori utama:
 
 ### always
 
-Templates in `./wallbash/always/` are executed during:
+Template di `./wallbash/always/` dijalankan saat:
 
-- Theme switch
-- Wallpaper switch
-- Mode switch
+- Pergantian tema
+- Pergantian wallpaper
+- Pergantian mode
 
-More information [here](./always/README).
+Informasi lebih lanjut [di sini](./always/README).
 
 ### theme
 
-Templates in `./wallbash/theme/` are executed during:
+Template di `./wallbash/theme/` dijalankan saat:
 
-- Theme switch
-- Mode switch
+- Pergantian tema
+- Pergantian mode
 
-More information [here](./theme/README).
+Informasi lebih lanjut [di sini](./theme/README).
 
 ### scripts
 
-For customization, store your scripts in `./wallbash/scripts`. Use the `$WALLBASH_SCRIPTS` variable to navigate this directory.
+Untuk kustomisasi, simpan script Anda di `./wallbash/scripts`. Gunakan variabel `$WALLBASH_SCRIPTS` untuk navigasi ke direktori ini.
