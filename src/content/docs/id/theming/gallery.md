@@ -1,13 +1,13 @@
 ---
-title: HyDE Gallery
-description: supported HyDE themes.
+title: Galeri Tema HyDE
+description: Daftar Tema HyDE.
 sidebar:
   order: 1
 ---
 
 <div align = center><img src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png"><br></div>
 
-# Theme Gallery
+# Daftar Tema
 
 <!-- TABLE_START -->
 
@@ -56,45 +56,45 @@ sidebar:
 
 <!-- TABLE_END -->
 
-\*All theme tags are linked to their corresponding repositories.
+\*Semua tag tema ditautkan ke repositori masing-masing.
 
-\*For more information, visit [HyDE-project/hyde-themes](https://github.com/HyDE-project/hyde-themes).
+\*Untuk informasi lebih lanjut, kunjungi [HyDE-project/hyde-themes](https://github.com/HyDE-project/hyde-themes).
 
-## Usage
+## Penggunaan
 
-> - Make sure you have installed [HyDE](https://github.com/HyDE-project/hyde)
+> - Pastikan Anda telah menginstal [HyDE](https://github.com/HyDE-project/hyde)
 
-### Interactively import themes from the gallery
+### Impor tema secara interaktif dari galeri
 
 ```shell
 hydectl theme import
 ```
 
-### Import a specific theme by name and URL
+### Impor tema tertentu berdasarkan nama dan URL
 
 ```shell
 hydectl theme import --name "Theme Name" --url "https://github.com/User/Repository"
 ```
 
-### Update all local themes
+### Perbarui semua tema lokal
 
 ```shell
 hydectl theme import --fetch all
 ```
 
-### Update a specific theme
+### Perbarui tema tertentu
 
 ```shell
 hydectl theme import --fetch "Theme Name"
 ```
 
-### Select a theme interactively
+### Pilih tema secara interaktif
 
 ```shell
 hydectl theme select
 ```
 
-### Set a theme directly
+### Terapkan tema secara langsung
 
 ```shell
 hydectl theme set "Theme Name"
@@ -102,21 +102,21 @@ hydectl theme set "Theme Name"
 
 ---
 
-## Wallpaper Management
+## Manajemen Wallpaper
 
-### Select a wallpaper interactively
+### Pilih wallpaper secara interaktif
 
 ```shell
 hydectl wallpaper select
 ```
 
-### Set a specific wallpaper
+### Terapkan wallpaper tertentu
 
 ```shell
 hydectl wallpaper set /path/to/wallpaper.jpg
 ```
 
-### List available wallpapers
+### Tampilkan daftar wallpaper yang tersedia
 
 ```shell
 hydectl wallpaper list
