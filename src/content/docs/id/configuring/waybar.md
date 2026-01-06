@@ -199,7 +199,7 @@ Ini adalah konvensi Waybar untuk memungkinkan pengguna menambahkan modul serupa
 dengan class yang sama.
 
 
-## Membuat Layout Waybaar Anda Sendiri
+## Membuat Layout Waybar Anda Sendiri
 
 :::note
 

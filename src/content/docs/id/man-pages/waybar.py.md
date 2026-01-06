@@ -1,13 +1,13 @@
 ---
 title: waybar.py
-description: waybar.py manual page
+description: Halaman manual waybar.py
 ---
 
 ## Name
 
-`waybar.py` - HyDE Waybar configuration management script
+`waybar.py` - Skrip manajemen konfigurasi Waybar untuk HyDE
 
-## Synopsis
+## Sinopsis
 
 ```
 waybar.py [-h] [--set SET] [-n] [-p] [-u] [-g] [-i] [-b] [-G] 
@@ -15,212 +15,216 @@ waybar.py [-h] [--set SET] [-n] [-p] [-u] [-g] [-i] [-b] [-G]
           [--hide [{0,1,toggle}]]
 ```
 
-## Description
+## Deskripsi
 
-`waybar.py` is a comprehensive Waybar configuration management script that is part of the HyDE, your Development Environment.
+`waybar.py` adalah skrip manajemen konfigurasi Waybar yang komprehensif dan merupakan bagian dari HyDE (lingkungan pengembangan Anda).
 
-The script manages Waybar configurations stored in `~/.config/waybar/layouts/` and their corresponding styles in `~/.config/waybar/styles/`. It automatically handles the generation of includes files, icon sizing, border radius updates, and provides seamless switching between different Waybar configurations.
+Skrip ini mengelola konfigurasi Waybar tersimpan di `~/.config/waybar/layouts` beserta style yang terkait di `~/.config/waybar/styles`.
+Ia secara otomatis menangani pembuatan file includes, pengaturan ukuran ikon, pembaruan border radius, serta perpindahan (switching) antar konfigurasi Waybar dengan mulus.
 
-## Options
+## Opsi
 
-### Layout Management
+### Manajemen Layout
 
 **`--set SET`**
-: Set a specific layout by name. The layout file should exist in `~/.config/waybar/layouts/` with a `.jsonc` extension.
+: Mengatur layout tertentu berdasarkan nama. File layout harus ada di `~/.config/waybar/layouts/` dengan ekstensi `.jsonc`.
 
 **`-n, --next`**
-: Switch to the next available layout in alphabetical order. Cycles through all layouts in the layouts directory.
+: Berpindah ke layout berikutnya berdasarkan urutan alfabet. Akan berputar (cycle) di semua layout yang tersedia.
 
 **`-p, --prev`**
-: Switch to the previous available layout in alphabetical order. Cycles through all layouts in the layouts directory.
+: Berpindah ke layout sebelumnya berdasarkan urutan alfabet. Akan berputar (cycle) di semua layout yang tersedia.
 
-### Update Operations
+### Operasi Pembaruan
 
 **`-u, --update`**
-: Perform a complete update of all Waybar components including:
-  - Icon size configurations in JSON files
-  - Border radius in CSS files  
-  - Includes.json file generation
-  - Configuration and style synchronization
+: Melakukan pembaruan penuh terhadap semua komponen Waybar, termasuk:
+  - Konfigurasi ukuran ikon di file JSON
+  - Border radius di file CSS
+  - Pembuatan file includes.json
+  - Singkronisasi konfigurasi dan style
 
 **`-g, --update-global-css`**
-: Update only the global.css file. This file contains dynamic font-size and font-family configurations that can be overridden by themes via `hypr.theme` >> `$BAR_FONT`.
+: Memperbarui hanya file `global.css`. File ini berisi konfigurasi dinamis seperti font-size dan font-family yang dapat dioverride oleh theme melalui `hypr.theme` >> `$BAR_FONT`.
 
 **`-i, --update-icon-size`**
-: Update icon size configurations in JSON files. This resolves icon sizing that cannot be handled directly by Waybar's CSS.
+: Memperbarui konfigurasi ukuran ikon di file JSON. Digunakan untuk mengatasi ukuran ikon yang tidak bisa ditangani langsung oleh CSS Waybar.
 
 **`-b, --update-border-radius`**
-: Update border radius configurations in CSS files. This creates dynamic border radius for groups that adapts to Hyprland's corner rounding settings.
+: Memperbarui konfigurasi border radius di file CSS. 
+Ini membuat border radius dinamis untuk grup yang menyesuaikan dengan pengaturan *corner rounding* Hyperland.
 
 **`-G, --generate-includes`**
-: Generate the `includes.json` file. This file contains:
-  - All modules from `~/.config/waybar/modules/`
-  - Dynamic configurations that Waybar doesn't provide natively
-  - Icon size resolutions for proper styling
+: Menghasilkan file `includes.json` yang berisi:
+  - Semua modul dari `~/.config/waybar/modules/`
+  - Konfigurasi dinamis yang tidak disediakan secara native oleh Waybar
+  - Resolusi ukuran ikon untuk styling yang tepat
 
-### Configuration Paths
+### Path Konfigurasi
 
 **`-c CONFIG, --config CONFIG`**
-: Specify the path to a source `config.jsonc` file. This allows using configurations outside the standard layouts directory.
+: Menentukan path ke file `config.jsonc`. Memungkinkan penggunaan konfigurasi di luar direktori layout standar.
 
 **`-s STYLE, --style STYLE`**
-: Specify the path to a source `style.css` file. This allows using styles outside the standard styles directory.
+: Menentukan path ke file `style.css`. Memungkinkan penggunaan style di luar direktori style standar.
 
-### Process Management
+## Manajemen Proses
 
 **`-w, --watch`**
-: Enable watch mode. Continuously monitor Waybar and automatically restart it if the process dies. Useful for maintaining a persistent Waybar instance.
+: Mengaktifkan mode watch. Akan memonitor Waybar secara terus-menerus dan otomatis me-restrat jika proses mati. Berguna untuk menjaga Waybar tetap berjalan.
 
 **`--kill, -k`**
-: Kill all running Waybar instances and any associated watcher scripts. This provides a clean way to terminate all Waybar processes.
+: Mematikan semua instance Waybar yang sedang berjalan dan skrip watcher terkait. Memberikan cara bersih untuk menghentikan semua proses Waybar.
 
 **`--hide [{0,1,toggle}]`**
-: Control Waybar visibility:
-  - `--hide 0` or `--hide show`: Show Waybar
-  - `--hide 1` or `--hide hide`: Hide Waybar  
-  - `--hide` or `--hide toggle`: Toggle current visibility state
+: :
+  - `--hide 0` or `--hide show`: Tampilkan Waybar
+  - `--hide 1` or `--hide hide`: Sembunyikan Waybar  
+  - `--hide` or `--hide toggle`: Toggle (bolak-balik) status visibilitas
 
-### Information and Listing
+### Informasi dan Listing
 
 **`--json, -j`**
-: List all available layouts in JSON format. Useful for scripting and integration with other tools.
+: Menampilkan daftar semua layout yang tersedia dalam format JSON. 
+Berguna untuk scripting dan integrasi tools lain.
 
 **`--select, -S`**
-: Open an interactive rofi menu to select and switch between available layouts. This provides a visual interface for browsing and selecting from all layout configurations in `~/.config/waybar/layouts/`.
+: Membuka menu interaktif rofi untuk memilih dan berpindah antar layout. 
+Menyediakan antar muka visual untuk browsing dan memilih layout dari `~/.config/waybar/layouts/`.
 
 **`-h, --help`**
-: Display help message with all available options and exit.
+: Menampilkan pesan bantuan berisi semua opsi yang tersedia.
 
 ## Files
 
 **`~/.config/waybar/`**
-: Main Waybar configuration directory for user customizations
+: Direktori konfigurasi utama Waybar untuk kustomisasi pengguna
 
 **`~/.config/waybar/layouts/`**
-: Directory containing Waybar layout configuration files (`.jsonc` format)
+: Direktori berisi file konfigurasi layout Waybar (format `.jsonc`)
 
 **`~/.config/waybar/styles/`**
-: Directory containing CSS style files corresponding to layouts
+: Direktori berisi file CSS style yang sesuai dengan layout
 
 **`~/.config/waybar/modules/`**
-: Directory containing individual module configurations
+: Direktori berisi konfigurasi modul individual
 
 **`~/.config/waybar/includes/`**
-: Directory containing generated include files and dynamic configurations
+: Direktori berisi file include yang dihasilkan dan konfigurasi dinamis
 
 **`~/.config/waybar/includes/includes.json`**
-: Auto-generated file containing all module definitions and dynamic configurations
+: File yang dihasilkan otomatis berisi semua definisi modul dan konfigurasi dinamis
 
 **`~/.config/waybar/config.jsonc`**
-: Current active Waybar configuration (transient file, copy of selected layout)
+: Konfigurasi Waybar yang sedang aktif (file transien, salinan dari layout yang dipilih)
 
 **`~/.config/waybar/style.css`**
-: Current active Waybar style (auto-generated, imports multiple CSS files)
+: Style Waybar yang sedang aktif (dihasilkan otomatis, mengimpor beberapa file CSS)
 
 **`~/.local/share/waybar/`**
-: HyDE-provided Waybar configurations (read-only, do not edit)
+: Konfigurasi Waybar yang disediakan HyDE (read-only, jangan diedit)
 
-## Examples
+## Contoh Penggunaan
 
-### Basic Layout Management
+### Manajemen Layout Dasar
 
-Select a layout interactively:
+Memilih layout secara interaktif:
 ```bash
-waybar.py --select       # Opens rofi layout selector
+waybar.py --select       # Membuka pemilih layout rofi
 ```
 
-Switch to a specific layout:
+Berpindah ke layout tertentu:
 ```bash
 waybar.py --set khing
 ```
 
-Cycle through layouts:
+Berputar melalui layout:
 ```bash
-waybar.py --next     # Next layout
-waybar.py --prev     # Previous layout
+waybar.py --next     # Layout berikutnya
+waybar.py --prev     # Layout sebelumnya
 ```
 
-### Configuration Updates
+### Pembaruan Konfigurasi
 
-Update all configurations:
+Memperbarui semua konfigurasi:
 ```bash
 waybar.py --update
 ```
 
-Update specific components:
+Memperbarui komponen tertentu:
 ```bash
-waybar.py --update-icon-size        # Update icon sizes only
-waybar.py --update-border-radius    # Update border radius only
-waybar.py --generate-includes       # Regenerate includes.json
+waybar.py --update-icon-size        # Perbarui ukuran ikon saja
+waybar.py --update-border-radius    # Perbarui border radius saja
+waybar.py --generate-includes       # Hasilkan ulang includes.json
 ```
 
-### Process Management
+### Manajemen Proses
 
-Start Waybar with watch mode:
+Memulai Waybar dengan mode watch:
 ```bash
 waybar.py --watch
 ```
 
-Control Waybar visibility:
+Mengontrol visibilitas Waybar:
 ```bash
-waybar.py --hide 1       # Hide Waybar
-waybar.py --hide 0       # Show Waybar  
-waybar.py --hide toggle  # Toggle visibility
+waybar.py --hide 1       # Sembunyikan Waybar
+waybar.py --hide 0       # Tampilkan Waybar  
+waybar.py --hide toggle  # Toggle visibilitas
 ```
 
-Kill all `waybar.py` processes which effectively kill `--watch` mode:
+Mematikan semua proses `waybar.py` yang secara efektif mematikan mode `--watch`:
 
 ```bash
 waybar.py --kill
 ```
 
-### Information Gathering
+### Pengumpulan Informasi
 
-Interactive layout selection:
+Pemilihan layout interaktif:
 ```bash
-waybar.py --select       # Opens rofi menu for layout selection
+waybar.py --select       # Membuka menu rofi untuk pemilihan layout
 ```
 
-List available layouts:
+Daftar layout yang tersedia:
 ```bash
-waybar.py --json         # JSON format for scripting
+waybar.py --json         # Format JSON untuk scripting
 ```
 
-### Custom Configuration Paths
+### Path Konfigurasi Kustom
 
-Use custom configuration files:
+Menggunakan file konfigurasi kustom:
 ```bash
 waybar.py --config /path/to/custom-config.jsonc --style /path/to/custom-style.css
 ```
 
-## Configuration Workflow
+## Alur Kerja Konfigurasi
 
-1. **Browse and select layouts**: Use `waybar.py --select` to open an interactive rofi menu and preview available layouts
+1. **Telusuri dan pilih layout**: Gunakan `waybar.py --select` untuk membuka menu rofi interaktif dan melihat pratinjau layout yang tersedia
 
-2. **Create or copy a layout**: Start with an existing layout from `~/.local/share/waybar/layouts/` or create a new one in `~/.config/waybar/layouts/`
+2. **Buat atau salin layout**: Mulai dengan layout yang ada dari `~/.local/share/waybar/layouts/` atau buat yang baru di `~/.config/waybar/layouts/`
 
-3. **Generate includes**: Run `waybar.py --generate-includes` to ensure all modules are available
+3. **Hasilkan includes**: Jalankan `waybar.py --generate-includes` untuk memastikan semua modul tersedia
 
-4. **Set the layout**: Use `waybar.py --set <layout-name>` to activate your configuration, or use the interactive selector with `waybar.py --select`
+4. **Atur layout**: Gunakan `waybar.py --set <nama-layout>` untuk mengaktifkan konfigurasi Anda, atau gunakan pemilih interaktif dengan `waybar.py --select`
 
-5. **Update configurations**: Run `waybar.py --update` after making changes to ensure all components are synchronized
+5. **Perbarui konfigurasi**: Jalankan `waybar.py --update` setelah membuat perubahan untuk memastikan semua komponen tersinkronisasi
 
-## Integration with HyDE
+## Integrasi dengan HyDE
 
-`waybar.py` is tightly integrated with the HyDE ecosystem:
+`waybar.py` terintegrasi erat dengan ekosistem HyDE:
 
-- **Theme Integration**: Automatically adapts to current HyDE theme settings
-- **Dynamic Styling**: Updates border radius based on Hyprland window rounding
-- **Font Management**: Synchronizes fonts with HyDE theme configurations  
-- **Module System**: Manages HyDE-specific Waybar modules and configurations
+- **Integrasi Tema**: Secara otomatis menyesuaikan dengan pengaturan tema HyDE saat ini
+- **Styling Dinamis**: Memperbarui border radius berdasarkan pengaturan rounding window Hyprland
+- **Manajemen Font**: Menyinkronkan font dengan konfigurasi tema HyDE
+- **Sistem Modul**: Mengelola modul dan konfigurasi Waybar khusus HyDE
 
 
-## Notes
+## Catatan
 
-- Always use `~/.config/waybar/` for custom configurations, never edit files in `~/.local/share/waybar/`
-- The `includes.json` file is auto-generated and should not be manually edited
-- Layout names correspond to filenames without the `.jsonc` extension
-- Style files should match layout names for automatic pairing (e.g., `khing.jsonc` uses `khing.css`)
+- Selalu gunakan `~/.config/waybar/` untuk konfigurasi kustom, jangan pernah mengedit file di `~/.local/share/waybar/`
+- File `includes.json` dihasilkan secara otomatis dan tidak boleh diedit secara manual
+- Nama layout sesuai dengan nama file tanpa ekstensi `.jsonc`
+- File style harus sesuai dengan nama layout untuk pasangan otomatis (contoh: `khing.jsonc` menggunakan `khing.css`)
 
 
 
