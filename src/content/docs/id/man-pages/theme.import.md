@@ -39,7 +39,7 @@ theme.import.py - Mengimpor tema dari repositori galeri HyDE
 - `-f`, `--fetch` TEMA
   Mengambil dan memperbarui tema tertentu berdasarkan nama. Gunakan `all` untuk mengambil semua tema yang terletak di `xdg_config/hyde/themes`.
 
-### VARIABEL LINGKUNGAN
+### ENVIRONMENT VARIABLES
 
 - `LOG_LEVEL`
   Menetapkan tingkat logging (default: `INFO`).

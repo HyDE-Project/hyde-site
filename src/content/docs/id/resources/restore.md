@@ -5,7 +5,7 @@ description: Restore script's logic
 
 :::note
 
-"restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
+Istilah "restore" dalam konteks ini berarti mengembalikan dotfiles dari repository ke `$HOME`, bukan sebaliknya.
 
 ```sh
 ./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>
@@ -15,48 +15,48 @@ description: Restore script's logic
 
 ## Pipe Separated Values (PSV)
 
-This is a pipe-separated value file. It contains the paths of the dotfiles and their respective package dependencies.
+Ini adalah berkas pipe-separated value. Berkas ini berisi path dotfiles beserta dependensi paketnya masing-masing.
 
-#### Note:
+#### Catatan:
 
-- Lines starting with `#` are comments.
-- The only known variable is `${HOME}`.
-- This is a 4-column file separated by `|`.
-- Each column should use spaces to separate array elements.
+- Baris yang diawali dengan `#` adalah komentar.
+- Satu-satunya variabel yang dikenali adalah `${HOME}`.
+- Ini adalah berkas dengan 4 kolom yang dipisahkan oleh karakter `|`.
+- Setiap kolom harus menggunakan spasi untuk memisahkan elemen array.
 
-#### Structure:
+#### Struktur:
 
 ```shell
 flag|path|target|dependency
 ```
 
-#### Flags:
+#### Flag:
 
 - **( P ) Populate/Preserved**
 
-  - This flag ensures that the target is only copied if it does not already exist. It is useful for preserving the current state of the target, preventing any overwrites or modifications to existing files or directories.
+  - Flag ini memastikan target hanya akan disalin jika belum ada. Berguna untuk mempertahankan kondisi target saat ini, sehingga mencegah penimpaan atau modifikasi pada berkas atau direktori yang sudah ada.
 
 - **( S ) Sync**
 
-  - If the target file(s) exist, overwrite them.
-  - If the target is a directory, only overwrite the files that are listed.
-  - Preserve other files in the target directory that are not listed.
-  - This behavior is similar to the `cp -r` command.
+  - Jika berkas target ada, maka akan ditimpa.
+  - Jika target adalah sebuah direktori, hanya berkas yang tercantum saja yang akan ditimpa.
+  - Berkas lain di dalam direktori target yang tidak tercantum akan tetap dipertahankan.
+  - Perilaku ini mirip dengan perintah `cp -r`.
 
 - **( O ) Overwrite**
 
-  - This flag performs an aggressive sync operation. It ensures that the target is completely replaced by the source.
-  - If the target is a directory, every file and subdirectory within it will be overwritten by the corresponding items from the source.
-  - If the target is a file, it will be entirely overwritten by the source file.
-  - This operation does not preserve any existing files or directories in the target location; everything is replaced.
-  - Useful for updating core configurations and scripts.
+  - Flag ini melakukan sinkronisasi secara agresif. Memastikan target sepenuhnya digantikan oleh sumber.
+  - Jika target adalah direktori, semua berkas dan subdirektori di dalamnya akan ditimpa oleh item yang sesuai dari sumber.
+  - Jika target adalah berkas, maka akan sepenuhnya ditimpa oleh berkas sumber.
+  - Operasi ini tidak mempertahankan berkas atau direktori yang sudah ada di lokasi target; semuanya ditimpa.
+  - Berguna untuk memperbarui konfigurasi inti dan skrip.
 
 - **( B ) Backup**
-  - Backup the target.
-  - All P, S, O flags will also backup the target file/directory.
+  - Melakukan backtup terhadap target.
+  - Semua flag P, S, O  juga akan melakukan backup terhadap berkas atau direktori target.
 
 <details>
-<summary>Sample PSV file</summary>
+<summary>Contoh berkas PSV</summary>
 
 ```shell
  Hyde core files 
@@ -142,11 +142,11 @@ P|${HOME}/.config/hypr|hypridle.conf|hypridle
 
 </details>
 
-## TOML Configuration
+## Konfigurasi TOML
 
-🚧 🚧 WIP 🚧🚧
+🚧 🚧 Masih dalam tahap pengerjaan 🚧🚧
 
-PSV configuration file is convenient for the script to read and write. However, it is very restrictive and not user-friendly.
-For further customization, we can use TOML configuration files.
+Berkas konfigurasi PSV memudahkan skrip untuk membaca dan menulis data. Namun, format ini sangat terbatas dan kurang ramah bagi pengguna.
+Untuk kustomisasi lebih lanjut, kita dapat menggunakan berkas konfigurasi TOML.
 
 ...
