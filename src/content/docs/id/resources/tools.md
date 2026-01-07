@@ -1,50 +1,50 @@
 ---
 title: Tools
-description: Recommended tools
+description: Alat yang direkomendasikan
 ---
 
-These tools can enhance your workflow and help you make the most of your Hyprland experience! They have been tested and works well with HyDe too
+Alat-alat ini dapat meningkatkan alur kerja Anda dan membantu Anda memaksimalkan pengalaman Hyprland! Semuanya telah diuji dan bekerja dengan baik bersama HyDe juga
 
 ### Wallpaper
 
-- [Hyprpaper](https://github.com/hyprwm/hyprpaper) ![c++][cpp] (blazing fast wayland wallpaper utility with IPC controls)
-- [swww](https://github.com/Horus645/swww) ![rust][rs] (Wallpaper daemon with live switching, awesome animations, and GIF support)
-- [mpvpaper](https://github.com/GhostNaN/mpvpaper) ![c][c] (Wallpaper daemon that wraps MPV, useful for videos, and more advanced usage)
-- [swaybg](https://github.com/swaywm/swaybg) ![c][c] (Very simple wallpaper daemon used by default on sway)
-- [waypaper](https://github.com/anufrievroman/waypaper) ![python][py] (GUI wallpaper setter)
-- [waypaper engine](https://github.com/0bCdian/Waypaper-Engine) ![typescript][ts] (GUI wallpaper setter with playlist capabilities)
-- [wpaperd](https://github.com/danyspin97/wpaperd) ![rust][rs] (Minimal wallpaper daemon for Wayland)
+- [Hyprpaper](https://github.com/hyprwm/hyprpaper) ![c++][cpp] (utilitas wallpaper wayland yang sangat cepat dengan kontrol IPC)
+- [swww](https://github.com/Horus645/swww) ![rust][rs] (Daemon wallpaper dengan pergantian langsung, animasi keren, dan dukungan GIF)
+- [mpvpaper](https://github.com/GhostNaN/mpvpaper) ![c][c] (Daemon wallpaper yang membungkus MPV, berguna untuk video dan penggunaan lebih lanjut)
+- [swaybg](https://github.com/swaywm/swaybg) ![c][c] (Daemon wallpaper yang sangat sederhana, digunakan secara default di sway)
+- [waypaper](https://github.com/anufrievroman/waypaper) ![python][py] (Pengatur wallpaper berbasis GUI)
+- [waypaper engine](https://github.com/0bCdian/Waypaper-Engine) ![typescript][ts] (Pengatur wallpaper berbasis GUI dengan kemampuan playlist)
+- [wpaperd](https://github.com/danyspin97/wpaperd) ![rust][rs] (Daemon wallpaper minimal untuk Wayland)
 
 
-### Idle Daemons
+### Daemon Idle
 
-- [hypridle](https://github.com/hyprwm/hypridle) ![c++][cpp] (Hyprland's idle daemon)
-- [swayidle](https://github.com/swaywm/swayidle) ![c][c] (Idle daemon used by default in sway, also only one I could find for wlroots)
+- [hypridle](https://github.com/hyprwm/hypridle) ![c++][cpp] (Daemon idle untuk Hyprland)
+- [swayidle](https://github.com/swaywm/swayidle) ![c][c] (Daemon idle yang digunakan secara default di sway, juga satu-satunya yang bisa ditemukan untuk wlroots)
 
-### Lockers
+### Pengunci Layar
 
-- [swaylock](https://github.com/swaywm/swaylock) ![c][c] (Sway's default locker, very configurable, and popular)
-- [swaylock-effects](https://github.com/mortie/swaylock-effects) ![c][c] (Fork of swaylock, but with effects ^)
-- [waylock](https://codeberg.org/ifreund/waylock) ![zig][z] (A small screenlocker for Wayland compositors)
-- [hyprlock](https://github.com/hyprwm/hyprlock) ![c++][cpp] (Hyprland's GPU-accelerated screen locking utility)
-- [syslock](https://github.com/System64fumo/syslock) ![c++][cpp] (Simple screen locker for wayland written in gtkmm 4)
+- [swaylock](https://github.com/swaywm/swaylock) ![c][c] (Pengunci layar default Sway, sangat dapat dikonfigurasi, dan populer)
+- [swaylock-effects](https://github.com/mortie/swaylock-effects) ![c][c] (Fork dari swaylock, tetapi dengan efek ^)
+- [waylock](https://codeberg.org/ifreund/waylock) ![zig][z] (Pengunci layar kecil untuk kompositor Wayland)
+- [hyprlock](https://github.com/hyprwm/hyprlock) ![c++][cpp] (Utilitas pengunci layar yang dipercepat GPU dari Hyprland)
+- [syslock](https://github.com/System64fumo/syslock) ![c++][cpp] (Pengunci layar sederhana untuk wayland yang ditulis dalam gtkmm 4)
 
-### Clipboard Managers
+### Pengelola Clipboard
 
-- [clipman](https://github.com/chmouel/clipman) ![go][go] (A simple clipboard manager for Wayland)
-- [cliphist](https://github.com/sentriz/cliphist) ![go][go] (Wayland clipboard manager)
+- [clipman](https://github.com/chmouel/clipman) ![go][go] (Pengelola clipboard sederhana untuk Wayland)
+- [cliphist](https://github.com/sentriz/cliphist) ![go][go] (Pengelola clipboard Wayland)
 
 
-### Raw Tools
+### Alat Dasar
 
-- [Grim](https://git.sr.ht/~emersion/grim) ![c][c] (basic screenshot tool)
-- [grim-hyprland](https://github.com/eriedaberrie/grim-hyprland) ![c][c] (drop-in replacement Grim fork with support for Hyprland's window capture protocol)
-- [Wayshot](https://git.sr.ht/~shinyzenith/wayshot) ![rust][rs] (basic screenshot tool made for speed and in rust)
-- [slurp](https://github.com/emersion/slurp) ![c][c] (basic area selection tool)
-- [Hyprpicker](https://github.com/hyprwm/hyprpicker)  ![c++][cpp] (wlroots-compatible Wayland color picker that does not suck)
-- [Wayfreeze](https://github.com/Jappie3/wayfreeze) ![rust][rs] (Tool to freeze the screen of a Wayland compositor)
+- [Grim](https://git.sr.ht/~emersion/grim) ![c][c] (alat screenshot dasar)
+- [grim-hyprland](https://github.com/eriedaberrie/grim-hyprland) ![c][c] (fork pengganti Grim dengan dukungan protokol tangkapan jendela Hyprland)
+- [Wayshot](https://git.sr.ht/~shinyzenith/wayshot) ![rust][rs] (alat screenshot dasar yang dibuat untuk kecepatan dan ditulis dalam rust)
+- [slurp](https://github.com/emersion/slurp) ![c][c] (alat pemilihan area dasar)
+- [Hyprpicker](https://github.com/hyprwm/hyprpicker)  ![c++][cpp] (pemilih warna Wayland yang kompatibel dengan wlroots)
+- [Wayfreeze](https://github.com/Jappie3/wayfreeze) ![rust][rs] (Alat untuk membekukan layar dari kompositor Wayland)
 
-### Recording
+### Perekaman
 
-- [wf-recorder](https://github.com/ammen99/wf-recorder) ![c++][cpp] (Simple screenrecorder, like grim but records video)
-- [wl-screenrec](https://github.com/russelltg/wl-screenrec) ![rust][rs] (Simple and efficient screenrecorder for AMD and Intel GPUs)
+- [wf-recorder](https://github.com/ammen99/wf-recorder) ![c++][cpp] (Perekam layar sederhana, seperti grim tetapi merekam video)
+- [wl-screenrec](https://github.com/russelltg/wl-screenrec) ![rust][rs] (Perekam layar sederhana dan efisien untuk GPU AMD dan Intel)
