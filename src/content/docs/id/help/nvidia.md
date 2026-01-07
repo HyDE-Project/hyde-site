@@ -1,20 +1,20 @@
 ---
 title: NVIDIA
-description: For NVIDIA GPU users
+description: Untuk pengguna GPU NVIDIA
 ---
 
-HyDE's installation automates the installation of **NVIDIA drivers** and **nvidia-utils**.
+Instalasi HyDE mengotomatisasi pemasangan **NVIDIA drivers** dan **nvidia-utils**.
 
 :::note
-More information at: https://wiki.archlinux.org/title/NVIDIA
+Informasi lebih lanjut tersedia di: https://wiki.archlinux.org/title/NVIDIA
 
 :::
 
-This table shows what drivers will be added to your system based on the nvidia GPU you have.
+Tabel berikut menunjukkan driver apa saja yang akan ditambahkan ke sistem Anda berdasarkan GPU NVIDIA yang Anda miliki.
 
 <!-- START TABLE OF CONTENTS -->
 
-# Table of Contents
+# Daftar Isi
 
 - [nvidia-340xx-dkms](#nvidia-340xx-dkms)
 - [nvidia-390xx-dkms](#nvidia-390xx-dkms)
