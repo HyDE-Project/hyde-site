@@ -22,7 +22,7 @@ git clone https://github.com/richen604/hyde-theme-starter ~/MyTheme
 
    - Un thème GTK (obligatoire)
      - recherchez sur [Gnome-Look Themes](https://www.gnome-look.org/browse?cat=135&ord=latest) pour des thèmes existants
-     - ou consultez [Générer GTK4](#generer-gtk4-depuis-wallbash) pour générer un thème GTK à partir d'un fond d'écran
+     - ou consultez [Générer GTK4](#générer-gtk4-depuis-wallbash) pour générer un thème GTK à partir d'un fond d'écran
    - Pack d'icônes (optionnel) - par défaut Tela-circle
      - recherchez sur [Gnome-Look Icons](https://www.gnome-look.org/browse?cat=132&ord=latest) pour des packs d'icônes existants
    - Thème de curseur (optionnel) - par défaut Bibata-Modern-Ice
