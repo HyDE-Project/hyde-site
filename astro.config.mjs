@@ -23,6 +23,7 @@ export default defineConfig({
         de: { label: 'Deutsch', lang: 'de' },
         hi: { label: 'हिन्दी', lang: 'hi' },
         ru: { label: 'Русский', lang: 'ru'},
+        id: { label: 'Bahasa Indonesia', lang: 'id'},
       },
       social: [
         {

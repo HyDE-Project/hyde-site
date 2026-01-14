@@ -1,0 +1,95 @@
+---
+title: hyde-shell
+description: Wrapper eksekusi skrip HyDE dan resolver lingkungan (environment).
+sidebar:
+  order: 2
+---
+
+## Nama
+
+`hyde-shell` - Wrapper eksekusi skrip HyDE dan resolver lingkungan (environment).
+
+## Sinopsis
+
+```
+hyde-shell [command] [arguments...]
+hyde-shell [--help | help | -h]
+hyde-shell [-r | reload]
+```
+
+## Deskripsi
+
+`hyde-shell` adalah skrip wrapper universal yang mengeksekusi skrip HyDE tanpa perlu ekstensi file
+serta menyelesaikan masalah terkait PATH, misalnya ketika pengguna tidak sengaja menimpa
+`~/.local/lib/hyde` dalam PATH mereka.
+
+Berlokasi di `~/.local/bin/`, hyde-shell secara otomatis menemukan dan mengeksekusi skrip dari 
+direktori pustaka (library) HyDE, baik skrip Python (.py) maupun skrip shell (.sh) tanpa 
+memerlukan ekstensi file.
+
+## Opsi
+
+**`--help, help, -h`**
+: Tampilkan pesan bantuan yang menampilkan daftar perintah dan informasi penggunaan yang tersedia.
+
+**`-r, reload`**
+: Muat ulang lingkungan HyDE dan menyegarkan semua konfigurasi.
+
+## Perintah Bawaan
+
+**`wallbash`**
+: Eksekusi skrip wallbash untuk pengaturan tema dan manajemen warna secara dinamis.
+
+## Eksekusi Skrip
+
+`hyde-shell` menyediakan akses ke semua skrip HyDE tanpa memerlukan ekstensi file:
+
+```bash
+hyde-shell waybar              # Eksekusi waybar.py
+hyde-shell theme.import        # Eksekusi theme.import.py
+hyde-shell wallpaper           # Eksekusi wallpaper.sh
+hyde-shell screenrecord          # Eksekusi screenrecord.sh
+```
+
+Wrapper otomatis menemukan dan menyelesaikan semua skrip di direktori pustaka (library) HyDE.
+
+## Contoh Penggunaan
+
+Eksekusi semua skrip HyDE tanpa ekstensi file:
+```bash
+hyde-shell waybar --help           # Jalankan waybar.py dengan flag help
+hyde-shell theme.import            # Jalankan theme.import.py
+hyde-shell wallpaper               # Jalankan wallpaper.sh
+```
+
+Gunakan perintah bawaan:
+```bash
+hyde-shell wallbash                # Eksekusi skrip wallbash di ~/.config/hyde/wallbash/scripts/
+
+hyde-shell reload                  # Muat ulang lingkungan HyDE
+```
+
+Pass argumen ke skrip di bawahnya:
+```bash
+hyde-shell waybar --set layout-1   # Pass argumen ke waybar.py
+```
+
+## Fitur Utama
+
+- **Resolusi Path Skrip**: Menemukan skrip di `~/.local/lib/hyde/` tanpa memperhatikan konfigurasi PATH
+- **Pengendalian Ekstensi**: Secara otomatis menambahkan ekstensi file yang sesuai (.py, .sh)
+- **Independensi PATH**: Bekerja tanpa memperhatikan konfigurasi PATH saat ini atau direktori kerja
+
+## File
+
+**`~/.local/bin/hyde-shell`**
+: Skrip wrapper eksekusi utama
+
+**`~/.local/lib/hyde/`**
+: Direktori yang berisi semua skrip dan modul HyDE
+
+## Catatan
+
+- Selalu gunakan `hyde-shell` daripada eksekusi skrip langsung untuk kompatibilitas maksimal
+- Ekstensi file adalah opsional dan diselesaikan secara otomatis
+- Versi HyDE akan semakin banyak mengandalkan `hyde-shell` untuk eksekusi skrip
