@@ -15,7 +15,6 @@ description: Configuración de Waybar
 ├── 📄 config.jsonc
 ├── 📄 style.css
 ├── 📄 theme.css
-├── 📄 user-style.css
 └── 📄 user-style.css
 ```
 
@@ -120,7 +119,7 @@ Directorio: `./includes/`
 ```
 
 - **border-radius.css**
-  - Radio de borde dinámico para los [grupos](#groups-grupos).
+  - Radio de borde dinámico para los [grupos](#group-class-clase-grupal-para-estilizado).
 
 #### Vista previa de Radio de Borde Dinámico
 
