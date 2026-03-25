@@ -428,7 +428,7 @@ You can reuse the same group shape multiple times by adding tags (`#tagname`):
 
 #### Step 6: Arrange Groups in Module Positions
 
-Finally, assign your groups to the three available positions:
+Now you can assign your groups to the three available positions:
 
 ```jsonc
   "modules-left": ["group/pill-left", "group/pill-down", "group/pill-up"],

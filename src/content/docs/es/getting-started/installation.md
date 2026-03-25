@@ -92,19 +92,8 @@ El script de instalación puede ejecutarse en diferentes modos:
 
 <!-- ### Option 2
 
-:::caution
-
-HyDE-CLI author here.
-The CLI's dots management (Hyde {restore,backup,control,override}) is not yet and might not be 100% compatible of the current hyprdots.
-This is due to incompatibility of the meta files
-and the above commands need manual intervention
-Rest assured that other commands are working perfectly
-and will be ported to its own `hydectl` command line interface
-
-:::
-
-As a second install option, you can also use `Hyde-install`, which might be easier for some.
-View installation instructions for HyDE in [Hyde-cli - Usage](https://github.com/kRHYME7/Hyde-cli?tab=readme-ov-file#usage).
+Como segunda opción de instalación, también puedes emplear `hyde-shell`.
+Consulta el manual de uso en [hyde-shell](/en/man-pages/hyde-shell).
 
 ### Option 3
 
