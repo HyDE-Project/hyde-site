@@ -64,34 +64,35 @@ sidebar:
 
 > - Make sure you have installed [HyDE](https://github.com/HyDE-project/hyde)
 
-### Interactively import themes from the gallery
+### Interactively import themes from the gallery with hyde-shell
 
 ```shell
-hydectl theme import
+hyde-shell theme.import --select
 ```
 
-### Import a specific theme by name and URL
+### Import a specific theme by name and URL with hydectl 
 
 ```shell
-hydectl theme import --name "Theme Name" --url "https://github.com/User/Repository"
-```
-
-### Update all local themes
-
-```shell
-hydectl theme import --fetch all
+hydectl theme import --name "Catppuccin Mocha" --url  "https://github.com/HyDE-Project/hyde-themes/tree/Catppuccin-Mocha"
 ```
 
 ### Update a specific theme
 
 ```shell
-hydectl theme import --fetch "Theme Name"
+hyde-shell theme.import --fetch "Theme Name"
 ```
 
-### Select a theme interactively
+### Update only themes located in '$XDG_config/hyde/themes'
 
 ```shell
-hydectl theme select
+hyde-shell theme.import --fetch all
+```
+
+
+### Select your active theme with rofi
+
+```shell
+hyde-shell theme.select
 ```
 
 ### Set a theme directly
@@ -104,20 +105,20 @@ hydectl theme set "Theme Name"
 
 ## Wallpaper Management
 
-### Select a wallpaper interactively
+### Select a wallpaper interactively using rofi
 
 ```shell
-hydectl wallpaper select
+hyde-shell wallpaper -S
 ```
 
 ### Set a specific wallpaper
 
 ```shell
-hydectl wallpaper set /path/to/wallpaper.jpg
+hyde-shell wallpaper -S --select /path/to/wallpaper.jpg
 ```
 
 ### List available wallpapers
 
 ```shell
-hydectl wallpaper list
+hyde-shell wallpaper list
 ```
