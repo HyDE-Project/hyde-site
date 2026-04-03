@@ -36,9 +36,11 @@ description: Configuración relacionada con Hyprland
 
 **¡Lee primero la [Wiki de Hyprland](https://wiki.hyprland.org/)!**
 
+**Y actualizate sobre los variabels [de XDG aqui](https://specifications.freedesktop.org/basedir/latest/)**
+
 :::
 
-# Configuración de Hyprland en HyDE
+## Configuración de Hyprland en HyDE
 
 Dado que Hyprland carga `~/.config/hypr/hyprland.conf`, la configuración de Hyprland en HyDE se divide en tres secciones:
 
@@ -48,7 +50,7 @@ Dado que Hyprland carga `~/.config/hypr/hyprland.conf`, la configuración de Hyp
 
 ## 1. Plantilla Base
 
-Esta sección contiene la configuración predeterminada de HyDE. Se recomienda no modificar esta sección.
+Esta sección contiene la configuración predeterminada de HyDE. Se recomienda _no_ modificar esta sección directamente.
 
 **Ruta del archivo:** $XDG_DATA_HOME/hyde/hyprland.conf`
 
@@ -164,10 +166,10 @@ Esta sección es para la configuración del usuario. Se recomienda modificar est
 
 **Rutas de archivos:**
 
-- ./keybindings.conf
-- ./windowrules.conf
-- ./monitors.conf
-- ./userprefs.conf
+- `$XDG_CONFIG_HOME/hypr/keybindings.conf`
+- `$XDG_CONFIG_HOME/hypr/windowrules.conf`
+- `$XDG_CONFIG_HOME/hypr/monitors.conf`
+- `$XDG_CONFIG_HOME/hypr/userprefs.conf`
 
 ---
 
@@ -178,8 +180,17 @@ Las variables de Hyprland pueden ser sobrescritas, por lo que puedes cambiar los
 
 Además, Hyprland puede recargar en caliente los archivos de configuración, por lo que puedes editarlos y ver los cambios inmediatamente.
 
+Si deseas ser seguro sobre editar la configuración estandar, copiala a una ubicación _segura_ primero: 
+
+```bash
+cp ~/.local/share/hyde/schema/config.toml ~/config.toml.bak
+```
+
+O aun mejor, casate con editar `~/.config/hypr` si eres nuevo. Yo recomiendo editar userprefs.conf si esque te gustaría agregar un segundo teclado (nano `~/.config/hypr/userprefs.conf` ya asegurate de tener `kb_layout = us, es`, puedes cambiarlo instataneamente con super + k), windowrules.conf si esque te gustaria habilitar transparencia completa mediante las `layer rules` al final, o mantener todo como comodamente este funcionando.
+
 :::
 
 Ahora deberías saber qué archivo es cuál. Consulta la [Wiki de Hyprland](https://wiki.hyprland.org) para obtener más información y lograr tu experiencia de escritorio perfecta.
 
-También consulta [Preguntas Frecuentes y Consejos](../help/faq#how-can-i-change-keyboard-layout)
+Para detalles sobre como UWSM maneja tu sistema a un nivel de servicio y variables de ambiente, checa [Autostart & UWSM](../../help/secrets/).
+También consulta [Preguntas Frecuentes y Consejos](../../help/faq#how-can-i-change-keyboard-layout).

@@ -1,6 +1,6 @@
 ---
 title: Secretos y Portals
-descprion: Como una instalación estandar de HyDE maneja secretos, compatibilidad con XDG, inicio automatico y portales de desktop.
+description: Como una instalación estandar de HyDE maneja secretos, compatibilidad con XDG, inicio automatico y portales de desktop.
 sidebar:
   order: 3
   badge:
@@ -13,8 +13,11 @@ sidebar:
 Este documento busca servir como apoyo para usuarios perdidos sobre algunos conceptos que veo traen confusión, en específico:
 
 *Manejo de secretos por HyDE.
+
 *Como esque HyDE maneja XDG
+
 *Explicación concreta de UWSM/Secretos/desktop-portals/
+
 *Una guía para prevenir problemas con rofi/theme swtiching.
 
 ## Secrets

@@ -30,7 +30,7 @@ The o.f.s. API holds your passwords alongside **lookup attributes** that an appl
 
 On a contemporary HyDE installation, the libsecret API defined by `org.freedesktop.secrets` is present because **KWallet** is pulled in as a dependency of `kio`. `kio` is installed because **Dolphin** is HyDE's default GUI file explorer, as defined in `pkg_core.lst`.
 
-For system-level privilege escalation (e.g., running GParted or Dolphin as root), HyDE uses **`polkit`** as the authentication agent and **`polkit-gnome`** for prompts on the graphical interface.
+For system-level privilege escalation (e.g., running GParted or Dolphin as root), HyDE uses **`polkit`** as the auth framework and **`polkit-gnome`** for prompts on the graphical interface.
 
 :::tip[Problems launching those apps?]
 It may be that installing `xorg-xhost` fixes your issue:
