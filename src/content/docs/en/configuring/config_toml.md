@@ -23,7 +23,7 @@ then paste it in here.
  -->
 
 ---
-HyDE exposes `xdg_config/hyde/config.toml` file for users to modify. This lets users have the ability to interact the scripts without using command arguments.
+Currently, HyDE exposes `~/.local/share/hyde/schema/config.toml` file for users to modify. This lets users have the ability to interact with the scripts without using command arguments.
 
 Users are encouraged to use an editor that support schema validation to ensure the configuration file is valid.
 ```toml
