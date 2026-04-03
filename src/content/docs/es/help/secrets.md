@@ -47,7 +47,7 @@ Puede ser que no tienes `xorg-xhost` instalado.
 
 ---
 
-## Cumpliendo con 
+## Cumpliendo con XDG
 
 Las [Especificaciones de directorios gracias a XDG](https://specifications.freedesktop.org/basedir-spec/latest/)  define las ubicaciones estandares para _userdata, configuración, cache, archivos de autoinicio_. HyDE intenta seguir estas especificaciónes mediante varios paquetes esenciales:
 
@@ -64,12 +64,18 @@ Las [Especificaciones de directorios gracias a XDG](https://specifications.freed
 
 ## Autostart & UWSM
 
-[UWSM](https://github.com/Vladimir-csp/uwsm)(Universal Wayland Session Manager) maneja el lanzamiento de aplicaciones tratandolas como **Unidades de systemd**. Asolas, usa systemd para empezar varias configuraciones relacionadas con correr nuestro Window Manager y el tratamiento de apps como servicios, para (en teorìa) dar:
+[UWSM](https://github.com/Vladimir-csp/uwsm)(Universal Wayland Session Manager) maneja el lanzamiento de aplicaciones tratandolas como **Unidades de systemd**. cual habilita control de ciertas variables de entorno. Asolas, permite que scripts sean corridas al nivel de servicio (incluso andes de hyprland) y usa systemd para pegarse con `graphical-session-pre.target, graphical-session.target` y `xdg-desktop-autostart.target` para (en teoría) dar:
 
-- Una experiencia limpia de inicio.
-- Establecer variables de HyDE y sus configuraciones.
+- Una experiencia limpia de inicio/apago.
+- Establecer scripts de HyDE y configuración al nivel de servicio.
 - Manejo automatíco de recursos del sistema, además de fallbacks.
 - Una diferencia más clara entre lo que le pertenece a la *sesion gráfica* y lo que no.
+
+Lo que UWSM _no_ puede hacer:
+
+- Dar un incremento mágico de rendimiento.
+- Empaqueta/conteneriza todas tus apps.
+- Arreglar problemas relacionados con cualquier cosa afuera de la activa session gráfica corriendo uwsm.
 
 ### HyDE's scripts para establecer UWSM
 
