@@ -12,13 +12,13 @@ sidebar:
 
 Este documento busca servir como apoyo para usuarios perdidos sobre algunos conceptos que veo traen confusión, en específico:
 
-*Manejo de secretos por HyDE.
+- Manejo de secretos por HyDE.
 
-*Como esque HyDE maneja XDG
+- Como esque HyDE maneja XDG
 
-*Explicación concreta de UWSM/Secretos/desktop-portals/
+- Explicación concreta de UWSM/Secretos/desktop-portals/
 
-*Una guía para prevenir problemas con rofi/theme swtiching.
+- Una guía para prevenir problemas con rofi/theme swtiching.
 
 ## Secrets
 
@@ -134,8 +134,8 @@ El stack de tema de HyDE intenta enfocarze en 4 categorias que en breve describi
 
 HyDE tiene 2 conceptos distinctos que usuarios confunden con regularidad:
 
--**Theme** (`Super + Shift + T` or `hyde-shell theme select`) - seleciona un bundle entero, cual puede incluir una serie de imagenes de fondo, GTK arc, el cursor, un preset de Kvantum y reglas de color predefinidas.
--**Mode**(`Super + Shift + R` o `Super + Shift + A`) - Cicla entre modos de wallbash (colores extraidos por tu actual imagen de fondo) y modos de tema (colores que vienen pre-definidos por tu tema). Esto afecta la tonalidad de tu tema, sin cambiarlo en si.
+- **Theme** (`Super + Shift + T` or `hyde-shell theme select`) - seleciona un bundle entero, cual puede incluir una serie de imagenes de fondo, GTK arc, el cursor, un preset de Kvantum y reglas de color predefinidas.
+- **Mode**(`Super + Shift + R` o `Super + Shift + A`) - Cicla entre modos de wallbash (colores extraidos por tu actual imagen de fondo) y modos de tema (colores que vienen pre-definidos por tu tema). Esto afecta la tonalidad de tu tema, sin cambiarlo en si.
 
 Cambiar un tema causa (entre otras cosas) que wallbash regenere las tokens de color y las empuje hacia cada plantilla registrada. Cambiar de modo hace lo mismo pero con una fuente de color diferente.
 
