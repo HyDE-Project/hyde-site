@@ -9,7 +9,7 @@ description: HyDE Python virtual environment manager manual page
 
 ## Synopsis
 
-```
+```bash
 python-env [command] [options]
 ```
 
@@ -34,7 +34,7 @@ The system Python and user packages are never accessed.
 
 ### `create`
 
-```
+```bash
 python-env create
 ```
 
@@ -44,7 +44,7 @@ Creates the virtual environment and installs all dependencies from `pyproject.to
 
 ### `sync`
 
-```
+```bash
 python-env sync
 ```
 
@@ -54,7 +54,7 @@ Syncs dependencies from `pyproject.toml` into the existing environment. Use this
 
 ### `install`
 
-```
+```bash
 python-env install <package> [package ...]
 ```
 
@@ -62,7 +62,7 @@ Installs one or more packages into the HyDE venv using `uv add`. The package is 
 
 **Example:**
 
-```shell
+```bash
 python-env install requests pillow
 ```
 
@@ -70,7 +70,7 @@ python-env install requests pillow
 
 ### `uninstall`
 
-```
+```bash
 python-env uninstall <package> [package ...]
 ```
 
@@ -78,7 +78,7 @@ Removes one or more packages from the HyDE venv using `uv remove`. Also removes 
 
 **Example:**
 
-```shell
+```bash
 python-env uninstall pillow
 ```
 
@@ -86,7 +86,7 @@ python-env uninstall pillow
 
 ### `destroy`
 
-```
+```bash
 python-env destroy
 ```
 
@@ -96,7 +96,7 @@ Removes the entire virtual environment directory. Does **not** modify `pyproject
 
 ### `rebuild`
 
-```
+```bash
 python-env rebuild
 ```
 
@@ -106,7 +106,7 @@ Destroys the virtual environment and recreates it from scratch by running `sync`
 
 ### `uv`
 
-```
+```bash
 python-env uv [--hyde] <uv-args> ...
 ```
 
@@ -141,7 +141,7 @@ Some HyDE features ship as **optional dependency groups** in `pyproject.toml`. T
 
 Use the `uv` subcommand with `--extra`:
 
-```shell
+```bash
 python-env uv --hyde sync --extra amd
 ```
 
@@ -155,7 +155,7 @@ Do **not** use `python-env install pyamdgpuinfo` for optional extras — that wo
 
 You can extend the HyDE venv with your own packages. The key rule is: **only add packages that HyDE does not declare**.
 
-```shell
+```bash
 # Safe — adding a package HyDE doesn't know about
 python-env install my-tool
 
@@ -192,31 +192,31 @@ If a package you need conflicts with a HyDE dependency, do **not** force-install
 
 **First-time setup:**
 
-```shell
+```bash
 python-env create
 ```
 
 **Update after pulling HyDE changes:**
 
-```shell
+```bash
 python-env sync
 ```
 
 **Install AMD GPU support:**
 
-```shell
+```bash
 python-env uv --hyde sync --extra amd
 ```
 
 **Add a personal package:**
 
-```shell
+```bash
 python-env install python-dotenv
 ```
 
 **Nuke and rebuild a broken environment:**
 
-```shell
+```bash
 python-env rebuild
 ```
 
