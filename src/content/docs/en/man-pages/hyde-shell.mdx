@@ -36,6 +36,16 @@ Located in `~/.local/bin/`, `hyde-shell` automatically discovers and executes sc
 **`wallbash`**
 : Execute a wallbash script for dynamic theming and color management.
 
+**`python-env`**
+: Manage HyDE's isolated Python virtual environment. See [python-env](/en/man-pages/python-env/) for full documentation.
+
+```bash
+hyde-shell python-env create        # Create the virtual environment
+hyde-shell python-env sync          # Sync dependencies from pyproject.toml
+hyde-shell python-env install <pkg> # Install a package into the HyDE venv
+hyde-shell python-env rebuild       # Destroy and recreate the venv
+```
+
 ## Script Execution
 
 `hyde-shell` provides access to all HyDE scripts without requiring file extensions:
@@ -44,7 +54,8 @@ Located in `~/.local/bin/`, `hyde-shell` automatically discovers and executes sc
 hyde-shell waybar              # Executes waybar.py
 hyde-shell theme.import        # Executes theme.import.py
 hyde-shell wallpaper           # Executes wallpaper.sh
-hyde-shell screenrecord          # Executes screenrecord.sh
+hyde-shell screenrecord        # Executes screenrecord.sh
+hyde-shell python-env          # Manages the HyDE Python venv
 ```
 
 The wrapper automatically discovers and resolves all scripts in the HyDE library directory.
@@ -75,6 +86,7 @@ hyde-shell waybar --set layout-1   # Pass arguments to waybar.py
 - **Script Path Resolution**: Finds scripts in `~/.local/lib/hyde/` regardless of PATH configuration
 - **Extension Handling**: Automatically appends appropriate file extensions (.py, .sh)
 - **PATH Independence**: Works regardless of current PATH configuration or working directory
+- **Python Environment Management**: Exposes `python-env` to create, sync, and manage the HyDE isolated venv
 
 ## Files
 
