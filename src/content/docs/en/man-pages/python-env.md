@@ -90,7 +90,7 @@ python-env uninstall pillow
 python-env destroy
 ```
 
-Removes the entire virtual environment directory. Does **not** modify `pyproject.toml`. Run `create` or `sync` afterwards to recreate it.
+Removes the entire virtual environment directory. Does **not** modify `pyproject.toml`. Run `create` afterward to recreate it.
 
 ---
 
@@ -100,7 +100,7 @@ Removes the entire virtual environment directory. Does **not** modify `pyproject
 python-env rebuild
 ```
 
-Destroys the virtual environment and recreates it from scratch by running `sync`. Useful when the environment becomes corrupted or after a Python version change.
+Destroys the virtual environment and recreates it from scratch (does `create` & `sync` in behind). Useful when the environment becomes corrupted or after a Python version change.
 
 ---
 
