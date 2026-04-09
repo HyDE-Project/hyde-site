@@ -8,7 +8,7 @@ These tools can enhance your workflow and help you make the most of your Hyprlan
 ### Wallpaper
 
 - [Hyprpaper](https://github.com/hyprwm/hyprpaper) ![c++][cpp] (blazing fast wayland wallpaper utility with IPC controls)
-- [swww](https://github.com/Horus645/swww) ![rust][rs] (Wallpaper daemon with live switching, awesome animations, and GIF support)
+- [awww](https://codeberg.org/LGFae/awww) ![rust][rs] (Wallpaper daemon with live switching, awesome animations, and GIF support)
 - [mpvpaper](https://github.com/GhostNaN/mpvpaper) ![c][c] (Wallpaper daemon that wraps MPV, useful for videos, and more advanced usage)
 - [swaybg](https://github.com/swaywm/swaybg) ![c][c] (Very simple wallpaper daemon used by default on sway)
 - [waypaper](https://github.com/anufrievroman/waypaper) ![python][py] (GUI wallpaper setter)
@@ -32,7 +32,7 @@ These tools can enhance your workflow and help you make the most of your Hyprlan
 ### Clipboard Managers
 
 - [clipman](https://github.com/chmouel/clipman) ![go][go] (A simple clipboard manager for Wayland)
-- [cliphist](https://github.com/sentriz/cliphist) ![go][go] (Wayland clipboard manager)
+- [cliphist](https://github.com/sentriz/cliphist) ![go][go] (Reliable Wayland clipboard manager)
 
 
 ### Raw Tools
