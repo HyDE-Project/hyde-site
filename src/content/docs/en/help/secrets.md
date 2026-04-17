@@ -28,11 +28,17 @@ The o.f.s. API holds your passwords alongside **lookup attributes** that an appl
 
 ### How HyDE handles secrets by default
 
-On a contemporary HyDE installation, the libsecret API defined by `org.freedesktop.secrets` is present because **KWallet** is pulled in as a dependency of `kio`. `kio` is installed because **Dolphin** is HyDE's default GUI file explorer, as defined in `pkg_core.lst`.
+On a contemporary HyDE installation, the libsecret API defined by `org.freedesktop.secrets` is present because **KWallet** is pulled in as a dependency of `kio`. `kio` is installed because **Dolphin** is HyDE's default GUI file explorer, as defined in `pkg_core.lst`. 
 
-For system-level privilege escalation (e.g., running GParted or Dolphin as root), HyDE uses **`polkit`** as the auth framework and **`polkit-gnome`** for prompts on the graphical interface.
+For system-level privilege escalation (e.g., mounting a drive or using Dolphin as root), HyDE uses **`polkit`** as the authorization framework. The graphical prompt that asks for your password is provided by a **polkit authentication agent**. Rather than hard-coding a single agent, HyDE's startup configuration invokes **`polkitkdeauth.sh`** — a dispatch script that walks a prioritized list of known polkit agents and executes the first one it finds on your system. The preferred agent is **`hyprpolkitagent`**, but **`polkit-gnome`**, **`polkit-kde`**, and others are defined as fallbacks in the script (alongside the rest of the hyde-shell scripts).
 
-:::tip[Problems launching those apps?]
+You only need **one** running polkit agent at a time, unless you have a specific configuration in mind.
+
+:::tip[KWallet tip]
+If KWallet is installed but inactive, you should disable it via the KWalletManager GUI. This is not ideal, but leaving an inactive KWallet service enabled can cause instability.
+:::
+
+:::tip[Problems launching older apps via rofi?]
 It may be that installing `xorg-xhost` fixes your issue:
 
 ```bash
@@ -42,9 +48,9 @@ sudo pacman -Sy xorg-xhost
 Then reboot.
 :::
 
-1. **A service requires elevation** — A service (such as GParted or Dolphin) requires elevation to perform a task. The system uses the policies defined by `polkit` (and established in `/usr/share/polkit-1/...`) to determine whether the task requires elevated privileges. If a secret is needed, `polkit-gnome` renders a prompt asking the user for a password. If valid, the service is allowed to climb privileges temporarily.
+1. **A service requires elevation** — A service (such as GParted or Dolphin) requires elevation to perform a task. The system uses the policies defined by `polkit` (and established in `/usr/share/polkit-1/...`) to determine whether the task requires elevated privileges. If elevation is needed, whichever polkit agent `polkitkdeauth.sh` launched renders the password prompt. If valid, the service is allowed to escalate privileges temporarily.
 
-2. **Retrieving a credential** — When the application needs those credentials again, it asks for your password via `polkit-gnome`. This should be seamless so long as you are not missing dependencies or have a misconfiguration from installing [HyDE incorrectly](../../getting-started/installation/).
+2. **Retrieving a credential** — When the application needs those credentials again, the polkit agent prompts for your password. This should be seamless so long as you are not missing dependencies or have a misconfiguration from installing [HyDE incorrectly](../../getting-started/installation/).
 
 ---
 
@@ -56,10 +62,10 @@ The [XDG Base Directory Specification](https://specifications.freedesktop.org/ba
 
 | Package | Purpose |
 |---|---|
-| `polkit-gnome` | Graphical and general authentication agent for privilege-escalation prompts. |
+| `hyprpolkitagent` | Graphical and general authentication agent for privilege-escalation prompts. |
 | `xdg-user-dirs` | Sets the standard user directories (`Documents`, `Pictures`, etc.) according to the XDG specification. |
 | `xdg-desktop-portal-hyprland` (XDPH) | Enables D-Bus communication between applications and Hyprland. Essential for Flatpak apps — screen sharing, PipeWire integration, and more. |
-| `xdg-desktop-portal-gtk` | Fallback portal for GTK-based applications (e.g., `polkit-gnome`) that need to communicate via D-Bus. |
+| `xdg-desktop-portal-gtk` | Fallback portal for GTK-based applications (e.g., gnome) that need to communicate via D-Bus. |
 
 ---
 
@@ -130,10 +136,17 @@ HyDE's theming stack currently targets *four* application categories explained b
 
 HyDE has two separate concepts that users often conflate:
 
-- **Theme** (<kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd> or `hyde-shell theme select`) — selects a complete theme bundle: wallpaper set, GTK arc, icon pack, cursor, Kvantum preset, and pre-defined color overrides. (and even mode behavior via wallbash)
-- **Mode** (<kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) — cycles between _wallbash_ modes (colors extracted live from your current wallpaper) and _theme_ mode (colors from the theme bundle's pre-defined palette). This affects wallbash-driven apps without changing the theme itself.
+- **Theme** (<kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd> or `hyde-shell theme select`) — selects a complete theme bundle: wallpaper set, GTK arc, icon pack, cursor, Kvantum preset, and pre-defined color overrides. 
+- **Mode** (<kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd>) — cycles between _wallbash_ modes (colors extracted live from your current wallpaper) and _theme_ mode (colors from the theme bundle's pre-defined palette). This affects wallbash-driven apps without changing the theme itself. 
 
-Switching a theme triggers (among other things) wallbash to regenerate color tokens and push them to every registered template. Switching mode does the same but with a different color source.
+Both actions converge on the same pipeline. Selecting a theme (`hyde-shell themeselect`) presents a rofi picker, then calls `theme.switch.sh` — the central orchestrator. Toggling mode (`hyde-shell wallbashtoggle -m`) presents a rofi picker for the four modes (theme, auto, dark, light), writes the choice to state, and also calls `theme.switch.sh`.
+
+`theme.switch.sh` does the heavy lifting: it sources `globalcontrol.sh` for environment setup, loads the theme's variables (GTK theme, icon pack, cursor, fonts), and writes them to every relevant config file — qt5ct, qt6ct, kdeglobals, gtk-2.0, gtk-3.0, gtk-4.0, xsettingsd, flatpak overrides, and Xresources. It then calls `wallpaper.sh` to set the theme's wallpaper, which in turn triggers `color.set.sh` — the wallbash template engine. `color.set.sh` loads the dominant color (dcol) data cached for the current wallpaper, builds sed substitution scripts from those colors, and applies them in parallel to every registered `.dcol` and `.theme` template across the wallbash directories.
+
+`globalcontrol.sh` is the shared environment script sourced by nearly every other HyDE script. It sets XDG paths, loads persisted theme state, exports the current theme directory and wallbash mode, and provides utility functions (`pkg_installed`, `set_conf`, `get_hashmap`, `get_themes`, `toml_write`) that the rest of the pipeline depends on.
+
+`hyde-shell` wraps all of these scripts into a single initialized tool, so for most users the recommended way to interact with theming is through `hyde-shell` commands rather than calling individual scripts.
+
 
 ### Rofi
 
@@ -166,6 +179,8 @@ Electron apps use their own Chromium rendering pipeline and do not natively part
 - **VS Code** — wallbash can apply a color theme if the wallbash extension or color theme is active inside the editor.
 - **Spotify** — potentially powerful if a proper Spicetify setup is in place.
 - **Discord** — typically requires a custom client (e.g., Vencord) that reads CSS; wallbash templates exist for this in the community.
+- **Zen** - Has community support for a wallbash script (https://github.com/dim-ghub/ZenBash/tree/main) 
+- **neovim** - Not electron, but also has a dedicated wallbash plugin in the works. (https://github.com/iamharshdabas/hyde.nvim)
 
 :::tip
 For Electron apps, the most reliable approach is an app-specific wallbash template in `~/.config/hyde/wallbash/scripts/`. This lets wallbash push color and other data directly to the app's config format on every wallpaper or theme switch.
@@ -173,6 +188,11 @@ For Electron apps, the most reliable approach is an app-specific wallbash templa
 
 ### Flatpak apps
 
-Flatpak apps run in a sandbox and are generally configured well with a clean HyDE install. You can use **Warehouse** to see what's installed via Flathub, or run `./install_fpk.sh` in the `~/HyDE/Scripts/extra` directory to verify the setup and configuration state.
+Flatpak apps run in a sandbox and are isolated from most shared or system libraries. They tend to include their own Qt and GTK runtimes baked in. With a clean HyDE install you can use **Warehouse** to see what's installed via Flathub, or run `./install_fpk.sh` in the `~/HyDE/Scripts/extra` directory to set it up if Flathub was declined during `./install.sh`. Portals allow controlled exceptions to the sandbox, and HyDE's integration with broader community projects means apps like Spotify and Discord, depending on the clients installed, can benefit from some user interaction:
+https://github.com/HyDE-Project/HyDE/discussions/137#discussioncomment-11918528
 
 Portal-mediated theming (like with ARCs) is the cleaner long-term path and depends on `xdg-desktop-portal-gtk` being active in your session.
+
+### Conclusion
+
+This document aims to provide reliable definitions of core concepts that are often scattered across Discord threads and user reports. It is mainly geared at resolving common issues — themes not loading, apps not picking up colors, authentication prompts misbehaving — but should also be useful for developers looking to understand how HyDE's internals fit together. If you want to dig deeper or optimize, refer to the scripts mentioned throughout, keeping in mind that many are tightly interrelated and changes can cascade.
