@@ -110,9 +110,9 @@ just install
 
 ### Testing your theme with wallbash
 
-There are two ways to initialize your theme. from wallbash or from an existing theme.
+There are two ways to initialize your theme. From wallbash or from an existing theme.
 
-We are going to use wallbash for this guide. as it gives you a good understanding of how wallbash generates the colors for your theme. You can learn more about wallbash [here](#understanding-wallbash).
+We are going to use wallbash for this guide. As it gives you a good understanding of how wallbash generates the colors for your theme. You can learn more about wallbash [here](#understanding-wallbash).
 
 Open Wallbash, setting auto, dark, or light (`Meta + Shift + R`). </br>
 Set your chosen wallpaper as the current wallpaper (`Meta + Shift + W`)
@@ -268,7 +268,7 @@ cp -r ./refs/gtk-4.0/* ./Config/.config/hyde/themes/MyTheme/gtk-4.0/
 
 ### Understanding wallbash
 
-Wallbash generates 4 primary colors from your wallpaper, then creates color groups around each primary color with the following structure:
+Wallbash is a special HyDE tool that generates 4 primary colors from your wallpaper, then creates color groups around each primary color with the following structure:
 
 For each primary color (`wallbash_pry1` through `wallbash_pry4`):
 
