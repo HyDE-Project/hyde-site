@@ -2,7 +2,7 @@
 title: Runtime de Lua y migración
 description: Cómo se despliega, configura y migra el runtime de Hyprland basado en Lua de HyDE desde el layout heredado de Hyprlang.
 sidebar:
-  order: 4
+order: 4
 ---
 
 Este documento explica el stack de Hyprland basado en Lua introducido por [la migración a Lua](https://github.com/HyDE-Project/HyDE/discussions/1717). Está escrito para usuarios existentes de HyDE que están decidiendo si migrar —y cómo hacerlo— desde la configuración heredada de Hyprlang.

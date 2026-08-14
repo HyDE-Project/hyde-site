@@ -2,7 +2,7 @@
 title: Lua for the User & Migration
 description: How HyDE's Lua-based Hyprland runtime is deployed, configured, and migrated from the legacy Hyprlang layout.
 sidebar:
-  order: 4
+order: 4
 ---
 
 This document explains the Lua-based Hyprland stack introduced by [the Lua migration](https://github.com/HyDE-Project/HyDE/discussions/1717). It is written for existing HyDE users deciding whether, and how, to move from the legacy Hyprlang configuration.
