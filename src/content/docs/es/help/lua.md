@@ -1,8 +1,6 @@
 ---
 title: Runtime de Lua y migración
 description: Cómo se despliega, configura y migra el runtime de Hyprland basado en Lua de HyDE desde el layout heredado de Hyprlang.
-sidebar:
-order: 4
 ---
 
 Este documento explica el stack de Hyprland basado en Lua introducido por [la migración a Lua](https://github.com/HyDE-Project/HyDE/discussions/1717). Está escrito para usuarios existentes de HyDE que están decidiendo si migrar —y cómo hacerlo— desde la configuración heredada de Hyprlang.
@@ -20,7 +18,7 @@ En esencia, estamos migrando a algo con mejor soporte: **Lua**. Un lenguaje de s
 
 Hyprlang era el material antiguo que usábamos para transportar variables de entorno importantes, y su funcionalidad era limitada. Aquí un ejemplo tomado del antiguo startup.conf:
 
-```conf
+```sh
 exec-once = dbus-update-activation-environment --systemd --all #? Might fail so we hardcode the variables below
 exec-once = $start.DBUS_SHARE_PICKER    # dbus-update-activation-environment (one-time setup)
 exec-once = $start.SYSTEMD_SHARE_PICKER # systemctl --user import-environment (one-time setup)

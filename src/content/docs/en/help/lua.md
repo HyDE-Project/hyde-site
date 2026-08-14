@@ -1,8 +1,6 @@
 ---
 title: Lua for the User & Migration
 description: How HyDE's Lua-based Hyprland runtime is deployed, configured, and migrated from the legacy Hyprlang layout.
-sidebar:
-order: 4
 ---
 
 This document explains the Lua-based Hyprland stack introduced by [the Lua migration](https://github.com/HyDE-Project/HyDE/discussions/1717). It is written for existing HyDE users deciding whether, and how, to move from the legacy Hyprlang configuration.
@@ -20,7 +18,7 @@ Essentially, we're migrating to something with better support, **Lua**. Quite th
 
 Hyprlang was the old material we used to carry important environment variables and its functionality was limited. Here's an example taken from the old startup.conf:
 
-```conf
+```sh
 exec-once = dbus-update-activation-environment --systemd --all #? Might fail so we hardcode the variables below
 exec-once = $start.DBUS_SHARE_PICKER    # dbus-update-activation-environment (one-time setup)
 exec-once = $start.SYSTEMD_SHARE_PICKER # systemctl --user import-environment (one-time setup)
