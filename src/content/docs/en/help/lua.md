@@ -158,7 +158,7 @@ Start with HyDE's shipped modules for patterns that match the installed runtime,
 
 ### TOML still has a role
 
-TOML remains the data layer between scripting and runtime calls. `~/.config/hyde/config.toml` contains portable HyDE preferences such as desktop applications, startup commands and helpful aliases, while the installed schema describes valid fields. HyDE's configuration registry also uses TOML to describe editable files and their hooks, including `~/.config/hypr/hyprland.lua`.
+TOML remains the data layer between scripting and runtime calls. `$XDG_DATA_HOME/hyde/config-registry.toml` contains portable HyDE preferences such as desktop applications, startup commands and helpful aliases, while the installed schema describes valid fields. HyDE's configuration registry also uses TOML to describe editable files and their hooks, including `~/.config/hypr/hyprland.lua`.
 
 The separation:
 
@@ -185,7 +185,7 @@ Use `hyde-shell layouts --select` to choose a shipped or custom layout.
 ~/.config/hypr/lua/layouts/custom.lua
 ```
 
-The old `[hyprland-start]` section has been replaced by `[desktop.start]` in `~/.config/hyde/config.toml`. Lua's `start_up.lua` runs these events in accordance to the local schema, when Hyprland emits its start event. The schema installed with HyDE documents the supported keys.
+The old `[hyprland-start]` section has been replaced by `[desktop.start]` in `$XDG_DATA_HOME/hyde/schema/config.toml`. Lua's `start_up.lua` runs these events in accordance to the local schema, when Hyprland emits its start event. The schema installed with HyDE documents the supported keys.
 
 ### Restore and `deez`
 
@@ -227,7 +227,7 @@ Run `./install.sh -p` to establish environment setup according to the newest git
   -- ~/.config/hypr/userprefs.conf -> ~/.config/hypr/hyprland.lua:17
   -- ~/.config/hypr/windowrules.conf, monitors.conf, nvidia.conf -> user hyprland.lua or a Lua module under lua/
   -- ~/.config/hypr/animations.conf, workflows.conf -> Lua workflow/animation selectors, not the old conf files
-  -- ~/.local/share/hypr/_.conf and ~/.local/share/hyde/_.conf files -> mostly retired leftovers, kept only for migration/backups
+  -- ~/.local/share/hypr/_.conf and ~/.local/share/hyde/_.conf files -> mostly retired leftovers, kept only for migration/backups, the schema folder is useful to backup only if you have edited relevant startup instructions.
 ```
 
 ## Migration checklist
@@ -239,11 +239,43 @@ Run `./install.sh -p` to establish environment setup according to the newest git
 5. Start a new HyDE session(should happen automatically), then verify the runtime and reload Hyprland:
 
 ```bash
-printf 'mode: %s\nconfig: %s\nprofile: %s\n' \
-  "$HYDE_MODE" "$HYPRLAND_CONFIG" "$DCONF_PROFILE" "$HYDE_ACTIVATED" "$HYDE_FEATURE_LUA" "$QT_QPA_PLATFORM" &&
-test -f "$HYPRLAND_CONFIG" || read -r -p ans "Interupted, continue?(y/n)"
-test -z "$DCONF_PROFILE" || test -f "$DCONF_PROFILE"
-hyprctl reload
+sh -c '
+printf "%-18s %s\n" "HYDE_MODE"        "${HYDE_MODE:-<unset>}"
+printf "%-18s %s\n" "HYPRLAND_CONFIG"  "${HYPRLAND_CONFIG:-<unset>}"
+printf "%-18s %s\n" "DCONF_PROFILE"    "${DCONF_PROFILE:-<unset>}"
+printf "%-18s %s\n" "HYDE_ACTIVATED"   "${HYDE_ACTIVATED:-<unset>}"
+printf "%-18s %s\n" "HYDE_FEATURE_LUA" "${HYDE_FEATURE_LUA:-<unset>}"
+printf "%-18s %s\n" "QT_QPA_PLATFORM"  "${QT_QPA_PLATFORM:-<unset>}"
+echo
+need_p=0
+if command -v luarocks >/dev/null 2>&1; then
+    echo "luarocks: "
+else
+    echo "luarocks: not found"
+    need_p=1
+fi
+if [ -x "$HOME/.local/state/hyde/python_env/bin/deez" ]; then
+    echo "deez (python env): found"
+else
+    echo "deez (python env): not found"
+    need_p=1
+fi
+if [ -n "$HYPRLAND_CONFIG" ] && [ -f "$HYPRLAND_CONFIG" ]; then
+    echo "HYPRLAND_CONFIG: "
+else
+    echo "HYPRLAND_CONFIG: unset!"
+    exit 1
+fi
+if [ -n "$DCONF_PROFILE" ] && [ ! -f "$DCONF_PROFILE" ]; then
+    echo "warn: DCONF_PROFILE is set but the file itself is missing."
+fi
+echo
+if [ "$need_p" -eq 1 ]; then
+    echo "=> run ./install.sh -p before ./install.sh -r"
+else
+    echo "=> ./install.sh -p ran, safe to skip straight to -r"
+fi
+'
 ```
 
 :::note[Need the legacy guide?]

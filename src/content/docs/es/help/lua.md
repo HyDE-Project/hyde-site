@@ -155,7 +155,7 @@ Empieza con los módulos que trae HyDE de fábrica para patrones que coincidan c
 
 ### TOML todavía tiene un papel
 
-TOML sigue siendo la capa de datos entre el scripting y las llamadas en runtime. `~/.config/hyde/config.toml` contiene preferencias portables de HyDE, como aplicaciones de escritorio, comandos de inicio y alias útiles, mientras que el esquema instalado describe los campos válidos. El registro de configuración de HyDE también usa TOML para describir los archivos editables y sus hooks, incluyendo `~/.config/hypr/hyprland.lua`.
+TOML sigue siendo la capa de datos entre el scripting y las llamadas en runtime. `$XDG_DATA_HOME/hyde/config-registry.toml` contiene preferencias portables de HyDE, como aplicaciones de escritorio, comandos de inicio y alias útiles, mientras que el esquema instalado describe los campos válidos. El registro de configuración de HyDE también usa TOML para describir los archivos editables y sus hooks, incluyendo `~/.config/hypr/hyprland.lua`.
 
 La separación:
 
@@ -182,7 +182,7 @@ Usa `hyde-shell layouts --select` para elegir un layout incluido de fábrica o u
 ~/.config/hypr/lua/layouts/custom.lua
 ```
 
-La antigua sección `[hyprland-start]` ha sido reemplazada por `[desktop.start]` en `~/.config/hyde/config.toml`. El `start_up.lua` de Lua ejecuta estos eventos de acuerdo con el esquema local, cuando Hyprland emite su evento de inicio. El esquema instalado con HyDE documenta las claves soportadas.
+La antigua sección `[hyprland-start]` ha sido reemplazada por `[desktop.start]` en `$XDG_DATA_HOME/hyde/schema/config.toml`. El `start_up.lua` de Lua ejecuta estos eventos de acuerdo con el esquema local, cuando Hyprland emite su evento de inicio. El esquema instalado con HyDE documenta las claves soportadas.
 
 ### Restauración y `deez`
 
@@ -221,9 +221,9 @@ Ejecuta `./install.sh -p` para establecer la configuración del entorno según e
   -- ~/.config/hypr/hyprland.conf -> ~/.local/share/hypr/hyde.lua:1
   -- ~/.config/hypr/keybindings.conf -> ~/.local/share/hypr/lua/key_binds.lua:1
   -- ~/.config/hypr/userprefs.conf -> ~/.config/hypr/hyprland.lua:17
-  -- ~/.config/hypr/windowrules.conf, monitors.conf, nvidia.conf -> user hyprland.lua or a Lua module under lua/
-  -- ~/.config/hypr/animations.conf, workflows.conf -> Lua workflow/animation selectors, not the old conf files
-  -- ~/.local/share/hypr/_.conf and ~/.local/share/hyde/_.conf files -> mostly retired leftovers, kept only for migration/backups
+  -- ~/.config/hypr/windowrules.conf, monitors.conf, nvidia.conf -> user hyprland.lua o un módulo de Lua bajo lua/
+  -- ~/.config/hypr/animations.conf, workflows.conf -> Lua workflow/animation selectors, no los archivos de conf antiguos
+  -- ~/.local/share/hypr/_.conf and ~/.local/share/hyde/_.conf files -> Sobras mantenidas para migraciones/respaldos, la carpeta de schema en partícular es solo útil respaldar si has editado las instrucciones relevantes de corrida.
 ```
 
 ## Lista de verificación de migración
@@ -235,11 +235,43 @@ Ejecuta `./install.sh -p` para establecer la configuración del entorno según e
 5. Inicia una nueva sesión de HyDE (debería ocurrir automáticamente), y luego verifica el runtime y recarga Hyprland:
 
 ```bash
-printf 'mode: %s\nconfig: %s\nprofile: %s\n' \
-  "$HYDE_MODE" "$HYPRLAND_CONFIG" "$DCONF_PROFILE" "$HYDE_ACTIVATED" "$HYDE_FEATURE_LUA" "$QT_QPA_PLATFORM" &&
-test -f "$HYPRLAND_CONFIG" || read -r -p ans "Interupted, continue?(y/n)"
-test -z "$DCONF_PROFILE" || test -f "$DCONF_PROFILE"
-hyprctl reload
+sh -c '
+printf "%-18s %s\n" "HYDE_MODE"        "${HYDE_MODE:-<unset>}"
+printf "%-18s %s\n" "HYPRLAND_CONFIG"  "${HYPRLAND_CONFIG:-<unset>}"
+printf "%-18s %s\n" "DCONF_PROFILE"    "${DCONF_PROFILE:-<unset>}"
+printf "%-18s %s\n" "HYDE_ACTIVATED"   "${HYDE_ACTIVATED:-<unset>}"
+printf "%-18s %s\n" "HYDE_FEATURE_LUA" "${HYDE_FEATURE_LUA:-<unset>}"
+printf "%-18s %s\n" "QT_QPA_PLATFORM"  "${QT_QPA_PLATFORM:-<unset>}"
+echo
+need_p=0
+if command -v luarocks >/dev/null 2>&1; then
+    echo "luarocks: "
+else
+    echo "luarocks: no encontrado"
+    need_p=1
+fi
+if [ -x "$HOME/.local/state/hyde/python_env/bin/deez" ]; then
+    echo "deez (python env): encontrado"
+else
+    echo "deez (python env): no encontrado "
+    need_p=1
+fi
+if [ -n "$HYPRLAND_CONFIG" ] && [ -f "$HYPRLAND_CONFIG" ]; then
+    echo "HYPRLAND_CONFIG: "
+else
+    echo "HYPRLAND_CONFIG: unset!"
+    exit 1
+fi
+if [ -n "$DCONF_PROFILE" ] && [ ! -f "$DCONF_PROFILE" ]; then
+    echo "Existe variable, falta el archivo."
+fi
+echo
+if [ "$need_p" -eq 1 ]; then
+    echo "=> corre ./install.sh -p antes de ./install.sh -r"
+else
+    echo "=> ./install.sh -p hecho, seguro para correr restauración -r"
+fi
+'
 ```
 
 :::note[¿Necesitas la guía heredada?]
