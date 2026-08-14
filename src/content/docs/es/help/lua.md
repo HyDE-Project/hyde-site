@@ -60,7 +60,7 @@ hyde-shell layouts --select
 | Reglas de ventana | `~/.config/hypr/windowrules.conf` | `/.local/share/hypr/lua/window_rules.lua`, aunque preferiblemente deberías migrarlas a `hyprland.lua` |
 | Ajustes de inicio | `[hyprland-start]` en `config.toml` | `[desktop.start]` en `$XDG_DATA_HOME/hyde/config-registry.toml` |
 | Preferencias de usuario (UserPrefs) | `.config/hypr/userprefs.conf` | `~/.local/share/hypr/lua/defaults.lua` |
-| Copia de seguridad y restauración | [listas de restauración heredadas](../resources/restore.md) | [manifiestos de `deez` invocados por `install.sh -r`](../resources/restore.md##tomlConfiguration) |
+| Copia de seguridad y restauración | [listas de restauración heredadas](../resources/restore.md) | [manifiestos de `deez` invocados por `install.sh -r`](../resources/restore.md#tomlConfiguration) |
 
 :::tip[HyDE+Lua trae un límite de módulos completamente nuevo]
 Si estás acostumbrado a editar archivos conf debido a temas con bugs visuales o actualizaciones mal sincronizadas, te va a encantar la nueva rigidez de Lua; y si nunca has tenido que lidiar con eso, considéralo el momento perfecto para sumarte y ayudar a mejorar HyDE.
@@ -70,7 +70,7 @@ Lua evita muchos de los trucos puntuales que empezamos a usar para lograr que Hy
 
 | Archivos modificados | | Cambios de LOC | Scripts | Descripción |
 | --- | --- | --- | --- | --- |
-| 44 | +2,074 | −159 | 33 añadidos, 11 modificados, 29 sin cambios | Añade manifiestos y migraciones de dotfiles; actualiza el soporte de instalación y restauración. |
+| 44 | +2,074, | −159 | 33 añadidos, 11 modificados, 29 sin cambios | Añade manifiestos y migraciones de dotfiles; actualiza el soporte de instalación y restauración. |
 
 las nuevas carpetas `dots` y `dots-groups` en ~/HyDE/Scripts/ que contienen los esquemas de dotfiles.
 

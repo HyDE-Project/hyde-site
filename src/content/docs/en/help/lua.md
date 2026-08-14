@@ -62,18 +62,18 @@ hyde-shell layouts --select
 | Window rules | `~/.config/hypr/windowrules.conf` | `/.local/share/hypr/lua/window_rules.lua` but preferably you'd port them into `hyprland.lua` |
 | Startup settings | `[hyprland-start]` in `config.toml` | `[desktop.start]` in `$XDG_DATA_HOME/hyde/config-registry.toml` |
 | UserPrefs | `.config/hypr/userprefs.conf` | `~/.local/share/hypr/lua/defaults.lua` |
-| backup-restore | [legacy restore lists](../resources/restore.md) | [`deez` manifests invoked by `install.sh -r`](../resources/restore.md##tomlConfiguration) |
+| backup-restore | [legacy restore lists](../resources/restore.md) | [`deez` manifests invoked by `install.sh -r`](../resources/restore.md#tomlConfiguration) |
 
 :::tip[HyDE+Lua brings a whole new module boundary]
 If you're used to editing conf files due to glitchy themeing or mistimed updates then you'll love the new rigidness of Lua, and if you've never had to deal with that then consider it a perfect time to jump in and make HyDE better.
 :::
 
-Lua prevents a lot of the one-off tricks we started to rely on in-order to make hyprlang work for finer routines,
+Lua prevents a lot of the one-off tricks we started to rely on in order to make hyprlang work for finer routines,
 but it is **not** a guaranteed performance upgrade. Its main benefit is a more maintainable configuration and long-term support. The following table takes into account 'changes' as the differences between the latest available dev branch and a 'stable' release from before May 12th 2026 [95adf01]:
 
-| Files changed | |LOC changes | Scripts | Description |
+| Files changed | | LOC changes | Scripts | Description |
 | --- | --- | --- | --- |
-| 44 | +2,074 | −159 | 33 added, 11 modified, 29 unchanged | Adds dotfile manifests and migrations; updates installation and restore support. |
+| 44 | +2,074, −159 | 33 added, 11 modified, 29 unchanged | Adds dotfile manifests and migrations; updates installation and restore support. |
 
 the new `dots` and `dots-groups` folders in ~/HyDE/Scripts/ containing the dot-file schemas.
 
@@ -90,7 +90,7 @@ All previous entrypoints have been updated;
 ---
 
 :::danger
-Don't mess with TOML or Lua data you don't recognize, the punishment for running a broken dot-file setup is much bigger, as is our ability to build out HyDE. $XDG_DATA_HOME/hypr/lua/* defines a lot of what happends after uwsm launches and mounts HyDE's drop-in configuration and is at the heart of HyDE's functionality.
+Don't mess with TOML or Lua data you don't recognize, the punishment for running a broken dot-file setup is much bigger, as is our ability to build out HyDE. $XDG_DATA_HOME/hypr/lua/* defines a lot of what happens after uwsm launches and mounts HyDE's drop-in configuration and is at the heart of HyDE's functionality.
 :::
 
 ### Runtime upgrades
@@ -113,7 +113,7 @@ Files below `~/.local/share/hypr/lua/` and `~/.local/share/hypr/hyde.lua` are de
 
 ## Hyprlang to Lua
 
-**Hyprlang files are declarative**: they describe settings and dispatch commands. What's inside a .conf file was a lie, it was and will always tend to be `Hypr` compliant syntax. Lua can express the same settings, then add functions, event handlers, and shared helpers where they make sense; which some conf files were doing anyways.
+**Hyprlang files are declarative**: they describe settings and dispatch commands. What's inside a .conf file was a lie, it was and will always tend to be `Hypr` compliant syntax. Lua can express the same settings, then add functions, event handlers, and shared helpers where they make sense; which some conf files were doing anyway.
 
 For example, a legacy input block such as:
 
@@ -210,8 +210,8 @@ For an intentionally controlled retry, use the same command shape as the install
 ```
 
 **Replace the `--list` flag for `--deploy all` only if you're sure it won't cause conflicts**
-If it does, please don't report on it. As mentioned `deez-dots` its an _implementation detail_,
-it's very practical outside our context but within, has been harnessed down so that there's very litte
+If it does, please don't report on it. As mentioned `deez-dots` is an _implementation detail_,
+it's very practical outside our context but within, has been harnessed down so that there's very little
 risk of it failing outside user error.
 
 :::tip[Use the full installer]
@@ -234,8 +234,8 @@ Run `./install.sh -p` to establish environment setup according to the newest git
 
 1. Review [Installation](../../getting-started/installation/) and clone the Lua-enabled HyDE revision you intend to use.
 2. Make a smart backup. I recommend: `~/.config/hypr`, `~/.config/hyde`, `~/.config/dconf`, `~/.config/gtk-3.0`, `~/.config/qt5ct`, `~/.config/qt6ct`, `~/.config/kdeglobals`, `~/.gtkrc-2.0`, and `~/.config/uwsm`.
-3. Definetly make sure `luarocks` and the preface is set-up: `./install.sh -p`. Running `./install.sh -r` will not and **can not** translsate or transfer your existing .conf syntax into usable HyDE+Lua syntax.
-4. Port legacy Hyprlang customisations into the directoris described throughout this doc. ($XDG_DATA_HOME, $HYPRLAND_CONFIG, $UWSM_FINALIZE_VARNAMES)
+3. Definitely make sure `luarocks` and the preface is set-up: `./install.sh -p`. Running `./install.sh -r` will not and **can not** translate or transfer your existing .conf syntax into usable HyDE+Lua syntax.
+4. Port legacy Hyprlang customisations into the directories described throughout this doc. ($XDG_DATA_HOME, $HYPRLAND_CONFIG, $UWSM_FINALIZE_VARNAMES)
 5. Start a new HyDE session(should happen automatically), then verify the runtime and reload Hyprland:
 
 ```bash
