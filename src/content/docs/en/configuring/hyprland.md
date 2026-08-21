@@ -7,7 +7,7 @@ sidebar:
 
 <link rel="stylesheet" href="/src/styles/tables.css">
 
-# Configuration Tree
+## Configuration Tree
 
 ```
 . 📂 ~/.config/hypr
@@ -31,16 +31,17 @@ sidebar:
 . 📂 ~/.local/share/hyde
 │ ├── 📄 hyprland.conf
 ```
-
 ---
 
 :::caution
 
 **Read the [Hyprland Wiki](https://wiki.hyprland.org/) first!**
 
+**And refresh on the XDG variables used [Right Here](https://specifications.freedesktop.org/basedir/latest/)**
+
 :::
 
-# HyDE's Hyprland Configuration
+## HyDE's Hyprland Configuration
 
 Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE divides its configuration into three sections:
 
@@ -50,7 +51,7 @@ Since Hyprland sources `~/.config/hypr/hyprland.conf`, HyDE divides its configur
 
 ## 1. Boilerplate
 
-This section contains the default configuration of HyDE, which you are recommended not to modify.
+This section contains the default configuration of HyDE, which you are recommended *not* to modify directly.
 
 **Filepath:** `$XDG_DATA_HOME/hyde/hyprland.conf`
 
@@ -67,20 +68,20 @@ This section is for overriding HyDE's default configuration.
 
 :::caution
 
-The `xdg_config/hypr/hyde.conf` file is deprecated, use `xdg_config/hyde/config.toml` instead.
+The `xdg_config/hypr/hyde.conf` file is deprecated, use `$XDG_DATA_HOME/hyde/schema/config.toml` instead
 
 :::
 
 To override HyDE's default Hyprland settings, configure these sections in your `config.toml`:
 
 - **[hyprland]** - Application defaults, theming, and display settings
-- **[hyprland_start]** - Startup commands and services
+- **[hyprland-start]** - Startup commands and services
 
-**Configuration File:** `$XDG_STATE_HOME/hyde/hyprland.conf`
+**Configuration File:** `~/.local/share/hyde/schema/config.toml`
 
 For detailed options, see:
 - [hyprland configuration](../config_toml/#hyprland)
-- [hyprland_start configuration](../config_toml/#hyprland_start)
+- [hyprland_start configuration](../config_toml/#hyprland-start)
 
 ## 3. Users
 
@@ -88,10 +89,10 @@ This section is for user configuration, which you may adjust as needed.
 
 **Filepaths:**
 
-- `./keybindings.conf`
-- `./windowrules.conf`
-- `./monitors.conf`
-- `./userprefs.conf`
+- `$XDG_CONFIG_HOME/hypr/keybindings.conf`
+- `$XDG_CONFIG_HOME/hypr/windowrules.conf`
+- `$XDG_CONFIG_HOME/hypr/monitors.conf`
+- `$XDG_CONFIG_HOME/hypr/userprefs.conf`
 
 ---
 
@@ -101,8 +102,17 @@ You will likely need to configure only these files; you can override Hyprland's 
 
 Also, Hyprland can hot reload the configuration files, so you can edit them and immediately see the changes.
 
+If you wish to be safe about editing the default configuration, copy it to a backup location first:
+
+```bash
+cp ~/.local/share/hyde/schema/config.toml ~/config.toml.bak
+```
+
+Or better yet, just stick to messing with `~/.config/hypr`, I recommend editing userprefs.conf if you'd like to add a keyboard layout (which you can then switch with super + k), windowrules.conf if you'd like to enable full transparency by changing the layer rules at the bottom, or just leaving them as they comfortably are.
+
 :::
 
 Now you should know which file is which. Refer to the [Hyprland Wiki](https://wiki.hyprland.org) for more information to achieve your perfect desktop experience.
 
-Also see [FAQs and Tips](../help/faq#how-can-i-change-keyboard-layout).
+For details on how UWSM manages your system at a service level and session environment variables, see [Autostart & UWSM](../../help/secrets/).
+Also see [FAQs and Tips](../../help/faq#how-can-i-change-keyboard-layout).

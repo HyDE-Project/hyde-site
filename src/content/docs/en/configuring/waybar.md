@@ -32,10 +32,7 @@ description: Waybar Configuration
   - Theme generated file.
 
 :::note
-You should know that the `xdg_share/waybar` (~/.local/share/waybar) is a directory that is provided by HyDE. NEVER edit the files in this directory, as they will be overwritten on updates. You should instead edit your own `~/.config/waybar` directory! 
-
-Take note that both have the same structure and I suggest you to copy the files from `xdg_share/waybar` to `~/.config/waybar` and edit them there.
-
+You should know that the `xdg_share/waybar` (~/.local/share/waybar) is a directory that is provided by HyDE. NEVER edit the files in this directory, as they will be overwritten on updates. You should instead edit your own by copying the files from `xdg_share/waybar` to `~/.config/waybar` and editing them there.
 :::
 
 ### Modules
