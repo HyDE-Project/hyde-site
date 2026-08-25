@@ -92,9 +92,9 @@ Don't mess with TOML or Lua data you don't recognize, the punishment for running
 :::
 
 
-### hypr.toml updates
+### hyde.toml updates
 
-Few keys in hyde.toml has been renamed for better clarity and extensibility.
+Few keys in `.config/hyde/hyde.toml` has been renamed for better clarity and extensibility.
 
 Renamed / Moved
 - hyprland.browser → desktop.app.browser
