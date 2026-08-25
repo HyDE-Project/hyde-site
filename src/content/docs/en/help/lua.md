@@ -40,6 +40,11 @@ Hyprlang was good for having a table of variables, not for moving parts like is 
 
 Instead of hoping that `startup.conf` goes off before hyprland starts, we declare an event `hyprland.start` or `hyde.activate` which chains into runtime operation, `hyde-shell reload` shows this off as it rebuilds core environments.
 
+
+## First step
+Run `uninstall.sh` before running `install.sh -r`. This helps clear files that might conflict with each other.
+
+
 ## Layouts
 
 Layouts is a new and exclusive lua feature that allows the user to change the behaviour of their whole WM in 1 swift action,
@@ -68,11 +73,6 @@ If you're used to editing conf files due to glitchy themeing or mistimed updates
 
 Lua prevents a lot of the one-off tricks we started to rely on in order to make hyprlang work for finer routines,
 but it is **not** a guaranteed performance upgrade. Its main benefit is a more maintainable configuration and long-term support. The following table takes into account 'changes' as the differences between the latest available dev branch and a 'stable' release from before May 12th 2026 [95adf01]:
-
-| Files changed | | LOC changes | Scripts | Description |
-| --- | --- | --- | --- |
-| 44 | +2,074, −159 | 33 added, 11 modified, 29 unchanged | Adds dotfile manifests and migrations; updates installation and restore support. |
-
 the new `dots` and `dots-groups` folders in ~/HyDE/Scripts/ containing the dot-file schemas.
 
 `Helper functions` for `install.sh` which are supposed to make migrating more simple and reinforces the python env
@@ -90,6 +90,25 @@ All previous entrypoints have been updated;
 :::danger
 Don't mess with TOML or Lua data you don't recognize, the punishment for running a broken dot-file setup is much bigger, as is our ability to build out HyDE. $XDG_DATA_HOME/hypr/lua/* defines a lot of what happens after uwsm launches and mounts HyDE's drop-in configuration and is at the heart of HyDE's functionality.
 :::
+
+
+### hypr.toml updates
+
+Few keys in hyde.toml has been renamed for better clarity and extensibility.
+
+Renamed / Moved
+- hyprland.browser → desktop.app.browser
+- hyprland.editor → desktop.app.editor
+- hyprland.explorer → desktop.app.explorer
+- hyprland.lockscreen → desktop.app.lockscreen
+- hyprland.terminal → desktop.app.terminal
+- hyprland.quickapps → desktop.app.quickapps
+- hyprland.* desktop/UI settings → desktop.* where applicable
+- hyprland-start configuration → desktop.start
+
+Make sure you replace them so everything works acoording to the old version.
+
+
 
 ### Runtime upgrades
 
