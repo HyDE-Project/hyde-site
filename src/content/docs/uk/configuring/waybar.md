@@ -55,7 +55,7 @@ description: Налаштування Waybar
 ```
 
 - Зберігайте всі модулі у `~/.config/waybar/modules/`.
-- Файли звідси рекурсивно додаються як записи в `includes/includes.jsonc`
+- Файли звідси рекурсивно додаються як записи в `includes/includes.json`
 - Усі модулі в межах певного дерева використовують угоду `parent-child`. Наприклад: `custom/cpuinfo` перетворюється на `custom-cpuinfo`. Це використовується для зручного визначення назви класу в CSS без плутанини.
 
 Приклад:
@@ -81,7 +81,7 @@ description: Налаштування Waybar
 HyDE зберігає всі готові до використання конфігурації в каталозі `layouts/`. Ними можна керувати за допомогою скрипта `hyde-shell waybar`.
 
 :::note
-Якщо користувач випадково налаштує `./waybar/config.jsonc`, цей файл буде переміщено до `~/.config/waybar/layouts/backup/name_timestamp.jsonc`. Незважаючи на ці заходи, ми рекомендуємо створювати копію своєї конфігурації в `~/.config/waybar/layouts/`.
+Якщо користувач випадково налаштує `~/.config/waybar/config.jsonc`, цей файл буде переміщено до `~/.config/waybar/layouts/backup/name_timestamp.jsonc`. Незважаючи на ці заходи, ми рекомендуємо створювати копію своєї конфігурації в `~/.config/waybar/layouts/`.
 :::
 
 Про CSS-стилізацію макетів див. у розділі [стилі](#стилі).
@@ -449,7 +449,7 @@ hyde-shell waybar -S
 # Або застосувати напряму
 waybar -c ~/.config/waybar/layouts/my_config.jsonc
 ```
-![alt text](/src/assets/waybar/selector.png)
+![alt text](../../../../assets/waybar/selector.png)
 
 :::note 
 Дивіться hyde-shell waybar --help для додаткових параметрів.

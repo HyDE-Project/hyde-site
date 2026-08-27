@@ -54,7 +54,7 @@ yay -Sy hyde-cli-git
 
 ```sh
 git clone https://aur.archlinux.org/hyde-cli-git.git
-cd ./hyde-cli
+cd ./hyde-cli-git
 makepkg -si
 ```
 
@@ -113,7 +113,7 @@ make update clean install
 > ⚠️ _Вже маєте HyDE, перш ніж дізналися про цей CLI?_
 > Просто виконайте цю команду
 > `Hyde-install --link --dir ~/HyDE`
-> Зверніть увагу, що `~/HydE` — це шлях до каталогу клону.
+> Зверніть увагу, що `~/HyDE` — це шлях до каталогу клону.
 > Див. розділ **Розширене встановлення** нижче для отримання додаткової інформації.
 
 2. **Розширене встановлення**

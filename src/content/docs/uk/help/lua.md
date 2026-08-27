@@ -62,10 +62,10 @@ hyde-shell layouts --select
 | Питання | Застаріле налаштування | Налаштування Lua |
 | --- | --- | --- |
 | Точка входу Hyprland | `~/.config/hypr/hyprland.conf` або `$XDG_DATA_HOME/hyprland.conf` | `$XDG_DATA_HOME/hypr/hyde.lua` та `~/.config/hypr/hyprland.lua` |
-| Правила вікон | `~/.config/hypr/windowrules.conf` | `/.local/share/hypr/lua/window_rules.lua`, але бажано перенести їх у `hyprland.lua` |
+| Правила вікон | `~/.config/hypr/windowrules.conf` | `$XDG_DATA_HOME/hypr/lua/window_rules.lua`, але бажано перенести їх у `hyprland.lua` |
 | Налаштування запуску | `[hyprland-start]` у `config.toml` | `[desktop.start]` у `$XDG_DATA_HOME/hyde/config-registry.toml` |
 | Уподобання користувача | `.config/hypr/userprefs.conf` | `~/.local/share/hypr/lua/defaults.lua` |
-| резервне копіювання/відновлення | [застарілі списки відновлення](../resources/restore.md) | [маніфести `deez`, що викликаються через `install.sh -r`](../resources/restore.md#tomlConfiguration) |
+| резервне копіювання/відновлення | [застарілі списки відновлення](../resources/restore.md) | [маніфести `deez`, що викликаються через `install.sh -r`](../resources/restore.md#конфігурація-toml) |
 
 :::tip[HyDE+Lua приносить абсолютно нову межу модулів]
 Якщо ви звикли редагувати conf-файли через глючне оформлення тем або невчасні оновлення — вам сподобається нова строгість Lua, а якщо ви ніколи з цим не стикалися, вважайте це чудовою нагодою долучитися й зробити HyDE кращим.
@@ -82,7 +82,7 @@ _~/HyDE/Scripts/dots/hyprland.toml_ розгортає дерево Lua.
 
 | Точка входу | Опис |
 | --- | --- |
-| $XDG_DATA_HOME/.local/share/hypr/hyde.lua | Виконує обіцянки щодо середовища, як-от середовище виконання, основні lua-скрипти, всі уподобання `.config/` та резервні варіанти `.local/` |
+| $XDG_DATA_HOME/hypr/hyde.lua | Виконує обіцянки щодо середовища, як-от середовище виконання, основні lua-скрипти, всі уподобання `.config/` та резервні варіанти `.local/` |
 | $XDG_CONFIG_HOME/hypr/hyprland.lua | Шар користувацьких перевизначень, або просто "уподобання користувача", є частиною бажаної зони для взаємодії з цим оновленням — від додавання клавіатурних скорочень до виклику скриптів HyDE через lua. Директива `require("")` тут корисна |
 
 ---
@@ -145,7 +145,7 @@ input {
 перетворюється на змістовніший профіль:
 
 ```lua
-# ~/.config/hypr/hyprland.lua
+-- ~/.config/hypr/hyprland.lua
 hl.config({
     input = {
         kb_layout = "us,es",

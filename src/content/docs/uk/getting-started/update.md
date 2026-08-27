@@ -17,7 +17,7 @@ git pull origin master
 
 Будь-які внесені вами налаштування буде перезаписано, якщо вони позначені для цього у `Scripts/restore_cfg.psv`.
 Однак усі замінені конфігурації резервуються та можуть бути відновлені з `~/.config/cfg_backups`.
-Дивіться [Відновлення конфігурації](/hyde/installation/restore/) для отримання додаткової інформації.
+Дивіться [Відновлення конфігурації](../../resources/restore/) для отримання додаткової інформації.
 
 :::
 
@@ -34,7 +34,7 @@ git pull origin master
 > "restore" (відновлення) у цьому контексті означає відновлення dotfiles із репозиторію до вашого $HOME, а не навпаки.
 
 ```sh
-./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>
+./restore_cfg.sh /path/to/file.psv /path/to/hyde/clone/Configs
 ```
 
 :::

@@ -5,9 +5,9 @@ sidebar:
   order: 1
 ---
 
-<div align = center><img src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png"><br></div>
+<div align = center><img src="https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png" alt="Банер HyDE"><br></div>
 
-# Галерея тем
+## Галерея тем
 
 <!-- TABLE_START -->
 
@@ -37,7 +37,7 @@ sidebar:
 | [![Monterey Frost](https://placehold.co/180x50/3B4252/D8DEE9?text=Monterey+Frost&font=Oswald)](https://github.com/rishav12s/Monterey-Frost)                           | Темна тема, натхненна Mac-OS                                                        | [rishav12s](https://github.com/rishav12s)                     |
 | [![Paranoid Sweet](https://placehold.co/180x50/821595/51ABAB?text=Paranoid+Sweet&font=Oswald)](https://github.com/rishav12s/Paranoid-Sweet)                           | Темно-фіолетова тема для HyDE                                                  | [rishav12s](https://github.com/rishav12s)                     |
 | [![Sci-fi](https://placehold.co/180x50/0D55B2/249CB6?text=Sci-fi&font=Oswald)](https://github.com/KaranRaval123/Sci-fi)                                               | Тема в стилі наукової фантастики                                                                | [KaranRaval123](https://github.com/KaranRaval123)             |
-| [![Scarlet Night](https://placehold.co/180x50/FF0000/0A0A0A?text=Scarlet+Night&font=Oswald)](https://github.com/abenezerw/Scarlet-Night)                              | Гарячо-червоний + глибоко-чорний                                                              | [abenezerw](https://github.com/abenezerw)                     |
+| [![Scarlet Night](https://placehold.co/180x50/FF0000/0A0A0A?text=Scarlet+Night&font=Oswald)](https://github.com/abenezerw/Scarlet-Night)                              | Яскраво-червоний + глибоко-чорний                                                              | [abenezerw](https://github.com/abenezerw)                     |
 | [![Synth Wave](https://placehold.co/180x50/495495/ff7edb?text=Synth+Wave&font=Oswald)](https://github.com/HyDE-Project/hyde-themes/tree/Synth-Wave)                   | Офіційна тема                                                                    | [prasanthrangan](https://github.com/prasanthrangan)           |
 | [![Red Stone](https://placehold.co/180x50/7E5655/C94342?text=Red+Stone&font=Oswald)](https://github.com/mahaveergurjar/Theme-Gallery/tree/Red_Stone)                  | Тема на основі гарячого червоного кольору                                                               | [mahaveergurjar](https://github.com/mahaveergurjar)           |
 | [![Windows 11](https://placehold.co/180x50/277AE6/D2DCFD?text=Windows+11&font=Oswald)](https://github.com/HyDE-Project/hyde-gallery/tree/Windows-11)                  | Ми любимо Windows! Ого                                                              | [T-Crypt](https://github.com/T-Crypt)                         |
@@ -70,7 +70,7 @@ sidebar:
 hyde-shell theme.import --select
 ```
 
-### Імпорт конкретної теми за назвою й URL за допомогою hydectl 
+### Імпорт конкретної теми за назвою і URL за допомогою hydectl 
 
 ```shell
 hydectl theme import --name "Catppuccin Mocha" --url  "https://github.com/HyDE-Project/hyde-themes/tree/Catppuccin-Mocha"

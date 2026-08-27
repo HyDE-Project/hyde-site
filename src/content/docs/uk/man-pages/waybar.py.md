@@ -9,10 +9,10 @@ description: Man-сторінка waybar.py
 
 ## Синтаксис
 
-```
+```text
 waybar.py [-h] [--set SET] [-n] [-p] [-u] [-g] [-i] [-b] [-G] 
           [-c CONFIG] [-s STYLE] [-w] [--json] [--select] [--kill] 
-          [--hide [{0,1,toggle}]]
+          [--hide]
 ```
 
 ## Опис
@@ -74,11 +74,8 @@ waybar.py [-h] [--set SET] [-n] [-p] [-u] [-g] [-i] [-b] [-G]
 **`--kill, -k`**
 : Завершити всі запущені екземпляри Waybar та будь-які пов'язані скрипти спостереження. Це забезпечує чистий спосіб завершення всіх процесів Waybar.
 
-**`--hide [{0,1,toggle}]`**
-: Керувати видимістю Waybar:
-  - `--hide 0` або `--hide show`: показати Waybar
-  - `--hide 1` або `--hide hide`: приховати Waybar  
-  - `--hide` або `--hide toggle`: перемкнути поточний стан видимості
+**`--hide`**
+: Перемкнути поточний стан видимості Waybar (прапорець без аргументів).
 
 ### Інформація та перелік
 
@@ -163,9 +160,7 @@ waybar.py --watch
 
 Керувати видимістю Waybar:
 ```bash
-waybar.py --hide 1       # Приховати Waybar
-waybar.py --hide 0       # Показати Waybar  
-waybar.py --hide toggle  # Перемкнути видимість
+waybar.py --hide         # Перемкнути видимість Waybar
 ```
 
 Завершити всі процеси `waybar.py`, що фактично зупиняє режим `--watch`:

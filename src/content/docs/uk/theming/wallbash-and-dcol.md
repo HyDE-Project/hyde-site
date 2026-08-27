@@ -39,7 +39,7 @@ description: Розуміння Wallbash та dcol
 
 ## Базовий формат:
 
-```
+```text
 target|command 
 contents
 ```
@@ -77,7 +77,7 @@ contents
 
 Директорія `~/.config/hyde/wallbash/*` містить три основні директорії:
 
-### always
+### Always
 
 Шаблони в `./wallbash/always/` виконуються під час:
 
@@ -87,7 +87,7 @@ contents
 
 Докладніше [тут](./always/README).
 
-### theme
+### Theme
 
 Шаблони в `./wallbash/theme/` виконуються під час:
 
@@ -96,6 +96,6 @@ contents
 
 Докладніше [тут](./theme/README).
 
-### scripts
+### Scripts
 
 Для налаштування зберігайте свої скрипти в `./wallbash/scripts`. Використовуйте змінну `$WALLBASH_SCRIPTS`, щоб перейти в цю директорію.

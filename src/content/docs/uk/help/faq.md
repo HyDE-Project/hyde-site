@@ -172,7 +172,7 @@ input {
 <summary id="edit-waybar">Як редагувати waybar?</summary>
 <div>
 
-Ви можете створити власну конфігурацію waybar, додавши власний файл у ~/.config/waybar/layouts/<filename>.jsonc. Потім його можна буде обрати в меню HyDE або запустивши скрипт з репозиторію `HyDE/Scripts/waybar.py -S`
+Ви можете створити власну конфігурацію waybar, додавши власний файл у `~/.config/waybar/layouts/<filename>.jsonc`. Потім його можна буде обрати в меню HyDE або запустивши скрипт з репозиторію `HyDE/Scripts/waybar.py -S`
 
 Дивіться документацію з теми оформлення у [Вікі Waybar](https://github.com/Alexays/Waybar/wiki).
 
@@ -204,10 +204,9 @@ input {
 <summary id="app-launcher">Як запустити це через засіб запуску застосунків?</summary>
 <div>
 
-Знайдіть запис .desktop за допомогою зручної команди find /usr/share/applications -name '\*code.desktop' image
+Знайдіть запис .desktop за допомогою команди `find /usr/share/applications -name '*code.desktop'`
 Вам слід скопіювати, а потім відредагувати запис .desktop кожного застосунку в `~/.local/share/applications/`
 Знайдіть частину Exec = і додайте прапорці
-image
 
 :::note
 📢 Пам'ятайте: якщо ви хочете відредагувати або створити файл .desktop, гарною практикою буде розмістити його в ~/.local/share/applications/, щоб уникнути змін у системних файлах. Це гарантує, що ваші зміни стосуються лише вашого користувача й не потребують адміністративних прав
@@ -247,7 +246,7 @@ image
 
 1. На екрані SDDM відкрийте tty за допомогою `Ctrl + Alt + F6` (або іншої функціональної клавіші)
 2. Увійдіть в обліковий запис, з яким виникла проблема
-3. `nano usr/share/sddm/themes/[theme name]/theme.conf`
+3. `nano /usr/share/sddm/themes/[theme name]/theme.conf`
 4. Знайдіть параметр `AllowBadUsername` і встановіть значення true
 5. Перезавантажте систему
 

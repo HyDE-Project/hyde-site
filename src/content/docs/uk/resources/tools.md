@@ -5,7 +5,7 @@ description: Рекомендовані інструменти
 
 Ці інструменти можуть покращити ваш робочий процес і допомогти отримати максимум від досвіду використання Hyprland! Їх протестовано, і вони добре працюють з HyDE також
 
-### Шпалери
+## Шпалери
 
 - [Hyprpaper](https://github.com/hyprwm/hyprpaper) ![c++][cpp] (блискавично швидка утиліта шпалер для wayland з керуванням через IPC)
 - [awww](https://codeberg.org/LGFae/awww) ![rust][rs] (демон шпалер з живим перемиканням, чудовими анімаціями та підтримкою GIF)
@@ -48,3 +48,11 @@ description: Рекомендовані інструменти
 
 - [wf-recorder](https://github.com/ammen99/wf-recorder) ![c++][cpp] (простий засіб запису екрана, подібний до grim, але записує відео)
 - [wl-screenrec](https://github.com/russelltg/wl-screenrec) ![rust][rs] (простий і ефективний засіб запису екрана для GPU AMD та Intel)
+
+[cpp]: https://img.shields.io/badge/-C++-00599C?logo=c%2B%2B&logoColor=white
+[rs]: https://img.shields.io/badge/-Rust-000000?logo=rust&logoColor=white
+[c]: https://img.shields.io/badge/-C-A8B9CC?logo=c&logoColor=white
+[py]: https://img.shields.io/badge/-Python-3776AB?logo=python&logoColor=white
+[ts]: https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white
+[z]: https://img.shields.io/badge/-Zig-F7A41D?logo=zig&logoColor=white
+[go]: https://img.shields.io/badge/-Go-00ADD8?logo=go&logoColor=white

@@ -8,7 +8,7 @@ description: Шаблон wallbash для HyprPanel
 ![241005_14h19m51s_screenshot](https://github.com/user-attachments/assets/11f40837-08fe-4979-b16e-b1d0a6fd4fcd)
 
 
-### Шаблон Wallbash для HyprPanel
+## Шаблон Wallbash для HyprPanel
 
 Цей шаблон призначений для використання з HyprPanel. Для отримання додаткової інформації відвідайте [HyprPanel](https://hyprpanel.com/).
 
