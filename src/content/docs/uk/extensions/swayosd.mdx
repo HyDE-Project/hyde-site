@@ -1,0 +1,13 @@
+---
+title: SwayOSD
+description: Індикатор на екрані на основі GTK для клавіатурних скорочень, як-от caps-lock і гучність
+---
+
+SwayOSD вже підтримується HyDE. Вам лише потрібно вручну додати демон, щоб це запрацювало.
+
+### Швидке налаштування
+
+```bash
+  exec-once = swayosd-server # enable swayosd service
+  exec-once = $(pkexec swayosd-libinput-backend) # swayosd service for keyboard input (requires to be run in a subshell)
+```
