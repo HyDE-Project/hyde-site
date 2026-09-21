@@ -5,148 +5,111 @@ description: Restore script's logic
 
 :::note
 
-"restore" in further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
+"Restore" in this and further context is restoring the dotfiles from the repository to your $HOME, not the other way around.
 
 ```sh
 ./restore_cfg.sh </path/to/file.psv > <optional /path/to/hyde/clone>
 ```
 
+**Warning - the second argument is an origin, not a destination.** If you pass something like `~/.config` there, hoping that means "restore out to _my_ config folder", the script will instead look for missing files in `~/.config`.
+Every restoration step from then on fails silently with `No such file or directory` so long as the given list is incomprehensible.
+Don't run the restore script on its own.
+
 :::
+
+Given that `.local/lib/hyde` populates via this exact mechanism, a failed run at this stage could corrupt the HyDE library without replacing it - if `hyde-shell` responds with something like (`Error: Could not load HyDE, broken installation?`)
+ Copy a functional version of the library from either a local backup `"${XDG_CONFIG_HOME:-$HOME/.config}/cfg_backups/<timestamp>/.local/lib/hyde/"` or by making sure you're carrying the right files:
+
+```bash
+rsync -av ~/HyDE/Configs/.config/ "${XDG_CONFIG_HOME:-$HOME}/"&&
+rsync -av ~/HyDE/Configs/.local/ "${XDG_DATA_HOME:-$HOME}/.local/"
+```
 
 ## Pipe Separated Values (PSV)
 
 This is a pipe-separated value file. It contains the paths of the dotfiles and their respective package dependencies.
 
-#### Note:
+**Note:**
 
-- Lines starting with `#` are comments.
-- The only known variable is `${HOME}`.
 - This is a 4-column file separated by `|`.
 - Each column should use spaces to separate array elements.
+- HyDE includes a single `restore_cfg.psv`, which defines the fallback configuration.
+- This format is recognized outside strict psv operations.
+- Specifically, `restore.config.sh` captures the list of dependencies in psv format across various lists and runs 1 of typically 4 operations.
 
-#### Structure:
+### Structure
 
 ```shell
 flag|path|target|dependency
 ```
 
-#### Flags:
+If you wish to know more about the flags refer to the `restore_cfg.psv` file in `HyDE/Scripts/`
 
-- **( P ) Populate/Preserved**
+#### example:
 
-  - This flag ensures that the target is only copied if it does not already exist. It is useful for preserving the current state of the target, preventing any overwrites or modifications to existing files or directories.
-
-- **( S ) Sync**
-
-  - If the target file(s) exist, overwrite them.
-  - If the target is a directory, only overwrite the files that are listed.
-  - Preserve other files in the target directory that are not listed.
-  - This behavior is similar to the `cp -r` command.
-
-- **( O ) Overwrite**
-
-  - This flag performs an aggressive sync operation. It ensures that the target is completely replaced by the source.
-  - If the target is a directory, every file and subdirectory within it will be overwritten by the corresponding items from the source.
-  - If the target is a file, it will be entirely overwritten by the source file.
-  - This operation does not preserve any existing files or directories in the target location; everything is replaced.
-  - Useful for updating core configurations and scripts.
-
-- **( B ) Backup**
-  - Backup the target.
-  - All P, S, O flags will also backup the target file/directory.
-
-<details>
-<summary>Sample PSV file</summary>
-
-```shell
- Hyde core files 
-P|${HOME}/.config/hyde|config.toml|hyprland
+```sh
 P|${HOME}/.config/hypr|hyde.conf animations.conf windowrules.conf keybindings.conf userprefs.conf monitors.conf|hyprland
-P|${HOME}/.config/hypr|nvidia.conf|hyprland nvidia-utils
-P|${HOME}/.config/hypr/themes|theme.conf wallbash.conf colors.conf|hyprland
-P|${HOME}/.local/state|hyde|hyprland
-
-S|${HOME}/.config/hypr|hyprland.conf|hyprland
-S|${HOME}/.local|bin|hyprland
-S|${HOME}/.config|gtk-3.0|nwg-look
-S|${HOME}/.config|nwg-look|nwg-look
-S|${HOME}/.config|xsettingsd|nwg-look
-S|${HOME}|.gtkrc-2.0|nwg-look
-S|${HOME}/.config|Kvantum|kvantum
-S|${HOME}/.config|qt5ct|qt5ct
-S|${HOME}/.config|qt6ct|qt6ct
-S|${HOME}/.config/hyde|wallbash|hyprland
-S|${HOME}/.config/hypr|animations|hyprland
-
-O|${HOME}/.local/share|hyde|hyprland
-O|${HOME}/.local/lib|hyde|hyprland
-
- Editor 
-P|${HOME}/.config/Code - OSS/User|settings.json|code
-P|${HOME}/.config/Code/User|settings.json|visual-studio-code-bin
-P|${HOME}/.config/VSCodium/User|settings.json|vscodium-bin
-
- Bar 
-P|${HOME}/.config/waybar|config.ctl|waybar
-S|${HOME}/.config/waybar|modules config.jsonc theme.css style.css|waybar
-
- Terminal 
-P|${HOME}/.config|lsd|lsd
-S|${HOME}/.config|fastfetch|fastfetch
-S|${HOME}/.config/kitty|hyde.conf theme.conf|kitty
-P|${HOME}/.config/kitty|kitty.conf|kitty
-
- Shell 
-P|${HOME}/.config|fish|fish
-P|${HOME}|.zshrc .hyde.zshrc .p10k.zsh|zsh zsh-theme-powerlevel10k pokego-bin
-S|${HOME}|.zshenv|zsh zsh-theme-powerlevel10k
-
- File Explorer 
-P|${HOME}/.local/state|dolphinstaterc|dolphin
-P|${HOME}/.config|baloofilerc|dolphin
-S|${HOME}/.config/menus|applications.menu|dolphin
-S|${HOME}/.config|dolphinrc|dolphin
-S|${HOME}/.config|kdeglobals|dolphin
-S|${HOME}/.local/share/kio/servicemenus|hydewallpaper.desktop|dolphin
-S|${HOME}/.local/share/kxmlgui5|dolphin|dolphin
-S|${HOME}/.local/share|dolphin|dolphin
-
- Input 
-P|${HOME}/.config|libinput-gestures.conf|libinput-gestures
-
- Wayland 
-P|${HOME}/.config|spotify-flags.conf|spotify
-P|${HOME}/.config|code-flags.conf|code
-P|${HOME}/.config|code-flags.conf|visual-studio-code-bin
-P|${HOME}/.config|vscodium-flags.conf|vscodium-bin
-P|${HOME}/.config|electron-flags.conf|electron
-
- Notifications 
-S|${HOME}/.config|dunst|dunst
-
- Gaming 
-S|${HOME}/.config|MangoHud|mangohud
-
- Launcher 
-S|${HOME}/.config|rofi|rofi
-S|${HOME}/.config|wlogout|wlogout
-
- Lock Screen 
-S|${HOME}/.config|swaylock|swaylock-effects
-P|${HOME}/.config/hypr|hyprlock.conf|hyprlock
-S|${HOME}/.config/hypr|hyprlock|hyprlock
-
- Idle daemon 
-P|${HOME}/.config/hypr|hypridle.conf|hypridle
+S|${HOME}/.config/uwsm|env env-hyprland env.d env-hyprland.d|systemd hyprland uwsm
+O|${HOME}/.local/share|hypr|hyprland
 ```
 
-</details>
+It is recommended that you verify your local dotfiles are aligned with those of the HyDEs github repository.
+The following one-shot tries to help you:
+
+```bash
+rsync -rnc --itemize-changes --exclude='.git' \                                                    
+ ~/HyDE/Configs/.config/ "${XDG_CONFIG_HOME:-$HOME}/.config/"
+```
+
+Lines that start with `>f+++++++++++` are files that exist in the upstream but are missing locally.
+Lines like `>fc...` belong to files whose contents differ between you and upstream - Like one of _your_ configurations or outdated content inside the file.
+
+Once you've identified the missing configuration files/dirs, you must begin a backup, if you'd like to convert the outtaded syntax to one compatible with Lua, where applicable you can use: [hyprconf2lua](https://github.com/Prateek-squadron/hyprconf2lua).
+
+You can also look to the cfg_backups folder managed by HyDE:
+
+```bash
+cd "${XDG_CONFIG_HOME:-$HOME}/cfg_backups/"
+```
+
+## How do I restore my system?
+
+HyDE is constantly evolving, every update brings a farewell to older configurations with the promise of improvement, we can take advantage of this and simply:
+
+```sh
+cd ~/HyDE/
+git pull origin master
+cd Scripts/
+./install.sh -r  #If you don't care about the files in .config and .local, backups are made regardless.
+rsync -av ~/HyDE/Configs/.config $XDG_CONFIG_HOME/ &&
+rsync -av ~/HyDE/Configs/.local $XDG_DATA_HOME
+```
+
+- **`HyDE/Scripts/install.sh -r`** - Utilizes 'deez_dots', which requires a python environment (./install.sh -p) and is the most generic way of restoring your system.
 
 ## TOML Configuration
 
-🚧 🚧 WIP 🚧🚧
+TOML — Tom's Obvious, Minimal Language —  is a configuration language which, like JSON,
+uses `key = value` pairs alongside `[Definition Blocks]` and a clear syntax to build data structures. Hyde's own `hyde.toml`
+concentrates the majority of changes between updates. Why TOML specifically? Well, its human-legible first, machine-second - Its contents serve good descriptions as well as doubling-up for instructing.
 
-PSV configuration file is convenient for the script to read and write. However, it is very restrictive and not user-friendly.
-For further customization, we can use TOML configuration files.
+Also it allows comments and is read similarly to a systemd service unit-file, e.g:
+
+```toml
+# config.toml, circa 2024
+[rofi.theme]
+# themeselect.sh configuration
+scale = 6
+
+# Registro moderno
+[rofi.files.theme]
+description = "Rofi Theme"
+path = "${XDG_CONFIG_HOME:-$HOME/.config}/rofi/themes/current.rasi"
+pre_hook = ["bash", "-c", "mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/rofi/themes"]
+post_hook = ["bash", "-c", "echo 'Rofi theme updated.'"]
+```
+
+HyDE uses TOML to carry a registry of various important system states. With time it was found more efficient to wrap
+certain configurations within well-defined blocks. The restore scripts and operations (`deez-dots`, `restore_cfg`, `install.sh -r`) try taking advantage of the list format that is given - usually inside the well-defined blocks - to carry a timeline of HyDE's evolution, manifest, and more. Which the system interprets alongside environment variables and other HyDE specific data. Look at: [Configuring Hyprland](https://hydeproject.pages.dev/en/configuring/hyprland/). For more information.
 
 ...

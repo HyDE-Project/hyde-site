@@ -144,12 +144,16 @@ if you want to modify the structure then you'll have to modify the qml files in 
 
 Read this for details: https://wiki.hyprland.org/Configuring/Variables/#input
 
-In HyDE we have the `~/.config/hypr/userprefs.conf` add the configuration in there.
+In HyDE create a lua file `~/.config/hypr/custom.lua` and add the configuration in there.
 
-```
-input {
-  kb_layout = us,de
-}
+```lua
+-- ~/.config/hypr/hyprland.lua
+hl.config({
+    input = {
+        kb_layout = "us,es",
+        accel_profile = "flat",
+    },
+})
 ```
 
 Use `SUPER` + `K` to switch between layouts.

@@ -142,12 +142,16 @@ Si quieres modificar la estructura, tendrás que modificar los archivos qml en /
 
 Lee esto primero: https://wiki.hyprland.org/Configuring/Variables/#input
 
-En HyDE tenemos el archivo `~/.config/hypr/userprefs.conf`, añade la configuración allí.
+En HyDE genera un archivo `~/.config/hypr/custom.lua`, añade la configuración allí.
 
-```
-input {
-  kb_layout = us,es
-}
+```lua
+-- ~/.config/hypr/hyprland.lua
+hl.config({
+    input = {
+        kb_layout = "us,es",
+        accel_profile = "flat",
+    },
+})
 ```
 
 Usa `SUPER` + `K` para cambiar entre distribuciones.
